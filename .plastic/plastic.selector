@@ -1,0 +1,4 @@
+repository "Harmonys Last Stand@doraemonidol@cloud"
+  path "/"
+    br "/main"
+    co "/main"
