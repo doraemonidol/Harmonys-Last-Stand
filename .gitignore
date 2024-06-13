@@ -55,6 +55,15 @@ ExportedObj/
 # Unity3D generated file on crash reports
 sysinfo.txt
 
+# Ignore Logic
+Assets/Scripts/Logic/*
+Assets/Scripts/Presentation/*.cs*
+Assets/Scripts/Common/*.cs*
+Assets/Scripts/Data/*.cs*
+Assets/Scripts/DTO/*.cs*
+Assets/Scripts/*.meta
+
+
 # Builds
 *.apk
 *.aab
