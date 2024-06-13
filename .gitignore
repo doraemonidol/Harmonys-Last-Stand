@@ -63,7 +63,6 @@ Assets/Scripts/Data/*.cs*
 Assets/Scripts/DTO/*.cs*
 Assets/Scripts/*.meta
 
-
 # Builds
 *.apk
 *.aab
