@@ -6,6 +6,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,19 +22,10 @@ public class SpawnProjectilesScript : MonoBehaviour {
     public List<GameObject> VFXs = new List<GameObject> ();
 
 	private int count = 0;
-	private float timeToFire = 0f;
-	private GameObject effectToSpawn;
-	[SerializeField] private Camera mainCamera;
+	// private float timeToFire = 0f;
+	[SerializeField] private CinemachineVirtualCamera virtualCamera;
 
 	void Start () {
-
-		if(VFXs.Count>0)
-			effectToSpawn = VFXs[0];
-		else
-			Debug.Log ("Please assign one or more VFXs in inspector");
-		
-		// if (effectName != null) effectName.text = effectToSpawn.name;
-
 		rotateToMouse.StartUpdateRay ();
         if (useTarget && target != null)
         {
@@ -46,21 +38,21 @@ public class SpawnProjectilesScript : MonoBehaviour {
     }
 
 	void Update () {
-		if (Input.GetMouseButton (0) && Time.time >= timeToFire) {
-			timeToFire = Time.time + 1f / effectToSpawn.GetComponent<ProjectileMoveScript>().fireRate;
-			SpawnVFX ();	
-		}
+		// if (Input.GetMouseButton (0) && Time.time >= timeToFire) {
+		// 	timeToFire = Time.time + 1f / effectToSpawn.GetComponent<ProjectileMoveScript>().fireRate;
+		// 	SpawnVFX ();	
+		// }
 
-		if (Input.GetKeyDown (KeyCode.Q))
-			Next ();
-		if (Input.GetKeyDown(KeyCode.E))
-			Previous();
+		// if (Input.GetKeyDown (KeyCode.Q))
+		// 	Next ();
+		// if (Input.GetKeyDown(KeyCode.E))
+		// 	Previous();
 	}
 
-	public void SpawnVFX () {
+	public void SpawnVFX (GameObject effectToSpawn) {
 		GameObject vfx;
 
-		var cameraShakeScript = mainCamera.GetComponent<CameraShakeSimpleScript> ();
+		var cameraShakeScript = virtualCamera.GetComponent<CameraShakeSimpleScript> ();
 
 		if (cameraShake && cameraShakeScript)
 			cameraShakeScript.ShakeCamera ();
@@ -93,31 +85,27 @@ public class SpawnProjectilesScript : MonoBehaviour {
 			vfx = Instantiate (effectToSpawn);		
 	}
 
-	public void Next () {
-		count++;
-
-		if (count > VFXs.Count)
-			count = 0;
-
-		for(int i = 0; i < VFXs.Count; i++){
-			if (count == i)	effectToSpawn = VFXs [i];
-			// if (effectName != null)	effectName.text = effectToSpawn.name;
-		}
-	}
-
-	public void Previous () {
-		count--;
-
-		if (count < 0)
-			count = VFXs.Count;
-
-		for (int i = 0; i < VFXs.Count; i++) {
-			if (count == i) effectToSpawn = VFXs [i];
-			// if (effectName )	effectName.text = effectToSpawn.name;
-		}
-	}
-
-	public void CameraShake () {
-		cameraShake = !cameraShake;
-	}
+	// public void Next () {
+	// 	count++;
+	//
+	// 	if (count > VFXs.Count)
+	// 		count = 0;
+	//
+	// 	for(int i = 0; i < VFXs.Count; i++){
+	// 		if (count == i)	effectToSpawn = VFXs [i];
+	// 		// if (effectName != null)	effectName.text = effectToSpawn.name;
+	// 	}
+	// }
+	//
+	// public void Previous () {
+	// 	count--;
+	//
+	// 	if (count < 0)
+	// 		count = VFXs.Count;
+	//
+	// 	for (int i = 0; i < VFXs.Count; i++) {
+	// 		if (count == i) effectToSpawn = VFXs [i];
+	// 		// if (effectName )	effectName.text = effectToSpawn.name;
+	// 	}
+	// }
 }

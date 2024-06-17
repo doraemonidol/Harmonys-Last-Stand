@@ -10,33 +10,41 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class CameraShakeSimpleScript : MonoBehaviour {
 
-	private bool isRunning = false;
-	private Animation anim;
+	private bool _isRunning = false;
+	public CinemachineVirtualCamera vcam;
+	private CinemachineTransposer transposer;
 
 	void Start () {
-		anim = GetComponent<Animation> ();
+		vcam = GetComponent<CinemachineVirtualCamera> ();
+		transposer = vcam.GetCinemachineComponent<CinemachineTransposer>();
+		
+		if (vcam == null) {
+			Debug.LogError ("No virtual camera assigned to the CameraShakeSimpleScript script.");
+		}
+		
+		if (transposer == null) {
+			Debug.LogError ("No transposer found on the virtual camera.");
+		}
 	}
 
 	public void ShakeCamera() {	
-		if (anim != null)
-			anim.Play (anim.clip.name);
-		else
-			ShakeCaller (0.25f, 0.1f);
+		ShakeCaller (0.25f, 0.05f);
 	}
 
 	//other shake option
-	public void ShakeCaller (float amount, float duration){
+	void ShakeCaller (float amount, float duration){
 		StartCoroutine (Shake(amount, duration));
 	}
 
-	IEnumerator Shake (float amount, float duration){
-		isRunning = true;
+	private IEnumerator Shake (float amount, float duration){
+		_isRunning = true;
 
-		Vector3 originalPos = transform.localPosition;
+		Vector3 originalOffset = transposer.m_FollowOffset;
 		int counter = 0;
 
 		while (duration > 0.01f) {
@@ -44,16 +52,18 @@ public class CameraShakeSimpleScript : MonoBehaviour {
 
 			var x = Random.Range (-1f, 1f) * (amount/counter);
 			var y = Random.Range (-1f, 1f) * (amount/counter);
+			
+			transposer.m_FollowOffset += new Vector3(x, y, 0);
 
-			transform.localPosition = Vector3.Lerp (transform.localPosition, new Vector3 (originalPos.x + x, originalPos.y + y, originalPos.z), 0.5f);
+			// transform.localPosition = Vector3.Lerp (transform.localPosition, new Vector3 (originalPos.x + x, originalPos.y + y, originalPos.z), 0.5f);
 
 			duration -= Time.deltaTime;
 			
-			yield return new WaitForSeconds (0.1f);
+			yield return new WaitForSeconds (0.02f);
 		}
 
-		transform.localPosition = originalPos;
+		transposer.m_FollowOffset = originalOffset;
 
-		isRunning = false;
+		_isRunning = false;
 	}
 }

@@ -7,10 +7,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class RotateToMouseScript : MonoBehaviour {
 
-	public float maximumLenght;
+	public float maximumLength;
 
 	private Ray rayMouse;
 	private Vector3 pos;
@@ -38,10 +39,10 @@ public class RotateToMouseScript : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundMask)) {
 				mousePos = hit.point;
 			} else {
-				mousePos = ray.GetPoint(maximumLenght);
+				mousePos = ray.GetPoint(maximumLength);
 			}
 			
-			Debug.Log(mousePos);
+			// Debug.Log(mousePos);
 			
 			RotateToMouse (directionIndicator, mousePos);
 			yield return updateTime;
