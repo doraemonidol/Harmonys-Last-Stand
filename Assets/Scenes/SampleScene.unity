@@ -347,6 +347,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3656534823255315729, guid: 7aa07ab191b473a4bb0a16121a775908, type: 3}
   m_PrefabInstance: {fileID: 266269645}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &155366355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 155366356}
+  m_Layer: 2
+  m_Name: ProjectileContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &155366356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155366355}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1902544005}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &182290437
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +389,7 @@ GameObject:
   - component: {fileID: 182290438}
   - component: {fileID: 182290439}
   m_Layer: 2
-  m_Name: Skill2
+  m_Name: Normal_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -389,13 +420,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 182290437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10653da39d4d19c42b711d69faa9a749, type: 3}
+  m_Script: {fileID: 11500000, guid: eb04f56fc88946c5afc64a77e80e73e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vfx: {fileID: 1305997383178436, guid: 5b54c2e1bf70dd248902db6814a270fb, type: 3}
-  skillIndicator: {fileID: 142278908}
-  ChannelingTime: 1
+  preCastVfx: {fileID: 0}
+  preCastTime: 0
+  preCastPosition: {fileID: 0}
+  castVfx: {fileID: 1149073990277440, guid: 018425a5e75e2094eb0ca95d72327204, type: 3}
+  castTime: 0
+  castPosition: {fileID: 1902544005}
+  postCastVfx: {fileID: 0}
+  postCastTime: 0
+  postCastPosition: {fileID: 0}
+  skillContainer: {fileID: 0}
+  stickToCaster: 0
+  cameraShake: 0
+  cooldownTime: 1
+  skillState: 1
+  firePoint: {fileID: 0}
+  target: {fileID: 0}
+  castingSound: {fileID: 0}
+  hitSound: {fileID: 0}
   rotateToMouse: {fileID: 0}
+  channelingTime: 3
+  skillIndicator: {fileID: 142278908}
 --- !u!1001 &266269645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -492,7 +540,7 @@ GameObject:
   - component: {fileID: 297465319}
   - component: {fileID: 297465320}
   m_Layer: 2
-  m_Name: Skill1
+  m_Name: Special_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -522,12 +570,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 297465318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10653da39d4d19c42b711d69faa9a749, type: 3}
+  m_Script: {fileID: 11500000, guid: b968d3e0c0ed4e5c91681262f5ac3707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vfx: {fileID: 1997882812359486, guid: 840f338b0237d3440b6d0de9ca9481f5, type: 3}
-  skillIndicator: {fileID: 0}
-  ChannelingTime: 1
+  preCastVfx: {fileID: 0}
+  preCastTime: 0
+  preCastPosition: {fileID: 0}
+  castVfx: {fileID: 1997882812359486, guid: 840f338b0237d3440b6d0de9ca9481f5, type: 3}
+  castTime: 0
+  castPosition: {fileID: 919435606}
+  postCastVfx: {fileID: 0}
+  postCastTime: 0
+  postCastPosition: {fileID: 0}
+  skillContainer: {fileID: 0}
+  stickToCaster: 0
+  cameraShake: 0
+  cooldownTime: 1
+  skillState: 1
+  firePoint: {fileID: 0}
+  target: {fileID: 0}
+  castingSound: {fileID: 0}
+  hitSound: {fileID: 0}
   rotateToMouse: {fileID: 0}
 --- !u!1 &665192827
 GameObject:
@@ -861,7 +924,7 @@ GameObject:
   - component: {fileID: 951591691}
   - component: {fileID: 951591692}
   m_Layer: 2
-  m_Name: NormalAttack
+  m_Name: Normal_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -892,13 +955,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 951591690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10653da39d4d19c42b711d69faa9a749, type: 3}
+  m_Script: {fileID: 11500000, guid: eb04f56fc88946c5afc64a77e80e73e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vfx: {fileID: 1607489160101874, guid: 413b180ebab02d349a31789fab789ef6, type: 3}
-  skillIndicator: {fileID: 795787726042680807}
-  ChannelingTime: 1
+  preCastVfx: {fileID: 0}
+  preCastTime: 0
+  preCastPosition: {fileID: 0}
+  castVfx: {fileID: 1170744857039610, guid: 1fcfcb93d7455e94bb4991c5ab289a41, type: 3}
+  castTime: 0
+  castPosition: {fileID: 919435606}
+  postCastVfx: {fileID: 0}
+  postCastTime: 0
+  postCastPosition: {fileID: 0}
+  skillContainer: {fileID: 0}
+  stickToCaster: 0
+  cameraShake: 0
+  cooldownTime: 1
+  skillState: 1
+  firePoint: {fileID: 0}
+  target: {fileID: 0}
+  castingSound: {fileID: 0}
+  hitSound: {fileID: 0}
   rotateToMouse: {fileID: 0}
+  channelingTime: 2
+  skillIndicator: {fileID: 795787726042680807}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,7 +1292,7 @@ GameObject:
   - component: {fileID: 1514229930}
   - component: {fileID: 1514229931}
   m_Layer: 2
-  m_Name: Skill3
+  m_Name: Special_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1242,12 +1322,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1514229929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10653da39d4d19c42b711d69faa9a749, type: 3}
+  m_Script: {fileID: 11500000, guid: b968d3e0c0ed4e5c91681262f5ac3707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vfx: {fileID: 1846563170864394, guid: 3bbebb6123d7fdd4fa718a9ea192c837, type: 3}
-  skillIndicator: {fileID: 0}
-  ChannelingTime: 1
+  preCastVfx: {fileID: 0}
+  preCastTime: 0
+  preCastPosition: {fileID: 0}
+  castVfx: {fileID: 1966937190983394, guid: de6c0b0e816f5c641b189eebd2200e89, type: 3}
+  castTime: 0
+  castPosition: {fileID: 1902544005}
+  postCastVfx: {fileID: 0}
+  postCastTime: 0
+  postCastPosition: {fileID: 0}
+  skillContainer: {fileID: 0}
+  stickToCaster: 0
+  cameraShake: 0
+  cooldownTime: 1
+  skillState: 1
+  firePoint: {fileID: 0}
+  target: {fileID: 0}
+  castingSound: {fileID: 0}
+  hitSound: {fileID: 0}
   rotateToMouse: {fileID: 0}
 --- !u!1 &1633934001
 GameObject:
@@ -1501,6 +1596,7 @@ Transform:
   m_Children:
   - {fileID: 1311074239}
   - {fileID: 1345613005}
+  - {fileID: 155366356}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1902544006
@@ -1728,13 +1824,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6420b199d93418abddef27028124b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skills:
+  normalSkills:
   - {fileID: 951591692}
-  - {fileID: 297465320}
   - {fileID: 182290439}
+  specialSkills:
+  - {fileID: 297465320}
   - {fileID: 1514229931}
-  rotateToMouse: {fileID: 0}
+  rotateToMouse: {fileID: 1902544010}
+  firePoint: {fileID: 919435605}
+  target: {fileID: 0}
+  skillContainer: {fileID: 155366355}
   timeScaleFactor: 0.3
+  virtualCamera: {fileID: 2139190074}
 --- !u!114 &1902544013
 MonoBehaviour:
   m_ObjectHideFlags: 0

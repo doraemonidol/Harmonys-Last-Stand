@@ -24,6 +24,7 @@ public class RotateToMouseScript : MonoBehaviour {
 
 	void Start () {
 		cam = Camera.main;
+		StartCoroutine (UpdateRay());
 	}
 
 	public void StartUpdateRay (){
