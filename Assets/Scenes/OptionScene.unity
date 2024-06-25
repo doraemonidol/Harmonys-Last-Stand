@@ -214,7 +214,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 533360453}
-        m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
+        m_TargetAssemblyTypeName: SliderHandler, Assembly-CSharp
         m_MethodName: LogSliderPercentage
         m_Mode: 1
         m_Arguments:
@@ -234,10 +234,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 533360450}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d72aa3445969a487090e4d0bc29cf49c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ce544f88718c46758cc921b4c9be00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 0
   slider: {fileID: 533360452}
 --- !u!1 &538004832
 GameObject:
@@ -1232,7 +1231,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 0
-  slider: {fileID: 0}
 --- !u!114 &1624975045
 MonoBehaviour:
   m_ObjectHideFlags: 0
