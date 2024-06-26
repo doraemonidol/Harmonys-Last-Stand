@@ -56,12 +56,7 @@ ExportedObj/
 sysinfo.txt
 
 # Ignore Logic
-Assets/Scripts/Logic/*
-Assets/Scripts/Presentation/*.cs*
-Assets/Scripts/Common/*.cs*
-Assets/Scripts/Data/*.cs*
-Assets/Scripts/DTO/*.cs*
-Assets/Scripts/*.meta
+
 
 # Builds
 *.apk
@@ -78,3 +73,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+/.plastic
+/.plastic
+/.plastic
+/Test
+/.plastic
