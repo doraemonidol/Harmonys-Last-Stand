@@ -1,37 +1,34 @@
 using System.Collections;
+using System.Diagnostics;
 using Cinemachine;
 using DTT.AreaOfEffectRegions;
+using Presentation.MainCharacter;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Debug = UnityEngine.Debug;
 
 public abstract class BaseSkill : MonoBehaviour
 {
     [Header("VFX")]
-    [SerializeField] private GameObject preCastVfx;
-    [SerializeField] private float preCastTime;
-    [SerializeField] private Transform preCastPosition;
-    [SerializeField] private GameObject castVfx;
-    [SerializeField] private float castTime;
-    [SerializeField] private Transform castPosition;
-    [SerializeField] private GameObject postCastVfx;
-    [SerializeField] private float postCastTime;
-    [SerializeField] private Transform postCastPosition;
-    
-    
-    [SerializeField] protected GameObject skillContainer;
-    [SerializeField] protected bool stickToCaster;
+    [SerializeField] protected VFX preCastVfx;
+    [SerializeField] protected VFX projectileVfx;
+    [SerializeField] protected VFX postCastVfx;
     
     [SerializeField] private bool cameraShake;
+    [SerializeField] private bool rotateToDirection = true;
     private CameraShakeSimpleScript _cameraShakeSimpleScript;
+    protected RotateToDirection Rotator;
 
     [Header("Skill Timings")]
     [SerializeField] private float cooldownTime = 1f;
-    [SerializeField] private SkillState skillState = SkillState.Idle;
+    private SkillState _skillState = SkillState.Idle;
     
     [Space]
     [Header("Attack Direction")]
-    [SerializeField] private GameObject firePoint;
-    [SerializeField] private GameObject target;
+    private GameObject _firePoint;
+    private GameObject _target;
+    [SerializeField] private bool useTarget = false;
     
     [Space]
     [Header("Sound effects")]
@@ -43,15 +40,20 @@ public abstract class BaseSkill : MonoBehaviour
     {
         Debug.Log("Base Class Start");
     }
+
+    public void AttachRotator(RotateToDirection rotator)
+    {
+        this.Rotator = rotator;
+    }
     
     public void AttachFirePoint(GameObject firePoint)
     {
-        this.firePoint = firePoint;
+        this._firePoint = firePoint;
     }
     
     public void AttachTarget(GameObject target)
     {
-        this.target = target;
+        this._target = target;
     }
     
     public void AttachVirtualCamera(CinemachineVirtualCamera virtualCamera)
@@ -71,68 +73,67 @@ public abstract class BaseSkill : MonoBehaviour
     
     private IEnumerator PlayVFX()
     {
-        skillState = SkillState.PreCasting;
+        _skillState = SkillState.PreCasting;
         
         if (cameraShake)
         {
             _cameraShakeSimpleScript.ShakeCamera();
         }
         
-        if (preCastVfx)
+        if (preCastVfx.HasVFX())
         {
-            StartCoroutine(RenderVFX(preCastVfx, preCastPosition.position));
-            yield return new WaitForSeconds(preCastTime);
+            StartCoroutine(RenderVFX(preCastVfx));
+            yield return new WaitForSeconds(preCastVfx.duration);
         }
         
-        skillState = SkillState.Casting;
-        if (castVfx)
+        _skillState = SkillState.Casting;
+        if (projectileVfx.HasVFX())
         {
-            StartCoroutine(RenderVFX(castVfx, castPosition.position));
-            yield return new WaitForSeconds(castTime);
+            StartCoroutine(RenderVFX(projectileVfx));
+            yield return new WaitForSeconds(projectileVfx.duration);
         }
         
-        skillState = SkillState.PostCasting;
-        if (postCastVfx)
+        _skillState = SkillState.PostCasting;
+        if (postCastVfx.HasVFX())
         {
-            StartCoroutine(RenderVFX(postCastVfx, postCastPosition.position));
-            yield return new WaitForSeconds(postCastTime);
+            StartCoroutine(RenderVFX(postCastVfx));
+            yield return new WaitForSeconds(postCastVfx.duration);
         }
 
-        skillState = SkillState.OnCooldown;
+        _skillState = SkillState.OnCooldown;
         
         StartCoroutine(Cooldown());
     }
 
-    private IEnumerator RenderVFX(GameObject effectToRender, Vector3 position)
+    private IEnumerator RenderVFX(VFX vfx)
     {
-        GameObject vfx = Instantiate(effectToRender, position, Quaternion.identity);
+        GameObject instantiatedVfx = Instantiate(vfx.vfx, vfx.GetPosition(), Quaternion.identity);
         
-        if (stickToCaster)
-            vfx.transform.parent = skillContainer.transform;
-        
-        if (!vfx)
+        if (!instantiatedVfx)
         {
             Debug.LogError("No VFX found");
             yield break;
         }
+                
+        if (Rotator != null && rotateToDirection)
+        {
+            instantiatedVfx.transform.localRotation = Rotator.GetRotation();
+        }
 
-        StartCoroutine(DestroyVfx(vfx));
-    }
-
-    private IEnumerator DestroyVfx(GameObject vfx)
-    {
-        yield return new WaitForSeconds(vfx.GetComponent<ParticleSystem>().main.duration);
-        Destroy(vfx);
+        if (vfx.autoDestroy)
+        {
+            Destroy(instantiatedVfx, vfx.duration);
+        }
     }
     
     private IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(cooldownTime);
-        skillState = SkillState.Idle;
+        _skillState = SkillState.Idle;
     }
     
     public bool IsOnCooldown()
     {
-        return skillState == SkillState.OnCooldown;
+        return _skillState == SkillState.OnCooldown;
     }
 }

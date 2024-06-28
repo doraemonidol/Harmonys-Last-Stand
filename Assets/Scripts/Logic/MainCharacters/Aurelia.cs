@@ -6,7 +6,7 @@ using Logic.Effects;
 using Logic.Helper;
 using Logic.Weapons;
 using UnityEngine;
-using Action = Common.Action;
+using Action = Common.ActionEvent;
 using Object = UnityEngine.Object;
 
 namespace Logic.MainCharacters
@@ -152,14 +152,14 @@ namespace Logic.MainCharacters
         {
             switch (action)
             {
-                case Action.MoveLeft:
-                case Action.MoveRight:
-                case Action.MoveUp:
-                case Action.MoveDown:
-                case Action.MoveUpRight:
-                case Action.MoveUpLeft:
-                case Action.MoveDownRight:
-                case Action.MoveDownLeft:
+                case Action.MOVE_LEFT:
+                case Action.MOVE_RIGHT:
+                case Action.MOVE_UP:
+                case Action.MOVE_DOWN:
+                case Action.MOVE_UP_RIGHT:
+                case Action.MOVE_UP_LEFT:
+                case Action.MOVE_DOWN_RIGHT:
+                case Action.MOVE_DOWN_LEFT:
                 {
                     if (_effectManager.CheckIfEffectApply(EffectHandle.Hallucinate))
                     {

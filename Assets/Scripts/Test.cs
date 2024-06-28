@@ -1,4 +1,5 @@
 
+    using Presentation.MainCharacter;
     using UnityEngine;
 
     public class Test : MonoBehaviour
@@ -7,7 +8,6 @@
         public Test()
         {
             Debug.Log("Constructor");
-            _playerSkill = new PlayerNormalSkill();
         }
         
         // Start is called before the first frame update

@@ -1,5 +1,6 @@
 using System.Collections;
 using Logic;
+using Presentation.Events;
 using UnityEngine;
 
 namespace Presentation
@@ -7,6 +8,8 @@ namespace Presentation
     public abstract class PresentationObject : MonoBehaviour
     {
         protected readonly IPObject BoxObject;
+
+        protected EventManager _eventManager = new EventManager();
         
         private readonly ArrayList Notifier = new ArrayList();
 

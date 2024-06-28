@@ -9,18 +9,6 @@ using Debug = UnityEngine.Debug;
 
 public abstract class PlayerSkill : BaseSkill
 {
-    [Header("Player Skill")]
-    [SerializeField] protected RotateToMouseScript rotateToMouse;
-    
-    public void AttachRotateToMouse(RotateToMouseScript rotateToMouse)
-    {
-        this.rotateToMouse = rotateToMouse;
-    }
-    
-    public void AttachSkillContainer(GameObject skillContainer)
-    {
-        this.skillContainer = skillContainer;
-    }
     
     public void Start()
     {
@@ -33,4 +21,9 @@ public abstract class PlayerSkill : BaseSkill
     {
         base.Update();
     }
+
+    public abstract void UpdateChannelingTime(float timeScaleFactor);
+    public abstract void StartChanneling();
+    public abstract void StopChanneling();
+    public abstract double GetChannelingTime();
 }

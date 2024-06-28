@@ -2,7 +2,6 @@ using System;
 using System.Threading;
 using DTO;
 using Logic.Weapons;
-using Presentation;
 
 namespace Logic.Skills
 {

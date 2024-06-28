@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerNormalSkill : PlayerSkill
 {
+    [Space]
     [Header("Channeling Info")]
-    private bool isChanneling;
     [SerializeField] public float channelingTime;
+    private bool isChanneling;
     
     [Space]
     [Header("Attack Indicator Regions")]
@@ -41,7 +42,7 @@ public class PlayerNormalSkill : PlayerSkill
         if (isChanneling)
         {
             skillIndicator.SetActive(true);
-            SetAngle(rotateToMouse.GetRotation().eulerAngles.y);
+            SetAngle(Rotator.GetRotation().eulerAngles.y);
             if (_circleRegion)
             {
                 _circleRegion.FillProgress += Time.deltaTime / channelingTime;
@@ -61,14 +62,19 @@ public class PlayerNormalSkill : PlayerSkill
             skillIndicator.SetActive(false);
         }
     }
-    
-    public void StartChanneling()
+
+    public override void UpdateChannelingTime(float timeScaleFactor)
+    {
+        channelingTime *= timeScaleFactor;
+    }
+
+    public override void StartChanneling()
     {
         Debug.Log("Start Channeling");
         isChanneling = true;
     }
     
-    public void StopChanneling()
+    public override void StopChanneling()
     {
         Time.timeScale = 1f;
         isChanneling = false;
@@ -86,7 +92,12 @@ public class PlayerNormalSkill : PlayerSkill
             _scatterLineRegion.FillProgress = 0;
         }
     }
-    
+
+    public override double GetChannelingTime()
+    {
+        return channelingTime;
+    }
+
     public void SetAngle(float angle)
     {
         if (_arcRegion)

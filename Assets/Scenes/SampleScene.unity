@@ -154,8 +154,10 @@ MonoBehaviour:
   useTarget: 0
   use2D: 0
   cameraShake: 1
-  rotateToMouse: {fileID: 1902544010}
+  effectName: {fileID: 0}
+  rotateToMouse: {fileID: 0}
   firePoint: {fileID: 919435605}
+  cameras: {fileID: 0}
   target: {fileID: 0}
   VFXs:
   - {fileID: 1661707786246352, guid: 368464f8326873c46857bc476ac2b0a7, type: 3}
@@ -188,7 +190,6 @@ MonoBehaviour:
   - {fileID: 1391574063814312, guid: 68a0ef4dcae9aa14687734d594059d40, type: 3}
   - {fileID: 1040889220841686, guid: 9ae5e242e15c7494a8bd65e18812ce62, type: 3}
   - {fileID: 1305997383178436, guid: 5b54c2e1bf70dd248902db6814a270fb, type: 3}
-  virtualCamera: {fileID: 2139190074}
 --- !u!4 &26740101
 Transform:
   m_ObjectHideFlags: 0
@@ -420,29 +421,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 182290437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb04f56fc88946c5afc64a77e80e73e4, type: 3}
+  m_Script: {fileID: 11500000, guid: a452852caa312b94dacd8263f796bf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preCastVfx: {fileID: 0}
-  preCastTime: 0
-  preCastPosition: {fileID: 0}
-  castVfx: {fileID: 1149073990277440, guid: 018425a5e75e2094eb0ca95d72327204, type: 3}
-  castTime: 0
-  castPosition: {fileID: 1902544005}
-  postCastVfx: {fileID: 0}
-  postCastTime: 0
-  postCastPosition: {fileID: 0}
-  skillContainer: {fileID: 0}
-  stickToCaster: 0
+  preCastVfx:
+    vfx: {fileID: 0}
+    duration: 0
+    transform: {fileID: 0}
+    autoDestroy: 0
+  projectileVfx:
+    vfx: {fileID: 0}
+    duration: 0
+    transform: {fileID: 0}
+    autoDestroy: 0
+  postCastVfx:
+    vfx: {fileID: 0}
+    duration: 0
+    transform: {fileID: 0}
+    autoDestroy: 0
   cameraShake: 0
+  rotateToDirection: 1
   cooldownTime: 1
-  skillState: 1
-  firePoint: {fileID: 0}
-  target: {fileID: 0}
   castingSound: {fileID: 0}
   hitSound: {fileID: 0}
-  rotateToMouse: {fileID: 0}
-  channelingTime: 3
+  channelingTime: 2
   skillIndicator: {fileID: 142278908}
 --- !u!1001 &266269645
 PrefabInstance:
@@ -570,28 +572,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 297465318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b968d3e0c0ed4e5c91681262f5ac3707, type: 3}
+  m_Script: {fileID: 11500000, guid: 1204db3e8bde4bd479ea3cfa202e9e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preCastVfx: {fileID: 0}
-  preCastTime: 0
-  preCastPosition: {fileID: 0}
-  castVfx: {fileID: 1997882812359486, guid: 840f338b0237d3440b6d0de9ca9481f5, type: 3}
-  castTime: 0
-  castPosition: {fileID: 919435606}
-  postCastVfx: {fileID: 0}
-  postCastTime: 0
-  postCastPosition: {fileID: 0}
-  skillContainer: {fileID: 0}
-  stickToCaster: 0
+  preCastVfx:
+    vfx: {fileID: 0}
+    duration: 0
+    transform: {fileID: 0}
+    autoDestroy: 0
+  projectileVfx:
+    vfx: {fileID: 1746672929845058, guid: 8d89c0a66c07c584f9daee47860bd878, type: 3}
+    duration: 0
+    transform: {fileID: 919435606}
+    autoDestroy: 0
+  postCastVfx:
+    vfx: {fileID: 0}
+    duration: 0
+    transform: {fileID: 0}
+    autoDestroy: 0
   cameraShake: 0
+  rotateToDirection: 1
   cooldownTime: 1
-  skillState: 1
-  firePoint: {fileID: 0}
-  target: {fileID: 0}
   castingSound: {fileID: 0}
   hitSound: {fileID: 0}
-  rotateToMouse: {fileID: 0}
 --- !u!1 &665192827
 GameObject:
   m_ObjectHideFlags: 3
@@ -955,28 +958,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 951591690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb04f56fc88946c5afc64a77e80e73e4, type: 3}
+  m_Script: {fileID: 11500000, guid: a452852caa312b94dacd8263f796bf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preCastVfx: {fileID: 0}
-  preCastTime: 0
-  preCastPosition: {fileID: 0}
-  castVfx: {fileID: 1170744857039610, guid: 1fcfcb93d7455e94bb4991c5ab289a41, type: 3}
-  castTime: 0
-  castPosition: {fileID: 919435606}
-  postCastVfx: {fileID: 0}
-  postCastTime: 0
-  postCastPosition: {fileID: 0}
-  skillContainer: {fileID: 0}
-  stickToCaster: 0
+  preCastVfx:
+    vfx: {fileID: 0}
+    duration: 0
+    transform: {fileID: 0}
+    autoDestroy: 0
+  projectileVfx:
+    vfx: {fileID: 1170744857039610, guid: 7144230a5630cff4f91f1127c7e0aa27, type: 3}
+    duration: 0
+    transform: {fileID: 919435606}
+    autoDestroy: 0
+  postCastVfx:
+    vfx: {fileID: 0}
+    duration: 0
+    transform: {fileID: 0}
+    autoDestroy: 0
   cameraShake: 0
+  rotateToDirection: 1
   cooldownTime: 1
-  skillState: 1
-  firePoint: {fileID: 0}
-  target: {fileID: 0}
   castingSound: {fileID: 0}
   hitSound: {fileID: 0}
-  rotateToMouse: {fileID: 0}
   channelingTime: 2
   skillIndicator: {fileID: 795787726042680807}
 --- !u!1 &963194225
@@ -1151,6 +1155,113 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &1175851433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1175851437}
+  - component: {fileID: 1175851436}
+  - component: {fileID: 1175851435}
+  - component: {fileID: 1175851434}
+  m_Layer: 0
+  m_Name: Capsule
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!136 &1175851434
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175851433}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1175851435
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175851433}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1175851436
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175851433}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1175851437
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175851433}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.83603, y: 2.5, z: 0.28}
+  m_LocalScale: {x: 2.45, y: 2.45, z: 2.45}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1287837642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1322,28 +1433,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1514229929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b968d3e0c0ed4e5c91681262f5ac3707, type: 3}
+  m_Script: {fileID: 11500000, guid: 1204db3e8bde4bd479ea3cfa202e9e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preCastVfx: {fileID: 0}
-  preCastTime: 0
-  preCastPosition: {fileID: 0}
-  castVfx: {fileID: 1966937190983394, guid: de6c0b0e816f5c641b189eebd2200e89, type: 3}
-  castTime: 0
-  castPosition: {fileID: 1902544005}
-  postCastVfx: {fileID: 0}
-  postCastTime: 0
-  postCastPosition: {fileID: 0}
-  skillContainer: {fileID: 0}
-  stickToCaster: 0
+  preCastVfx:
+    vfx: {fileID: 0}
+    duration: 0
+    transform: {fileID: 0}
+    autoDestroy: 0
+  projectileVfx:
+    vfx: {fileID: 1966937190983394, guid: de6c0b0e816f5c641b189eebd2200e89, type: 3}
+    duration: 0
+    transform: {fileID: 1902544005}
+    autoDestroy: 0
+  postCastVfx:
+    vfx: {fileID: 0}
+    duration: 0
+    transform: {fileID: 0}
+    autoDestroy: 0
   cameraShake: 0
+  rotateToDirection: 1
   cooldownTime: 1
-  skillState: 1
-  firePoint: {fileID: 0}
-  target: {fileID: 0}
   castingSound: {fileID: 0}
   hitSound: {fileID: 0}
-  rotateToMouse: {fileID: 0}
 --- !u!1 &1633934001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,14 +1605,12 @@ GameObject:
   - component: {fileID: 1902544004}
   - component: {fileID: 1902544003}
   - component: {fileID: 1902544002}
-  - component: {fileID: 1902544006}
   - component: {fileID: 1902544007}
   - component: {fileID: 1902544008}
-  - component: {fileID: 1902544009}
+  - component: {fileID: 1902544006}
+  - component: {fileID: 1902544012}
   - component: {fileID: 1902544010}
   - component: {fileID: 1902544011}
-  - component: {fileID: 1902544012}
-  - component: {fileID: 1902544013}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -1758,20 +1868,6 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &1902544009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1902544001}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72fe5ff2a7d77f1429ff2257a1621f9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directionIndicator: {fileID: 1311074238}
-  mainCamera: {fileID: 963194227}
 --- !u!114 &1902544010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1781,15 +1877,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1902544001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b471b1df235ed774e9063eb5be974d7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2aaba5c3e6f7eb34db2c7d8bd5bbe383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximumLength: 0
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
-  directionIndicator: {fileID: 1311074238}
-  cam: {fileID: 963194227}
+  normalSkills:
+  - {fileID: 951591692}
+  - {fileID: 182290439}
+  specialSkills:
+  - {fileID: 297465320}
+  - {fileID: 1514229931}
+  firePoint: {fileID: 919435605}
+  target: {fileID: 0}
+  timeScaleFactor: 0.3
+  virtualCamera: {fileID: 2139190074}
 --- !u!195 &1902544011
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1821,71 +1921,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1902544001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6420b199d93418abddef27028124b36, type: 3}
+  m_Script: {fileID: 11500000, guid: 88cc5a4cb76065949a7efd0635d94dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSkills:
-  - {fileID: 951591692}
-  - {fileID: 182290439}
-  specialSkills:
-  - {fileID: 297465320}
-  - {fileID: 1514229931}
-  rotateToMouse: {fileID: 1902544010}
-  firePoint: {fileID: 919435605}
-  target: {fileID: 0}
-  skillContainer: {fileID: 155366355}
-  timeScaleFactor: 0.3
-  virtualCamera: {fileID: 2139190074}
---- !u!114 &1902544013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1902544001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2eb83ec655d71b498b43c9ebccd8066, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useTarget: 0
-  use2D: 0
-  cameraShake: 0
-  rotateToMouse: {fileID: 1902544010}
-  firePoint: {fileID: 919435605}
-  target: {fileID: 0}
-  VFXs:
-  - {fileID: 1661707786246352, guid: 368464f8326873c46857bc476ac2b0a7, type: 3}
-  - {fileID: 1830508508936448, guid: 5d777067c17b96c43a3bd547d25cb893, type: 3}
-  - {fileID: 1830508508936448, guid: 659814323bd726a4999afb3ffef0a9d6, type: 3}
-  - {fileID: 1657981230171060, guid: 6cf36a334a0e5754ea36fca06014b86a, type: 3}
-  - {fileID: 1657981230171060, guid: 080168af0fb1a0f48bd653b0def3737e, type: 3}
-  - {fileID: 1374267004960804, guid: 10a196906512b5141bfd56285ee6c562, type: 3}
-  - {fileID: 1374267004960804, guid: 22d294288012ca446bf50ffb2281ba95, type: 3}
-  - {fileID: 1607489160101874, guid: 413b180ebab02d349a31789fab789ef6, type: 3}
-  - {fileID: 1607489160101874, guid: 1220774a6e4cd454aa215fc9dfec7f4a, type: 3}
-  - {fileID: 1049234075114562, guid: c7e9268bc510d734e980e1e5b5898911, type: 3}
-  - {fileID: 1603392920371116, guid: b45a1889b41ca8f4d8ea147d8d705bee, type: 3}
-  - {fileID: 1170744857039610, guid: 1fcfcb93d7455e94bb4991c5ab289a41, type: 3}
-  - {fileID: 1170744857039610, guid: afbfa7d0f636e0a4db9f7f5959f3399e, type: 3}
-  - {fileID: 1997882812359486, guid: 840f338b0237d3440b6d0de9ca9481f5, type: 3}
-  - {fileID: 1746672929845058, guid: 066d7c4cdca7a744fb9457e7b49580db, type: 3}
-  - {fileID: 1746672929845058, guid: 6e49bc153d702e34dbb5dfe187524e3c, type: 3}
-  - {fileID: 1746672929845058, guid: d914bf125c123ec4994f1988475d0aad, type: 3}
-  - {fileID: 1746672929845058, guid: cd1818ce99cdc194c981c04a464d749d, type: 3}
-  - {fileID: 1961964258596952, guid: eca1ff6741def5a468081e17839fc91e, type: 3}
-  - {fileID: 1961964258596952, guid: 5ee2402c00157d84db5c7658adfd8c61, type: 3}
-  - {fileID: 1707102027251842, guid: dfb85277a4a133d45bc2d5f31d82309c, type: 3}
-  - {fileID: 1707102027251842, guid: 18776a98654da834ca6d32c0064b3709, type: 3}
-  - {fileID: 1823173409967616, guid: c2b318905b842b34fbcd30056dc06ee0, type: 3}
-  - {fileID: 1823173409967616, guid: f261eef93809e0d4a8add87b46009ce2, type: 3}
-  - {fileID: 1846563170864394, guid: 3bbebb6123d7fdd4fa718a9ea192c837, type: 3}
-  - {fileID: 1846563170864394, guid: 92c022025cd148e43add20e6225243cc, type: 3}
-  - {fileID: 1260705795423738, guid: e21f397f19b330b43a512abfdfd2c479, type: 3}
-  - {fileID: 1391574063814312, guid: 68a0ef4dcae9aa14687734d594059d40, type: 3}
-  - {fileID: 1040889220841686, guid: 9ae5e242e15c7494a8bd65e18812ce62, type: 3}
-  - {fileID: 1305997383178436, guid: 5b54c2e1bf70dd248902db6814a270fb, type: 3}
-  virtualCamera: {fileID: 2139190074}
+  maximumLength: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  directionIndicator: {fileID: 1311074238}
 --- !u!1001 &1987718655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2079,7 +2122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7cf7a6258c3634283fde9ddda2db91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vcam: {fileID: 0}
 --- !u!1 &795787724404262690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,3 +2541,4 @@ SceneRoots:
   - {fileID: 2139190075}
   - {fileID: 1287837642}
   - {fileID: 26740101}
+  - {fileID: 1175851437}

@@ -6,27 +6,31 @@ using UnityEngine.Serialization;
 
 public class PlayerCastSkill: MonoBehaviour
 {
-    [SerializeField] private List<PlayerNormalSkill> normalSkills;
-    [SerializeField] private List<PlayerSpecialSkill> specialSkills;
+    [SerializeField] private List<PlayerSkill> normalSkills;
+    [SerializeField] private List<PlayerSkill> specialSkills;
     private float _beginChannelingTime = 0f;
     private int _currentSkill = -1;
-    public RotateToMouseScript rotateToMouse;
+    private RotateToMouseScript _rotateToMouse;
     [SerializeField] private GameObject firePoint;
     [SerializeField] private GameObject target;
-    [SerializeField] private GameObject skillContainer;
 
     [SerializeField] public float timeScaleFactor = 0.3f;
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     
     void Start()
     {
+        _rotateToMouse = GetComponent<RotateToMouseScript>();
+        if (!_rotateToMouse)
+        {
+            Debug.LogError("Please assign RotateToMouseScript to the player");
+        }
         if (normalSkills.Count + specialSkills.Count != 4)
         {
             Debug.LogError("Please assign 4 skills to the player");
         }
         
-        rotateToMouse = GetComponent<RotateToMouseScript>();    
-        if (!rotateToMouse)
+        _rotateToMouse = GetComponent<RotateToMouseScript>();    
+        if (!_rotateToMouse)
         {
             Debug.LogError("Please assign RotateToMouseScript to the player");
         }
@@ -38,9 +42,8 @@ public class PlayerCastSkill: MonoBehaviour
     {
         for (int i = 0; i < normalSkills.Count; i++)
         {
-            normalSkills[i].channelingTime *= timeScaleFactor;
-            normalSkills[i].AttachSkillContainer(skillContainer);
-            normalSkills[i].AttachRotateToMouse(rotateToMouse);
+            normalSkills[i].UpdateChannelingTime(timeScaleFactor);
+            normalSkills[i].AttachRotator(_rotateToMouse);
             normalSkills[i].AttachFirePoint(firePoint);
             normalSkills[i].AttachTarget(target);
             normalSkills[i].AttachVirtualCamera(virtualCamera);
@@ -48,8 +51,7 @@ public class PlayerCastSkill: MonoBehaviour
         
         for (int i = 0; i < specialSkills.Count; i++)
         {
-            specialSkills[i].AttachSkillContainer(skillContainer);
-            specialSkills[i].AttachRotateToMouse(rotateToMouse);
+            specialSkills[i].AttachRotator(_rotateToMouse);
             specialSkills[i].AttachFirePoint(firePoint);
             specialSkills[i].AttachTarget(target);
             specialSkills[i].AttachVirtualCamera(virtualCamera);
@@ -60,9 +62,13 @@ public class PlayerCastSkill: MonoBehaviour
     {
         for (int i = 0; i <= 1; i++)
         {
-            if (Input.GetMouseButtonDown(i) && _currentSkill == -1 && !normalSkills[i].IsOnCooldown())
+            if (Input.GetMouseButtonDown(i) && _currentSkill == -1)
             {
-                normalSkills[i].StartCasting();
+                if (!normalSkills[i].IsOnCooldown())
+                {
+                    normalSkills[i].StartCasting();
+                }
+                
                 if (!specialSkills[i].IsOnCooldown())
                 {
                     _currentSkill = i;
@@ -80,7 +86,7 @@ public class PlayerCastSkill: MonoBehaviour
             if (Input.GetMouseButtonUp(i) && _currentSkill == i)
             {
                 normalSkills[i].StopChanneling();
-                if (Time.time - _beginChannelingTime >= normalSkills[i].channelingTime)
+                if (Time.time - _beginChannelingTime >= normalSkills[i].GetChannelingTime())
                 {
                     Debug.Log("Cast Skill " + i);
                     specialSkills[i].StartCasting();

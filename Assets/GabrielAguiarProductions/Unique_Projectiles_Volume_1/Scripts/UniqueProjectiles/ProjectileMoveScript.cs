@@ -80,7 +80,7 @@ public class ProjectileMoveScript : MonoBehaviour {
 
 	void FixedUpdate () {
         if (target != null)
-            rotateToMouse.RotateToMouse (gameObject, target.transform.position);
+            rotateToMouse.RotateTo (gameObject, target.transform.position);
         if (rotate)
             transform.Rotate(0, 0, rotateAmount, Space.Self);
         if (speed != 0 && rb != null)
