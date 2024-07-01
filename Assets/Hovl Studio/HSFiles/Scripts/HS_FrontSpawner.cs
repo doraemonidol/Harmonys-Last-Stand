@@ -7,7 +7,6 @@ public class HS_FrontSpawner : MonoBehaviour
     public Transform pivot;
     public float speed = 15f;
     public float drug = 1f;
-    public float repeatingTime = 1f;
     public GameObject craterPrefab;
     public float spawnRate = 1f;
     public float spawnDuration = 1f;
@@ -21,26 +20,17 @@ public class HS_FrontSpawner : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("StartAgain", 0f, repeatingTime);
         startSpeed = speed;
         stepPosition = pivot.position;
         spawnDur = spawnDuration;
     }
 
-    void StartAgain()
-    {
-        startSpeed = speed;
-        transform.position = pivot.position;
-        stepPosition = pivot.position;
-        spawnDur = spawnDuration;
-        randomTimer = 0;
-    }
-
-    void Update()
+    void FixedUpdate()
     {
         spawnDur -= Time.deltaTime;
         randomTimer += (Time.deltaTime * 2);
         startSpeed = startSpeed * drug;
+        // Debug.Log("Initial position: " + transform.position);
         transform.position += transform.forward * (startSpeed * Time.deltaTime);
 
         var heading = transform.position - stepPosition;
@@ -55,6 +45,7 @@ public class HS_FrontSpawner : MonoBehaviour
                 {
                     pos.y = Terrain.activeTerrain.SampleHeight(transform.position);
                 }
+                // Debug.Log("Crater position: " + pos);
                 var craterInstance = Instantiate(craterPrefab, pos, Quaternion.identity);
                 if (changeScale == true) { craterInstance.transform.localScale += new Vector3(randomTimer, randomTimer, randomTimer); }
                 var craterPs = craterInstance.GetComponent<ParticleSystem>();

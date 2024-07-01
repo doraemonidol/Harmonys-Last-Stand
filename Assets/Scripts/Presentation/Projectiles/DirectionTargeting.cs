@@ -19,7 +19,7 @@ namespace Presentation.Projectiles
         
         public override void Start()
         {
-            startPos = transform.position;
+            StartPos = transform.position;
             _rb = GetComponent<Rigidbody>();
             
             if (!Mathf.Approximately(accuracy, 100))
@@ -75,6 +75,7 @@ namespace Presentation.Projectiles
             if (!other.gameObject.CompareTag("Bullet") && !_collided)
             {
                 _collided = true;
+                Debug.Log("Collided with " + other.gameObject.name);
 
                 if (trails.Count > 0)
                 {
@@ -100,6 +101,8 @@ namespace Presentation.Projectiles
                 if (hitPrefab != null)
                 {
                     var hitVFX = Instantiate(hitPrefab, pos, rot) as GameObject;
+                    
+                    hitVFX.transform.parent = other.transform;
 
                     var ps = hitVFX.GetComponent<ParticleSystem>();
                     if (ps == null)
@@ -113,6 +116,11 @@ namespace Presentation.Projectiles
 
                 StartCoroutine(DestroyParticle(0f));
             }
+        }
+
+        public override void Ultimate()
+        {
+            throw new System.NotImplementedException();
         }
 
         private IEnumerator DestroyParticle (float waitTime) {

@@ -18,5 +18,10 @@ namespace Presentation.Projectiles
         public override void OnCollisionEnter(Collision other)
         {
         }
+
+        public override void Ultimate()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

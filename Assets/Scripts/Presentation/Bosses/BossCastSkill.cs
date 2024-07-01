@@ -34,7 +34,7 @@ namespace Presentation.Bosses
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
             if (Random.Range(0, 2) == 1)
             {

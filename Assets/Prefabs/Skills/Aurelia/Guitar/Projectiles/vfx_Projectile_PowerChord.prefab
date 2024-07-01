@@ -19673,7 +19673,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 4
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
@@ -19721,6 +19721,7 @@ MonoBehaviour:
   trails:
   - {fileID: 1195859114076728}
   - {fileID: 1007587837872394}
+  hasUltimate: 0
   rotate: 0
   rotateAmount: 45
   speed: 22

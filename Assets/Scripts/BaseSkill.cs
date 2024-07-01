@@ -3,6 +3,7 @@ using System.Diagnostics;
 using Cinemachine;
 using DTT.AreaOfEffectRegions;
 using Presentation.MainCharacter;
+using Presentation.Projectiles;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -14,6 +15,7 @@ public abstract class BaseSkill : MonoBehaviour
     [SerializeField] protected VFX preCastVfx;
     [SerializeField] protected VFX projectileVfx;
     [SerializeField] protected VFX postCastVfx;
+    private GameObject _currentInstantiatedVfx;
     
     [SerializeField] private bool cameraShake;
     [SerializeField] private bool rotateToDirection = true;
@@ -58,7 +60,8 @@ public abstract class BaseSkill : MonoBehaviour
     
     public void AttachVirtualCamera(CinemachineVirtualCamera virtualCamera)
     {
-        _cameraShakeSimpleScript = virtualCamera.GetComponent<CameraShakeSimpleScript>();
+        if (virtualCamera)
+            _cameraShakeSimpleScript = virtualCamera.GetComponent<CameraShakeSimpleScript>();
     }
 
     // Update is called once per frame
@@ -68,7 +71,17 @@ public abstract class BaseSkill : MonoBehaviour
     
     public void StartCasting()
     {
-        StartCoroutine(PlayVFX());
+        if (_skillState == SkillState.Casting)
+        {
+            ProjectileMovement projectileMovement = _currentInstantiatedVfx.GetComponent<ProjectileMovement>();
+            if (projectileMovement.hasUltimate)
+            {
+                projectileMovement.Ultimate();
+            }
+        } else
+        {
+            StartCoroutine(PlayVFX());
+        }
     }
     
     private IEnumerator PlayVFX()
@@ -114,6 +127,8 @@ public abstract class BaseSkill : MonoBehaviour
             Debug.LogError("No VFX found");
             yield break;
         }
+        
+        _currentInstantiatedVfx = instantiatedVfx;
                 
         if (Rotator != null && rotateToDirection)
         {

@@ -116,6 +116,7 @@ public class HS_MovementInput : MonoBehaviour
         }
         if (Input.GetKeyDown("2") && casting == false)
         {
+            Debug.Log("Casting 2");
             if (canUlt)
             {
                 useUlt = true;
@@ -243,6 +244,7 @@ public class HS_MovementInput : MonoBehaviour
 
     public IEnumerator FastPlay(int EffectNumber)
     {
+        Debug.Log("Casting fast skill");
         fastSkillrefresh = true;
         Effect = Prefabs[EffectNumber].GetComponent<ParticleSystem>();
         Effect.Play();

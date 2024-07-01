@@ -5119,7 +5119,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 4
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
@@ -5143,6 +5143,7 @@ MonoBehaviour:
   hitPrefab: {fileID: 1735349400919506, guid: 87def46591e27bb4e981ad47e4848e35, type: 3}
   trails:
   - {fileID: 1048663460839562}
+  hasUltimate: 0
   rotate: 0
   rotateAmount: 45
   speed: 45
