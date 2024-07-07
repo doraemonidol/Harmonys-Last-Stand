@@ -6,11 +6,11 @@ namespace Logic.Skills.Flute
 {
     public class TranquilTune : AcSkill
     {
-        public TranquilTune(IWeapon owner) : base(owner)
+        public TranquilTune(Weapon owner) : base(owner)
         {
         }
 
-        public TranquilTune(IWeapon owner, long coolDownTime) : base(owner, coolDownTime)
+        public TranquilTune(Weapon owner, long coolDownTime) : base(owner, coolDownTime)
         {
         }
 

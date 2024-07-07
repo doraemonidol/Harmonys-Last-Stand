@@ -34,23 +34,24 @@ namespace Logic.Effects
         }
 
         public override void Execute()
-        {
-            var args = new EventDto
-            {
-                [EffectHandle.HpDrain] = _hpDrain
-            };
+        { 
             // Open an thread
             var thread = new Thread(() =>
             {
-                
                 // While the current time is less than EffectEndTime
                 while (System.DateTime.Now.Millisecond < EffectEndTime)
                 {
-                    Character.UpdateEffect(EffectHandle.Bleeding, args);
+                    Character.UpdateEffect(EffectHandle.Bleeding, new EventDto
+                    {
+                        [EffectHandle.HpDrain] = _hpDrain
+                    });
                     
                     // Sleep for 1 second
                     Thread.Sleep(1000);
                 }
+                
+                // Remove the bleeding effect
+                Character.ReceiveEffect(EffectHandle.DisableBleeding);
                 
                 // Notify the Effect Manager when the effect ends
                 NotifyWhenEnd();

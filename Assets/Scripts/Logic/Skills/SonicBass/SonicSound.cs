@@ -6,11 +6,11 @@ namespace Logic.Skills.SonicBass
 {
     public class SonicSound : AcSkill
     {
-        public SonicSound(IWeapon owner) : base(owner)
+        public SonicSound(Weapon owner) : base(owner)
         {
         }
 
-        public SonicSound(IWeapon owner, long coolDownTime) : base(owner, coolDownTime)
+        public SonicSound(Weapon owner, long coolDownTime) : base(owner, coolDownTime)
         {
         }
 

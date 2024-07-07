@@ -6,11 +6,11 @@ namespace Logic.Skills.Guitar
 {
     public class StringStrike : AcSkill
     {
-        public StringStrike(IWeapon owner) : base(owner)
+        public StringStrike(Weapon owner) : base(owner)
         {
         }
 
-        public StringStrike(IWeapon owner, long coolDownTime) : base(owner, coolDownTime)
+        public StringStrike(Weapon owner, long coolDownTime) : base(owner, coolDownTime)
         {
         }
 

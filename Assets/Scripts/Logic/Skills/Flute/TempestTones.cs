@@ -7,11 +7,11 @@ namespace Logic.Skills.Flute
 {
     public class TempestTones : AcSkill
     {
-        protected TempestTones(IWeapon owner) : base(owner)
+        public TempestTones(Weapon owner) : base(owner)
         {
         }
 
-        protected TempestTones(IWeapon owner, long coolDownTime) : base(owner, coolDownTime)
+        public TempestTones(Weapon owner, long coolDownTime) : base(owner, coolDownTime)
         {
         }
 

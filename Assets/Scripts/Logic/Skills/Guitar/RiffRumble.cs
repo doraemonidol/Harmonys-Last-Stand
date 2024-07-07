@@ -6,11 +6,11 @@ namespace Logic.Skills.Guitar
 {
     public class RiffRumble : AcSkill
     {
-        public RiffRumble(IWeapon owner) : base(owner)
+        public RiffRumble(Weapon owner) : base(owner)
         {
         }
 
-        public RiffRumble(IWeapon owner, long coolDownTime) : base(owner, coolDownTime)
+        public RiffRumble(Weapon owner, long coolDownTime) : base(owner, coolDownTime)
         {
         }
 
@@ -21,7 +21,7 @@ namespace Logic.Skills.Guitar
             {
                 [EffectHandle.HpReduce] = 30
             };
-            target.ReceiveEffect(EffectHandle.GetHit);
+            target.ReceiveEffect(EffectHandle.GetHit, args);
         }
     }
 }

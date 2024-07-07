@@ -1,10 +1,16 @@
+using Logic.Helper;
+using Logic.Skills;
+
 namespace Logic.Weapons
 {
-    public class SuperBass : IWeapon
+    public class SuperBass : Weapon
     {
-        public void Trigger(int index)
+        public SuperBass()
         {
-            throw new System.NotImplementedException();
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.SuperBass, this, 1));
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.SuperBass, this, 2));
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.SuperBass, this, 3));
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.SuperBass, this, 4));
         }
     }
 }

@@ -6,11 +6,11 @@ namespace Logic.Skills.Flute
 {
     public class WhistlingWind : AcSkill
     {
-        public WhistlingWind(IWeapon owner) : base(owner)
+        public WhistlingWind(Weapon owner) : base(owner)
         {
         }
 
-        public WhistlingWind(IWeapon owner, long coolDownTime) : base(owner, coolDownTime)
+        public WhistlingWind(Weapon owner, long coolDownTime) : base(owner, coolDownTime)
         {
         }
 

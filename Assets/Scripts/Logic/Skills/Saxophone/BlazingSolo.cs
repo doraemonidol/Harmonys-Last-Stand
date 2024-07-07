@@ -6,11 +6,11 @@ namespace Logic.Skills.Saxophone
 {
     public class BlazingSolo : AcSkill
     {
-        public BlazingSolo(IWeapon owner) : base(owner)
+        public BlazingSolo(Weapon owner) : base(owner)
         {
         }
 
-        public BlazingSolo(IWeapon owner, long coolDownTime) : base(owner, coolDownTime)
+        public BlazingSolo(Weapon owner, long coolDownTime) : base(owner, coolDownTime)
         {
         }
 

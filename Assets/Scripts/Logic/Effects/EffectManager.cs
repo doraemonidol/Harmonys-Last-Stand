@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using Logic.Helper;
 
 namespace Logic.Effects
 {
     public class EffectManager
     {
-        private readonly ArrayList _effects = ArrayList.Synchronized(new ArrayList());
+        private readonly Dictionary<int, ArrayList> _effects = new();
         
         private readonly object _lock = new object();
         
@@ -22,35 +24,46 @@ namespace Logic.Effects
             }
         }
         
-        public void Refresh()
+        public void Refresh(int effectHandle)
         {
             lock (_lock)
             {
-                foreach (EffectCommand effect in _effects)
+                foreach (var effect in _effects[effectHandle])
                 {
-                    if (effect.IsExpired())
+                    if (((EffectCommand)effect).IsExpired())
                     {
-                        _effects.Remove(effect);
+                        Remove((EffectCommand)effect);
                     }
-                }
-
-                foreach (EffectCommand effect in _effects)
-                {
-                    _effectRoll[effect.Handle] = (int)_effectRoll[effect.Handle] + 1;
                 }
             }
         }
         
         public void Add(EffectCommand effect)
         {
-            _effects.Add(effect);
-            _effectRoll[effect.Handle] = (int)_effectRoll[effect.Handle] + 1;
+            lock (_lock)
+            {
+                _effects[effect.Handle].Add(effect);
+                _effectRoll[effect.Handle] = (int)_effectRoll[effect.Handle] + 1;
+            }
+        }
+
+        public void Erase(int effectHandle)
+        {
+            lock (_lock)
+            {
+                _effects[effectHandle].Clear();
+                _effectRoll[effectHandle] = 0;
+            }
         }
 
         public void Remove(EffectCommand effect)
         {
-            _effects.Remove(effect);
-            _effectRoll[effect.Handle] = (int)_effectRoll[effect.Handle] - 1;
+            lock (_lock)
+            {
+                _effects[effect.Handle].Remove(effect);
+
+                _effectRoll[effect.Handle] = (int)_effectRoll[effect.Handle] - 1;
+            }
         }
         
         public bool CheckIfEffectApply(int effect)

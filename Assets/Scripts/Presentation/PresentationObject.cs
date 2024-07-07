@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using Common;
 using Logic;
 using UnityEngine;
 
@@ -6,7 +8,9 @@ namespace Presentation
 {
     public abstract class PresentationObject : MonoBehaviour
     {
-        protected readonly IPObject BoxObject;
+        public Identity SelfHandle { get; set; }
+        
+        public Identity LogicHandle { get; set; }
         
         private readonly ArrayList Notifier = new ArrayList();
 
@@ -16,7 +20,7 @@ namespace Presentation
 
         public void AcceptAndUpdate(EventUpdateVisitor visitor)
         {
-            BoxObject.AcceptAndUpdate(visitor);
+            //throw new Exception("Receive an new message from visitor");
         }
         
         public void Subscribe(LogicObject notifier)

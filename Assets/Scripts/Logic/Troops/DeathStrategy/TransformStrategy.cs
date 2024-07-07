@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Logic.Facade;
 
 namespace Logic.Troops.DeathStrategy
 {
@@ -29,6 +28,11 @@ namespace Logic.Troops.DeathStrategy
             {
                 Console.WriteLine(e);
             }
+        }
+
+        public void GetStrategyType()
+        {
+            throw new NotImplementedException();
         }
     }
 }

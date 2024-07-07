@@ -1,27 +1,22 @@
 using System;
 using System.Collections;
 using Common;
-using Logic.Facade;
+using Logic.Helper;
 using Logic.Skills;
 using Logic.Weapons.Attributes;
 
 namespace Logic.Weapons
 {
-    public class Violin : IWeapon
+    public class Violin : Weapon
     {
         private WAttributes _attributes;
-
+        
         public Violin()
         {
-            _attributes = new WAttributes();
-            var identity = new Identity("Violin");
-            LogicWorld.Register(this, new Identity(""));
-        }
-        
-        public void Trigger(int index)
-        {
-            var skill = _attributes.Get(index);
-            //skill.Activate();
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.Violin, this, 1));
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.Violin, this, 2));
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.Violin, this, 3));
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.Violin, this, 4));
         }
     }
 }

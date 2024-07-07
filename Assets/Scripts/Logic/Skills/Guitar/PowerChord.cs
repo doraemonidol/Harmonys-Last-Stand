@@ -7,11 +7,11 @@ namespace Logic.Skills.Guitar
 {
     public class PowerChord : AcSkill
     {
-        public PowerChord(IWeapon owner) : base(owner)
+        public PowerChord(Weapon owner) : base(owner)
         {
         }
 
-        public PowerChord(IWeapon owner, long coolDownTime) : 
+        public PowerChord(Weapon owner, long coolDownTime) : 
             base(owner, coolDownTime)
         {
             

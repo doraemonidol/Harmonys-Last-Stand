@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Threading;
+using Logic.Helper;
 
 namespace Logic.Effects
 {
@@ -18,7 +20,17 @@ namespace Logic.Effects
 
         public override void Execute()
         {
-            throw new System.NotImplementedException();
+            var thread = new Thread(() =>
+            {
+                while (System.DateTime.Now.Millisecond < EffectEndTime)
+                {
+                    Thread.Sleep(1000);
+                }
+                
+                Character.ReceiveEffect(EffectHandle.DisableSleepy);
+                
+                NotifyWhenEnd();
+            });
         }
     }
 }

@@ -1,5 +1,7 @@
+using System;
 using DTO;
 using Logic.Helper;
+using Logic.MainCharacters;
 using Logic.Weapons;
 using UnityEditor;
 
@@ -7,22 +9,27 @@ namespace Logic.Skills.Saxophone
 {
     public class SmoothSerenade : AcSkill
     {
-        public SmoothSerenade(IWeapon owner) : base(owner)
+        public SmoothSerenade(Weapon owner) : base(owner)
         {
         }
 
-        public SmoothSerenade(IWeapon owner, long coolDownTime) : base(owner, coolDownTime)
+        public SmoothSerenade(Weapon owner, long coolDownTime) : base(owner, coolDownTime)
         {
+        }
+
+        public override void Activate()
+        {
+            base.Activate();
+            ((IMainCharacter)User).ReceiveEffect(EffectHandle.Healing, new EventDto
+            {
+                [EffectHandle.HpGain] = 5,
+                ["timeout"] = 10,
+            });
         }
 
         public override void Affect(ICharacter attacker, ICharacter target, EventDto context)
         {
-            var args = new EventDto
-            {
-                [EffectHandle.HpGain] = 5,
-                ["timeout"] = 10,
-            };
-            attacker.ReceiveEffect(EffectHandle.Healing, args);
+            throw new NotImplementedException();
         }
     }
 }
