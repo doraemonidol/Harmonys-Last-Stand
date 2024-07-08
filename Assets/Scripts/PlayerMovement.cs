@@ -1,38 +1,38 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.Serialization;
-
-public class PlayerMovement : MonoBehaviour
-{
-    [SerializeField] private float _moveSpeed = 10f;
-    [SerializeField] private float _dashDistance = 20f;
-    [SerializeField] private float _dashDuration = 1f;
-    [SerializeField] private float _dashCooldown = 5f;
-    private bool _canDash = true;
-    private bool _isDashing = false;
-    [SerializeField] TrailRenderer _trailRenderer;
-    [SerializeField] private Rigidbody _rigidbody;
-    [SerializeField] private Vector3 _currentDirection = Vector3.forward;
-    private NavMeshAgent _agent;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        _rigidbody = GetComponent<Rigidbody>();
-        _trailRenderer = GetComponent<TrailRenderer>();
-        _agent = GetComponent<NavMeshAgent>();
-        _agent.speed = _moveSpeed;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        ProcessTranslation();
-    }
-
-    private void ProcessTranslation()
+       using System.Collections.Generic;
+       using UnityEngine;
+       using UnityEngine.AI;
+       using UnityEngine.Serialization;
+       
+       public class PlayerMovement : MonoBehaviour
+       {
+           [SerializeField] private float _moveSpeed = 10f;
+           [SerializeField] private float _dashDistance = 20f;
+           [SerializeField] private float _dashDuration = 1f;
+           [SerializeField] private float _dashCooldown = 5f;
+           private bool _canDash = true;
+           private bool _isDashing = false;
+           [SerializeField] TrailRenderer _trailRenderer;
+           [SerializeField] private Rigidbody _rigidbody;
+           [SerializeField] private Vector3 _currentDirection = Vector3.forward;
+           private NavMeshAgent _agent;
+           
+           // Start is called before the first frame update
+           void Start()
+           {
+               _rigidbody = GetComponent<Rigidbody>();
+               _trailRenderer = GetComponent<TrailRenderer>();
+               _agent = GetComponent<NavMeshAgent>();
+               _agent.speed = _moveSpeed;
+           }
+       
+           // Update is called once per frame
+           void Update()
+           {
+               ProcessTranslation();
+           }
+       
+           private void ProcessTranslation()
     {
         if (_isDashing) return;
         

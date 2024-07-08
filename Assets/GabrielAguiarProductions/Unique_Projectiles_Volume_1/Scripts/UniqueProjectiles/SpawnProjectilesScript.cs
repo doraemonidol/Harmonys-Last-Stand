@@ -6,6 +6,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using GabrielAguiarProductions.Unique_Projectiles_Volume_1.Scripts.UniqueProjectiles;
 using UnityEngine;
 using UnityEngine.UI;
 

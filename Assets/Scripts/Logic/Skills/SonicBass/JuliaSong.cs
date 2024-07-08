@@ -6,11 +6,11 @@ namespace Logic.Skills.SonicBass
 {
     public class JuliaSong : AcSkill
     {
-        public JuliaSong(IWeapon owner) : base(owner)
+        public JuliaSong(Weapon owner) : base(owner)
         {
         }
 
-        public JuliaSong(IWeapon owner, long coolDownTime) : base(owner, coolDownTime)
+        public JuliaSong(Weapon owner, long coolDownTime) : base(owner, coolDownTime)
         {
         }
 

@@ -1,12 +1,15 @@
 namespace Logic.Helper
 {
-    public class WeaponHandle
+    public static class WeaponHandle
     {
-        public const int Saxophone = 0;
-        public const int Flute = 1;
-        public const int Piano = 2;
-        public const int Guitar = 3;
-        public const int Violin = 4;
-        public const int SuperBass = 5;
+        public const int Saxophone = 1110;
+        public const int Flute = 1111;
+        public const int Piano = 1112;
+        public const int Guitar = 1113;
+        public const int Violin = 1114;
+        public const int SuperBass = 1115;
+        public const int ApWeapon = 1116;
+        public const int LwWeapon = 1117;
+        public const int MmWeapon = 1118;
     }
 }

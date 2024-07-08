@@ -1,10 +1,16 @@
+using Logic.Helper;
+using Logic.Skills;
+
 namespace Logic.Weapons
 {
-    public class Guitar : IWeapon
+    public class Guitar : Weapon
     {
-        public void Trigger(int index)
+        public Guitar()
         {
-            throw new System.NotImplementedException();
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.Guitar, this, 1));
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.Guitar, this, 2));
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.Guitar, this, 3));
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.Guitar, this, 4));
         }
     }
 }

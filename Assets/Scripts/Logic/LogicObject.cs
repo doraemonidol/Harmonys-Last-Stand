@@ -1,11 +1,14 @@
 using System.Collections;
-using Logic.Facade;
+using Common;
 using Presentation;
 
 namespace Logic
 {
     public class LogicObject
     {
+        public Identity SelfHandle { get; set; }
+        public Identity PresentationHandle { get; set; }
+        
         protected readonly ArrayList Subscribers = new ArrayList();
 
         protected LogicObject()
@@ -40,7 +43,7 @@ namespace Logic
                 this.Unsubscribe(presentSubscriber);
             }
         }
-
+        
         public void NotifySubscribers(EventUpdateVisitor visitor)
         {
             foreach (PresentationObject subscriber in Subscribers)

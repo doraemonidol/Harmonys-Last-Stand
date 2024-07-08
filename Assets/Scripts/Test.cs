@@ -1,5 +1,4 @@
 
-    using Presentation.MainCharacter;
     using UnityEngine;
 
     public class Test : MonoBehaviour

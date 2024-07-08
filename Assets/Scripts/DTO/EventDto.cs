@@ -6,13 +6,13 @@ namespace DTO
     public class EventDto
     {
         public string Event { get; set; }
-        
-        public Dictionary<string, object> Arguments { get; set; }
+
+        private Dictionary<string, object> Arguments { get; set; } = new();
         
         // Implement the [string] method
         public object this[string key]
         {
-            get => Arguments[key];
+            get => Arguments.GetValueOrDefault(key);
             set => Arguments[key] = value;
         }
     }

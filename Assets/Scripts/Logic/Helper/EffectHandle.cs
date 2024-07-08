@@ -18,6 +18,11 @@ namespace Logic.Helper
         public const int Sleepy = 13;
         public const int Jinxed = 14;
         public const int Resonance = 15;
+        public const int Charm = 16;
+        public const int Resistance = 17;
+        public const int KnockBack = 18;
+        public const int Clone = 19;
+        public const int Resurrect = 20;
         
         // --------------------------------------- GET HIT ---------------------------------- //
         public const int GetHit = 11;
@@ -32,6 +37,16 @@ namespace Logic.Helper
         public const int DisableNearsight = 94;
         public const int DisableSlowDown = 93;
         public const int DisableShielded = 92;
+        public const int DisableJinxed = 91;
+        public const int DisableResonance = 90;
+        public const int DisableCharm = 89;
+        public const int DisableResistance = 88;
+        public const int DisableKnockBack = 87;
+        public const int DisableClone = 86;
+        public const int DisableVoid = 85;
+        public const int DisableExhausted = 84;
+        public const int DisableSleepy = 83;
+        public const int DisableHealing = 82;
         
         
         // --------------------------------------- PARAMS ----------------------------------- //

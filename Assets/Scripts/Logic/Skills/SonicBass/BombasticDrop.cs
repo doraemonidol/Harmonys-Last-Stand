@@ -7,11 +7,11 @@ namespace Logic.Skills.SonicBass
 {
     public class BombasticDrop : AcSkill
     {
-        public BombasticDrop(IWeapon owner) : base(owner)
+        public BombasticDrop(Weapon owner) : base(owner)
         {
         }
 
-        public BombasticDrop(IWeapon owner, long coolDownTime) : base(owner, coolDownTime)
+        public BombasticDrop(Weapon owner, long coolDownTime) : base(owner, coolDownTime)
         {
         }
 

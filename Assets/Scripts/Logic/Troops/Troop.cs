@@ -1,10 +1,11 @@
 using System;
 using Logic.Helper;
 using Logic.Troops.DeathStrategy;
+using Logic.Villains;
 
 namespace Logic.Troops
 {
-    public class Troop : LogicObject
+    public class Troop : Villain
     {
         public int Handle { get; set; }
         
@@ -13,8 +14,8 @@ namespace Logic.Troops
         public Troop(Troop another) : base(another)
         {
         }
-        
-        public Troop(IDeathStrategy deathStrategy) : base()
+
+        protected Troop(IDeathStrategy deathStrategy) : base()
         {
             _deathStrategy = deathStrategy;
         }
