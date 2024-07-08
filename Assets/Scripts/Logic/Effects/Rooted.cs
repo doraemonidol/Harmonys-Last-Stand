@@ -36,6 +36,8 @@ namespace Logic.Effects
                     Thread.Sleep(1000);
                 }
                 
+                Character.ReceiveEffect(EffectHandle.DisableRooted);
+                
                 // Notify the Effect Manager when the effect ends
                 NotifyWhenEnd();
             });

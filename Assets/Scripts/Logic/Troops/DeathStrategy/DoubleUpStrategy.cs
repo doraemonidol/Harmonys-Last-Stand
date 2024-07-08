@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Logic.Facade;
 
 namespace Logic.Troops.DeathStrategy
 {
@@ -10,15 +9,26 @@ namespace Logic.Troops.DeathStrategy
         {
             try
             {
-                var world = LogicWorld.GetInstance();
-                // var presTroop1 = new PresentationTroop();
-                // var presTroop2 = new PresentationTroop();
-                
+                var thisTroop = (Troop)args["troop"];
+                var visitor = new EventUpdateVisitor
+                {
+                    ["ev"] =
+                    {
+                        ["type"] = "death",
+                        ["next"] = "double_up",
+                    }
+                };
+                thisTroop.NotifySubscribers(visitor);
                 throw new Exception("Not done yet.");
             } catch (Exception e)
             {
                 Console.WriteLine(e);
             }
+        }
+
+        public void GetStrategyType()
+        {
+            throw new NotImplementedException();
         }
     }
 }

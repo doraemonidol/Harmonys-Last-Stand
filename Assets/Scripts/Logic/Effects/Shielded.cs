@@ -28,7 +28,7 @@ namespace Logic.Effects
         {
             var thread = new Thread(() =>
             {
-                Character.ReceiveEffect(EffectHandle.Shielded);
+                // Character.ReceiveEffect(EffectHandle.Shielded);
                 
                 // While the current time is less than EffectEndTime
                 while (System.DateTime.Now.Millisecond < EffectEndTime)

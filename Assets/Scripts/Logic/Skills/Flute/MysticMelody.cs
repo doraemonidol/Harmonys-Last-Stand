@@ -11,12 +11,12 @@ namespace Logic.Skills.Flute
     public class MysticMelody : AcSkill
     {
         
-        public MysticMelody(IWeapon owner) : base(owner)
+        public MysticMelody(Weapon owner) : base(owner)
         {
             
         }
 
-        public MysticMelody(IWeapon owner, long coolDown) : base(owner: owner, coolDownTime: coolDown)
+        public MysticMelody(Weapon owner, long coolDown) : base(owner: owner, coolDownTime: coolDown)
         {
         }
 

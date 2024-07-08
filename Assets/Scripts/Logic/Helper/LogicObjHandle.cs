@@ -9,5 +9,6 @@ namespace Logic.Helper
         public const int Troop2 = 4;
         public const int Troop3 = 5;
         public const int Troop4 = 6;
+        public const int Weapon = 7;
     }
 }

@@ -6,11 +6,11 @@ namespace Logic.Skills.Saxophone
 {
     public class JazzJolt : AcSkill
     {
-        public JazzJolt(IWeapon owner) : base(owner)
+        public JazzJolt(Weapon owner) : base(owner)
         {
         }
 
-        public JazzJolt(IWeapon owner, long coolDownTime) : base(owner, coolDownTime)
+        public JazzJolt(Weapon owner, long coolDownTime) : base(owner, coolDownTime)
         {
         }
 

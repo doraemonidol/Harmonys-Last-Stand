@@ -1,15 +1,16 @@
+using System;
 using System.Collections;
+using Common;
 using Logic;
-using Presentation.Events;
 using UnityEngine;
 
 namespace Presentation
 {
     public abstract class PresentationObject : MonoBehaviour
     {
-        protected readonly IPObject BoxObject;
-
-        protected EventManager _eventManager = new EventManager();
+        public Identity SelfHandle { get; set; }
+        
+        public Identity LogicHandle { get; set; }
         
         private readonly ArrayList Notifier = new ArrayList();
 
@@ -17,10 +18,7 @@ namespace Presentation
 
         public abstract void Update();
 
-        public void AcceptAndUpdate(EventUpdateVisitor visitor)
-        {
-            BoxObject.AcceptAndUpdate(visitor);
-        }
+        public abstract void AcceptAndUpdate(EventUpdateVisitor visitor);
         
         public void Subscribe(LogicObject notifier)
         {

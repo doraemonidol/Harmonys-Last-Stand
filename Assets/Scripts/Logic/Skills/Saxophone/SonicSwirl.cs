@@ -7,11 +7,11 @@ namespace Logic.Skills.Saxophone
 {
     public class SonicSwirl : AcSkill
     {
-        public SonicSwirl(IWeapon owner) : base(owner)
+        public SonicSwirl(Weapon owner) : base(owner)
         {
         }
 
-        public SonicSwirl(IWeapon owner, long coolDownTime) : base(owner, coolDownTime)
+        public SonicSwirl(Weapon owner, long coolDownTime) : base(owner, coolDownTime)
         {
         }
 

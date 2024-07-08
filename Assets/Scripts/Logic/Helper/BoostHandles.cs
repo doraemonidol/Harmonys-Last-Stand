@@ -10,5 +10,6 @@ namespace Logic.Helper
         public const int ReduceDamage = 5;
         public const int ReduceHealth = 6;
         public const int ReduceMana = 7;
+        public const int Reset = 8;
     }
 }

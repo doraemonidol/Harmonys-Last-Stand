@@ -6,11 +6,11 @@ namespace Logic.Skills.Guitar
 {
     public class SoloSurge : AcSkill
     {
-        public SoloSurge(IWeapon owner) : base(owner)
+        public SoloSurge(Weapon owner) : base(owner)
         {
         }
 
-        public SoloSurge(IWeapon owner, long coolDownTime) : base(owner, coolDownTime)
+        public SoloSurge(Weapon owner, long coolDownTime) : base(owner, coolDownTime)
         {
         }
 

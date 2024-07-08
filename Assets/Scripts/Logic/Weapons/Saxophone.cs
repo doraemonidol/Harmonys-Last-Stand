@@ -1,10 +1,17 @@
+using Logic.Helper;
+using Logic.Skills;
+
 namespace Logic.Weapons
 {
-    public class Saxophone : IWeapon
+    public class Saxophone : Weapon
     {
-        public void Trigger(int index)
+        
+        public Saxophone()
         {
-            throw new System.NotImplementedException();
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.Saxophone, this, 1));
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.Saxophone, this, 2));
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.Saxophone, this, 3));
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.Saxophone, this, 4));
         }
     }
 }

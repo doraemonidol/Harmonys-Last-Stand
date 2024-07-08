@@ -6,11 +6,11 @@ namespace Logic.Skills.Piano
 {
     public class ResonantStrike : AcSkill
     {
-        public ResonantStrike(IWeapon owner) : base(owner)
+        public ResonantStrike(Weapon owner) : base(owner)
         {
         }
 
-        public ResonantStrike(IWeapon owner, long coolDownTime) : base(owner, coolDownTime)
+        public ResonantStrike(Weapon owner, long coolDownTime) : base(owner, coolDownTime)
         {
         }
 

@@ -6,11 +6,11 @@ namespace Logic.Skills.Piano
 {
     public class RhapsodyRampage : AcSkill
     {
-        public RhapsodyRampage(IWeapon owner) : base(owner)
+        public RhapsodyRampage(Weapon owner) : base(owner)
         {
         }
 
-        public RhapsodyRampage(IWeapon owner, long coolDownTime) : base(owner, coolDownTime)
+        public RhapsodyRampage(Weapon owner, long coolDownTime) : base(owner, coolDownTime)
         {
         }
 
