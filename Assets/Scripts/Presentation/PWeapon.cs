@@ -17,5 +17,13 @@ namespace Presentation
         {
             return SpecialSkills;
         }
+        
+        public List<PSkill> GetSkills()
+        {
+            var skills = new List<PSkill>();
+            skills.AddRange(NormalSkills);
+            skills.AddRange(SpecialSkills);
+            return skills;
+        }
     }
 }

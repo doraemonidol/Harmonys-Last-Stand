@@ -117,9 +117,9 @@ namespace Logic.Facade
                     presRef.Subscribe(logicRef);
                     logicRef.Subscribe(presRef);
 
-                    foreach (var i in Enumerable.Range(0, ((PWeapon)presRef).GetNormalSkills().Count))
+                    foreach (var i in Enumerable.Range(0, ((PWeapon)presRef).GetSkills().Count))
                     {
-                        var presSkill = ((PWeapon)presRef).GetNormalSkills()[i];
+                        var presSkill = ((PWeapon)presRef).GetSkills()[i];
                         var logicSkill = logicRef.Skills[i];
 
                         presSkill.Subscribe(logicSkill);
