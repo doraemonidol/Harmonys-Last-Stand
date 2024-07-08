@@ -5,14 +5,17 @@ namespace Presentation
 {
     public abstract class PWeapon : PresentationObject
     {
-
-        protected List<PSkill> Skills;
+        protected List<PSkill> NormalSkills;
+        protected List<PSkill> SpecialSkills;
         
-        public List<PSkill> GetSkills()
+        public List<PSkill> GetNormalSkills()
         {
-            return Skills;
+            return NormalSkills;
         }
-
-
+        
+        public List<PSkill> GetSpecialSkills()
+        {
+            return SpecialSkills;
+        }
     }
 }

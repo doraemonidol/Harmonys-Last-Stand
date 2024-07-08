@@ -9,7 +9,7 @@ using Time = UnityEngine.Time;
 
 namespace MockUp
 {
-    public class MaestroMockUp : PresentationObject
+    public class LudwigMockUp : PresentationObject
     {
         private float lastCastTime = 0.0f;
         private float cooldownTime = 1.0f;
@@ -44,40 +44,37 @@ namespace MockUp
             switch (visitor["ev"]["type"])
             {
                 case "dead":
-                    Debug.Log("Maestro Dead Animation");
+                    Debug.Log("Ludwig Dead Animation");
                     break;
                 case "start-effect":
                     switch (visitor["args"]["name"])
                     {
                         case EffectType.STUNT:
-                            Debug.Log("Maestro Stunt Animation");
+                            Debug.Log("Ludwig Stunt Animation");
                             break;
                         case EffectType.BLEEDING:
-                            Debug.Log("Maestro Bleeding Animation");
+                            Debug.Log("Ludwig Bleeding Animation");
                             break;
                         case EffectType.KNOCKBACK:
-                            Debug.Log("Maestro Knockback Animation");
+                            Debug.Log("Ludwig Knockback Animation");
                             break;
                         case EffectType.SLEEPY:
-                            Debug.Log("Maestro Sleepy Animation");
+                            Debug.Log("Ludwig Sleepy Animation");
                             break;
                         case EffectType.RESONANCE:
-                            Debug.Log("Maestro Resonance Animation");
+                            Debug.Log("Ludwig Resonance Animation");
                             break;
                         case EffectType.ROOTED:
-                            Debug.Log("Maestro Rooted Animation");
+                            Debug.Log("Ludwig Rooted Animation");
                             break;
                         case EffectType.EXHAUSTED:
-                            Debug.Log("Maestro Exhausted Animation");
+                            Debug.Log("Ludwig Exhausted Animation");
                             break;
                         case EffectType.GET_HIT:
-                            Debug.Log("Maestro Get Hit Animation");
-                            break;
-                        case EffectType.RESURRECTION:
-                            Debug.Log("Maestro Resurrection Animation");
+                            Debug.Log("Ludwig Get Hit Animation");
                             break;
                         default:
-                            Debug.Log("Maestro Default Animation");
+                            Debug.Log("Ludwig Default Animation");
                             break;
                     }
                     break;
@@ -85,34 +82,31 @@ namespace MockUp
                     switch (visitor["args"]["name"])
                     {
                         case EffectType.STUNT:
-                            Debug.Log("Maestro Stunt Animation End");
+                            Debug.Log("Ludwig Stunt Animation End");
                             break;
                         case EffectType.BLEEDING:
-                            Debug.Log("Maestro Bleeding Animation End");
+                            Debug.Log("Ludwig Bleeding Animation End");
                             break;
                         case EffectType.KNOCKBACK:
-                            Debug.Log("Maestro Knockback Animation End");
+                            Debug.Log("Ludwig Knockback Animation End");
                             break;
                         case EffectType.SLEEPY:
-                            Debug.Log("Maestro Sleepy Animation End");
+                            Debug.Log("Ludwig Sleepy Animation End");
                             break;
                         case EffectType.RESONANCE:
-                            Debug.Log("Maestro Resonance Animation End");
+                            Debug.Log("Ludwig Resonance Animation End");
                             break;
                         case EffectType.ROOTED:
-                            Debug.Log("Maestro Rooted Animation End");
+                            Debug.Log("Ludwig Rooted Animation End");
                             break;
                         case EffectType.EXHAUSTED:
-                            Debug.Log("Maestro Exhausted Animation End");
+                            Debug.Log("Ludwig Exhausted Animation End");
                             break;
                         case EffectType.GET_HIT:
-                            Debug.Log("Maestro Get Hit Animation End");
-                            break;
-                        case EffectType.RESURRECTION:
-                            Debug.Log("Maestro Resurrection Animation End");
+                            Debug.Log("Ludwig Get Hit Animation End");
                             break;
                         default:
-                            Debug.Log("Maestro Default Animation End");
+                            Debug.Log("Ludwig Default Animation End");
                             break;
                     }
                     break;
@@ -120,22 +114,22 @@ namespace MockUp
                     switch (visitor["args"]["skill-index"])
                     {
                         case 0:
-                            Debug.Log("Maestro Cast Skill 0 Animation");
+                            Debug.Log("Ludwig Cast Skill 0 Animation");
                             break;
                         case 1:
-                            Debug.Log("Maestro Cast Skill 1 Animation");
+                            Debug.Log("Ludwig Cast Skill 1 Animation");
                             break;
                         case 2:
-                            Debug.Log("Maestro Cast Skill 2 Animation");
+                            Debug.Log("Ludwig Cast Skill 2 Animation");
                             break;
                         case 3:
-                            Debug.Log("Maestro Cast Skill 3 Animation");
+                            Debug.Log("Ludwig Cast Skill 3 Animation");
                             break;
                         case 4:
-                            Debug.Log("Maestro Cast Skill 4 Animation");
+                            Debug.Log("Ludwig Cast Skill 4 Animation");
                             break;
                         default:
-                            Debug.LogError("Maestro Unknown Cast: " + visitor["args"]["skill-index"]);
+                            Debug.LogError("Ludwig Unknown Cast: " + visitor["args"]["skill-index"]);
                             break;
                     }
                     break;

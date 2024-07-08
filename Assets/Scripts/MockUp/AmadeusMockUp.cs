@@ -9,7 +9,7 @@ using Time = UnityEngine.Time;
 
 namespace MockUp
 {
-    public class MaestroMockUp : PresentationObject
+    public class AmadeusMockUp : PresentationObject
     {
         private float lastCastTime = 0.0f;
         private float cooldownTime = 1.0f;
@@ -44,40 +44,37 @@ namespace MockUp
             switch (visitor["ev"]["type"])
             {
                 case "dead":
-                    Debug.Log("Maestro Dead Animation");
+                    Debug.Log("Amadeus Dead Animation");
                     break;
                 case "start-effect":
                     switch (visitor["args"]["name"])
                     {
                         case EffectType.STUNT:
-                            Debug.Log("Maestro Stunt Animation");
+                            Debug.Log("Amadeus Stunt Animation");
                             break;
                         case EffectType.BLEEDING:
-                            Debug.Log("Maestro Bleeding Animation");
+                            Debug.Log("Amadeus Bleeding Animation");
                             break;
                         case EffectType.KNOCKBACK:
-                            Debug.Log("Maestro Knockback Animation");
+                            Debug.Log("Amadeus Knockback Animation");
                             break;
                         case EffectType.SLEEPY:
-                            Debug.Log("Maestro Sleepy Animation");
+                            Debug.Log("Amadeus Sleepy Animation");
                             break;
                         case EffectType.RESONANCE:
-                            Debug.Log("Maestro Resonance Animation");
+                            Debug.Log("Amadeus Resonance Animation");
                             break;
                         case EffectType.ROOTED:
-                            Debug.Log("Maestro Rooted Animation");
+                            Debug.Log("Amadeus Rooted Animation");
                             break;
                         case EffectType.EXHAUSTED:
-                            Debug.Log("Maestro Exhausted Animation");
+                            Debug.Log("Amadeus Exhausted Animation");
                             break;
                         case EffectType.GET_HIT:
-                            Debug.Log("Maestro Get Hit Animation");
-                            break;
-                        case EffectType.RESURRECTION:
-                            Debug.Log("Maestro Resurrection Animation");
+                            Debug.Log("Amadeus Get Hit Animation");
                             break;
                         default:
-                            Debug.Log("Maestro Default Animation");
+                            Debug.Log("Amadeus Default Animation");
                             break;
                     }
                     break;
@@ -85,34 +82,31 @@ namespace MockUp
                     switch (visitor["args"]["name"])
                     {
                         case EffectType.STUNT:
-                            Debug.Log("Maestro Stunt Animation End");
+                            Debug.Log("Amadeus Stunt Animation End");
                             break;
                         case EffectType.BLEEDING:
-                            Debug.Log("Maestro Bleeding Animation End");
+                            Debug.Log("Amadeus Bleeding Animation End");
                             break;
                         case EffectType.KNOCKBACK:
-                            Debug.Log("Maestro Knockback Animation End");
+                            Debug.Log("Amadeus Knockback Animation End");
                             break;
                         case EffectType.SLEEPY:
-                            Debug.Log("Maestro Sleepy Animation End");
+                            Debug.Log("Amadeus Sleepy Animation End");
                             break;
                         case EffectType.RESONANCE:
-                            Debug.Log("Maestro Resonance Animation End");
+                            Debug.Log("Amadeus Resonance Animation End");
                             break;
                         case EffectType.ROOTED:
-                            Debug.Log("Maestro Rooted Animation End");
+                            Debug.Log("Amadeus Rooted Animation End");
                             break;
                         case EffectType.EXHAUSTED:
-                            Debug.Log("Maestro Exhausted Animation End");
+                            Debug.Log("Amadeus Exhausted Animation End");
                             break;
                         case EffectType.GET_HIT:
-                            Debug.Log("Maestro Get Hit Animation End");
-                            break;
-                        case EffectType.RESURRECTION:
-                            Debug.Log("Maestro Resurrection Animation End");
+                            Debug.Log("Amadeus Get Hit Animation End");
                             break;
                         default:
-                            Debug.Log("Maestro Default Animation End");
+                            Debug.Log("Amadeus Default Animation End");
                             break;
                     }
                     break;
@@ -120,22 +114,22 @@ namespace MockUp
                     switch (visitor["args"]["skill-index"])
                     {
                         case 0:
-                            Debug.Log("Maestro Cast Skill 0 Animation");
+                            Debug.Log("Amadeus Cast Skill 0 Animation");
                             break;
                         case 1:
-                            Debug.Log("Maestro Cast Skill 1 Animation");
+                            Debug.Log("Amadeus Cast Skill 1 Animation");
                             break;
                         case 2:
-                            Debug.Log("Maestro Cast Skill 2 Animation");
+                            Debug.Log("Amadeus Cast Skill 2 Animation");
                             break;
                         case 3:
-                            Debug.Log("Maestro Cast Skill 3 Animation");
+                            Debug.Log("Amadeus Cast Skill 3 Animation");
                             break;
                         case 4:
-                            Debug.Log("Maestro Cast Skill 4 Animation");
+                            Debug.Log("Amadeus Cast Skill 4 Animation");
                             break;
                         default:
-                            Debug.LogError("Maestro Unknown Cast: " + visitor["args"]["skill-index"]);
+                            Debug.LogError("Amadeus Unknown Cast: " + visitor["args"]["skill-index"]);
                             break;
                     }
                     break;

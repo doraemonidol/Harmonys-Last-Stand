@@ -47,7 +47,7 @@ namespace Tests
             }
             TestContext.WriteLine("Passed Weapon Instantiation");
             var i = 1;
-            foreach (var skill in weapon.GetSkills())
+            foreach (var skill in weapon.GetNormalSkills())
             {
                 var skillHandle = skill.LogicHandle;
                 var skillObj = (LogicObject) LogicLayer.GetInstance()._objects[skillHandle];
@@ -87,7 +87,7 @@ namespace Tests
             LogicLayer.GetInstance().Observe(new EventDto
             {
                 Event = "CAST",
-                ["skill"] = weapon.GetSkills()[0].LogicHandle,
+                ["skill"] = weapon.GetNormalSkills()[0].LogicHandle,
             });
             Thread.Sleep(10000);
             try
@@ -95,7 +95,7 @@ namespace Tests
                 LogicLayer.GetInstance().Observe(new EventDto
                 {
                     Event = "CAST",
-                    ["skill"] = weapon.GetSkills()[0].LogicHandle,
+                    ["skill"] = weapon.GetNormalSkills()[0].LogicHandle,
                 });
                 Assert.IsTrue(false);
             }
@@ -103,8 +103,8 @@ namespace Tests
             {
                 TestContext.WriteLine(e.StackTrace);
                 TestContext.WriteLine("Current time: " + Time.WhatIsIt());
-                TestContext.WriteLine("Next time to activate: " + ((AcSkill)LogicLayer.GetInstance()._objects[weapon.GetSkills()[0].LogicHandle]).NextTimeToAvailable);
-                Assert.IsTrue(((AcSkill)LogicLayer.GetInstance()._objects[weapon.GetSkills()[0].LogicHandle]).IsAvailable());
+                TestContext.WriteLine("Next time to activate: " + ((AcSkill)LogicLayer.GetInstance()._objects[weapon.GetNormalSkills()[0].LogicHandle]).NextTimeToAvailable);
+                Assert.IsTrue(((AcSkill)LogicLayer.GetInstance()._objects[weapon.GetNormalSkills()[0].LogicHandle]).IsAvailable());
             }
         }
 
@@ -123,7 +123,7 @@ namespace Tests
                 ["attacker"] = aurelia.LogicHandle,
                 ["target"] = villain.LogicHandle,
                 ["context"] = null,
-                ["skill"] = weapon.GetSkills()[0].LogicHandle,
+                ["skill"] = weapon.GetNormalSkills()[0].LogicHandle,
             });
         }
         

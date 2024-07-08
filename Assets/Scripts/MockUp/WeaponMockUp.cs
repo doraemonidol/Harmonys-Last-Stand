@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Logic;
 using Logic.Facade;
 using Logic.Helper;
 using Presentation;
@@ -9,7 +10,7 @@ namespace MockUp
     {
         public override void Start()
         {
-            Skills = new List<PSkill>
+            NormalSkills = new List<PSkill>
             {
                 gameObject.AddComponent<Wp1>(),
                 gameObject.AddComponent<Wp1>(),
@@ -21,6 +22,11 @@ namespace MockUp
         }
 
         public override void Update()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void AcceptAndUpdate(EventUpdateVisitor visitor)
         {
             throw new System.NotImplementedException();
         }

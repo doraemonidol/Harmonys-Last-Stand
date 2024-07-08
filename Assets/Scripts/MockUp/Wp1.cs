@@ -1,3 +1,4 @@
+using Logic;
 using Presentation;
 
 namespace MockUp
@@ -10,6 +11,11 @@ namespace MockUp
         }
 
         public override void Update()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void AcceptAndUpdate(EventUpdateVisitor visitor)
         {
             throw new System.NotImplementedException();
         }

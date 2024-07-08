@@ -18,10 +18,7 @@ namespace Presentation
 
         public abstract void Update();
 
-        public void AcceptAndUpdate(EventUpdateVisitor visitor)
-        {
-            //throw new Exception("Receive an new message from visitor");
-        }
+        public abstract void AcceptAndUpdate(EventUpdateVisitor visitor);
         
         public void Subscribe(LogicObject notifier)
         {
