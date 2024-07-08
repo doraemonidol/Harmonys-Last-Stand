@@ -1,8 +1,8 @@
-// public enum SkillState
-// {
-//     OnCooldown,
-//     Idle,
-//     PreCasting,
-//     Casting,
-//     PostCasting
-// }
+public enum SkillState
+{
+    OnCooldown,
+    Idle,
+    PreCasting,
+    Casting,
+    PostCasting
+}

@@ -10,6 +10,6 @@ namespace Presentation.Effect
         [SerializeField] protected float duration;
         [SerializeField] protected GameObject vfx;
         protected GameObject VFXInstance;
-        public abstract void PlayEffect(EffectType effectType);
+        public abstract void PlayEffect(string effectType);
     }  
 }

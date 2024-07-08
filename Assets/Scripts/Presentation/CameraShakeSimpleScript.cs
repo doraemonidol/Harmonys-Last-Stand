@@ -11,20 +11,20 @@
 using System.Collections;
 using UnityEngine;
 
-namespace GabrielAguiarProductions.Unique_Projectiles_Volume_1.Scripts.UniqueProjectiles
+namespace Presentation
 {
 	public class CameraShakeSimpleScript : MonoBehaviour {
 
-		private bool isRunning = false;
-		private Animation anim;
+		private bool _isRunning = false;
+		private Animation _anim;
 
 		void Start () {
-			anim = GetComponent<Animation> ();
+			_anim = GetComponent<Animation> ();
 		}
 
 		public void ShakeCamera() {	
-			if (anim != null)
-				anim.Play (anim.clip.name);
+			if (_anim != null)
+				_anim.Play (_anim.clip.name);
 			else
 				ShakeCaller (0.25f, 0.1f);
 		}
@@ -35,7 +35,7 @@ namespace GabrielAguiarProductions.Unique_Projectiles_Volume_1.Scripts.UniquePro
 		}
 
 		IEnumerator Shake (float amount, float duration){
-			isRunning = true;
+			_isRunning = true;
 
 			Vector3 originalPos = transform.localPosition;
 			int counter = 0;
@@ -55,7 +55,7 @@ namespace GabrielAguiarProductions.Unique_Projectiles_Volume_1.Scripts.UniquePro
 
 			transform.localPosition = originalPos;
 
-			isRunning = false;
+			_isRunning = false;
 		}
 	}
 }

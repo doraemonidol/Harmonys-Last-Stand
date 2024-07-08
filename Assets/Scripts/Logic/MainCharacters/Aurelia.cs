@@ -276,14 +276,14 @@ namespace Logic.MainCharacters
         {
             switch (action)
             {
-                case Action.MOVE_LEFT:
-                case Action.MOVE_RIGHT:
-                case Action.MOVE_UP:
-                case Action.MOVE_DOWN:
-                case Action.MOVE_UP_RIGHT:
-                case Action.MOVE_UP_LEFT:
-                case Action.MOVE_DOWN_RIGHT:
-                case Action.MOVE_DOWN_LEFT:
+                case Action.MoveLeft:
+                case Action.MoveRight:
+                case Action.MoveUp:
+                case Action.MoveDown:
+                case Action.MoveUpLeft:
+                case Action.MoveUpRight:
+                case Action.MoveDownLeft:
+                case Action.MoveDownRight:
                 {
                     var logicAction = action;
                     

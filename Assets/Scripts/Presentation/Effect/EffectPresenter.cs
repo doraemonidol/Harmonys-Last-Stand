@@ -1,4 +1,5 @@
 using Common;
+using Logic;
 using UnityEngine;
 
 namespace Presentation.Effect
@@ -18,9 +19,14 @@ namespace Presentation.Effect
             
         }
 
-        public override void PlayEffect(EffectType type)
+        public override void AcceptAndUpdate(EventUpdateVisitor visitor)
         {
-            if (type == EffectType.SHIELDED)
+            throw new System.NotImplementedException();
+        }
+
+        public override void PlayEffect(string type)
+        {
+            if (type == EffectType.SHIELD)
             {
                  VFXInstance = Instantiate(vfx, transform.position, Quaternion.identity);
                  vfx.transform.SetParent(entityVfxContainer.transform);

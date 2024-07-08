@@ -4,35 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fb9b93a-44b5-4fa0-a66c-b66f1a7f53d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/SummonClone.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/SummonClone.cs.meta" afterDir="false" />
+    <list default="true" id="63011af6-f4c3-4a14-b20c-aff937d67981" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/CameraShakeSimpleScript.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/CameraShakeSimpleScript.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Circle Centre 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Circle Centre 2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Body 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Body 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/For demo scenes/HS_MovementInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/For demo scenes/HS_MovementInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/HS_FrontSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/HS_FrontSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Demo scene files/GrayMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Demo scene files/GrayMat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_barrel_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_barrel_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_boulder_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_boulder_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_bucket_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_bucket_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_build_village_fence_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_build_village_fence_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_building_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_building_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_building_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_building_02.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_fence_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_fence_02.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_logpile_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_logpile_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_plank_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_plank_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_sword_shovel_halberd_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_sword_shovel_halberd_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_torch_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Scene environment/Materials/mat_torch_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Guitar/Projectiles/vfx_Projectile_PowerChord.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Guitar/Projectiles/vfx_Projectile_PowerChord.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Guitar/Projectiles/vfx_Projectile_StringStrike.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Guitar/Projectiles/vfx_Projectile_StringStrike.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AllIn1VfxToolkit/InstanceTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AllIn1VfxToolkit/InstanceTest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/UniqueProjectiles/CameraShakeSimpleScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/UniqueProjectiles/CameraShakeSimpleScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/UniqueProjectiles/SpawnProjectilesScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/UniqueProjectiles/SpawnProjectilesScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossCastSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossCastSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/DirectionTargeting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/DirectionTargeting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/ProjectileMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/ProjectileMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/SpreadingAOETargeting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/SpreadingAOETargeting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/MainCharacters/Aurelia.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/MainCharacters/Aurelia.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Effect/BaseEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Effect/BaseEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Effect/EffectPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Effect/EffectPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/MainCharacter.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/MainCharacter/Aurelia.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/MainCharacter/Aurelia.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Troops/Troop.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Troops/Troop.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scripts.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scripts.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SkillState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SkillState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/Tests.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,45 +39,39 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerCloneMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Runtime/UniversalRenderPipeline.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/594891d2a0f14b1f8bee5c011ae8cc8a4de00/1d/a05e3f0b/0200001Fpdb23.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/871f569eaf8b4851b13fb472d101b1cb4da00/6a/a7bf6dcd/0200001Fpdb23.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.10.1/Runtime/Behaviours/CinemachineVirtualCamera.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="SWEA" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 6
-}</component>
-  <component name="ProjectId" id="2iOtOwWanS5lbVEoew8LSLvwGHt" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2ixru7rzWZbhDtlD5k1mrwhniGu" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Standalone Player.Start Unity.executor&quot;: &quot;Run&quot;,
-    &quot;Standalone Player.Unit Tests (batch mode).executor&quot;: &quot;Run&quot;,
-    &quot;bd855e35-dc5b-4ed3-9b2d-7d062a517afa.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;vfx&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CodeLensConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "vfx",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Nhat Hung\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Nhat Hung\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Nhat Hung\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Nhat Hung\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Nhat Hung\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\Nhat Hung\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
-  <component name="RunManager" selected="Standalone Player.Start Unity">
+}]]></component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Programming\Unity Editor\Unity 2022.3.29f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;D:\Programming\Unity\Harmonys Last Stand&quot; -debugCodeOptimization" />
@@ -122,23 +112,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0fb9b93a-44b5-4fa0-a66c-b66f1a7f53d2" name="Changes" comment="" />
-      <created>1719373424472</created>
+      <changelist id="63011af6-f4c3-4a14-b20c-aff937d67981" name="Changes" comment="" />
+      <created>1720443291601</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1719373424472</updated>
-      <workItem from="1719373428250" duration="11216000" />
-      <workItem from="1719391587547" duration="71000" />
-      <workItem from="1719391682994" duration="101000" />
-      <workItem from="1719391801269" duration="1673000" />
-      <workItem from="1719403055455" duration="6378000" />
-      <workItem from="1719437776884" duration="8354000" />
-      <workItem from="1719460676435" duration="9305000" />
-      <workItem from="1719532066355" duration="1283000" />
-      <workItem from="1719578356590" duration="1287000" />
-      <workItem from="1719751604793" duration="3362000" />
-      <workItem from="1719804582426" duration="10220000" />
-      <workItem from="1719850232827" duration="518000" />
+      <updated>1720443291601</updated>
+      <workItem from="1720443297420" duration="3091000" />
     </task>
     <servers />
   </component>
