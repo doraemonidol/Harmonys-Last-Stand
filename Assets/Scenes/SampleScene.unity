@@ -205,6 +205,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &86725951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8527421165118653427, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
+  m_PrefabInstance: {fileID: 1069439489}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &86725953
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86725951}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4be8e6b2635836b448f3542896e1e5b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &92940591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,7 +1514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3501522210643059124, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3501522211581904752, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
       propertyPath: m_Layer
@@ -1690,6 +1716,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7871196614378430836, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4be8e6b2635836b448f3542896e1e5b7, type: 2}
+    - target: {fileID: 7871196614378430836, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'Root'\n\tTransform 'IndexFinger_02'\n\tTransform
+        'Elbow_R'\n\tTransform 'Finger_02'\n\tTransform 'Finger_03'\n\tTransform
+        'Ball_L'\n\tTransform 'Thumb_02'\n\tTransform 'Ball_R'\n\tTransform 'Clavicle_L'\n\tTransform
+        'Finger_01'\n\tand more ...\n\tFrom animation clip 'Running'\n\tFrom animation
+        clip 'Summon'\n\tFrom animation clip 'Resurrection'\n\tFrom animation clip
+        'Laughing'\n\tFrom animation clip 'Happy Idle 1'"
+      objectReference: {fileID: 0}
     - target: {fileID: 8282019472162772701, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -1706,8 +1747,19 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedComponents:
+    - {fileID: 7871196614378430836, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 6974310148997039410, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
+    - {fileID: 1725420812834597829, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
+    - {fileID: 3778884291489461584, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
+    - {fileID: 2334159898347053710, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
+    - {fileID: 1644319090696120454, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
+    - {fileID: 87591951705377191, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
+    - {fileID: 5146481741708214735, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
+    - {fileID: 5905043475371307298, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
+    - {fileID: 3249742131948229080, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
+    - {fileID: 8980656752207890780, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4313383336366406414, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
       insertIndex: 0
@@ -1731,6 +1783,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3501522210643059124, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1927775834}
+    - targetCorrespondingSourceObject: {fileID: 3501522210643059124, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1927775835}
+    - targetCorrespondingSourceObject: {fileID: 8527421165118653427, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 86725953}
   m_SourcePrefab: {fileID: 100100000, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}
 --- !u!1 &1132743147
 GameObject:
@@ -2677,6 +2735,27 @@ CapsuleCollider:
   m_Height: 1.9820201
   m_Direction: 1
   m_Center: {x: 0, y: 0.95046365, z: 0}
+--- !u!95 &1927775835
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927775826}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4be8e6b2635836b448f3542896e1e5b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1987718655
 PrefabInstance:
   m_ObjectHideFlags: 0
