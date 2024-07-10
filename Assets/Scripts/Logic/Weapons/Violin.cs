@@ -14,8 +14,8 @@ namespace Logic.Weapons
         public Violin()
         {
             Skills.Add(AcSkill.TransformInto(WeaponHandle.Violin, this, 1));
-            Skills.Add(AcSkill.TransformInto(WeaponHandle.Violin, this, 2));
             Skills.Add(AcSkill.TransformInto(WeaponHandle.Violin, this, 3));
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.Violin, this, 2));
             Skills.Add(AcSkill.TransformInto(WeaponHandle.Violin, this, 4));
         }
     }

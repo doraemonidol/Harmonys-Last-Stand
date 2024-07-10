@@ -1,9 +1,11 @@
+using System.Collections.Generic;
 using Common;
 using DTO;
 using Logic;
 using Logic.Facade;
 using Logic.Helper;
 using Presentation;
+using Presentation.Bosses;
 using UnityEngine;
 using Time = UnityEngine.Time;
 
@@ -14,13 +16,32 @@ namespace MockUp
         private float lastCastTime = 0.0f;
         private float cooldownTime = 1.0f;
         public WeaponMockUp weapon;
+        
+        [SerializeField] private List<BossSkill> skills;
+        [SerializeField] private RotateToTargetScript _rotateToTarget;
+        
+        [SerializeField] private GameObject firePoint;
+        [SerializeField] private GameObject target;
         public override void Start()
         {
-            
-            weapon = new GameObject().AddComponent<WeaponMockUp>();
-            
-            weapon.Start(); // In further development, this should be called in the derived class for the weapon of Amadeus
             LogicLayer.GetInstance().Instantiate(Google.Search("ins", "ama"), this);
+            if (!_rotateToTarget)
+            {
+                Debug.LogError("Please assign RotateToTargetScript to the boss");
+            }
+            
+            InitializeSkills();
+        }
+
+        private void InitializeSkills()
+        {
+            for (int i = 0; i < skills.Count; i++)
+            {
+                skills[i].AttachRotator(_rotateToTarget);
+                skills[i].AttachFirePoint(firePoint);
+                skills[i].AttachTarget(target);
+            }
+            
         }
 
         public override void Update()

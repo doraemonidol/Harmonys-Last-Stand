@@ -4,187 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63011af6-f4c3-4a14-b20c-aff937d67981" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/EffectUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/EffectUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/EffectUIManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/EffectUIManager.cs.meta" afterDir="false" />
+    <list default="true" id="a6d8f654-96a8-4d8c-b60c-233031c2437c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/EntityTypeEnum.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/EntityTypeEnum.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Effects/Healing.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Effects/Healing.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/SkillMockUp.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/SkillMockUp.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AllIn1VfxToolkit/Demo &amp; Assets/Demo/Materials/SciFiOrbLines.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AllIn1VfxToolkit/Demo &amp; Assets/Demo/Materials/SciFiOrbLines.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/ChangeState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/ChangeState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/ClickToDistract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/ClickToDistract.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/DeathDemoScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/DeathDemoScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/DropCube.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/DropCube.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/Enemies/FlagAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/Enemies/FlagAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/Enemies/PlayHitSound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/Enemies/PlayHitSound.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/Health.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/HealthUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/HealthUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/MoveCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/MoveCharacter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/Shoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/Shoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/TurnInvisible.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Demos/Assets/Scripts/TurnInvisible.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAIAudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAIAudioManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAICoverManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAICoverManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAIDistanceCulling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAIDistanceCulling.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAIDistraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAIDistraction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAIEnemyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAIEnemyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAIGetCoverHeight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAIGetCoverHeight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAIRagdollData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAIRagdollData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAISpareState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAISpareState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAIStateTracker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/BlazeAIStateTracker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/SpareState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/SpareState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/StayInPosition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Additive Scripts/StayInPosition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/AlertStateBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/AlertStateBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/AlertTagBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/AlertTagBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/AttackStateBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/AttackStateBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/CompanionBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/CompanionBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/CoverShooterBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/CoverShooterBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/DistractedStateBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/DistractedStateBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/FleeBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/FleeBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/GoingToCoverBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/GoingToCoverBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/HitStateBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/HitStateBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/NormalStateBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/NormalStateBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/SurprisedStateBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Behaviours/SurprisedStateBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/BlazeAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/BlazeAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Classes/AnimationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Classes/AnimationManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Classes/AudioScriptable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Classes/AudioScriptable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Classes/BlazeBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Classes/BlazeBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Classes/Vision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Classes/Vision.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Classes/Waypoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Blaze AI/Scripts/Classes/Waypoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Circle Centre 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Circle Centre 2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Body 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Body 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Head 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Head 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/asset.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/asset.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Publishing Tools/asset.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Publishing Tools/asset.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/ParticleSystemController/ParticleSystemController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/ParticleSystemController/ParticleSystemController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/ParticleSystemController/ParticleSystemControllerEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/ParticleSystemController/ParticleSystemControllerEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/ParticleSystemController/SaveParticleSystemScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/ParticleSystemController/SaveParticleSystemScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/ParticleSystemController/Serializables.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/ParticleSystemController/Serializables.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/UniqueProjectiles/CameraShakeSimpleScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/UniqueProjectiles/CameraShakeSimpleScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/UniqueProjectiles/ProjectileMoveScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/UniqueProjectiles/ProjectileMoveScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/UniqueProjectiles/SpawnProjectilesScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Scripts/UniqueProjectiles/SpawnProjectilesScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Shaders/Legacy/AdditiveMobile_Scroll01.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Shaders/Legacy/AdditiveMobile_Scroll01.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Shaders/Legacy/Additive_EdgeSoft.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Shaders/Legacy/Additive_EdgeSoft.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Shaders/Legacy/Additive_Scroll01.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Shaders/Legacy/Additive_Scroll01.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Shaders/Legacy/AlphaBlendedMobile_Scroll01.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Shaders/Legacy/AlphaBlendedMobile_Scroll01.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Shaders/Legacy/AlphaBlended_EdgeSoft.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Shaders/Legacy/AlphaBlended_EdgeSoft.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Shaders/Legacy/AlphaBlended_Scroll01.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/Unique_Projectiles_Volume_1/Shaders/Legacy/AlphaBlended_Scroll01.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/For demo scenes/HS_CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/For demo scenes/HS_CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/For demo scenes/HS_CameraShaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/For demo scenes/HS_CameraShaker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/For demo scenes/HS_MovementInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/For demo scenes/HS_MovementInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/HS_FrontAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/HS_FrontAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/HS_FrontSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/HS_FrontSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/HS_ParticleCollisionInstance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/HS_ParticleCollisionInstance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/HS_TargetProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Scripts/HS_TargetProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Add_CenterGlow.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Add_CenterGlow.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Add_Fresnel.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Add_Fresnel.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_CenterGlow.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_CenterGlow.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_LinePath.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_LinePath.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_TwoSides.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_TwoSides.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/DissolveNoise.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/DissolveNoise.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Distortion.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Distortion.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Electricity.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Electricity.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Fire.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Fire.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Ice.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Ice.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/LightGlow.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/LightGlow.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Lightning.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Lightning.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Lit_CenterGlow.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Lit_CenterGlow.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/PBR Fantasy staff/Shaders/Staff.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/PBR Fantasy staff/Shaders/Staff.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Wizard spells pack.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Demo scene/Wizard spells pack.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Prefabs/Magic shield/Magic shield blue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Prefabs/Magic shield/Magic shield blue.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Prefabs/Magic shield/Shield buff.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Wizard spells pack/Prefabs/Magic shield/Shield buff.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Scripts/Rnd_Animation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Scripts/Rnd_Animation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Scripts/RotationScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Scripts/RotationScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/SRP_Shaders/Glass.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/SRP_Shaders/Glass.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/SRP_Shaders/Glow.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/SRP_Shaders/Glow.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/SRP_Shaders/Main.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/SRP_Shaders/Main.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/SRP_Shaders/SimpleWater.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/SRP_Shaders/SimpleWater.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/SRP_Shaders/Water.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/SRP_Shaders/Water.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/URP_Shaders/Glass_URP.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/URP_Shaders/Glass_URP.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/URP_Shaders/Glow_URP.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/URP_Shaders/Glow_URP.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/URP_Shaders/MainURP.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/URP_Shaders/MainURP.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/URP_Shaders/SimpleWater_URP.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/URP_Shaders/SimpleWater_URP.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/URP_Shaders/WaterURP.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Platformer_2-Low_Poly/Shaders/URP_Shaders/WaterURP.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/CarouselController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/CarouselController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/CarouselHorseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/CarouselHorseController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/ClownEntranceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/ClownEntranceController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/ClownGameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/ClownGameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/FerrisWheelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/FerrisWheelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/FlickerLight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/FlickerLight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/SimpleRotateCarnival.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/SimpleRotateCarnival.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/SimpleTranslate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/SimpleTranslate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/SpotLightFlicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/SpotLightFlicker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/TeaCupController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Scripts/TeaCupController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Shaders/SyntyStudios_Polygon_NeonShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Shaders/SyntyStudios_Polygon_NeonShader.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Violin/Effects/Echoing Waltz.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Violin/Effects/Echoing Waltz.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Violin/Template.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Violin/Template/Effects.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Violin/Template/Parts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Violin/Template/Projectiles.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Beethoven.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Mozart.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCastSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCastSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Events/EventManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Events/EventManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/DirectionTargeting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/DirectionTargeting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/StaticTargeting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/StaticTargeting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Troops.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scripts.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scripts.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_1(NotScriptBased)/Materials/Effect_10_Materials/Effect_10_Particle_3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_1(NotScriptBased)/Materials/Effect_10_Materials/Effect_10_Particle_3.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_1(NotScriptBased)/Materials/Effect_12_Materials/Effect_12_Sphere_5.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_1(NotScriptBased)/Materials/Effect_12_Materials/Effect_12_Sphere_5.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_1(NotScriptBased)/Materials/Effect_48_Materials/Effect_48_Sphere_2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_1(NotScriptBased)/Materials/Effect_48_Materials/Effect_48_Sphere_2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_1(NotScriptBased)/Materials/ObjectMaterial/objectMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_1(NotScriptBased)/Materials/ObjectMaterial/objectMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_1(NotScriptBased)/Materials/ObjectMaterial/objectMaterial2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_1(NotScriptBased)/Materials/ObjectMaterial/objectMaterial2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_1(NotScriptBased)/Materials/ObjectMaterial/planeMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_1(NotScriptBased)/Materials/ObjectMaterial/planeMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_2(ScriptBased)/Effects/Effect_48_AbsoluteOfWindStorm/Effect_48_StormTempest.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_2(ScriptBased)/Effects/Effect_48_AbsoluteOfWindStorm/Effect_48_StormTempest.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_2(ScriptBased)/Effects/Effect_48_AbsoluteOfWindStorm/Effect_48_WindStormBringer.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_2(ScriptBased)/Effects/Effect_48_AbsoluteOfWindStorm/Effect_48_WindStormBringer.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_2(ScriptBased)/Materials/Object_Materials/enemy.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_2(ScriptBased)/Materials/Object_Materials/enemy.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_2(ScriptBased)/Materials/Object_Materials/friendly.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_2(ScriptBased)/Materials/Object_Materials/friendly.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_2(ScriptBased)/Materials/Object_Materials/object.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_2(ScriptBased)/Materials/Object_Materials/object.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_2(ScriptBased)/Materials/Object_Materials/plane.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_2(ScriptBased)/Materials/Object_Materials/plane.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/EffectsScenes/EffectsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/EffectsScenes/EffectsScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Models/Materials/AircraftCarrier_01_Body_Texture.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Models/Materials/AircraftCarrier_01_Body_Texture.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Models/Materials/Bomb_01_Texture.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Models/Materials/Bomb_01_Texture.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Models/Materials/Bomber_02_Body_Texture.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Models/Materials/Bomber_02_Body_Texture.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Models/Materials/Chopper_01_Texture.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Models/Materials/Chopper_01_Texture.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Models/Materials/Jet_04_Body_Texture.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Models/Materials/Jet_04_Body_Texture.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Models/Materials/UAV_01_Texture.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Models/Materials/UAV_01_Texture.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Decals/HDRP_Decals/HDRPdecal(For2020HDRP).unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Decals/HDRP_Decals/HDRPdecal(For2020HDRP).unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Decals/HDRP_Decals/HDRPdecal(Upper2020HDRP).unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Decals/HDRP_Decals/HDRPdecal(Upper2020HDRP).unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Decals/HDRP_Decals/HDRPdecalMatrixFix(Upper2020HDRP).unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Decals/HDRP_Decals/HDRPdecalMatrixFix(Upper2020HDRP).unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Decals/URPdecal.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Decals/URPdecal.unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Materials/GammaSpaceMaterials(WithoutNormal).unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Materials/GammaSpaceMaterials(WithoutNormal).unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Materials/GammaSpaceMaterials.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Materials/GammaSpaceMaterials.unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Materials/LinearSpaceMaterials(WithoutNormal).unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Materials/LinearSpaceMaterials(WithoutNormal).unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Materials/LinearSpaceMaterials.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Materials/LinearSpaceMaterials.unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Prefebs/OptimizedEffectsPrefebs.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Prefebs/OptimizedEffectsPrefebs.unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Prefebs/OriginalEffectsPrefebs(WithoutDistort).unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Prefebs/OriginalEffectsPrefebs(WithoutDistort).unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Prefebs/OriginalEffectsPrefebs.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Prefebs/OriginalEffectsPrefebs.unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Toon/ToonTypeMaterial(GammaSpace).unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Toon/ToonTypeMaterial(GammaSpace).unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Toon/ToonTypeMaterial(LinearSpace).unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Toon/ToonTypeMaterial(LinearSpace).unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Toon/ToonTypeTextures_Part1.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Toon/ToonTypeTextures_Part1.unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Toon/ToonTypeTextures_Part2.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Patch/Toon/ToonTypeTextures_Part2.unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/ChangeSizeColor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/ChangeSizeColor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/DelayActive.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/DelayActive.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/DestroyObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/DestroyObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/ForEffects/LookAtTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/ForEffects/LookAtTarget.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/ForEffects/MultipleObjectsMake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/ForEffects/MultipleObjectsMake.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/ForEffects/ObjectMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/ForEffects/ObjectMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/ForEffects/ObjectMoveDestroy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/ForEffects/ObjectMoveDestroy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/ForEffects/ShieldActivate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/ForEffects/ShieldActivate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/ForEffects/_ObjectsMakeBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/ForEffects/_ObjectsMakeBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/NewMaterialChange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/NewMaterialChange.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/ScaleFactorApplyToMaterial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/ScaleFactorApplyToMaterial.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/VariousEffectsScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/VariousEffectsScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/VariousMouseOrbit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/VariousMouseOrbit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/VariousRotateObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/VariousRotateObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/VariousTranslateMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Scripts/VariousTranslateMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Shader_ForEffects/Shader_Decal.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Shader_ForEffects/Shader_Decal.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Shader_ForEffects/Shader_DistortionEffect.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Shader_ForEffects/Shader_DistortionEffect.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Shader_ForEffects/Shader_IntegratedEffect.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/Shader_ForEffects/Shader_IntegratedEffect.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys-Last-Stand/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys-Last-Stand/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys-Last-Stand/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys-Last-Stand/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Violin/Effects/vfx_Effect_HarmonyShield.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Violin/Effects/vfx_Effect_HarmonyShield.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Common/EffectType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Common/EffectType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Common/EntityType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Common/EntityType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Effects/EffectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Effects/EffectManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/MainCharacters/Aurelia.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/MainCharacters/Aurelia.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/Violin/HarmonyShield.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/Violin/HarmonyShield.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Villains/Villain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Villains/Villain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Weapons/Violin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Weapons/Violin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/AmadeusMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/AmadeusMockUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/LudwigMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/LudwigMockUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/MaestroMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/MaestroMockUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/WeaponMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/WeaponMockUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/WeaponMockUp2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/WeaponMockUp2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/EffectUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/EffectUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/PSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/PSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/PWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/PWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/PresentationObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/PresentationObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/InstanceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/InstanceTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,21 +44,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/594891d2a0f14b1f8bee5c011ae8cc8a4de00/1d/a05e3f0b/0200001Fpdb23.il" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/871f569eaf8b4851b13fb472d101b1cb4da00/6a/a7bf6dcd/0200001Fpdb23.il" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ProgressBar.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.10.1/Runtime/Behaviours/CinemachineVirtualCamera.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.10.1/Runtime/com.unity.cinemachine.asmdef" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Editor/MaterialUpgrader.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Editor/UniversalRenderPipelineMaterialUpgrader.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TextMeshProUGUI.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
 }</component>
-  <component name="ProjectId" id="2ixru7rzWZbhDtlD5k1mrwhniGu" />
+  <component name="ProjectId" id="2j2fMYTVlid2TRZT3CdX6kO3Mry" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -216,12 +56,13 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;vfx&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;vfx-Hung&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -273,13 +114,14 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="63011af6-f4c3-4a14-b20c-aff937d67981" name="Changes" comment="" />
-      <created>1720443291601</created>
+      <changelist id="a6d8f654-96a8-4d8c-b60c-233031c2437c" name="Changes" comment="" />
+      <created>1720590048092</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1720443291601</updated>
-      <workItem from="1720443297420" duration="3091000" />
-      <workItem from="1720451485952" duration="17618000" />
+      <updated>1720590048092</updated>
+      <workItem from="1720590050542" duration="3898000" />
+      <workItem from="1720594009942" duration="93000" />
+      <workItem from="1720594121896" duration="9830000" />
     </task>
     <servers />
   </component>

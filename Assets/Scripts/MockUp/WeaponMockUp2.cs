@@ -11,13 +11,13 @@ namespace MockUp
         public override void Start()
         {
             
-            NormalSkills = new List<PSkill>
+            normalSkills = new List<PSkill>
             {
                 gameObject.AddComponent<Wp1>(),
                 gameObject.AddComponent<Wp1>(),
             };
             
-            SpecialSkills = new List<PSkill>
+            specialSkills = new List<PSkill>
             {
                 gameObject.AddComponent<Wp1>(),
             };

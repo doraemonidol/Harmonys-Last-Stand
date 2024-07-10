@@ -2,6 +2,7 @@ using DTO;
 using Logic.Helper;
 using Logic.MainCharacters;
 using Logic.Weapons;
+using UnityEngine;
 
 namespace Logic.Skills.Violin
 {
@@ -17,6 +18,7 @@ namespace Logic.Skills.Violin
 
         public override void Activate(ICharacter activator)
         {
+            Debug.Log("Activated Harmony Shiled");
             base.Activate(activator);
             User.ReceiveEffect(EffectHandle.Shielded, new EventDto
             {

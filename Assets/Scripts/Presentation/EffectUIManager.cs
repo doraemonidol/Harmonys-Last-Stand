@@ -45,7 +45,7 @@ namespace Presentation
 
         public void Start()
         {
-            StartCoroutine(Test());
+            // StartCoroutine(Test());
         }
         
         IEnumerator Test()
@@ -80,7 +80,7 @@ namespace Presentation
                     i++;
                 }
             }
-            Debug.Log(effects.Count);
+            
             if (effects.Count == 0)
             {
                 canvas.gameObject.SetActive(false);
