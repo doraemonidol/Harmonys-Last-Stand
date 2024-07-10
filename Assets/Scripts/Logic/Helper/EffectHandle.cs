@@ -49,11 +49,12 @@ namespace Logic.Helper
         public const int DisableHealing = 82;
         
         
+        
         // --------------------------------------- PARAMS ----------------------------------- //
         public const string HpDrain = "HpDrain";
         public const string HpReduce = "HpReduce";
         public const string HpGain = "HpGain";
-        public const string Timeout = "Timeout";
+        public const string Timeout = "timeout";
         
         // --------------------------------------- STATS ------------------------------------ //
         public const int MysticMelodyDmg = 15;

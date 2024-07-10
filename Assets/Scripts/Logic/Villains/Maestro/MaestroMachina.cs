@@ -15,13 +15,13 @@ namespace Logic.Villains.Maestro
             MAESTRO_MOVSPEED,
             MAESTRO_ATTACK
         ) {
-            VillainWeapon = Weapon.TransformInto(WeaponHandle.MmWeapon, this);
+            VillainWeapon = Weapon.TransformInto(WeaponHandle.MmWeapon);
             State = new MmSkillCasting(this);
         }
         
         public MaestroMachina(LogicObject another) : base(another)
         {
-            VillainWeapon = Weapon.TransformInto(WeaponHandle.MmWeapon, this);
+            VillainWeapon = Weapon.TransformInto(WeaponHandle.MmWeapon);
             State = new MmSkillCasting(this);
         }
         
@@ -48,7 +48,7 @@ namespace Logic.Villains.Maestro
         {
             if (base.GetAvailableSkills().Contains(4))
             {
-                this.VillainWeapon.Trigger(4);
+                this.VillainWeapon.Trigger(4, this);
             }
             else
             {

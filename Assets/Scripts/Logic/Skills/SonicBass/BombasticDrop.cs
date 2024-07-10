@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Common.Context;
 using DTO;
 using Logic.Helper;
 using Logic.Weapons;
@@ -28,25 +29,23 @@ namespace Logic.Skills.SonicBass
                 (float) context["y2"]
             );
             var distance = Utils.GetDistance(posAttacker, posTarget);
+            var boostAmount = GameContext.GetInstance().Get("dmg+");
             var dmgExp = distance switch
             {
-                < 1 => 70,
-                < 2 => 50,
-                < 3 => 30,
-                <= 4 => 10,
+                < 1 => 70 * (100 + boostAmount) / 100,
+                < 2 => 50 * (100 + boostAmount) / 100,
+                < 3 => 30 * (100 + boostAmount) / 100,
+                <= 4 => 10 * (100 + boostAmount) / 100,
                 _ => 0,
             };
             var args = new EventDto
             {
-                [EffectHandle.HpReduce] = dmgExp
+                [EffectHandle.HpReduce] = dmgExp,
+                ["timeout"] = 3,
             };
             target.ReceiveEffect(EffectHandle.GetHit, args);
             if (!target.IsEffectApplied(EffectHandle.Resonance)) return;
-            var args1 = new EventDto
-            {
-                ["timeout"] = 3,
-            };
-            target.ReceiveEffect(EffectHandle.Stunt, args1);
+            target.ReceiveEffect(EffectHandle.Stunt, args);
         }
     }
 }

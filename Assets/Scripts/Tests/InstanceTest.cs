@@ -2,17 +2,22 @@ using System;
 using System.Collections;
 using System.Text;
 using System.Threading;
+using Common;
+using Common.Context;
 using DTO;
 using Logic;
 using Logic.Facade;
+using Logic.Helper;
 using Logic.MainCharacters;
 using Logic.Skills;
 using Logic.Villains;
 using Logic.Villains.Maestro;
 using MockUp;
 using NUnit.Framework;
+using UnityEditor.TestTools.TestRunner.Api;
 using NUnit.Framework.Internal;
 using Presentation;
+using UnityEditor;
 using UnityEngine;
 using Assert = UnityEngine.Assertions.Assert;
 using Time = Logic.Helper.Time;
@@ -21,6 +26,12 @@ namespace Tests
 {
     public class InstanceTest
     {
+        [SetUp]
+        public void ResetGameContext()
+        {
+            GameContext.GetInstance().Do(BoostHandles.HardReset);
+        }
+        
         // A Test behaves as an ordinary method
         [Test]
         public void TestInstantiateCharacter()
@@ -87,6 +98,7 @@ namespace Tests
             LogicLayer.GetInstance().Observe(new EventDto
             {
                 Event = "CAST",
+                ["activator"] = aurelia.LogicHandle,
                 ["skill"] = weapon.GetNormalSkills()[0].LogicHandle,
             });
             Thread.Sleep(10000);
@@ -95,6 +107,7 @@ namespace Tests
                 LogicLayer.GetInstance().Observe(new EventDto
                 {
                     Event = "CAST",
+                    ["activator"] = aurelia.LogicHandle,
                     ["skill"] = weapon.GetNormalSkills()[0].LogicHandle,
                 });
                 Assert.IsTrue(false);
@@ -109,13 +122,13 @@ namespace Tests
         }
 
         [Test]
-        public void TestCharacterTakeEffectHallucination()
+        public void TestVillainTakeEffectGetHit()
         {
             var aurelia = new GameObject().AddComponent<AureliaMockUp>();
             aurelia.Start();
             var weapon = new GameObject().AddComponent<WeaponMockUp>();
             weapon.Start();
-            var villain = new GameObject().AddComponent<MaestroMockUp>();
+            var villain = new GameObject().AddComponent<LudwigMockUp>();
             villain.Start();
             LogicLayer.GetInstance().Observe(new EventDto
             {
@@ -126,29 +139,152 @@ namespace Tests
                 ["skill"] = weapon.GetNormalSkills()[0].LogicHandle,
             });
         }
+
+        [Test]
+        public void TestCharacterTakeEffectGetHitAndFear()
+        {
+            var aurelia = new GameObject().AddComponent<AureliaMockUp>();
+            aurelia.Start();
+            var villain = new GameObject().AddComponent<LudwigMockUp>();
+            villain.Start();
+            LogicLayer.GetInstance().Observe(new EventDto
+            {
+                Event = "GET_ATTACKED",
+                ["attacker"] = villain.LogicHandle,
+                ["target"] = aurelia.LogicHandle,
+                ["context"] = null,
+                ["skill"] = villain.weapon.GetNormalSkills()[0].LogicHandle,
+            });
+            Thread.Sleep(5000);
+        }
         
         [Test]
         public void TestCharacterTakeEffectBleeding()
         {
-            
+            var aurelia = new GameObject().AddComponent<AureliaMockUp>();
+            aurelia.Start();
+            var villain = new GameObject().AddComponent<MaestroMockUp>();
+            villain.Start();
+            LogicLayer.GetInstance().Observe(new EventDto
+            {
+                Event = "GET_ATTACKED",
+                ["attacker"] = villain.LogicHandle,
+                ["target"] = aurelia.LogicHandle,
+                ["context"] = null,
+                ["skill"] = villain.weapon.GetNormalSkills()[0].LogicHandle,
+            });
         }
         
         [Test]
         public void TestCharacterTakeEffectJinxed()
         {
+            var aurelia = new GameObject().AddComponent<AureliaMockUp>();
+            aurelia.Start();
+            var weapon = new GameObject().AddComponent<WeaponMockUp>();
+            weapon.Start();
             
+            LogicLayer.GetInstance().Observe(new EventDto
+            {
+                Event = "CAST",
+                ["activator"] = aurelia.LogicHandle,
+                ["skill"] = weapon.GetSpecialSkills()[0].LogicHandle,
+            });
+            
+            var villain = new GameObject().AddComponent<LudwigMockUp>();
+            villain.Start();
+            
+            LogicLayer.GetInstance().Observe(new EventDto
+            {
+                Event = "GET_ATTACKED",
+                ["attacker"] = aurelia.LogicHandle,
+                ["target"] = villain.LogicHandle,
+                ["context"] = null,
+                ["skill"] = weapon.GetNormalSkills()[0].LogicHandle,
+            });
+            
+            Thread.Sleep(5000);
         }
 
         [Test]
         public void TestCharacterTakeEffectNearsight()
         {
+            var villain = new GameObject().AddComponent<LudwigMockUp>();
+            villain.Start();
+            var aurelia = new GameObject().AddComponent<AureliaMockUp>();
+            aurelia.Start();
             
+            LogicLayer.GetInstance().Observe(new EventDto
+            {
+                Event = "GET_ATTACKED",
+                ["attacker"] = villain.LogicHandle,
+                ["target"] = aurelia.LogicHandle,
+                ["context"] = null,
+                ["skill"] = villain.weapon.GetNormalSkills()[1].LogicHandle,
+            });
         }
 
         [Test]
         public void TestCharacterTakeEffectCharm()
         {
+            var villain = new GameObject().AddComponent<AmadeusMockUp>();
+            villain.Start();
+            var aurelia = new GameObject().AddComponent<AureliaMockUp>();
+            aurelia.Start();
             
+            LogicLayer.GetInstance().Observe(new EventDto
+            {
+                Event = "GET_ATTACKED",
+                ["attacker"] = villain.LogicHandle,
+                ["target"] = aurelia.LogicHandle,
+                ["context"] = null,
+                ["skill"] = villain.weapon.GetSpecialSkills()[0].LogicHandle,
+            });
+            
+            Thread.Sleep(1000);
+            
+            var weapon = new GameObject().AddComponent<WeaponMockUp2>();
+            weapon.Start();
+            
+            LogicLayer.GetInstance().Observe(new EventDto
+            {
+                Event = "CAST",
+                ["activator"] = villain.LogicHandle,
+                ["skill"] = weapon.GetNormalSkills()[0].LogicHandle,
+            }); 
+            
+            Thread.Sleep(5000);
+            
+            LogicLayer.GetInstance().Observe(new EventDto
+            {
+                Event = "CAST",
+                ["activator"] = villain.LogicHandle,
+                ["skill"] = weapon.GetNormalSkills()[0].LogicHandle,
+            });
+        }
+
+        [Test]
+        public void TestCharacterTakeEffectHallucination()
+        {
+            var villain = new GameObject().AddComponent<AmadeusMockUp>();
+            villain.Start();
+            var aurelia = new GameObject().AddComponent<AureliaMockUp>();
+            aurelia.Start();
+            
+            LogicLayer.GetInstance().Observe(new EventDto
+            {
+                Event = "GET_ATTACKED",
+                ["attacker"] = villain.LogicHandle,
+                ["target"] = aurelia.LogicHandle,
+                ["context"] = null,
+                ["skill"] = villain.weapon.GetNormalSkills()[1].LogicHandle,
+            });
+            
+            LogicLayer.GetInstance().Observe(new EventDto
+            {
+                Event = "MOVE",
+                ["identity"] = aurelia.LogicHandle,
+                ["direction"] = ActionEvent.MoveUp,
+            });
         }
         
         [Test]
@@ -160,13 +296,54 @@ namespace Tests
         [Test]
         public void TestCharacterTakeEffectShielded()
         {
+            var aurelia = new GameObject().AddComponent<AureliaMockUp>();
+            aurelia.Start();
+            var weapon = new GameObject().AddComponent<WeaponMockUp2>();
+            weapon.Start();
             
+            LogicLayer.GetInstance().Observe(new EventDto
+            {
+                Event = "CAST",
+                ["activator"] = aurelia.LogicHandle,
+                ["skill"] = weapon.GetSpecialSkills()[0].LogicHandle,
+            });
+            
+            var villain = new GameObject().AddComponent<LudwigMockUp>();
+            villain.Start();
+            
+            LogicLayer.GetInstance().Observe(new EventDto
+            {
+                Event = "GET_ATTACKED",
+                ["attacker"] = villain.LogicHandle,
+                ["target"] = aurelia.LogicHandle,
+                ["context"] = null,
+                ["skill"] = villain.weapon.GetNormalSkills()[0].LogicHandle,
+            });
         }
         
         [Test]
-        public void TestCharacterTakeEffectStun()
+        public void TestCharacterTakeEffectStunt()
         {
+            var villain = new GameObject().AddComponent<AmadeusMockUp>();
+            villain.Start();
+            var aurelia = new GameObject().AddComponent<AureliaMockUp>();
+            aurelia.Start();
             
+            LogicLayer.GetInstance().Observe(new EventDto
+            {
+                Event = "GET_ATTACKED",
+                ["attacker"] = villain.LogicHandle,
+                ["target"] = aurelia.LogicHandle,
+                ["context"] = null,
+                ["skill"] = villain.weapon.GetNormalSkills()[0].LogicHandle,
+            });
+            
+            LogicLayer.GetInstance().Observe(new EventDto
+            {
+                Event = "MOVE",
+                ["identity"] = aurelia.LogicHandle,
+                ["direction"] = ActionEvent.MoveUp,
+            });
         }
         
         [Test]
@@ -183,6 +360,18 @@ namespace Tests
         
         [Test]
         public void TestCharacterTakeEffectSleepy()
+        {
+            
+        }
+        
+        [Test]
+        public void TestCharacterTakeEffectResistance()
+        {
+            
+        }
+        
+        [Test]
+        public void TestCharacterTakeEffectVoid()
         {
             
         }

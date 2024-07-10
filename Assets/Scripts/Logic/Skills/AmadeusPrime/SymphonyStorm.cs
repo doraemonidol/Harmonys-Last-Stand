@@ -16,15 +16,19 @@ namespace Logic.Skills.AmadeusPrime
 
         public override void Affect(ICharacter attacker, ICharacter target, EventDto context)
         {
-            target.ReceiveEffect(EffectHandle.GetHit, new EventDto
+            var args = new EventDto
             {
-                ["dmg"] = 10,
-            });
-            target.ReceiveEffect(EffectHandle.SlowDown, new EventDto
-            {
+                [EffectHandle.HpReduce] = 10,
                 ["timeout"] = 5,
-                ["stat"] = 50,
-            });
+                ["exHp"] = 0,
+                ["exAtkSpd"] = 0,
+                ["exDmg"] = 0,
+                ["exMSp"] = 50,
+                ["exMana"] = 0,
+            };
+            target.ReceiveEffect(EffectHandle.GetHit, args);
+            target.ReceiveEffect(EffectHandle.Exhausted, args);
+            target.ReceiveEffect(EffectHandle.Hallucinate, args);
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.Threading;
+using Common.Context;
 using DTO;
 using Logic.Helper;
 using Logic.Weapons;
@@ -19,18 +20,16 @@ namespace Logic.Skills.Saxophone
         {
             // Deals 20 HP damage per second to enemies within a 4-meter radius for 6 seconds.
             
-            var thread = new Thread(() =>
+            var boostAmount = GameContext.GetInstance().Get("dmg+");
+            var finalDmg = 20 * (100 + boostAmount) / 100;
+            
+            var args = new EventDto
             {
-                for (var i = 0; i < 6; i++)
-                {
-                    var args = new EventDto
-                    {
-                        [EffectHandle.HpReduce] = 20,
-                    };
-                    target.ReceiveEffect(EffectHandle.GetHit, args);
-                    Thread.Sleep(1000);
-                }
-            });
+                [EffectHandle.HpReduce] = finalDmg,
+                ["timeout"] = 6,
+            };
+            
+            target.ReceiveEffect(EffectHandle.GetHit, args);
         }
     }
 }

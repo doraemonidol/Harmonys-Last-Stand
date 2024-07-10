@@ -6,10 +6,11 @@ using Presentation;
 
 namespace MockUp
 {
-    public class WeaponMockUp : PWeapon
+    public class WeaponMockUp2 : PWeapon
     {
         public override void Start()
         {
+            
             NormalSkills = new List<PSkill>
             {
                 gameObject.AddComponent<Wp1>(),
@@ -21,17 +22,17 @@ namespace MockUp
                 gameObject.AddComponent<Wp1>(),
             };
 
-            LogicLayer.GetInstance().Instantiate(Google.Search("ins", "wam"), this);
+            LogicLayer.GetInstance().Instantiate(Google.Search("ins", "vio"), this);
         }
 
         public override void Update()
         {
-            
+            throw new System.NotImplementedException();
         }
 
         public override void AcceptAndUpdate(EventUpdateVisitor visitor)
         {
-            
+            throw new System.NotImplementedException();
         }
     }
 }

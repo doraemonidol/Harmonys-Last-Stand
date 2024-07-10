@@ -13,9 +13,16 @@ namespace MockUp
     {
         private float lastCastTime = 0.0f;
         private float cooldownTime = 1.0f;
+        public WeaponMockUp weapon;
         public override void Start()
         {
-            LogicLayer.GetInstance().Instantiate(Google.Search("ins", "mae"), this);
+            
+            
+            weapon = new GameObject().AddComponent<WeaponMockUp>();
+            
+            weapon.Start(); // In further development, this should be called in the derived class for the weapon of Ludwig
+            
+            LogicLayer.GetInstance().Instantiate(Google.Search("ins", "lud"), this);
         }
 
         public override void Update()

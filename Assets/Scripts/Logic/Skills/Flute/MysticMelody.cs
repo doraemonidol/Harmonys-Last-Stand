@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using Common.Context;
 using DTO;
 using Logic;
 using Logic.Helper;
@@ -22,9 +23,11 @@ namespace Logic.Skills.Flute
 
         public override void Affect(ICharacter attacker, ICharacter target, EventDto context)
         {
+            var boostAmount = GameContext.GetInstance().Get("dmg+");
+            var finalDmg = 10 * (100 + boostAmount) / 100;
             var args = new EventDto
             {
-                ["timeout"] = 10,
+                ["timeout"] = finalDmg,
             };
             attacker.ReceiveEffect(EffectHandle.Shielded, args);
         }

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using DTO;
-using UnityEngine;
 
 namespace Logic
 {
@@ -10,6 +9,6 @@ namespace Logic
         public void ReceiveEffect(int ev, EventDto args = null);
         public bool IsEffectApplied(int ev);
         public void OnDead();
-        public void Do(int action, Dictionary<string, Object> args);
+        public void Do(int action, Dictionary<string, object> args);
     }
 }

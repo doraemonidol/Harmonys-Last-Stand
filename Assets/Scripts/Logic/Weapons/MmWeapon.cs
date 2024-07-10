@@ -13,13 +13,5 @@ namespace Logic.Weapons
             Skills.Add(AcSkill.TransformInto(WeaponHandle.MmWeapon, this, 3));
             Skills.Add(AcSkill.TransformInto(WeaponHandle.MmWeapon, this, 4));
         }
-
-        public MmWeapon(Villain villain)
-        {
-            Skills.Add(AcSkill.TransformInto(WeaponHandle.MmWeapon, this, 1));
-            Skills.Add(AcSkill.TransformInto(WeaponHandle.MmWeapon, this, 2, user: villain));
-            Skills.Add(AcSkill.TransformInto(WeaponHandle.MmWeapon, this, 3));
-            Skills.Add(AcSkill.TransformInto(WeaponHandle.MmWeapon, this, 4));
-        }
     }
 }

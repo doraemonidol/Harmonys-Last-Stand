@@ -22,7 +22,9 @@ namespace Logic.Skills
         protected Weapon Owner;
         
         protected ICharacter User;
+        
         public long NextTimeToAvailable { get; set; }
+        
         protected long CoolDownTime { get; set; }
         
         protected bool Locked = false;
@@ -45,13 +47,20 @@ namespace Logic.Skills
             this.Owner = owner;
             this.CoolDownTime = coolDownTime;
         }
+        
+        protected AcSkill(Weapon owner, long coolDownTime, ICharacter user)
+        {
+            this.Owner = owner;
+            this.CoolDownTime = coolDownTime;
+            User = user;
+        }
 
         public bool IsAvailable()
         {
             return (!Locked) && (Time.WhatIsIt() >= NextTimeToAvailable);
         }
         
-        public static AcSkill TransformInto(int wpName, Weapon wp, int index, int coolDownTime = 5000, Villain user = null)
+        public static AcSkill TransformInto(int wpName, Weapon wp, int index, int coolDownTime = 5000, ICharacter user = null)
         {
             return wpName switch
             {
@@ -91,8 +100,8 @@ namespace Logic.Skills
                 {
                     1 => new StringStrike(wp, coolDownTime),
                     2 => new PowerChord(wp, coolDownTime),
-                    3 => new RiffRumble(wp, coolDownTime),
-                    4 => new SoloSurge(wp, coolDownTime),
+                    3 => new SoloSurge(wp, coolDownTime), 
+                    4 => new RiffRumble(wp, coolDownTime),
                     _ => throw new Exception("Unknown skill"),
                 },
                 WeaponHandle.Piano => index switch
@@ -131,8 +140,10 @@ namespace Logic.Skills
 
         public abstract void Affect(ICharacter attacker, ICharacter target, EventDto context);
 
-        public virtual void Activate()
+        public virtual void Activate(ICharacter activator)
         {
+            User = activator;
+            
             if (this.Locked)
             {
                 throw new Exception("Exception thrown when trying to activate a locked skill");
@@ -141,7 +152,9 @@ namespace Logic.Skills
             {
                 throw new Exception("Exception thrown when trying to activate a skill that is not available");
             }
+            
             this.NextTimeToAvailable = Time.WhatIsIt() + CoolDownTime;
+            
             this.Lock();
         }
         

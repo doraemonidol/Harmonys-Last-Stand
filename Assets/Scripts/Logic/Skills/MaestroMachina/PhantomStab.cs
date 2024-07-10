@@ -39,9 +39,9 @@ namespace Logic.Skills.MaestroMachina
             _inProcessThread.Start();
         }
 
-        public override void Activate()
+        public override void Activate(ICharacter activator)
         {
-            base.Activate();
+            base.Activate(activator);
             Update();
         }
 
@@ -55,7 +55,8 @@ namespace Logic.Skills.MaestroMachina
         {
             var eventd = new EventDto
             {
-                [EffectHandle.HpReduce] = 10,
+                [EffectHandle.HpReduce] = 50,
+                [EffectHandle.HpDrain] = 10,
                 ["timeout"] = 10,
             };
             target.ReceiveEffect(EffectHandle.GetHit, eventd);

@@ -11,51 +11,31 @@ namespace Logic.Effects
         
         public Bleeding(ICharacter character) : base(character: character)
         {
-            PreventActions = 0;
-            
-            // Update EffectEndTime to the current time + 6 seconds using System
-            EffectEndTime = System.DateTime.Now.AddMilliseconds(6000).Millisecond;
-
             Handle = EffectHandle.Bleeding;
         }
 
         public Bleeding(ICharacter character, int timeout) : base(character: character, timeout: timeout)
         {
-            PreventActions = 0;
-
-            EffectEndTime = System.DateTime.Now.AddMilliseconds(timeout).Millisecond;
-            
             Handle = EffectHandle.Bleeding;
         }
 
         public Bleeding(ICharacter character, int timeout, Dictionary<string, int> args) : base(character, timeout)
         {
+            Handle = EffectHandle.Bleeding;
             _hpDrain = args[EffectHandle.HpDrain];
         }
 
-        public override void Execute()
-        { 
-            // Open an thread
-            var thread = new Thread(() =>
+        protected override void Update()
+        {
+            Character.UpdateEffect(EffectHandle.Bleeding, new EventDto
             {
-                // While the current time is less than EffectEndTime
-                while (System.DateTime.Now.Millisecond < EffectEndTime)
-                {
-                    Character.UpdateEffect(EffectHandle.Bleeding, new EventDto
-                    {
-                        [EffectHandle.HpDrain] = _hpDrain
-                    });
-                    
-                    // Sleep for 1 second
-                    Thread.Sleep(1000);
-                }
-                
-                // Remove the bleeding effect
-                Character.ReceiveEffect(EffectHandle.DisableBleeding);
-                
-                // Notify the Effect Manager when the effect ends
-                NotifyWhenEnd();
+                [EffectHandle.HpDrain] = _hpDrain
             });
+        }
+        
+        protected override void Disable()
+        {
+            Character.ReceiveEffect(EffectHandle.DisableBleeding);
         }
     }
 }

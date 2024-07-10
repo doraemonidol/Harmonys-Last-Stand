@@ -2,6 +2,7 @@ using DTO;
 using Logic.Helper;
 using Logic.Weapons;
 
+
 namespace Logic.Skills.LudwigVanVortex
 {
     public class FuryOfTheFifth : AcSkill

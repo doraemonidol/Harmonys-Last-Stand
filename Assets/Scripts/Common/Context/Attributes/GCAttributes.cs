@@ -1,4 +1,4 @@
-namespace Logic.Context.Attributes
+namespace Common.Context.Attributes
 {
     public class GCAttributes
     {
@@ -9,10 +9,12 @@ namespace Logic.Context.Attributes
         private int _dfMovSpd;
 
         private int _curHp;
-        private int _curMana;
-        private int _curDmg;
-        private int _curMovSpd;
-        private int _curAtkSpd;
+
+        private int _chHp;
+        private int _chMana;
+        private int _chDmg;
+        private int _chMovSpd;
+        private int _chAtkSpd;
         
         public GCAttributes(int dfHp, int dfMana, int dfDmg, int dfAtkSpd, int dfMovSpd)
         {
@@ -21,6 +23,14 @@ namespace Logic.Context.Attributes
             _dfDmg = dfDmg;
             _dfAtkSpd = dfAtkSpd;
             _dfMovSpd = dfMovSpd;
+            
+            _curHp = _dfHp;
+            
+            _chHp = 0;
+            _chMana = 0;
+            _chDmg = 0;
+            _chAtkSpd = 0;
+            _chMovSpd = 0;
         }
 
         public int Query(
@@ -37,79 +47,145 @@ namespace Logic.Context.Attributes
                 case "g":
                     switch (vars)
                     {
+                        case "dhp":
+                            return _dfHp;
+                        case "dmana":
+                            return _dfMana;
+                        case "ddmg":
+                            return _dfDmg;
+                        case "datk-spd":
+                            return _dfAtkSpd;
+                        case "dmov-spd":
+                            return _dfMovSpd;
                         case "hp":
                             return _curHp;
-                        case "mana":
-                            return _curMana;
-                        case "dmg":
-                            return _curDmg;
-                        case "atk-spd":
-                            return _curAtkSpd;
-                        case "mov-spd":
-                            return _curMovSpd;
+                        case "hp+":
+                            return _chHp;
+                        case "mana+":
+                            return _chMana;
+                        case "dmg+":
+                            return _chDmg;
+                        case "atk-spd+":
+                            return _chAtkSpd;
+                        case "mov-spd+":
+                            return _chMovSpd;
                     }
                     break;
                 case "set":
                 case "s":
                     switch (vars)
                     {
-                        case "hp":
+                        case "dhp":
                             _dfHp = value;
-                            return _curHp;
-                        case "mana":
+                            return _dfHp;
+                        case "dmana":
                             _dfMana = value;
-                            return _curMana;
-                        case "dmg":
+                            return _dfMana;
+                        case "ddmg":
                             _dfDmg = value;
-                            return _curDmg;
-                        case "atk-spd":
+                            return _dfDmg;
+                        case "datk-spd":
                             _dfAtkSpd = value;
-                            return _curAtkSpd;
-                        case "mov-spd":
+                            return _dfAtkSpd;
+                        case "dmov-spd":
                             _dfMovSpd = value;
-                            return _curMovSpd;
+                            return _dfMovSpd;
+                        case "hp":
+                            _curHp = value;
+                            return _curHp;
+                        case "hp+":
+                            _chHp = value;
+                            return _chHp;
+                        case "mana+":
+                            _chMana = value;
+                            return _chMana;
+                        case "dmg+":
+                            _chDmg = value;
+                            return _chDmg;
+                        case "atk-spd+":
+                            _chAtkSpd = value;
+                            return _chAtkSpd;
+                        case "mov-spd+":
+                            _chMovSpd = value;
+                            return _chMovSpd;
                     }
                     break;
                 case "add":
                 case "+":
                     switch (vars)
                     {
-                        case "hp":
+                        case "dhp":
                             _dfHp += value;
-                            return _curHp;
-                        case "mana":
+                            return _dfHp;
+                        case "dmana":
                             _dfMana += value;
-                            return _curMana;
-                        case "dmg":
+                            return _dfMana;
+                        case "ddmg":
                             _dfDmg += value;
-                            return _curDmg;
-                        case "atk-spd":
+                            return _dfDmg;
+                        case "datk-spd":
                             _dfAtkSpd += value;
-                            return _curAtkSpd;
-                        case "mov-spd":
+                            return _dfAtkSpd;
+                        case "dmov-spd":
                             _dfMovSpd += value;
-                            return _curMovSpd;
+                            return _dfMovSpd;
+                        case "hp":
+                            _curHp += value;
+                            return _curHp;
+                        case "hp+":
+                            _chHp += value;
+                            return _chHp;
+                        case "mana+":
+                            _chMana += value;
+                            return _chMana;
+                        case "dmg+":
+                            _chDmg += value;
+                            return _chDmg;
+                        case "atk-spd+":
+                            _chAtkSpd += value;
+                            return _chAtkSpd;
+                        case "mov-spd+":
+                            _chMovSpd += value;
+                            return _chMovSpd;
                     }
                     break;
                 case "minus":
                 case "-":
                     switch (vars)
                     {
-                        case "hp":
+                        case "dhp":
                             _dfHp -= value;
-                            return _curHp;
-                        case "mana":
+                            return _dfHp;
+                        case "dmana":
                             _dfMana -= value;
-                            return _curMana;
-                        case "dmg":
+                            return _dfMana;
+                        case "ddmg":
                             _dfDmg -= value;
-                            return _curDmg;
-                        case "atk-spd":
+                            return _dfDmg;
+                        case "datk-spd":
                             _dfAtkSpd -= value;
-                            return _curAtkSpd;
-                        case "mov-spd":
+                            return _dfAtkSpd;
+                        case "dmov-spd":
                             _dfMovSpd -= value;
-                            return _curMovSpd;
+                            return _dfMovSpd;
+                        case "hp":
+                            _curHp -= value;
+                            return _curHp;
+                        case "hp+":
+                            _chHp -= value;
+                            return _chHp;
+                        case "mana+":
+                            _chMana -= value;
+                            return _chMana;
+                        case "dmg+":
+                            _chDmg -= value;
+                            return _chDmg;
+                        case "atk-spd+":
+                            _chAtkSpd -= value;
+                            return _chAtkSpd;
+                        case "mov-spd+":
+                            _chMovSpd -= value;
+                            return _chMovSpd;
                     }
                     break;
                 case "reset":
@@ -119,18 +195,21 @@ namespace Logic.Context.Attributes
                         case "hp":
                             _curHp = _dfHp;
                             return _curHp;
-                        case "mana":
-                            _curMana = _dfMana;
-                            return _curMana;
-                        case "dmg":
-                            _curDmg = _dfDmg;
-                            return _curDmg;
-                        case "atk-spd":
-                            _curAtkSpd = _dfAtkSpd;
-                            return _curAtkSpd;
-                        case "mov-spd":
-                            _curMovSpd = _dfMovSpd;
-                            return _curMovSpd;
+                        case "hp+":
+                            _chHp = 0;
+                            return _chHp;
+                        case "mana+":
+                            _chMana = 0;
+                            return _chMana;
+                        case "dmg+":
+                            _chDmg = 0;
+                            return _chDmg;
+                        case "atk-spd+":
+                            _chAtkSpd = 0;
+                            return _chAtkSpd;
+                        case "mov-spd+":
+                            _chMovSpd = 0;
+                            return _chMovSpd;
                     }
                     break;
             }

@@ -14,9 +14,9 @@ namespace Logic.Skills.MaestroMachina
         {
         }
 
-        public override void Activate()
+        public override void Activate(ICharacter activator)
         {
-            base.Activate();
+            base.Activate(activator);
             User.ReceiveEffect(EffectHandle.Resurrect);
         }
 
