@@ -19,6 +19,8 @@ namespace Logic.Villains
         
         public int MovSpeed { get; set; }
         
+        private readonly object _lock = new object();
+        
         public int Dmg { get; set; }
         
         private readonly EffectManager _effectManager;
@@ -58,7 +60,7 @@ namespace Logic.Villains
         
         protected virtual void CustomReceiveEffect(int ev, EventDto args = null)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void ReceiveEffect(int ev, EventDto args = null)
@@ -169,15 +171,15 @@ namespace Logic.Villains
             {
                 _effectManager.Erase(EffectHandle.Sleepy);
             }
-
-            var dmg = (int)args["dmg"];
-
-            var cxt = GameContext.GetInstance();
-            cxt.Do(BoostHandles.ReduceHealth, dmg);
             
-            var currentHp = GameContext.GetInstance().Get("hp");
+            var dmg = (int)args[EffectHandle.HpReduce];
+
+            lock (_lock)
+            {
+                this.Heath -= dmg;
             
-            if (IsDead(currentHp)) OnDead();
+                if (IsDead(this.Heath)) OnDead();
+            }
         }
 
         private static bool IsDead(int currentHp)
@@ -261,7 +263,7 @@ namespace Logic.Villains
             });
         }
 
-        public void Do(int action, Dictionary<string, Object> args)
+        public void Do(int action, Dictionary<string, object> args)
         {
             switch (action)
             {

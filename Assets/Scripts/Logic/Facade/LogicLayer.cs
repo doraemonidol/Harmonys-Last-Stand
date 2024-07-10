@@ -50,6 +50,9 @@ namespace Logic.Facade
                     or EntityType.GUITAR 
                     or EntityType.SAXOPHONE 
                     or EntityType.VIOLON 
+                    or EntityType.WEAPON_MAESTRO
+                    or EntityType.WEAPON_LUDWIG
+                    or EntityType.WEAPON_AMADEUS
                         => Weapon.TransformInto(type),
                 EntityType.AMADEUS => new AmadeusPrime(),
                 EntityType.LUDWIG => new LudwigVanVortex(),
@@ -109,6 +112,9 @@ namespace Logic.Facade
                 case EntityType.SAXOPHONE:
                 case EntityType.PIANO:
                 case EntityType.SUPERBASS:
+                case EntityType.WEAPON_LUDWIG:
+                case EntityType.WEAPON_MAESTRO:
+                case EntityType.WEAPON_AMADEUS:
                 {
                     var identity = new Identity();
 
@@ -234,8 +240,12 @@ namespace Logic.Facade
                 }
                 case "CAST":
                 {
+                    var activator = (ICharacter) _objects[(Identity) eventDto["activator"]];
                     var skill = (AcSkill) _objects[(Identity) eventDto["skill"]];
-                    skill.Activate();
+                    activator.Do(ActionEvent.CastSkill, new Dictionary<string, object>
+                    {
+                        ["skill"] = skill,
+                    });
                     break;
                 }
                 case "GET_ATTACKED":

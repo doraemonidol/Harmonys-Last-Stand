@@ -17,7 +17,7 @@ namespace MockUp
 
         public override void AcceptAndUpdate(EventUpdateVisitor visitor)
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

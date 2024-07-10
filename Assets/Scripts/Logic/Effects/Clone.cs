@@ -12,34 +12,22 @@ namespace Logic.Effects
     {
         public Clone(ICharacter character) : base(character)
         {
+            Handle = EffectHandle.Clone;
         }
 
         public Clone(ICharacter character, int timeout) : base(character, timeout)
         {
+            Handle = EffectHandle.Clone;
         }
 
         public Clone(ICharacter character, int timeout, Dictionary<string, int> furArgs) : base(character, timeout, furArgs)
         {
+            Handle = EffectHandle.Clone;
         }
 
-        public override void Execute()
+        protected override void Disable()
         {
-            var thread = new Thread(() =>
-            {
-                // Character.UpdateEffect(EffectHandle.Clone, new EventDto
-                // {
-                //     ["ev"] = "clone",
-                // });
-                
-                while (System.DateTime.Now.Millisecond < EffectEndTime)
-                {
-                    Thread.Sleep(1000);
-                }
-                
-                Character.ReceiveEffect(EffectHandle.DisableClone);
-                
-                NotifyWhenEnd();
-            });
+            Character.ReceiveEffect(EffectHandle.DisableClone);
         }
     }
 }

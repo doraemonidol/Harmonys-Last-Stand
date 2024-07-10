@@ -15,9 +15,9 @@ namespace Logic.Skills.Piano
         {
         }
 
-        public override void Activate()
+        public override void Activate(ICharacter activator)
         {
-            base.Activate();
+            base.Activate(activator);
             User.ReceiveEffect(EffectHandle.Healing, new EventDto
             {
                 ["timeout"] = 5,

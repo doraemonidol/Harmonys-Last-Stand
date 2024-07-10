@@ -14,13 +14,24 @@ namespace Logic.Skills.Guitar
         {
         }
 
-        public override void Affect(ICharacter attacker, ICharacter target, EventDto context)
+        public override void Activate(ICharacter activator)
         {
+            base.Activate(activator);
             var args = new EventDto
             {
-                [EffectHandle.HpReduce] = 35
-            };
-            target.ReceiveEffect(EffectHandle.GetHit, args);
+                ["boostHp"] = 0,
+                ["boostMSp"] = 0,
+                ["boostAtkSpd"] = 0,
+                ["boostMana"] = 0,
+                ["boostDmg"] = 30,
+                ["timeout"] = 10000,
+            }; 
+            User.ReceiveEffect(EffectHandle.Jinxed, args);
+        }
+
+        public override void Affect(ICharacter attacker, ICharacter target, EventDto context)
+        {
+            
         }
     }
 }

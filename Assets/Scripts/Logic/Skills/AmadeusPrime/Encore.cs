@@ -18,7 +18,7 @@ namespace Logic.Skills.AmadeusPrime
         {
             target.ReceiveEffect(EffectHandle.GetHit, new EventDto
             {
-                ["dmg"] = 30,
+                [EffectHandle.HpReduce] = 30,
             });
             target.ReceiveEffect(EffectHandle.Charm, new EventDto
             {

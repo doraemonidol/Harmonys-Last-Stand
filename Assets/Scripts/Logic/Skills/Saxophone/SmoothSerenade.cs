@@ -17,9 +17,9 @@ namespace Logic.Skills.Saxophone
         {
         }
 
-        public override void Activate()
+        public override void Activate(ICharacter activator)
         {
-            base.Activate();
+            base.Activate(activator);
             ((IMainCharacter)User).ReceiveEffect(EffectHandle.Healing, new EventDto
             {
                 [EffectHandle.HpGain] = 5,

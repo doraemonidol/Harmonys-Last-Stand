@@ -134,65 +134,65 @@ namespace MockUp
             switch (visitor["ev"]["type"])
             {
                 case "move":
-                    Vector2 direction = (Vector2)visitor["args"]["direction"];
-                    float distance = (float)visitor["args"]["distance"];
-                    
-                    transform.position = new Vector3(
-                        transform.position.x + direction.x * distance,
-                        transform.position.y,
-                        transform.position.z + direction.y * distance
-                    );
-                    break;
+                    // Vector2 direction = (Vector2)visitor["args"]["direction"];
+                    // float distance = (float)visitor["args"]["distance"];
+                    //
+                    // transform.position = new Vector3(
+                    //     transform.position.x + direction.x * distance,
+                    //     transform.position.y,
+                    //     transform.position.z + direction.y * distance
+                    // );
+                    // break;
                 case "dead":
-                    Debug.Log("Aurelia Dead Animation");
+                    // Debug.Log("Aurelia Dead Animation");
                     break;
                 case "start-effect":
                     switch (visitor["args"]["name"])
                     {
                         case EffectType.STUNT:
-                            Debug.Log("Aurelia Stunt Animation");
+                            // Debug.Log("Aurelia Stunt Animation");
                             break;
                         case EffectType.BLEEDING:
-                            Debug.Log("Aurelia Bleeding Animation");
+                            // Debug.Log("Aurelia Bleeding Animation");
                             break;
                         case EffectType.HALLUCINATION:
-                            Debug.Log("Aurelia Hallucination Animation");
+                            // Debug.Log("Aurelia Hallucination Animation");
                             break;
                         case EffectType.FEAR:
-                            Debug.Log("Aurelia Fear Animation");
+                            // Debug.Log("Aurelia Fear Animation");
                             break;
                         case EffectType.NEARSIGHT:
-                            Debug.Log("Aurelia Nearsight Animation");
+                            // Debug.Log("Aurelia Nearsight Animation");
                             break;
                         case EffectType.SHIELD:
-                            Debug.Log("Aurelia Shield Animation");
+                            // Debug.Log("Aurelia Shield Animation");
                             break;
                         case EffectType.ROOTED:
-                            Debug.Log("Aurelia Rooted Animation");
+                            // Debug.Log("Aurelia Rooted Animation");
                             break;
                         case EffectType.CLONE:
-                            Debug.Log("Aurelia Clone Animation");
+                            // Debug.Log("Aurelia Clone Animation");
                             break;
                         case EffectType.RESISTANCE:
-                            Debug.Log("Aurelia Resistance Animation");
+                            // Debug.Log("Aurelia Resistance Animation");
                             break;
                         case EffectType.JINX:
-                            Debug.Log("Aurelia Jinx Animation");
+                            // Debug.Log("Aurelia Jinx Animation");
                             break;
                         case EffectType.KNOCKBACK:
-                            Debug.Log("Aurelia Knockback Animation");
+                            // Debug.Log("Aurelia Knockback Animation");
                             break;
                         case EffectType.REVERSE:
-                            Debug.Log("Aurelia Reverse Animation");
+                            // Debug.Log("Aurelia Reverse Animation");
                             break;
                         case EffectType.CHARM:
-                            Debug.Log("Aurelia Charm Animation");
+                            // Debug.Log("Aurelia Charm Animation");
                             break;
                         case EffectType.GET_HIT:
-                            Debug.Log("Aurelia Get Hit Animation");
+                            // Debug.Log("Aurelia Get Hit Animation");
                             break;
                         default:
-                            Debug.Log("Aurelia Default Animation");
+                            // Debug.Log("Aurelia Default Animation");
                             break;
                     }
 
@@ -201,80 +201,80 @@ namespace MockUp
                     switch (visitor["args"]["name"])
                     {
                         case "stunt":
-                            Debug.Log("Aurelia Stunt Animation End");
+                            // Debug.Log("Aurelia Stunt Animation End");
                             break;
                         case EffectType.BLEEDING:
-                            Debug.Log("Aurelia Bleeding Animation End");
+                            // Debug.Log("Aurelia Bleeding Animation End");
                             break;
                         case EffectType.HALLUCINATION:
-                            Debug.Log("Aurelia Hallucination Animation End");
+                            // Debug.Log("Aurelia Hallucination Animation End");
                             break;
                         case EffectType.FEAR:
-                            Debug.Log("Aurelia Fear Animation End");
+                            // Debug.Log("Aurelia Fear Animation End");
                             break;
                         case EffectType.NEARSIGHT:
-                            Debug.Log("Aurelia Nearsight Animation End");
+                            // Debug.Log("Aurelia Nearsight Animation End");
                             break;
                         case EffectType.SHIELD:
-                            Debug.Log("Aurelia Shield Animation End");
+                            // Debug.Log("Aurelia Shield Animation End");
                             break;
                         case EffectType.ROOTED:
-                            Debug.Log("Aurelia Rooted Animation End");
+                            // Debug.Log("Aurelia Rooted Animation End");
                             break;
                         case EffectType.CLONE:
-                            Debug.Log("Aurelia Clone Animation End");
+                            // Debug.Log("Aurelia Clone Animation End");
                             break;
                         case EffectType.RESISTANCE:
-                            Debug.Log("Aurelia Resistance Animation End");
+                            // Debug.Log("Aurelia Resistance Animation End");
                             break;
                         case EffectType.JINX:
-                            Debug.Log("Aurelia Jinx Animation End");
+                            // Debug.Log("Aurelia Jinx Animation End");
                             break;
                         case EffectType.KNOCKBACK :
-                            Debug.Log("Aurelia Knockback Animation End");
+                            // Debug.Log("Aurelia Knockback Animation End");
                             break;
                         case EffectType.REVERSE:
-                            Debug.Log("Aurelia Reverse Animation End");
+                            // Debug.Log("Aurelia Reverse Animation End");
                             break;
                         case EffectType.CHARM:
-                            Debug.Log("Aurelia Charm Animation End");
+                            // Debug.Log("Aurelia Charm Animation End");
                             break;
                         case EffectType.GET_HIT:
-                            Debug.Log("Aurelia Get Hit Animation End");
+                            // Debug.Log("Aurelia Get Hit Animation End");
                             break;
                         default:
-                            Debug.Log("Aurelia Default Animation End");
+                            // Debug.Log("Aurelia Default Animation End");
                             break;
                     }
                     break;
                 case "change-wp":
-                    Debug.Log("Aurelia Change Weapon Animation");
+                    // Debug.Log("Aurelia Change Weapon Animation");
                     break;
                 case "cast":
                     switch (visitor["args"]["skill-index"])
                     {
                         case 0:
-                            Debug.Log("Aurelia Cast Skill 0 Animation");
+                            // Debug.Log("Aurelia Cast Skill 0 Animation");
                             break;
                         case 1:
-                            Debug.Log("Aurelia Cast Skill 1 Animation");
+                            // Debug.Log("Aurelia Cast Skill 1 Animation");
                             break;
                         case 2:
-                            Debug.Log("Aurelia Cast Skill 2 Animation");
+                            // Debug.Log("Aurelia Cast Skill 2 Animation");
                             break;
                         case 3:
-                            Debug.Log("Aurelia Cast Skill 3 Animation");
+                            // Debug.Log("Aurelia Cast Skill 3 Animation");
                             break;
                         case 4:
-                            Debug.Log("Aurelia Cast Skill 4 Animation");
+                            // Debug.Log("Aurelia Cast Skill 4 Animation");
                             break;
                         default:
-                            Debug.LogError("Aurelia Unknown Cast: " + visitor["args"]["skill-index"]);
+                            // Debug.LogError("Aurelia Unknown Cast: " + visitor["args"]["skill-index"]);
                             break;
                     }
                     break;
                 default:
-                    Debug.LogError("Unknown Event: " + visitor["ev"]["type"]);
+                    // Debug.LogError("Unknown Event: " + visitor["ev"]["type"]);
                     break;
             }
         }

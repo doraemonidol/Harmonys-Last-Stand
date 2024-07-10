@@ -8,29 +8,22 @@ namespace Logic.Effects
     {
         public Hallucination(ICharacter character) : base(character)
         {
+            Handle = EffectHandle.Hallucinate;
         }
 
         public Hallucination(ICharacter character, int timeout) : base(character, timeout)
         {
+            Handle = EffectHandle.Hallucinate;
         }
 
         public Hallucination(ICharacter character, int timeout, Dictionary<string, int> furArgs) : base(character, timeout, furArgs)
         {
+            Handle = EffectHandle.Hallucinate;
         }
 
-        public override void Execute()
+        protected override void Disable()
         {
-            var thread = new Thread(() =>
-            {
-                while (System.DateTime.Now.Millisecond < EffectEndTime)
-                {
-                    Thread.Sleep(1000);
-                }
-                
-                Character.ReceiveEffect(EffectHandle.DisableHallucinate);
-                
-                NotifyWhenEnd();
-            });
+            Character.ReceiveEffect(EffectHandle.DisableHallucinate);
         }
     }
 }

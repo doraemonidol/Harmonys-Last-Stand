@@ -16,15 +16,15 @@ namespace Logic.Skills.Piano
         {
         }
 
-        public override void Activate()
+        public override void Activate(ICharacter activator)
         {
-            base.Activate();
-            ((IMainCharacter)User).ReceiveEffect(EffectHandle.Jinxed, new EventDto
+            base.Activate(activator);
+            User.ReceiveEffect(EffectHandle.Jinxed, new EventDto
             {
                 ["dmp"] = 0,
                 ["mana"] = 0,
-                ["movspd"] = 0,
-                ["atkspd"] = 0,
+                ["movspd"] = 30,
+                ["atkspd"] = 20,
                 ["hp"] = 0,
                 ["timeout"] = 10,
             });

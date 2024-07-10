@@ -53,6 +53,9 @@ namespace Logic.Helper
                 "amadeus" or "ama" => EntityType.AMADEUS,
                 "ludwig" or "lud" => EntityType.LUDWIG,
                 "maestro" or "mae" => EntityType.MAESTRO,
+                "weapon_maestro" or "wma" => EntityType.WEAPON_MAESTRO,
+                "weapon_ludwig" or "wlu" => EntityType.WEAPON_LUDWIG,
+                "weapon_amadeus" or "wam" => EntityType.WEAPON_AMADEUS,
                 _ => throw new System.Exception("Key not found at page instantiate")
             };
         }

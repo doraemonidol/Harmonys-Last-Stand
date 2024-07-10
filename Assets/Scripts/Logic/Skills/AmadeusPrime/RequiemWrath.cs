@@ -21,7 +21,7 @@ namespace Logic.Skills.AmadeusPrime
         {
             var args = new EventDto
             {
-                ["dmg"] = 15,
+                [EffectHandle.HpReduce] = 15,
                 ["timeout"] = 3,
             };
             target.ReceiveEffect(EffectHandle.GetHit, args);

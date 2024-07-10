@@ -6,6 +6,7 @@ using DTO;
 using Logic.Context;
 using Logic.Effects;
 using Logic.Helper;
+using Logic.Skills;
 using Logic.Weapons;
 using UnityEngine;
 using Action = Common.ActionEvent;
@@ -15,8 +16,6 @@ namespace Logic.MainCharacters
 {
     public class Aurelia : LogicObject, IMainCharacter
     {
-        private GameContext _context;
-        
         private readonly EffectManager _effectManager;
 
         public List<Weapon> _weapons { get; }
@@ -26,6 +25,7 @@ namespace Logic.MainCharacters
         public Aurelia()
         {
             _weapons = new List<Weapon>();
+            _effectManager = new EffectManager();
         }
 
         public Aurelia(List<int> wpLists)
@@ -59,17 +59,19 @@ namespace Logic.MainCharacters
         {
             try
             {
-                var timeout = (int)args![EffectHandle.Timeout];
+                var _context = GameContext.GetInstance();
                 switch (ev)
                 {
                     case EffectHandle.Bleeding:
                     {
+                        var timeout = (int)args![EffectHandle.Timeout];
                         if (_effectManager.CheckIfEffectApply(EffectHandle.Resistance))
                         {
                             return;
                         }
 
                         var hpDrain = (int)args![EffectHandle.HpDrain];
+                        
                         _effectManager.Add(new Bleeding(this, timeout,
                             new Dictionary<string, int>
                             {
@@ -79,6 +81,8 @@ namespace Logic.MainCharacters
                     }
                     case EffectHandle.Stunt:
                     {
+                        var timeout = (int)args![EffectHandle.Timeout];
+                        
                         if (_effectManager.CheckIfEffectApply(EffectHandle.Resistance))
                         {
                             return;
@@ -89,38 +93,44 @@ namespace Logic.MainCharacters
                     }
                     case EffectHandle.Hallucinate:
                     {
+                        var timeout = (int)args![EffectHandle.Timeout];
                         if (_effectManager.CheckIfEffectApply(EffectHandle.Resistance))
                         {
                             return;
                         }
-                        // _effectManager.Add(new Hallucination(this, timeout));
+                        _effectManager.Add(new Hallucination(this, timeout));
                         break;
                     }
                     case EffectHandle.Fear:
                     {
+                        var timeout = (int)args![EffectHandle.Timeout];
                         if (_effectManager.CheckIfEffectApply(EffectHandle.Resistance))
                         {
                             return;
                         }
 
-                        // _effectManager.Add(new Fear(this, timeout));
+                        _effectManager.Add(new Fear(this, timeout));
                         break;
                     }
                     case EffectHandle.Nearsight:
                     {
+                        var timeout = (int)args![EffectHandle.Timeout];
                         if (_effectManager.CheckIfEffectApply(EffectHandle.Resistance))
                         {
                             return;
                         }
-
+                        _effectManager.Add(new Nearsight(this, timeout));
                         break;
                     }
                     case EffectHandle.Shielded:
                     {
+                        var timeout = (int)args![EffectHandle.Timeout];
+                        _effectManager.Add(new Shielded(this, timeout));
                         break;
                     }
                     case EffectHandle.Rooted:
                     {
+                        var timeout = (int)args![EffectHandle.Timeout];
                         if (_effectManager.CheckIfEffectApply(EffectHandle.Resistance))
                         {
                             return;
@@ -130,6 +140,7 @@ namespace Logic.MainCharacters
                     }
                     case EffectHandle.SlowDown:
                     {
+                        var timeout = (int)args![EffectHandle.Timeout];
                         if (_effectManager.CheckIfEffectApply(EffectHandle.Resistance))
                         {
                             return;
@@ -139,6 +150,7 @@ namespace Logic.MainCharacters
                     }
                     case EffectHandle.Silent:
                     {
+                        var timeout = (int)args![EffectHandle.Timeout];
                         if (_effectManager.CheckIfEffectApply(EffectHandle.Resistance))
                         {
                             return;
@@ -148,29 +160,69 @@ namespace Logic.MainCharacters
                     }
                     case EffectHandle.Clone:
                     {
+                        var timeout = (int)args![EffectHandle.Timeout];
                         break;
                     }
                     case EffectHandle.Resistance:
                     {
+                        var timeout = (int)args![EffectHandle.Timeout];
                         break;
                     }
                     case EffectHandle.Charm:
                     {
+                        var timeout = (int)args![EffectHandle.Timeout];
+                        if (_effectManager.CheckIfEffectApply(EffectHandle.Resistance))
+                        {
+                            return;
+                        }
+                        _effectManager.Add(new Charm(this, timeout));
                         break;
                     }
                     case EffectHandle.Healing:
                     {
+                        var timeout = (int)args![EffectHandle.Timeout];
                         _context.Do(BoostHandles.BoostHealth, (int)args![EffectHandle.HpGain]);
+                        break;
+                    }
+                    case EffectHandle.Jinxed:
+                    {
+                        var timeout = (int)args![EffectHandle.Timeout];
+                        _effectManager.Add(new Jinxed(this, timeout, new Dictionary<string, int>
+                        {
+                            ["boostHp"] = (int)args!["boostHp"],
+                            ["boostMSp"] = (int)args!["boostMSp"],
+                            ["boostAtkSpd"] = (int)args!["boostAtkSpd"],
+                            ["boostMana"] = (int)args!["boostMana"],
+                            ["boostDmg"] = (int)args!["boostDmg"],
+                        }));
+                        break;
+                    }
+                    case EffectHandle.Exhausted:
+                    {
+                        if (_effectManager.CheckIfEffectApply(EffectHandle.Resistance))
+                        {
+                            return;
+                        }
+                        var timeout = (int)args![EffectHandle.Timeout];
+                        _effectManager.Add(new Exhaust(this, timeout, new Dictionary<string, int>
+                        {
+                            ["exHp"] = (int)args!["exHp"],
+                            ["exMSp"] = (int)args!["exMSp"],
+                            ["exAtkSpd"] = (int)args!["exAtkSpd"],
+                            ["exMana"] = (int)args!["exMana"],
+                            ["exDmg"] = (int)args!["exDmg"],
+                        }));
                         break;
                     }
                     case EffectHandle.GetHit:
                     {
-                        var dmg = (float) args![EffectHandle.HpReduce];
+                        var dmg = (int) args![EffectHandle.HpReduce];
+                        var fdmg = dmg * 1f;
                         if (_effectManager.CheckIfEffectApply(EffectHandle.Shielded))
                         {
-                            dmg *= 0.3f;
+                            fdmg *= 0.3f;
                         }
-                        _context.Do(BoostHandles.ReduceHealth, (int) dmg);
+                        _context.Do(BoostHandles.ReduceHealth, (int) fdmg);
                         var currentHp = GameContext.GetInstance().Get("hp");
                         if (IsDead(currentHp)) OnDead();
                         break;
@@ -185,6 +237,7 @@ namespace Logic.MainCharacters
                     case EffectHandle.DisableClone:
                     case EffectHandle.DisableHealing:
                     case EffectHandle.DisableSilent:
+                    case EffectHandle.DisableShielded:
                         this.NotifySubscribers(new EventUpdateVisitor
                         {
                             ["ev"] =
@@ -201,7 +254,7 @@ namespace Logic.MainCharacters
                         throw new Exception("Thrown at Aurelia.ReceiveEffect(). Invalid effect type.");
                 }
             } catch (NullReferenceException e) {
-                Debug.Log("Thrown at Aurelia.ReceiveEffect(). Arguments is null.\n" + e.Message);
+                Debug.Log("Thrown at Aurelia.ReceiveEffect(). Arguments is null.\n" + e.StackTrace);
                 throw;
             }
         }
@@ -235,6 +288,7 @@ namespace Logic.MainCharacters
         {
             try
             {
+                var _context = GameContext.GetInstance();
                 switch (ev)
                 {
                     case EffectHandle.Bleeding:
@@ -272,7 +326,7 @@ namespace Logic.MainCharacters
             }
         }
 
-        public void Do(int action, Dictionary<string, Object> args)
+        public void Do(int action, Dictionary<string, object> args)
         {
             switch (action)
             {
@@ -305,16 +359,16 @@ namespace Logic.MainCharacters
                         ["ev"] =
                         {
                             ["type"] = "move",
+                        },
+                        ["args"] =
+                        {
                             ["direction"] = logicAction,
-                            ["distance"] = GameContext.GetInstance().Get("moveSpeed"),
+                            ["distance"] = (100 + GameContext.GetInstance().Get("mov-spd+")) / 100f,
                         }
                     });
                     break;
                 }
-                case Action.CastSkill1:
-                case Action.CastSkill2:
-                case Action.CastSkill3:
-                case Action.CastSkill4:
+                case Action.CastSkill:
                 {
                     if (_effectManager.CheckIfEffectApply(EffectHandle.Stunt)
                         || _effectManager.CheckIfEffectApply(EffectHandle.Fear)
@@ -324,11 +378,11 @@ namespace Logic.MainCharacters
                     ) {
                         return;
                     }
-                    this._activeWeapon.Skills[action - 8].Activate();
+                    var skill = (AcSkill)args["skill"];
+                    skill.Activate(this);
                     break;
                 }
             }
-            throw new System.NotImplementedException();
         }
 
         public void ReceiveNewWeapon(int weapon)
@@ -360,6 +414,7 @@ namespace Logic.MainCharacters
 
         private void UpdateEffectOnBleeding(EventDto args = null)
         {
+            var _context = GameContext.GetInstance();
             _context.Do(BoostHandles.ReduceHealth, (int)args![EffectHandle.HpDrain]);
             var currentHp = GameContext.GetInstance().Get("hp");
             if (IsDead(currentHp)) OnDead();

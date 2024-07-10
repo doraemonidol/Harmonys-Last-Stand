@@ -94,18 +94,9 @@ namespace Logic.Skills.MaestroMachina
             thread.Start();
         }
 
-        public override void Activate()
+        public override void Activate(ICharacter activator)
         {
-            if (this.Locked)
-            {
-                throw new Exception("Exception thrown when trying to activate a locked skill");
-            }
-            if (this.NextTimeToAvailable > Time.WhatIsIt())
-            {
-                throw new Exception("Exception thrown when trying to activate a skill that is not available");
-            }
-            this.NextTimeToAvailable = Time.WhatIsIt() + CoolDownTime;
-            this.Lock();
+            base.Activate(activator);
             Update();
         }
 

@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Threading;
+using Logic.Helper;
 
 namespace Logic.Effects
 {
@@ -6,19 +8,22 @@ namespace Logic.Effects
     {
         public Resistance(ICharacter character) : base(character)
         {
+            Handle = EffectHandle.Resistance;
         }
 
         public Resistance(ICharacter character, int timeout) : base(character, timeout)
         {
+            Handle = EffectHandle.Resistance;
         }
 
         public Resistance(ICharacter character, int timeout, Dictionary<string, int> fur_args) : base(character, timeout, fur_args)
         {
+            Handle = EffectHandle.Resistance;
         }
 
-        public override void Execute()
+        protected override void Disable()
         {
-            throw new System.NotImplementedException();
+            Character.ReceiveEffect(EffectHandle.DisableResistance);
         }
     }
 }

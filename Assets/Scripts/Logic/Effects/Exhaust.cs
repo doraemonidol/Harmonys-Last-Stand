@@ -18,18 +18,21 @@ namespace Logic.Effects
         
         public Exhaust(ICharacter character) : base(character)
         {
+            Handle = EffectHandle.Exhausted;
         }
 
         public Exhaust(ICharacter character, int timeout) : base(character, timeout)
         {
+            Handle = EffectHandle.Exhausted;
         }
 
         public Exhaust(ICharacter character, int timeout, Dictionary<string, int> furArgs) : 
             base(character, timeout, furArgs)
         {
+            Handle = EffectHandle.Exhausted;
             ExHp = furArgs["exHp"];
             ExMSp = furArgs["exMSp"];
-            ExASp = furArgs["exASp"];
+            ExASp = furArgs["exAtkSpd"];
             ExMana = furArgs["exMana"];
             ExDmg = furArgs["exDmg"];
             ExRange |= (ExHp > 0) ? 1 : 0;
@@ -39,20 +42,9 @@ namespace Logic.Effects
             ExRange |= (ExDmg > 0) ? 16 : 0;
         }
         
-
-        public override void Execute()
+        protected override void Disable()
         {
-            var thread = new Thread(() =>
-            {
-                while (System.DateTime.Now.Millisecond < EffectEndTime)
-                {
-                    Thread.Sleep(1000);
-                }
-                
-                Character.ReceiveEffect(EffectHandle.DisableExhausted);
-                
-                NotifyWhenEnd();
-            });
+            Character.ReceiveEffect(EffectHandle.DisableExhausted);
         }
     }
 }

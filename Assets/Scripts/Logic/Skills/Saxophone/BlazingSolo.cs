@@ -1,3 +1,4 @@
+using Common.Context;
 using DTO;
 using Logic.Helper;
 using Logic.Weapons;
@@ -16,17 +17,16 @@ namespace Logic.Skills.Saxophone
 
         public override void Affect(ICharacter attacker, ICharacter target, EventDto context)
         {
+            var boostAmount = GameContext.GetInstance().Get("dmg+");
+            var finalDmg = 10 * (100 + boostAmount) / 100;
             var args = new EventDto
             {
-                [EffectHandle.HpReduce] = 10
-            };
-            target.ReceiveEffect(EffectHandle.GetHit, args);
-            var args1 = new EventDto
-            {
+                [EffectHandle.HpReduce] = finalDmg,
                 [EffectHandle.HpDrain] = 3,
                 ["timeout"] = 10,
             };
-            target.ReceiveEffect(EffectHandle.Bleeding, args1);
+            target.ReceiveEffect(EffectHandle.GetHit, args);
+            target.ReceiveEffect(EffectHandle.Bleeding, args);
         }
     }
 }

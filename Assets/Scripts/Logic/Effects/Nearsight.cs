@@ -7,39 +7,24 @@ namespace Logic.Effects
 { 
     public class Nearsight : EffectCommand
     {
-        private int _nearsightValue = 0; // out of 100
         public Nearsight(ICharacter character) : base(character)
         {
+            Handle = EffectHandle.Nearsight;
         }
 
         public Nearsight(ICharacter character, int timeout) : base(character, timeout)
         {
+            Handle = EffectHandle.Nearsight;
         }
 
         public Nearsight(ICharacter character, int timeout, Dictionary<string, int> furArgs) : base(character, timeout, furArgs)
         {
-            _nearsightValue = furArgs["nearsightValue"];
+            Handle = EffectHandle.Nearsight;
         }
 
-        public override void Execute()
+        protected override void Disable()
         {
-            var thread = new Thread(() =>
-            {
-                // Character.ReceiveEffect(EffectHandle.Nearsight, new EventDto
-                // {
-                //     ["ev"] = "nearsight",
-                //     ["nearsightValue"] = _nearsightValue
-                // });
-            
-                while (System.DateTime.Now.Millisecond < EffectEndTime)
-                {
-                    Thread.Sleep(1000);
-                }
-                
-                Character.ReceiveEffect(EffectHandle.DisableNearsight);
-            
-                NotifyWhenEnd();
-            });
+            Character.ReceiveEffect(EffectHandle.DisableNearsight);
         }
     }
 }

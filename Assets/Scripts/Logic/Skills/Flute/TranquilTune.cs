@@ -18,7 +18,7 @@ namespace Logic.Skills.Flute
         {
             var args = new EventDto
             {
-                ["dmg"] = 0,
+                ["dmg"] = 20,
                 ["hp"] = 0,
                 ["mana"] = 0,
                 ["timeout"] = 10,

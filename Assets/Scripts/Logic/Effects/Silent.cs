@@ -7,40 +7,22 @@ namespace Logic.Effects
     {
         public Silent(ICharacter character) : base(character)
         {
-            PreventActions |= (1 << MotionHandle.MotionAttack);
-            
-            // Automatically timeout is 5 seconds.
-            EffectEndTime = System.DateTime.Now.AddMilliseconds(5000).Millisecond;
-            
             Handle = EffectHandle.Silent;
         }
 
         public Silent(ICharacter character, int timeout) : base(character, timeout)
         {
-            PreventActions |= (1 << MotionHandle.MotionAttack);
-            
-            EffectEndTime = System.DateTime.Now.AddMilliseconds(timeout).Millisecond;
-
+            Handle = EffectHandle.Silent;
+        }
+        
+        public Silent(ICharacter character, int timeout, int shieldValue) : base(character, timeout)
+        {
             Handle = EffectHandle.Silent;
         }
 
-        public override void Execute()
+        protected override void Disable()
         {
-            var thread = new Thread(() =>
-            {
-                
-                // While the current time is less than EffectEndTime
-                while (System.DateTime.Now.Millisecond < EffectEndTime)
-                {
-                    // Sleep for 1 second
-                    Thread.Sleep(1000);
-                }
-                
-                Character.ReceiveEffect(EffectHandle.DisableSilent);
-                
-                // Notify the Effect Manager when the effect ends
-                NotifyWhenEnd();
-            });
+            Character.ReceiveEffect(EffectHandle.DisableSilent);
         }
     }
 }

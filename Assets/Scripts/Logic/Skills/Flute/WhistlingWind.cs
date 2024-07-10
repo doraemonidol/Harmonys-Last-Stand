@@ -14,13 +14,18 @@ namespace Logic.Skills.Flute
         {
         }
 
-        public override void Affect(ICharacter attacker, ICharacter target, EventDto context)
+        public override void Activate(ICharacter activator)
         {
+            base.Activate(activator);
             var args = new EventDto
             {
-                [EffectHandle.HpReduce] = EffectHandle.MysticMelodyDmg
+                ["timeout"] = 10000,
             };
-            target.ReceiveEffect(EffectHandle.GetHit, args);
+            User.ReceiveEffect(EffectHandle.Resistance, args);
+        }
+
+        public override void Affect(ICharacter attacker, ICharacter target, EventDto context)
+        {
         }
     }
 }

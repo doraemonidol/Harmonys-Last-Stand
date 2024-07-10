@@ -14,21 +14,24 @@ namespace MockUp
             {
                 gameObject.AddComponent<Wp1>(),
                 gameObject.AddComponent<Wp1>(),
+            };
+            
+            SpecialSkills = new List<PSkill>
+            {
                 gameObject.AddComponent<Wp1>(),
-                gameObject.AddComponent<Wp1>()
             };
 
-            LogicLayer.GetInstance().Instantiate(Google.Search("ins", "flu"), this);
+            LogicLayer.GetInstance().Instantiate(Google.Search("ins", "wam"), this);
         }
 
         public override void Update()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public override void AcceptAndUpdate(EventUpdateVisitor visitor)
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

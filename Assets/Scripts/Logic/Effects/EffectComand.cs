@@ -1,13 +1,13 @@
 using System.Collections.Generic;
+using System.Threading;
 using Logic.Effects;
+using Logic.Helper;
 
 namespace Logic.Effects
 {
     public abstract class EffectCommand
     {
         public int Handle { get; set; }
-        
-        protected int PreventActions = 0;
 
         protected long EffectEndTime;
         
@@ -18,11 +18,12 @@ namespace Logic.Effects
         protected EffectCommand(ICharacter character)
         {
             Character = character;
+            EffectEndTime = Time.WhatIsIt() + 5000;
         }
 
         protected EffectCommand(ICharacter character, int timeout) : this(character)
         {
-            EffectEndTime = System.DateTime.Now.AddMilliseconds(timeout).Millisecond;
+            EffectEndTime = Time.WhatIsIt() + timeout;
         }
 
         protected EffectCommand(
@@ -34,23 +35,53 @@ namespace Logic.Effects
             
         }
 
-        public bool IsPreventing(int motion)
+        protected virtual void Update()
         {
-            // using bitwise to check if motion is in PreventActions
-            return (PreventActions & (1 << motion)) != 0;
+            
         }
 
-        public abstract void Execute();
+        protected abstract void Disable();
+
+        public virtual void Execute()
+        {
+            var thread = new Thread(() =>
+            {
+                
+                while (Time.WhatIsIt() < EffectEndTime)
+                {
+                    this.Update();
+                    
+                    Thread.Sleep(1000);
+                }
+                
+                this.Disable();
+                
+                NotifyWhenEnd();
+            });
+            
+            thread.Start();
+        }
 
         public  bool IsExpired()
         {
-            return System.DateTime.Now.Millisecond >= EffectEndTime;
+            var currentTime = Time.WhatIsIt();
+            return currentTime >= EffectEndTime;
         }
         
         public void NotifyWhenEnd()
         {
             // Refresh the effect manager
             _effectManager.Refresh(Handle);
+        }
+
+        public void GetManagedBy(EffectManager effectManager)
+        {
+            _effectManager = effectManager;
+        }
+        
+        public void StopGetManaged()
+        {
+            _effectManager = null;
         }
     }
 }

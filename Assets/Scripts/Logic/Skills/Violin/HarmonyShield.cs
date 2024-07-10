@@ -15,9 +15,9 @@ namespace Logic.Skills.Violin
         {
         }
 
-        public override void Activate()
+        public override void Activate(ICharacter activator)
         {
-            base.Activate();
+            base.Activate(activator);
             User.ReceiveEffect(EffectHandle.Shielded, new EventDto
             {
                 ["timeout"] = 10,
@@ -27,7 +27,6 @@ namespace Logic.Skills.Violin
 
         public override void Affect(ICharacter attacker, ICharacter target, EventDto context)
         {
-            throw new System.NotImplementedException();
         }
     }
 }

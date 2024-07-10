@@ -1,4 +1,5 @@
 using System.Collections;
+using Common.Context.Attributes;
 using Logic.Context.Attributes;
 using Logic.Helper;
 
@@ -13,8 +14,6 @@ namespace Common.Context
         private static GCAttributes _attributes;
         
         private static GameContext _instance;
-        
-        private static EffectData _effectData;
 
         private static int UnlockedLevel { get; set; } = 0;
 
@@ -24,6 +23,17 @@ namespace Common.Context
         
         private static int Money { get; set; } = 0;
         public bool Saved { get; set; }
+        
+        private GameContext()
+        {
+            _attributes = new GCAttributes (
+                GameStats.AURELIA_HEALTH, 
+                100, 
+                GameStats.AURELIA_ATTACK,
+                GameStats.AURELIA_ATKSPEED,
+                GameStats.AURELIA_MOVSPEED
+            );
+        }
         
         public static GameContext GetInstance()
         {
@@ -39,37 +49,47 @@ namespace Common.Context
         /// <param name="actionHandle">The action handle./ See also: <seealso cref="BoostHandles"/></param>
         /// <param name="value">The value that query takes as parameter.</param>
         public void Do(int actionHandle, int value = 0)
-        {
+        { 
             switch (actionHandle)
             {
-                case BoostHandles.BoostSpeed:
-                    _attributes.Query("+", "spd", value);
+                case BoostHandles.BoostMovSpd:
+                    _attributes.Query("+", "mov-spd+", value);
                     break;
                 case BoostHandles.BoostHealth:
                     _attributes.Query("+", "hp", value);
                     break;
                 case BoostHandles.BoostDamage:
-                    _attributes.Query("+", "dmg", value);
+                    _attributes.Query("+", "dmg+", value);
                     break;
                 case BoostHandles.BoostMana:
-                    _attributes.Query("+", "mana", value);
+                    _attributes.Query("+", "mana+", value);
                     break;
-                case BoostHandles.ReduceSpeed:
-                    _attributes.Query("-", "spd", value);
+                case BoostHandles.BoostAtkSpd:
+                    _attributes.Query("+", "atk-spd+", value);
+                    break;
+                case BoostHandles.ReduceMovSpd:
+                    _attributes.Query("-", "mov-spd+", value);
                     break;
                 case BoostHandles.ReduceHealth:
                     _attributes.Query("-", "hp", value);
                     break;
                 case BoostHandles.ReduceDamage:
-                    _attributes.Query("-", "dmg", value);
+                    _attributes.Query("-", "dmg+", value);
                     break;
                 case BoostHandles.ReduceMana:
-                    _attributes.Query("-", "mana", value);
+                    _attributes.Query("-", "mana+", value);
                     break;
                 case BoostHandles.Reset:
-                    _attributes.Query("~", "mov-spd");
-                    _attributes.Query("~", "atk-spd");
-                    _attributes.Query("~", "dmg");
+                    _attributes.Query("~", "mov-spd+");
+                    _attributes.Query("~", "atk-spd+");
+                    _attributes.Query("~", "dmg+");
+                    break;
+                case BoostHandles.HardReset:
+                    _attributes.Query("~", "mov-spd+");
+                    _attributes.Query("~", "atk-spd+");
+                    _attributes.Query("~", "dmg+");
+                    _attributes.Query("~", "hp");
+                    _attributes.Query("~", "mana+");
                     break;
             }
         }
@@ -83,9 +103,42 @@ namespace Common.Context
             var varsLower = vars.ToLower();
             return varsLower switch
             {
-                "hp" or "mana" or "atk-spd" or "mov-spd" or "dmg" => _attributes.Query("get", varsLower),
+                "hp" 
+                or "mana+" 
+                or "atk-spd+" 
+                or "mov-spd+" 
+                or "dmg+" 
+                or "dfhp"
+                or "dfmana"
+                or "dfatk-spd"
+                or "dfmov-spd"
+                or "dfdmg"
+                    => _attributes.Query("get", varsLower),
                 _ => 0
             };
+        }
+
+        public void Set(string vars, int value)
+        {
+            var varsLower = vars.ToLower();
+            switch (varsLower)
+            {
+                case "hp":
+                    _attributes.Query("set", "hp", value);
+                    break;
+                case "mana+":
+                    _attributes.Query("set", "mana+", value);
+                    break;
+                case "atk-spd+":
+                    _attributes.Query("set", "atk-spd+", value);
+                    break;
+                case "mov-spd+":
+                    _attributes.Query("set", "mov-spd+", value);
+                    break;
+                case "dmg+":
+                    _attributes.Query("set", "dmg+", value);
+                    break;
+            }
         }
 
         public void LoadWeapon(string data)

@@ -5,6 +5,7 @@ namespace Logic.Weapons
 {
     public class Guitar : Weapon
     {
+        
         public Guitar()
         {
             Skills.Add(AcSkill.TransformInto(WeaponHandle.Guitar, this, 1));

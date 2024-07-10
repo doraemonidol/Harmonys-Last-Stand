@@ -10,7 +10,7 @@ namespace Logic.Weapons
     {
         public List<AcSkill> Skills { get; } = new();
 
-        public static Weapon TransformInto(int name, Villain user = null)
+        public static Weapon TransformInto(int name)
         {
             return name switch
             {
@@ -22,15 +22,15 @@ namespace Logic.Weapons
                 WeaponHandle.Guitar => new Guitar(),
                 WeaponHandle.ApWeapon => new ApWeapon(),
                 WeaponHandle.LwWeapon => new LwWeapon(),
-                WeaponHandle.MmWeapon => new MmWeapon(user),
+                WeaponHandle.MmWeapon => new MmWeapon(),
                 _ => throw new Exception("Weapon not found.")
             };
         }
 
-        public void Trigger(int index)
+        public void Trigger(int index, ICharacter activator)
         {
             var skill = Get(index);
-            skill.Activate();
+            skill.Activate(activator);
         }
         
         private bool IfSkillExists(AcSkill skill)

@@ -18,7 +18,7 @@ namespace Logic.Skills
 
         public void Affect(ICharacter attacker, ICharacter target = null, EventDto context = null);
         
-        public void Activate();
+        public void Activate(ICharacter activator);
 
         public void Lock();
 

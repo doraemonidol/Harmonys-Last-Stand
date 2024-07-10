@@ -19,5 +19,8 @@ namespace Common
         public const int AMADEUS = 12;
         public const int LUDWIG = 13;
         public const int MAESTRO = 14;
+        public const int WEAPON_MAESTRO = WeaponHandle.MmWeapon;
+        public const int WEAPON_LUDWIG = WeaponHandle.LwWeapon;
+        public const int WEAPON_AMADEUS = WeaponHandle.ApWeapon;
     }
 }

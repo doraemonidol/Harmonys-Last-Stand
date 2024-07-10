@@ -12,5 +12,7 @@ namespace Logic.Weapons
             Skills.Add(AcSkill.TransformInto(WeaponHandle.Flute, this, 3));
             Skills.Add(AcSkill.TransformInto(WeaponHandle.Flute, this, 4));
         }
+        
+        
     }
 }

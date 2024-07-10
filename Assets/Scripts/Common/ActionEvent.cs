@@ -10,10 +10,7 @@ namespace Common
         public const int MoveUpRight = 5;
         public const int MoveDownLeft = 6;
         public const int MoveDownRight = 7;
-        public const int CastSkill1 = 8;
-        public const int CastSkill2 = 9;
-        public const int CastSkill3 = 10;
-        public const int CastSkill4 = 11;
+        public const int CastSkill = 8;
 
         public static int FlipAction(int action)
         {
