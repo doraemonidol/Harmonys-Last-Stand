@@ -88,7 +88,7 @@ public class PlayerCastSkill: MonoBehaviour
                 normalSkills[i].StopChanneling();
                 if (Time.time - _beginChannelingTime >= normalSkills[i].GetChannelingTime())
                 {
-                    Debug.Log("Cast Skill " + i);
+                    Debug.Log("Cast Special Skill " + i);
                     specialSkills[i].StartCasting();
                 }
 

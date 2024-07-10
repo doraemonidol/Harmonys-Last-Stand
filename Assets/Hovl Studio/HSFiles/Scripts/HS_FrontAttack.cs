@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HS_FrontAttack : MonoBehaviour
@@ -10,25 +9,25 @@ public class HS_FrontAttack : MonoBehaviour
     public float drug = 1f;
     public GameObject craterPrefab;
     public ParticleSystem ps;
-    public bool playPS = false;
+    public bool playPS;
     public float spawnRate = 1f;
     public float spawnDuration = 1f;
-    public float positionOffset = 0f;
-    public bool changeScale = false;
-    private float randomTimer = 0f;
-    private float startSpeed = 0f;
-    private Vector3 stepPosition;
+    public float positionOffset;
+    public bool changeScale;
 
-    [Space]
-    [Header("Effect with Mesh animation")]
-    public bool effectWithAnimation = false;
+    [Space] [Header("Effect with Mesh animation")]
+    public bool effectWithAnimation;
+
     public Animator[] anim;
-    public float delay = 0f;
+    public float delay;
     public bool playMeshEffect;
+    private float randomTimer;
+    private float startSpeed;
+    private Vector3 stepPosition;
 
     private void Update()
     {
-        if (playMeshEffect == true)
+        if (playMeshEffect)
         {
             StartCoroutine(MeshEffect());
             playMeshEffect = false;
@@ -50,13 +49,9 @@ public class HS_FrontAttack : MonoBehaviour
             var lookPos = targetPoint - transform.position;
             lookPos.y = 0;
             if (!playPS)
-            {
                 transform.rotation = Quaternion.LookRotation(lookPos);
-            }
             else
-            {
                 transform.rotation = Quaternion.LookRotation(lookPos) * Quaternion.Euler(startRotation);
-            }
             stepPosition = pivot.position;
             randomTimer = 0;
             StartCoroutine(StartMove());
@@ -67,11 +62,7 @@ public class HS_FrontAttack : MonoBehaviour
     {
         if (playPS) ps.Play();
         yield return new WaitForSeconds(delay);
-        foreach (var animS in anim)
-        {
-            animS.SetTrigger("Attack");
-        }
-        yield break;
+        foreach (var animS in anim) animS.SetTrigger("Attack");
     }
 
     public IEnumerator StartMove()
@@ -89,17 +80,17 @@ public class HS_FrontAttack : MonoBehaviour
             {
                 if (craterPrefab != null)
                 {
-                    Vector3 randomPosition = new Vector3(Random.Range(-positionOffset, positionOffset), 0, Random.Range(-positionOffset, positionOffset));
-                    Vector3 pos = transform.position + (randomPosition * randomTimer * 2);
+                    var randomPosition = new Vector3(Random.Range(-positionOffset, positionOffset), 0,
+                        Random.Range(-positionOffset, positionOffset));
+                    var pos = transform.position + randomPosition * randomTimer * 2;
 
                     //to create effects on terrain
-                    if (Terrain.activeTerrain != null)
-                    {
-                        pos.y = Terrain.activeTerrain.SampleHeight(transform.position);
-                    }
+                    if (Terrain.activeTerrain != null) pos.y = Terrain.activeTerrain.SampleHeight(transform.position);
 
                     var craterInstance = Instantiate(craterPrefab, pos, Quaternion.identity);
-                    if (changeScale == true) { craterInstance.transform.localScale += new Vector3(randomTimer * 2, randomTimer * 2, randomTimer * 2); }
+                    if (changeScale)
+                        craterInstance.transform.localScale +=
+                            new Vector3(randomTimer * 2, randomTimer * 2, randomTimer * 2);
                     var craterPs = craterInstance.GetComponent<ParticleSystem>();
                     if (craterPs != null)
                     {
@@ -111,9 +102,11 @@ public class HS_FrontAttack : MonoBehaviour
                         Destroy(craterInstance, flashPsParts.main.duration);
                     }
                 }
+
                 //distance = 0;
                 stepPosition = transform.position;
             }
+
             if (randomTimer > spawnDuration)
             {
                 transform.parent = pivot;
@@ -121,6 +114,7 @@ public class HS_FrontAttack : MonoBehaviour
                 transform.rotation = Quaternion.Euler(startRotation);
                 yield break;
             }
+
             yield return null;
         }
     }

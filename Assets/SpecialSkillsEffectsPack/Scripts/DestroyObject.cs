@@ -1,20 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DestroyObject : MonoBehaviour
 {
     public float m_DestroytTime;
-    float m_Time;
+    private float m_Time;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         m_Time = Time.time;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Time.time > m_Time + m_DestroytTime)
             Destroy(gameObject);

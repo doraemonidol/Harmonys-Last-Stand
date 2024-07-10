@@ -2,234 +2,244 @@
 // Available at the Unity Asset Store - http://u3d.as/y3X 
 Shader "SimpleWater"
 {
-	Properties
-	{
-		_Pattern("Pattern", 2D) = "white" {}
-		_Color1("Color 1", Color) = (0.1137255,0.3960785,0.6,1)
-		_Color2("Color 2", Color) = (0.4453542,0.659279,0.6792453,1)
-		_ScaleDistortion("Scale Distortion", Float) = 2.4
-		_DistortionStr("Distortion Str", Float) = 0.24
-		_Layer1Direction("Layer 1 Direction", Vector) = (0.5,0,0,0)
-		_Layer1Speed("Layer 1 Speed", Float) = 0.6
-		_Layer1Tiling("Layer 1 Tiling", Float) = 0.2
-		_Layer2Direction("Layer 2 Direction", Vector) = (0.5,0,0,0)
-		_Layer2Speed("Layer 2 Speed", Float) = 0.4
-		_Layer2Tiling("Layer 2 Tiling", Float) = 0.15
-		_Layer3Direction("Layer 3 Direction", Vector) = (0,-0.5,0,0)
-		_Layer3Speed("Layer 3 Speed", Float) = 0.2
-		_Layer3Tiling("Layer 3 Tiling", Float) = 0.2
-		_Blend1("Blend 1", Float) = 0
-		_Blend2("Blend 2", Float) = 0
-		_FoamWidth("Foam Width", Float) = 0.4
-		_FoamScale("Foam Scale", Float) = 4
-		_FoamDistortionSpeed("Foam Distortion Speed", Float) = 1.5
-		_FoamDistortionScale("Foam Distortion Scale", Float) = 4
-		_FoamDistortionAmount("Foam Distortion Amount", Range( 0 , 0.1)) = 0.03
-		_WaveTiling("Wave Tiling", Vector) = (0.2,1,0,0)
-		_WaveScale("Wave Scale", Float) = 0.04
-		_WaveSpeed("Wave Speed", Float) = 4
-		_WaveBlend("Wave Blend", Float) = 0
-		_Metallic("Metallic", Range( 0 , 1)) = 0
-		_Smoothness("Smoothness", Range( 0 , 1)) = 0
-		_Tessellation("Tessellation", Float) = 4
-		[Toggle]_PatternInvertBW("Pattern Invert  B/W", Float) = 1
-		_DisplacementAmount("Displacement Amount", Float) = 0.4
-		[HideInInspector] __dirty( "", Int ) = 1
-	}
+    Properties
+    {
+        _Pattern("Pattern", 2D) = "white" {}
+        _Color1("Color 1", Color) = (0.1137255,0.3960785,0.6,1)
+        _Color2("Color 2", Color) = (0.4453542,0.659279,0.6792453,1)
+        _ScaleDistortion("Scale Distortion", Float) = 2.4
+        _DistortionStr("Distortion Str", Float) = 0.24
+        _Layer1Direction("Layer 1 Direction", Vector) = (0.5,0,0,0)
+        _Layer1Speed("Layer 1 Speed", Float) = 0.6
+        _Layer1Tiling("Layer 1 Tiling", Float) = 0.2
+        _Layer2Direction("Layer 2 Direction", Vector) = (0.5,0,0,0)
+        _Layer2Speed("Layer 2 Speed", Float) = 0.4
+        _Layer2Tiling("Layer 2 Tiling", Float) = 0.15
+        _Layer3Direction("Layer 3 Direction", Vector) = (0,-0.5,0,0)
+        _Layer3Speed("Layer 3 Speed", Float) = 0.2
+        _Layer3Tiling("Layer 3 Tiling", Float) = 0.2
+        _Blend1("Blend 1", Float) = 0
+        _Blend2("Blend 2", Float) = 0
+        _FoamWidth("Foam Width", Float) = 0.4
+        _FoamScale("Foam Scale", Float) = 4
+        _FoamDistortionSpeed("Foam Distortion Speed", Float) = 1.5
+        _FoamDistortionScale("Foam Distortion Scale", Float) = 4
+        _FoamDistortionAmount("Foam Distortion Amount", Range( 0 , 0.1)) = 0.03
+        _WaveTiling("Wave Tiling", Vector) = (0.2,1,0,0)
+        _WaveScale("Wave Scale", Float) = 0.04
+        _WaveSpeed("Wave Speed", Float) = 4
+        _WaveBlend("Wave Blend", Float) = 0
+        _Metallic("Metallic", Range( 0 , 1)) = 0
+        _Smoothness("Smoothness", Range( 0 , 1)) = 0
+        _Tessellation("Tessellation", Float) = 4
+        [Toggle]_PatternInvertBW("Pattern Invert  B/W", Float) = 1
+        _DisplacementAmount("Displacement Amount", Float) = 0.4
+        [HideInInspector] __dirty( "", Int ) = 1
+    }
 
-	SubShader
-	{
-		Tags{ "RenderType" = "Transparent"  "Queue" = "Transparent+0" "IgnoreProjector" = "True" }
-		Cull Back
-		CGPROGRAM
-		#include "UnityShaderVariables.cginc"
-		#include "UnityCG.cginc"
-		#include "Tessellation.cginc"
-		#pragma target 4.6
-		#pragma surface surf Standard alpha:fade keepalpha vertex:vertexDataFunc tessellate:tessFunction 
-		struct Input
-		{
-			float3 worldPos;
-			float3 worldNormal;
-			INTERNAL_DATA
-			float4 screenPos;
-		};
+    SubShader
+    {
+        Tags
+        {
+            "RenderType" = "Transparent" "Queue" = "Transparent+0" "IgnoreProjector" = "True"
+        }
+        Cull Back
+        CGPROGRAM
+        #include "UnityShaderVariables.cginc"
+        #include "UnityCG.cginc"
+        #include "Tessellation.cginc"
+        #pragma target 4.6
+        #pragma surface surf Standard alpha:fade keepalpha vertex:vertexDataFunc tessellate:tessFunction
+        struct Input
+        {
+            float3 worldPos;
+            float3 worldNormal;
+            INTERNAL_DATA
+            float4 screenPos;
+        };
 
-		uniform float _WaveSpeed;
-		uniform float2 _WaveTiling;
-		uniform float _WaveScale;
-		uniform float _DisplacementAmount;
-		uniform float _ScaleDistortion;
-		uniform float _DistortionStr;
-		uniform float _PatternInvertBW;
-		uniform sampler2D _Pattern;
-		uniform float _Layer3Speed;
-		uniform float2 _Layer3Direction;
-		uniform float _Layer3Tiling;
-		uniform float _Layer2Speed;
-		uniform float2 _Layer2Direction;
-		uniform float _Layer2Tiling;
-		uniform float4 _Color1;
-		uniform float4 _Color2;
-		uniform float _Layer1Speed;
-		uniform float2 _Layer1Direction;
-		uniform float _Layer1Tiling;
-		uniform float _Blend1;
-		uniform float _Blend2;
-		uniform float _WaveBlend;
-		UNITY_DECLARE_DEPTH_TEXTURE( _CameraDepthTexture );
-		uniform float4 _CameraDepthTexture_TexelSize;
-		uniform float _FoamWidth;
-		uniform float _FoamDistortionSpeed;
-		uniform float _FoamDistortionScale;
-		uniform float _FoamDistortionAmount;
-		uniform float _FoamScale;
-		uniform float _Metallic;
-		uniform float _Smoothness;
-		uniform float _Tessellation;
-
-
-		float3 mod2D289( float3 x ) { return x - floor( x * ( 1.0 / 289.0 ) ) * 289.0; }
-
-		float2 mod2D289( float2 x ) { return x - floor( x * ( 1.0 / 289.0 ) ) * 289.0; }
-
-		float3 permute( float3 x ) { return mod2D289( ( ( x * 34.0 ) + 1.0 ) * x ); }
-
-		float snoise( float2 v )
-		{
-			const float4 C = float4( 0.211324865405187, 0.366025403784439, -0.577350269189626, 0.024390243902439 );
-			float2 i = floor( v + dot( v, C.yy ) );
-			float2 x0 = v - i + dot( i, C.xx );
-			float2 i1;
-			i1 = ( x0.x > x0.y ) ? float2( 1.0, 0.0 ) : float2( 0.0, 1.0 );
-			float4 x12 = x0.xyxy + C.xxzz;
-			x12.xy -= i1;
-			i = mod2D289( i );
-			float3 p = permute( permute( i.y + float3( 0.0, i1.y, 1.0 ) ) + i.x + float3( 0.0, i1.x, 1.0 ) );
-			float3 m = max( 0.5 - float3( dot( x0, x0 ), dot( x12.xy, x12.xy ), dot( x12.zw, x12.zw ) ), 0.0 );
-			m = m * m;
-			m = m * m;
-			float3 x = 2.0 * frac( p * C.www ) - 1.0;
-			float3 h = abs( x ) - 0.5;
-			float3 ox = floor( x + 0.5 );
-			float3 a0 = x - ox;
-			m *= 1.79284291400159 - 0.85373472095314 * ( a0 * a0 + h * h );
-			float3 g;
-			g.x = a0.x * x0.x + h.x * x0.y;
-			g.yz = a0.yz * x12.xz + h.yz * x12.yw;
-			return 130.0 * dot( m, g );
-		}
+        uniform float _WaveSpeed;
+        uniform float2 _WaveTiling;
+        uniform float _WaveScale;
+        uniform float _DisplacementAmount;
+        uniform float _ScaleDistortion;
+        uniform float _DistortionStr;
+        uniform float _PatternInvertBW;
+        uniform sampler2D _Pattern;
+        uniform float _Layer3Speed;
+        uniform float2 _Layer3Direction;
+        uniform float _Layer3Tiling;
+        uniform float _Layer2Speed;
+        uniform float2 _Layer2Direction;
+        uniform float _Layer2Tiling;
+        uniform float4 _Color1;
+        uniform float4 _Color2;
+        uniform float _Layer1Speed;
+        uniform float2 _Layer1Direction;
+        uniform float _Layer1Tiling;
+        uniform float _Blend1;
+        uniform float _Blend2;
+        uniform float _WaveBlend;
+        UNITY_DECLARE_DEPTH_TEXTURE(_CameraDepthTexture);
+        uniform float4 _CameraDepthTexture_TexelSize;
+        uniform float _FoamWidth;
+        uniform float _FoamDistortionSpeed;
+        uniform float _FoamDistortionScale;
+        uniform float _FoamDistortionAmount;
+        uniform float _FoamScale;
+        uniform float _Metallic;
+        uniform float _Smoothness;
+        uniform float _Tessellation;
 
 
-		float3 PerturbNormal107_g1( float3 surf_pos, float3 surf_norm, float height, float scale )
-		{
-			// "Bump Mapping Unparametrized Surfaces on the GPU" by Morten S. Mikkelsen
-			float3 vSigmaS = ddx( surf_pos );
-			float3 vSigmaT = ddy( surf_pos );
-			float3 vN = surf_norm;
-			float3 vR1 = cross( vSigmaT , vN );
-			float3 vR2 = cross( vN , vSigmaS );
-			float fDet = dot( vSigmaS , vR1 );
-			float dBs = ddx( height );
-			float dBt = ddy( height );
-			float3 vSurfGrad = scale * 0.05 * sign( fDet ) * ( dBs * vR1 + dBt * vR2 );
-			return normalize ( abs( fDet ) * vN - vSurfGrad );
-		}
+        float3 mod2D289(float3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+
+        float2 mod2D289(float2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+
+        float3 permute(float3 x) { return mod2D289(((x * 34.0) + 1.0) * x); }
+
+        float snoise(float2 v)
+        {
+            const float4 C = float4(0.211324865405187, 0.366025403784439, -0.577350269189626, 0.024390243902439);
+            float2 i = floor(v + dot(v, C.yy));
+            float2 x0 = v - i + dot(i, C.xx);
+            float2 i1;
+            i1 = (x0.x > x0.y) ? float2(1.0, 0.0) : float2(0.0, 1.0);
+            float4 x12 = x0.xyxy + C.xxzz;
+            x12.xy -= i1;
+            i = mod2D289(i);
+            float3 p = permute(permute(i.y + float3(0.0, i1.y, 1.0)) + i.x + float3(0.0, i1.x, 1.0));
+            float3 m = max(0.5 - float3(dot(x0, x0), dot(x12.xy, x12.xy), dot(x12.zw, x12.zw)), 0.0);
+            m = m * m;
+            m = m * m;
+            float3 x = 2.0 * frac(p * C.www) - 1.0;
+            float3 h = abs(x) - 0.5;
+            float3 ox = floor(x + 0.5);
+            float3 a0 = x - ox;
+            m *= 1.79284291400159 - 0.85373472095314 * (a0 * a0 + h * h);
+            float3 g;
+            g.x = a0.x * x0.x + h.x * x0.y;
+            g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+            return 130.0 * dot(m, g);
+        }
 
 
-		float4 tessFunction( appdata_full v0, appdata_full v1, appdata_full v2 )
-		{
-			float4 temp_cast_0 = (_Tessellation).xxxx;
-			return temp_cast_0;
-		}
+        float3 PerturbNormal107_g1(float3 surf_pos, float3 surf_norm, float height, float scale)
+        {
+            // "Bump Mapping Unparametrized Surfaces on the GPU" by Morten S. Mikkelsen
+            float3 vSigmaS = ddx(surf_pos);
+            float3 vSigmaT = ddy(surf_pos);
+            float3 vN = surf_norm;
+            float3 vR1 = cross(vSigmaT, vN);
+            float3 vR2 = cross(vN, vSigmaS);
+            float fDet = dot(vSigmaS, vR1);
+            float dBs = ddx(height);
+            float dBt = ddy(height);
+            float3 vSurfGrad = scale * 0.05 * sign(fDet) * (dBs * vR1 + dBt * vR2);
+            return normalize(abs(fDet) * vN - vSurfGrad);
+        }
 
-		void vertexDataFunc( inout appdata_full v )
-		{
-			float mulTime45 = _Time.y * _WaveSpeed;
-			float3 ase_worldPos = mul( unity_ObjectToWorld, v.vertex );
-			float2 temp_output_5_0 = (ase_worldPos).xz;
-			float2 panner46 = ( mulTime45 * float2( 0.5,0.5 ) + ( temp_output_5_0 * _WaveTiling ));
-			float simplePerlin2D39 = snoise( panner46*_WaveScale );
-			simplePerlin2D39 = simplePerlin2D39*0.5 + 0.5;
-			float3 ase_worldNormal = UnityObjectToWorldNormal( v.normal );
-			float3 ase_vertexNormal = v.normal.xyz;
-			v.vertex.xyz += ( ( ( simplePerlin2D39 * _DisplacementAmount ) * ase_worldNormal.y ) * ase_vertexNormal );
-			v.vertex.w = 1;
-		}
 
-		void surf( Input i , inout SurfaceOutputStandard o )
-		{
-			float3 ase_worldPos = i.worldPos;
-			float3 surf_pos107_g1 = ase_worldPos;
-			float3 ase_worldNormal = WorldNormalVector( i, float3( 0, 0, 1 ) );
-			float3 surf_norm107_g1 = ase_worldNormal;
-			float simplePerlin2D103 = snoise( (ase_worldPos).xz*_ScaleDistortion );
-			simplePerlin2D103 = simplePerlin2D103*0.5 + 0.5;
-			float height107_g1 = simplePerlin2D103;
-			float scale107_g1 = _DistortionStr;
-			float3 localPerturbNormal107_g1 = PerturbNormal107_g1( surf_pos107_g1 , surf_norm107_g1 , height107_g1 , scale107_g1 );
-			float3 ase_worldTangent = WorldNormalVector( i, float3( 1, 0, 0 ) );
-			float3 ase_worldBitangent = WorldNormalVector( i, float3( 0, 1, 0 ) );
-			float3x3 ase_worldToTangent = float3x3( ase_worldTangent, ase_worldBitangent, ase_worldNormal );
-			float3 worldToTangentDir42_g1 = mul( ase_worldToTangent, localPerturbNormal107_g1);
-			float3 temp_output_107_40 = worldToTangentDir42_g1;
-			float3 Normal120 = temp_output_107_40;
-			o.Normal = Normal120;
-			float mulTime45 = _Time.y * _WaveSpeed;
-			float2 temp_output_5_0 = (ase_worldPos).xz;
-			float2 panner46 = ( mulTime45 * float2( 0.5,0.5 ) + ( temp_output_5_0 * _WaveTiling ));
-			float simplePerlin2D39 = snoise( panner46*_WaveScale );
-			simplePerlin2D39 = simplePerlin2D39*0.5 + 0.5;
-			float4 temp_cast_0 = (simplePerlin2D39).xxxx;
-			float mulTime34 = _Time.y * _Layer3Speed;
-			float3 temp_output_106_0 = ( float3( temp_output_5_0 ,  0.0 ) + temp_output_107_40 );
-			float2 panner30 = ( mulTime34 * _Layer3Direction + temp_output_106_0.xy);
-			float4 tex2DNode27 = tex2D( _Pattern, ( panner30 * _Layer3Tiling ) );
-			float4 temp_cast_3 = (( (( _PatternInvertBW )?( 1.0 ):( 0.0 )) == 0.0 ? tex2DNode27.r : ( 1.0 - tex2DNode27.r ) )).xxxx;
-			float mulTime125 = _Time.y * _Layer2Speed;
-			float2 panner20 = ( mulTime125 * _Layer2Direction + temp_output_106_0.xy);
-			float4 tex2DNode17 = tex2D( _Pattern, ( panner20 * _Layer2Tiling ) );
-			float4 temp_cast_6 = (( (( _PatternInvertBW )?( 1.0 ):( 0.0 )) == 0.0 ? tex2DNode17.r : ( 1.0 - tex2DNode17.r ) )).xxxx;
-			float mulTime15 = _Time.y * _Layer1Speed;
-			float2 panner13 = ( mulTime15 * _Layer1Direction + temp_output_106_0.xy);
-			float4 tex2DNode9 = tex2D( _Pattern, ( panner13 * _Layer1Tiling ) );
-			float4 lerpResult10 = lerp( _Color1 , _Color2 , ( (( _PatternInvertBW )?( 1.0 ):( 0.0 )) == 0.0 ? tex2DNode9.r : ( 1.0 - tex2DNode9.r ) ));
-			float4 blendOpSrc24 = temp_cast_6;
-			float4 blendOpDest24 = lerpResult10;
-			float4 lerpBlendMode24 = lerp(blendOpDest24,min( blendOpSrc24 , blendOpDest24 ),_Blend1);
-			float4 blendOpSrc35 = temp_cast_3;
-			float4 blendOpDest35 = ( saturate( lerpBlendMode24 ));
-			float4 lerpBlendMode35 = lerp(blendOpDest35,min( blendOpSrc35 , blendOpDest35 ),_Blend2);
-			float4 blendOpSrc41 = temp_cast_0;
-			float4 blendOpDest41 = ( saturate( lerpBlendMode35 ));
-			float4 lerpBlendMode41 = lerp(blendOpDest41,( blendOpSrc41 * blendOpDest41 ),_WaveBlend);
-			float4 temp_cast_9 = (1.0).xxxx;
-			float4 ase_screenPos = float4( i.screenPos.xyz , i.screenPos.w + 0.00000000001 );
-			float4 ase_screenPosNorm = ase_screenPos / ase_screenPos.w;
-			ase_screenPosNorm.z = ( UNITY_NEAR_CLIP_VALUE >= 0 ) ? ase_screenPosNorm.z : ase_screenPosNorm.z * 0.5 + 0.5;
-			float screenDepth59 = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE( _CameraDepthTexture, ase_screenPosNorm.xy ));
-			float distanceDepth59 = abs( ( screenDepth59 - LinearEyeDepth( ase_screenPosNorm.z ) ) / ( _FoamWidth ) );
-			float2 temp_output_61_0 = (ase_worldPos).xz;
-			float2 temp_cast_10 = (_FoamDistortionSpeed).xx;
-			float2 panner62 = ( 0.2 * _Time.y * temp_cast_10 + temp_output_61_0);
-			float simplePerlin2D65 = snoise( panner62*_FoamDistortionScale );
-			simplePerlin2D65 = simplePerlin2D65*0.5 + 0.5;
-			float simplePerlin2D69 = snoise( ( temp_output_61_0 + ( simplePerlin2D65 * _FoamDistortionAmount ) )*_FoamScale );
-			simplePerlin2D69 = simplePerlin2D69*0.5 + 0.5;
-			float4 lerpResult55 = lerp( ( saturate( lerpBlendMode41 )) , temp_cast_9 , saturate( step( distanceDepth59 , simplePerlin2D69 ) ));
-			float4 Base_Color118 = lerpResult55;
-			o.Albedo = Base_Color118.rgb;
-			o.Metallic = _Metallic;
-			o.Smoothness = _Smoothness;
-			float screenDepth114 = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE( _CameraDepthTexture, ase_screenPosNorm.xy ));
-			float distanceDepth114 = abs( ( screenDepth114 - LinearEyeDepth( ase_screenPosNorm.z ) ) / ( 0.04 ) );
-			o.Alpha = saturate( distanceDepth114 );
-		}
+        float4 tessFunction(appdata_full v0, appdata_full v1, appdata_full v2)
+        {
+            float4 temp_cast_0 = (_Tessellation).xxxx;
+            return temp_cast_0;
+        }
 
-		ENDCG
-	}
-	Fallback "Diffuse"
-	CustomEditor "ASEMaterialInspector"
+        void vertexDataFunc(inout appdata_full v)
+        {
+            float mulTime45 = _Time.y * _WaveSpeed;
+            float3 ase_worldPos = mul(unity_ObjectToWorld, v.vertex);
+            float2 temp_output_5_0 = (ase_worldPos).xz;
+            float2 panner46 = (mulTime45 * float2(0.5, 0.5) + (temp_output_5_0 * _WaveTiling));
+            float simplePerlin2D39 = snoise(panner46 * _WaveScale);
+            simplePerlin2D39 = simplePerlin2D39 * 0.5 + 0.5;
+            float3 ase_worldNormal = UnityObjectToWorldNormal(v.normal);
+            float3 ase_vertexNormal = v.normal.xyz;
+            v.vertex.xyz += (((simplePerlin2D39 * _DisplacementAmount) * ase_worldNormal.y) * ase_vertexNormal);
+            v.vertex.w = 1;
+        }
+
+        void surf(Input i, inout SurfaceOutputStandard o)
+        {
+            float3 ase_worldPos = i.worldPos;
+            float3 surf_pos107_g1 = ase_worldPos;
+            float3 ase_worldNormal = WorldNormalVector(i, float3( 0, 0, 1 ));
+            float3 surf_norm107_g1 = ase_worldNormal;
+            float simplePerlin2D103 = snoise((ase_worldPos).xz * _ScaleDistortion);
+            simplePerlin2D103 = simplePerlin2D103 * 0.5 + 0.5;
+            float height107_g1 = simplePerlin2D103;
+            float scale107_g1 = _DistortionStr;
+            float3 localPerturbNormal107_g1 = PerturbNormal107_g1(surf_pos107_g1, surf_norm107_g1, height107_g1,
+                                              scale107_g1);
+            float3 ase_worldTangent = WorldNormalVector(i, float3( 1, 0, 0 ));
+            float3 ase_worldBitangent = WorldNormalVector(i, float3( 0, 1, 0 ));
+            float3x3 ase_worldToTangent = float3x3(ase_worldTangent, ase_worldBitangent, ase_worldNormal);
+            float3 worldToTangentDir42_g1 = mul(ase_worldToTangent, localPerturbNormal107_g1);
+            float3 temp_output_107_40 = worldToTangentDir42_g1;
+            float3 Normal120 = temp_output_107_40;
+            o.Normal = Normal120;
+            float mulTime45 = _Time.y * _WaveSpeed;
+            float2 temp_output_5_0 = (ase_worldPos).xz;
+            float2 panner46 = (mulTime45 * float2(0.5, 0.5) + (temp_output_5_0 * _WaveTiling));
+            float simplePerlin2D39 = snoise(panner46 * _WaveScale);
+            simplePerlin2D39 = simplePerlin2D39 * 0.5 + 0.5;
+            float4 temp_cast_0 = (simplePerlin2D39).xxxx;
+            float mulTime34 = _Time.y * _Layer3Speed;
+            float3 temp_output_106_0 = (float3(temp_output_5_0, 0.0) + temp_output_107_40);
+            float2 panner30 = (mulTime34 * _Layer3Direction + temp_output_106_0.xy);
+            float4 tex2DNode27 = tex2D(_Pattern, (panner30 * _Layer3Tiling));
+            float4 temp_cast_3 = ((((_PatternInvertBW) ? (1.0) : (0.0)) == 0.0 ? tex2DNode27.r : (1.0 - tex2DNode27.r)))
+                .xxxx;
+            float mulTime125 = _Time.y * _Layer2Speed;
+            float2 panner20 = (mulTime125 * _Layer2Direction + temp_output_106_0.xy);
+            float4 tex2DNode17 = tex2D(_Pattern, (panner20 * _Layer2Tiling));
+            float4 temp_cast_6 = ((((_PatternInvertBW) ? (1.0) : (0.0)) == 0.0 ? tex2DNode17.r : (1.0 - tex2DNode17.r)))
+                .xxxx;
+            float mulTime15 = _Time.y * _Layer1Speed;
+            float2 panner13 = (mulTime15 * _Layer1Direction + temp_output_106_0.xy);
+            float4 tex2DNode9 = tex2D(_Pattern, (panner13 * _Layer1Tiling));
+            float4 lerpResult10 = lerp(_Color1, _Color2,
+                                                        (((_PatternInvertBW) ? (1.0) : (0.0)) == 0.0
+                           ? tex2DNode9.r
+                           : (1.0 - tex2DNode9.r)));
+            float4 blendOpSrc24 = temp_cast_6;
+            float4 blendOpDest24 = lerpResult10;
+            float4 lerpBlendMode24 = lerp(blendOpDest24, min(blendOpSrc24, blendOpDest24), _Blend1);
+            float4 blendOpSrc35 = temp_cast_3;
+            float4 blendOpDest35 = (saturate(lerpBlendMode24));
+            float4 lerpBlendMode35 = lerp(blendOpDest35, min(blendOpSrc35, blendOpDest35), _Blend2);
+            float4 blendOpSrc41 = temp_cast_0;
+            float4 blendOpDest41 = (saturate(lerpBlendMode35));
+            float4 lerpBlendMode41 = lerp(blendOpDest41, (blendOpSrc41 * blendOpDest41), _WaveBlend);
+            float4 temp_cast_9 = (1.0).xxxx;
+            float4 ase_screenPos = float4(i.screenPos.xyz, i.screenPos.w + 0.00000000001);
+            float4 ase_screenPosNorm = ase_screenPos / ase_screenPos.w;
+            ase_screenPosNorm.z = (UNITY_NEAR_CLIP_VALUE >= 0) ? ase_screenPosNorm.z : ase_screenPosNorm.z * 0.5 + 0.5;
+            float screenDepth59 = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, ase_screenPosNorm.xy));
+            float distanceDepth59 = abs((screenDepth59 - LinearEyeDepth(ase_screenPosNorm.z)) / (_FoamWidth));
+            float2 temp_output_61_0 = (ase_worldPos).xz;
+            float2 temp_cast_10 = (_FoamDistortionSpeed).xx;
+            float2 panner62 = (0.2 * _Time.y * temp_cast_10 + temp_output_61_0);
+            float simplePerlin2D65 = snoise(panner62 * _FoamDistortionScale);
+            simplePerlin2D65 = simplePerlin2D65 * 0.5 + 0.5;
+            float simplePerlin2D69 = snoise(
+                (temp_output_61_0 + (simplePerlin2D65 * _FoamDistortionAmount)) * _FoamScale);
+            simplePerlin2D69 = simplePerlin2D69 * 0.5 + 0.5;
+            float4 lerpResult55 = lerp((saturate(lerpBlendMode41)), temp_cast_9,
+                                       saturate(step(distanceDepth59, simplePerlin2D69)));
+            float4 Base_Color118 = lerpResult55;
+            o.Albedo = Base_Color118.rgb;
+            o.Metallic = _Metallic;
+            o.Smoothness = _Smoothness;
+            float screenDepth114 = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, ase_screenPosNorm.xy));
+            float distanceDepth114 = abs((screenDepth114 - LinearEyeDepth(ase_screenPosNorm.z)) / (0.04));
+            o.Alpha = saturate(distanceDepth114);
+        }
+        ENDCG
+    }
+    Fallback "Diffuse"
+    CustomEditor "ASEMaterialInspector"
 }
 /*ASEBEGIN
 Version=19202

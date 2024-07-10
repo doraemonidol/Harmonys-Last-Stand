@@ -10,9 +10,10 @@ namespace BlazeAISpace
 
         [Tooltip("The surprised animation to play.")]
         public string anim;
-        [Tooltip("The animation transition.")]
-        public float animT = 0.25f;
-        [Min(0), Tooltip("The duration to stay in this state and playing the animation.")]
+
+        [Tooltip("The animation transition.")] public float animT = 0.25f;
+
+        [Min(0)] [Tooltip("The duration to stay in this state and playing the animation.")]
         public float duration;
 
         [Tooltip("The speed of turning to face the target's caught position.")]
@@ -29,15 +30,15 @@ namespace BlazeAISpace
         #region BEHAVIOUR VARS
 
         public BlazeAI blaze { get; private set; }
-        bool isFirstRun = true;
-        float _duration = 0f;
-        bool playedAudio;
-        bool turningDone;
+        private bool isFirstRun = true;
+        private float _duration;
+        private bool playedAudio;
+        private bool turningDone;
 
         #endregion
 
         #region MAIN METHODS
-        
+
         public virtual void OnStart()
         {
             isFirstRun = false;
@@ -46,15 +47,13 @@ namespace BlazeAISpace
 
         public override void Open()
         {
-            if (isFirstRun) {
-                OnStart();
-            }
+            if (isFirstRun) OnStart();
 
             onStateEnter.Invoke();
-            
-            if (blaze == null) {
-                Debug.LogWarning($"No Blaze AI component found in the gameobject: {gameObject.name}. AI behaviour will have issues.");
-            }
+
+            if (blaze == null)
+                Debug.LogWarning(
+                    $"No Blaze AI component found in the gameobject: {gameObject.name}. AI behaviour will have issues.");
         }
 
         public override void Close()
@@ -63,51 +62,45 @@ namespace BlazeAISpace
             onStateExit.Invoke();
         }
 
-        void OnValidate()
+        private void OnValidate()
         {
-            if (blaze == null) {
-                blaze = GetComponent<BlazeAI>();
-            }
+            if (blaze == null) blaze = GetComponent<BlazeAI>();
         }
-        
+
         public override void Main()
         {
             // only turn if turning hasn't finished
-            if (!turningDone) 
+            if (!turningDone)
             {
                 // turn to face enemy -> this function returns true when done
-                if (blaze.TurnTo(blaze.enemyPosOnSurprised, blaze.waypoints.leftTurnAnimAlert, blaze.waypoints.rightTurnAnimAlert, blaze.waypoints.turningAnimT, turnSpeed)) {
+                if (blaze.TurnTo(blaze.enemyPosOnSurprised, blaze.waypoints.leftTurnAnimAlert,
+                        blaze.waypoints.rightTurnAnimAlert, blaze.waypoints.turningAnimT, turnSpeed))
                     turningDone = true;
-                }
 
                 return;
             }
-            
+
             // play animation
             blaze.animManager.Play(anim, animT);
-            
-            
+
+
             // play audio
-            if (playAudio && !playedAudio) 
-            {
-                if (!blaze.IsAudioScriptableEmpty()) {
-                    if (blaze.PlayAudio(blaze.audioScriptable.GetAudio(AudioScriptable.AudioType.SurprisedState))) {
+            if (playAudio && !playedAudio)
+                if (!blaze.IsAudioScriptableEmpty())
+                    if (blaze.PlayAudio(blaze.audioScriptable.GetAudio(AudioScriptable.AudioType.SurprisedState)))
                         playedAudio = true;
-                    }
-                }
-            }
 
             // timer to quit surprised state
             _duration += Time.deltaTime;
-            
-            if (_duration >= duration) 
+
+            if (_duration >= duration)
             {
                 Reset();
                 blaze.SetState(BlazeAI.State.attack);
             }
         }
 
-        void Reset()
+        private void Reset()
         {
             turningDone = false;
             _duration = 0f;

@@ -6,6 +6,6 @@ namespace BlazeAISpace
     {
         public abstract void Open();
         public abstract void Main();
-        public abstract void Close();    
+        public abstract void Close();
     }
 }

@@ -2,105 +2,111 @@
 // Available at the Unity Asset Store - http://u3d.as/y3X 
 Shader "Glow"
 {
-	Properties
-	{
-		_ASEOutlineColor( "Outline Color", Color ) = (0,0.1942773,1,0)
-		_ASEOutlineWidth( "Outline Width", Float ) = 0
-		_Emission1("Emission 1", Color) = (1,0,0,0)
-		_Emission1Str("Emission 1 Str", Float) = 1
-		_Emission2("Emission 2", Color) = (0,1,0,0)
-		_Emission2Str("Emission 2 Str", Float) = 1
-		[Toggle]_FresnelEdge("Fresnel/Edge", Float) = 0
-		_FresnelBias("Fresnel Bias", Float) = 0
-		_FresnelScale("Fresnel Scale", Float) = 1
-		_FresnelPower("Fresnel Power", Float) = 5
-		_EdgeWidth("Edge Width", Float) = 0.509
-		[HideInInspector] __dirty( "", Int ) = 1
-	}
+    Properties
+    {
+        _ASEOutlineColor( "Outline Color", Color ) = (0,0.1942773,1,0)
+        _ASEOutlineWidth( "Outline Width", Float ) = 0
+        _Emission1("Emission 1", Color) = (1,0,0,0)
+        _Emission1Str("Emission 1 Str", Float) = 1
+        _Emission2("Emission 2", Color) = (0,1,0,0)
+        _Emission2Str("Emission 2 Str", Float) = 1
+        [Toggle]_FresnelEdge("Fresnel/Edge", Float) = 0
+        _FresnelBias("Fresnel Bias", Float) = 0
+        _FresnelScale("Fresnel Scale", Float) = 1
+        _FresnelPower("Fresnel Power", Float) = 5
+        _EdgeWidth("Edge Width", Float) = 0.509
+        [HideInInspector] __dirty( "", Int ) = 1
+    }
 
-	SubShader
-	{
-		Tags{ }
-		Cull Front
-		CGPROGRAM
-		#pragma target 3.0
-		#pragma surface outlineSurf Outline nofog  keepalpha noshadow noambient novertexlights nolightmap nodynlightmap nodirlightmap nometa noforwardadd vertex:outlineVertexDataFunc 
-		
-		
-		
-		
-		struct Input {
-			half filler;
-		};
-		float4 _ASEOutlineColor;
-		float _ASEOutlineWidth;
-		void outlineVertexDataFunc( inout appdata_full v, out Input o )
-		{
-			UNITY_INITIALIZE_OUTPUT( Input, o );
-			v.vertex.xyz *= ( 1 + _ASEOutlineWidth);
-		}
-		inline half4 LightingOutline( SurfaceOutput s, half3 lightDir, half atten ) { return half4 ( 0,0,0, s.Alpha); }
-		void outlineSurf( Input i, inout SurfaceOutput o )
-		{
-			o.Emission = _ASEOutlineColor.rgb;
-			o.Alpha = 1;
-		}
-		ENDCG
-		
+    SubShader
+    {
+        Tags {}
+        Cull Front
+        CGPROGRAM
+        #pragma target 3.0
+        #pragma surface outlineSurf Outline nofog  keepalpha noshadow noambient novertexlights nolightmap nodynlightmap nodirlightmap nometa noforwardadd vertex:outlineVertexDataFunc
 
-		Tags{ "RenderType" = "Opaque"  "Queue" = "Geometry+0" "IsEmissive" = "true"  }
-		Cull Back
-		CGPROGRAM
-		#pragma target 3.0
-		#pragma surface surf Unlit keepalpha noshadow exclude_path:deferred 
-		struct Input
-		{
-			float3 worldPos;
-			float3 worldNormal;
-		};
 
-		uniform float _FresnelEdge;
-		uniform float4 _Emission1;
-		uniform float _Emission1Str;
-		uniform float4 _Emission2;
-		uniform float _Emission2Str;
-		uniform float _FresnelBias;
-		uniform float _FresnelScale;
-		uniform float _FresnelPower;
-		uniform float _EdgeWidth;
+        struct Input
+        {
+            half filler;
+        };
 
-		inline half4 LightingUnlit( SurfaceOutput s, half3 lightDir, half atten )
-		{
-			return half4 ( 0, 0, 0, s.Alpha );
-		}
+        float4 _ASEOutlineColor;
+        float _ASEOutlineWidth;
 
-		void surf( Input i , inout SurfaceOutput o )
-		{
-			float3 ase_worldPos = i.worldPos;
-			float3 ase_worldViewDir = normalize( UnityWorldSpaceViewDir( ase_worldPos ) );
-			float3 ase_worldNormal = i.worldNormal;
-			float fresnelNdotV17 = dot( ase_worldNormal, ase_worldViewDir );
-			float fresnelNode17 = ( _FresnelBias + _FresnelScale * pow( 1.0 - fresnelNdotV17, _FresnelPower ) );
-			float4 lerpResult23 = lerp( ( _Emission1 * _Emission1Str ) , ( _Emission2 * _Emission2Str ) , saturate( fresnelNode17 ));
-			float3 ase_vertexNormal = mul( unity_WorldToObject, float4( ase_worldNormal, 0 ) );
-			ase_vertexNormal = normalize( ase_vertexNormal );
-			float3 temp_output_32_0 = abs( ase_vertexNormal );
-			float3 temp_cast_0 = (_EdgeWidth).xxx;
-			float dotResult37 = dot( max( temp_output_32_0 , ( 1.0 - temp_output_32_0 ) ) , temp_cast_0 );
-			float3 _Vector0 = float3(1.5,1,0);
-			float ifLocalVar40 = 0;
-			if( dotResult37 >= _Vector0.x )
-				ifLocalVar40 = _Vector0.y;
-			else
-				ifLocalVar40 = _Vector0.z;
-			float4 lerpResult43 = lerp( ( _Emission1 * _Emission1Str ) , ( _Emission2 * _Emission2Str ) , ifLocalVar40);
-			o.Emission = (( _FresnelEdge )?( lerpResult43 ):( lerpResult23 )).rgb;
-			o.Alpha = 1;
-		}
+        void outlineVertexDataFunc(inout appdata_full v, out Input o)
+        {
+                UNITY_INITIALIZE_OUTPUT(Input, o);
+            v.vertex.xyz *= (1 + _ASEOutlineWidth);
+        }
 
-		ENDCG
-	}
-	CustomEditor "ASEMaterialInspector"
+        inline half4 LightingOutline(SurfaceOutput s, half3 lightDir, half atten) { return half4(0, 0, 0, s.Alpha); }
+
+        void outlineSurf(Input i, inout SurfaceOutput o)
+        {
+            o.Emission = _ASEOutlineColor.rgb;
+            o.Alpha = 1;
+        }
+        ENDCG
+
+
+        Tags
+        {
+            "RenderType" = "Opaque" "Queue" = "Geometry+0" "IsEmissive" = "true"
+        }
+        Cull Back
+        CGPROGRAM
+        #pragma target 3.0
+        #pragma surface surf Unlit keepalpha noshadow exclude_path:deferred
+        struct Input
+        {
+            float3 worldPos;
+            float3 worldNormal;
+        };
+
+        uniform float _FresnelEdge;
+        uniform float4 _Emission1;
+        uniform float _Emission1Str;
+        uniform float4 _Emission2;
+        uniform float _Emission2Str;
+        uniform float _FresnelBias;
+        uniform float _FresnelScale;
+        uniform float _FresnelPower;
+        uniform float _EdgeWidth;
+
+        inline half4 LightingUnlit(SurfaceOutput s, half3 lightDir, half atten)
+        {
+            return half4(0, 0, 0, s.Alpha);
+        }
+
+        void surf(Input i, inout SurfaceOutput o)
+        {
+            float3 ase_worldPos = i.worldPos;
+            float3 ase_worldViewDir = normalize(UnityWorldSpaceViewDir(ase_worldPos));
+            float3 ase_worldNormal = i.worldNormal;
+            float fresnelNdotV17 = dot(ase_worldNormal, ase_worldViewDir);
+            float fresnelNode17 = (_FresnelBias + _FresnelScale * pow(1.0 - fresnelNdotV17, _FresnelPower));
+            float4 lerpResult23 = lerp((_Emission1 * _Emission1Str), (_Emission2 * _Emission2Str),
+                saturate(fresnelNode17));
+            float3 ase_vertexNormal = mul(unity_WorldToObject, float4(ase_worldNormal, 0));
+            ase_vertexNormal = normalize(ase_vertexNormal);
+            float3 temp_output_32_0 = abs(ase_vertexNormal);
+            float3 temp_cast_0 = (_EdgeWidth).xxx;
+            float dotResult37 = dot(max(temp_output_32_0, (1.0 - temp_output_32_0)), temp_cast_0);
+            float3 _Vector0 = float3(1.5, 1, 0);
+            float ifLocalVar40 = 0;
+            if (dotResult37 >= _Vector0.x)
+                ifLocalVar40 = _Vector0.y;
+            else
+                ifLocalVar40 = _Vector0.z;
+            float4 lerpResult43 = lerp((_Emission1 * _Emission1Str), (_Emission2 * _Emission2Str), ifLocalVar40);
+            o.Emission = ((_FresnelEdge) ? (lerpResult43) : (lerpResult23)).rgb;
+            o.Alpha = 1;
+        }
+        ENDCG
+    }
+    CustomEditor "ASEMaterialInspector"
 }
 /*ASEBEGIN
 Version=19202

@@ -97,7 +97,7 @@ public abstract class BaseSkill : MonoBehaviour
             StartCoroutine(RenderVFX(preCastVfx));
             yield return new WaitForSeconds(preCastVfx.duration);
         }
-        
+        Debug.Log("Skill State: Casting");
         _skillState = SkillState.Casting;
         if (projectileVfx.HasVFX())
         {

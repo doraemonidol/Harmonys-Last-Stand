@@ -8,7 +8,7 @@ namespace BlazeAIDemo
         public float currentHealth { get; set; }
 
 
-        void Start()
+        private void Start()
         {
             currentHealth = maxHealth;
         }

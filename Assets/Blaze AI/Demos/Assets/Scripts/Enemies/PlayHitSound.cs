@@ -7,12 +7,11 @@ namespace BlazeAIDemo
         public AudioSource hitSound;
         public FlagAttack flagAttack;
 
-        void OnTriggerEnter(Collider col)
+        private void OnTriggerEnter(Collider col)
         {
-            if (col.CompareTag("Player") && flagAttack.attacking) {
-                if (!hitSound.isPlaying) hitSound.Play();
-            }
+            if (col.CompareTag("Player") && flagAttack.attacking)
+                if (!hitSound.isPlaying)
+                    hitSound.Play();
         }
     }
 }
-

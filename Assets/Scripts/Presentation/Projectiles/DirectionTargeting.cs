@@ -49,6 +49,7 @@ namespace Presentation.Projectiles
             
             if (muzzlePrefab != null) {
                 var muzzleVFX = Instantiate (muzzlePrefab, transform.position, Quaternion.identity);
+                muzzleVFX.transform.parent = transform;
                 muzzleVFX.transform.forward = gameObject.transform.forward + _offset;
                 var ps = muzzleVFX.GetComponent<ParticleSystem>();
                 if (ps != null)

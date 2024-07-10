@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class ShieldActivate : MonoBehaviour
 {
     public float ImpactLife;
-    Vector4[] points;
-    Material m_material;
-    List<Vector4> Hitpoints;
-    MeshRenderer m_meshRenderer;
-    float time;
+    private List<Vector4> Hitpoints;
+    private Material m_material;
+    private MeshRenderer m_meshRenderer;
+    private Vector4[] points;
+    private float time;
 
-    void Start()
+    private void Start()
     {
         time = Time.time;
         points = new Vector4[30];
@@ -21,15 +20,15 @@ public class ShieldActivate : MonoBehaviour
         m_material = m_meshRenderer.material;
     }
 
-    void Update()
+    private void Update()
     {
         //Set material ( based on Shader_IntegratedEffect ) point array
         m_material.SetVectorArray("_Points", points);
 
         //Find available points 
         Hitpoints = Hitpoints
-        .Select(s => new Vector4(s.x, s.y, s.z, s.w + Time.deltaTime / ImpactLife))
-        .Where(w => w.w <= 1).ToList();
+            .Select(s => new Vector4(s.x, s.y, s.z, s.w + Time.deltaTime / ImpactLife))
+            .Where(w => w.w <= 1).ToList();
 
         //Fill empty point for list circle
         if (Time.time > time + 0.1f)
@@ -45,7 +44,7 @@ public class ShieldActivate : MonoBehaviour
     public void AddHitObject(Vector3 position)
     {
         position -= transform.position;
-        position = position.normalized/2;
+        position = position.normalized / 2;
         Hitpoints.Add(new Vector4(position.x, position.y, position.z, 0));
     }
 

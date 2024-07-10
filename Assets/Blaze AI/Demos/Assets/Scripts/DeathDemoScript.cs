@@ -1,56 +1,48 @@
-using UnityEngine;
-using BlazeAISpace;
-using BlazeAIDemo;
 using System.Collections.Generic;
+using BlazeAIDemo;
+using UnityEngine;
 
 public class DeathDemoScript : MonoBehaviour
 {
     public BlazeAI[] blazeAI;
-    public List<Vector3> startPositions = new List<Vector3>();
+    public List<Vector3> startPositions = new();
 
-    void Start()
+    private void Start()
     {
-        foreach (var item in blazeAI) {
-            startPositions.Add(item.transform.position);
-        }
+        foreach (var item in blazeAI) startPositions.Add(item.transform.position);
     }
 
-    void Update()
+    private void Update()
     {
         // hit the AI
-        if (Input.GetKeyDown(KeyCode.E)) 
-        {
-            for (int i=0; i<blazeAI.Length; i++) {
+        if (Input.GetKeyDown(KeyCode.E))
+            for (var i = 0; i < blazeAI.Length; i++)
+            {
                 blazeAI[i].Hit();
-                BlazeAIDemo.Health blazeHealth = blazeAI[i].GetComponent<BlazeAIDemo.Health>();
+                var blazeHealth = blazeAI[i].GetComponent<Health>();
 
-                if (blazeHealth.currentHealth > 0) {
-                    blazeHealth.currentHealth -= 10;
-                }
+                if (blazeHealth.currentHealth > 0) blazeHealth.currentHealth -= 10;
 
-                if (blazeHealth.currentHealth <= 0) {
-                    if (i < 2) {
+                if (blazeHealth.currentHealth <= 0)
+                {
+                    if (i < 2)
                         // plays either death animation or ragdolls instantly depending on inspector
                         blazeAI[i].Death();
-                    }
-                    else {
+                    else
                         // plays death animation and then ragdolls midway
                         blazeAI[i].DeathDoll(0.5f);
-                    }
                 }
             }
-        }
 
 
         // return alive
-        if (Input.GetKeyDown(KeyCode.R)) 
-        {
-            for (int i=0; i<blazeAI.Length; i++) {
-                BlazeAIDemo.Health blazeHealth = blazeAI[i].GetComponent<BlazeAIDemo.Health>();
+        if (Input.GetKeyDown(KeyCode.R))
+            for (var i = 0; i < blazeAI.Length; i++)
+            {
+                var blazeHealth = blazeAI[i].GetComponent<Health>();
                 blazeHealth.currentHealth = blazeHealth.maxHealth;
                 blazeAI[i].ChangeState("normal");
                 blazeAI[i].transform.position = startPositions[i];
             }
-        }
     }
 }

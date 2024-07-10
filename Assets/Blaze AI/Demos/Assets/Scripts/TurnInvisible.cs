@@ -8,30 +8,30 @@ namespace BlazeAIDemo
         public Material invisibleMat;
         public AudioSource invisibleAudio;
         public AudioSource returnAudio;
-        public bool invisibleOnStart = false;
+        public bool invisibleOnStart;
+        private Material defaultMat;
+        private string defaultTag;
 
-        bool state = false;
-        string defaultTag;
-        Material defaultMat;
+        private bool state;
 
-        void Start()
+        private void Start()
         {
             if (invisibleOnStart) Invisible();
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                if (state) {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (state)
                     Appear();
-                }else{
+                else
                     Invisible();
-                }
             }
         }
 
-        void Invisible()
+        private void Invisible()
         {
             //turn invisible
             state = true;
@@ -42,7 +42,7 @@ namespace BlazeAIDemo
             if (!invisibleAudio.isPlaying) invisibleAudio.Play();
         }
 
-        void Appear()
+        private void Appear()
         {
             //return normal
             state = false;

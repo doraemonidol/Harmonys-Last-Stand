@@ -4,18 +4,16 @@ namespace BlazeAISpace
 {
     public class StayInPosition : MonoBehaviour
     {
-        BlazeAI blaze;
+        private BlazeAI blaze;
 
-        void Start()
+        private void Start()
         {
             blaze = GetComponent<BlazeAI>();
         }
-        
-        void Update()
+
+        private void Update()
         {
-            if (blaze.state == BlazeAI.State.normal || blaze.state == BlazeAI.State.alert) {
-                blaze.StayIdle();
-            }
+            if (blaze.state == BlazeAI.State.normal || blaze.state == BlazeAI.State.alert) blaze.StayIdle();
         }
     }
 }

@@ -12,12 +12,12 @@ public class RotationScript : MonoBehaviour
     public RotationAxis rotationAxis = RotationAxis.Y;
     public float rotationSpeed = 50.0f;
 
-    void Update()
+    private void Update()
     {
-        float rotationValue = rotationSpeed * Time.deltaTime;
+        var rotationValue = rotationSpeed * Time.deltaTime;
 
         // Rotation Axis
-        Vector3 axis = Vector3.zero;
+        var axis = Vector3.zero;
         switch (rotationAxis)
         {
             case RotationAxis.X:

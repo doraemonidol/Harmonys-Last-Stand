@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FlickerLight : MonoBehaviour
@@ -17,7 +16,7 @@ public class FlickerLight : MonoBehaviour
     private Coroutine flickerCoroutine;
     private float targetIntensity;
 
-    void Start()
+    private void Start()
     {
         //check if there is a light
         if (lightAsset == null)
@@ -38,15 +37,21 @@ public class FlickerLight : MonoBehaviour
         flickerCoroutine = StartCoroutine(ambientLight());
     }
 
-    IEnumerator ambientLight()
+    //stops coroutine if disabled in scene
+    private void OnDisable()
+    {
+        if (flickerCoroutine != null) StopCoroutine(flickerCoroutine);
+    }
+
+    private IEnumerator ambientLight()
     {
         while (true)
         {
             //random initial target intensity
             targetIntensity = Random.Range(minIntensity, maxIntensity);
 
-            float elapsedTime = 0f;
-            float startIntensity = lightAsset.intensity;
+            var elapsedTime = 0f;
+            var startIntensity = lightAsset.intensity;
 
             while (elapsedTime < 1f)
             {
@@ -57,15 +62,6 @@ public class FlickerLight : MonoBehaviour
 
             //time to wait before next flicker target
             yield return new WaitForSeconds(Random.Range(0.05f, 0.2f) / flickerSpeed);
-        }
-    }
-
-    //stops coroutine if disabled in scene
-    void OnDisable()
-    {
-        if (flickerCoroutine != null)
-        {
-            StopCoroutine(flickerCoroutine);
         }
     }
 }

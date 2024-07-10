@@ -1,21 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 namespace ithappy
 {
     public class Rnd_Animation : MonoBehaviour
     {
+        [SerializeField] private string titleAnim;
 
-        Animator anim;
-        float offsetAnim;
-
-        [SerializeField] string titleAnim;
+        private Animator anim;
+        private float offsetAnim;
 
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             anim = GetComponent<Animator>();
             offsetAnim = Random.Range(0f, 1f);

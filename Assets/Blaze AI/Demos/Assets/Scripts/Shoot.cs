@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
 using BlazeAISpace;
+using UnityEngine;
 
 namespace BlazeAIDemo
 {
@@ -8,20 +8,20 @@ namespace BlazeAIDemo
     {
         [HideInInspector] public LineRenderer lr;
         [HideInInspector] public BlazeAI blaze;
-        [HideInInspector] public BlazeAISpace.CoverShooterBehaviour coverShooter;
+        [HideInInspector] public CoverShooterBehaviour coverShooter;
 
         public Transform gun;
         public Material shootMaterial;
         public AudioSource gunShot;
 
 
-        void Start() 
+        private void Start()
         {
-            blaze = GetComponent<BlazeAI>(); 
+            blaze = GetComponent<BlazeAI>();
             coverShooter = GetComponent<CoverShooterBehaviour>();
             lr = GetComponent<LineRenderer>();
 
-            lr.enabled = false; 
+            lr.enabled = false;
             lr.startWidth = 0.05f;
             lr.endWidth = 0.05f;
         }
@@ -30,7 +30,7 @@ namespace BlazeAIDemo
         {
             lr.material = shootMaterial;
             gunShot.Play();
-            
+
             lr.enabled = true;
             lr.SetPosition(0, gun.position + new Vector3(0f, 0.2f, 0f));
             lr.SetPosition(1, coverShooter.hitPoint + new Vector3(0f, 0f, 0f));
@@ -38,12 +38,11 @@ namespace BlazeAIDemo
             StartCoroutine(TurnRendererOff());
         }
 
-        IEnumerator TurnRendererOff()
+        private IEnumerator TurnRendererOff()
         {
             yield return new WaitForSeconds(0.2f);
-            
+
             lr.enabled = false;
         }
     }
 }
-

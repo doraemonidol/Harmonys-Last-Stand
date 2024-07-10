@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SimpleTranslate : MonoBehaviour
@@ -11,21 +9,11 @@ public class SimpleTranslate : MonoBehaviour
     public bool moveZ;
     public float moveZSpeed = 2f;
 
-    void Update()
+    private void Update()
     {
-        if (moveX == true)
-        {
-            transform.Translate(Vector3.left * Time.deltaTime * moveXSpeed);
-        }
-        if (moveY == true)
-        {
-            transform.Translate(Vector3.up * Time.deltaTime * moveYSpeed);
-        }
+        if (moveX) transform.Translate(Vector3.left * Time.deltaTime * moveXSpeed);
+        if (moveY) transform.Translate(Vector3.up * Time.deltaTime * moveYSpeed);
 
-        if (moveZ == true)
-        {
-            transform.Translate(Vector3.back * Time.deltaTime * moveZSpeed);
-        }
+        if (moveZ) transform.Translate(Vector3.back * Time.deltaTime * moveZSpeed);
     }
 }
-

@@ -5,16 +5,18 @@ namespace BlazeAIDemo
     public class ClickToDistract : MonoBehaviour
     {
         public AudioSource distractionAudio;
-        BlazeAIDistraction distractionScript;
-        
-        void Start() {
+        private BlazeAIDistraction distractionScript;
+
+        private void Start()
+        {
             distractionScript = GetComponent<BlazeAIDistraction>();
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
-            if (Input.GetMouseButtonDown(0)){
+            if (Input.GetMouseButtonDown(0))
+            {
                 if (distractionAudio) distractionAudio.Play();
                 distractionScript.TriggerDistraction();
             }

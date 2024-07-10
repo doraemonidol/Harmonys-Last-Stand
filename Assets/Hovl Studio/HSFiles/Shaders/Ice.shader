@@ -2,70 +2,73 @@
 // Available at the Unity Asset Store - http://u3d.as/y3X 
 Shader "Hovl/Particles/Ice"
 {
-	Properties
-	{
-		_MainTex("Main Tex", 2D) = "white" {}
-		_Color("Color", Color) = (0.02352941,0.2055747,1,1)
-		_UpColor("Up Color", Color) = (0.4575472,0.7381514,1,1)
-		_ColorPosition("Color Position", Range( 0 , 1)) = 0.35
-		_Emission("Emission", Float) = 1
-		[HDR]_FresnelColor("Fresnel Color", Color) = (1,1,1,1)
-		_FresnelPower("Fresnel Power", Float) = 6
-		_FresnelScale("Fresnel Scale", Float) = 1
-		[HideInInspector] _texcoord( "", 2D ) = "white" {}
-		[HideInInspector] __dirty( "", Int ) = 1
-	}
+    Properties
+    {
+        _MainTex("Main Tex", 2D) = "white" {}
+        _Color("Color", Color) = (0.02352941,0.2055747,1,1)
+        _UpColor("Up Color", Color) = (0.4575472,0.7381514,1,1)
+        _ColorPosition("Color Position", Range( 0 , 1)) = 0.35
+        _Emission("Emission", Float) = 1
+        [HDR]_FresnelColor("Fresnel Color", Color) = (1,1,1,1)
+        _FresnelPower("Fresnel Power", Float) = 6
+        _FresnelScale("Fresnel Scale", Float) = 1
+        [HideInInspector] _texcoord( "", 2D ) = "white" {}
+        [HideInInspector] __dirty( "", Int ) = 1
+    }
 
-	SubShader
-	{
-		Tags{ "RenderType" = "Transparent"  "Queue" = "Transparent+0" "IgnoreProjector" = "True" "IsEmissive" = "true"  }
-		Cull Back
-		CGINCLUDE
-		#include "UnityPBSLighting.cginc"
-		#include "Lighting.cginc"
-		#pragma target 3.0
-		struct Input
-		{
-			float2 uv_texcoord;
-			float3 worldNormal;
-			float3 worldPos;
-			float4 vertexColor : COLOR;
-		};
+    SubShader
+    {
+        Tags
+        {
+            "RenderType" = "Transparent" "Queue" = "Transparent+0" "IgnoreProjector" = "True" "IsEmissive" = "true"
+        }
+        Cull Back
+        CGINCLUDE
+        #include "UnityPBSLighting.cginc"
+        #include "Lighting.cginc"
+        #pragma target 3.0
+        struct Input
+        {
+            float2 uv_texcoord;
+            float3 worldNormal;
+            float3 worldPos;
+            float4 vertexColor : COLOR;
+        };
 
-		uniform sampler2D _MainTex;
-		uniform float4 _MainTex_ST;
-		uniform float4 _Color;
-		uniform float4 _UpColor;
-		uniform float _ColorPosition;
-		uniform float _FresnelScale;
-		uniform float _FresnelPower;
-		uniform float4 _FresnelColor;
-		uniform float _Emission;
+        uniform sampler2D _MainTex;
+        uniform float4 _MainTex_ST;
+        uniform float4 _Color;
+        uniform float4 _UpColor;
+        uniform float _ColorPosition;
+        uniform float _FresnelScale;
+        uniform float _FresnelPower;
+        uniform float4 _FresnelColor;
+        uniform float _Emission;
 
-		void surf( Input i , inout SurfaceOutput o )
-		{
-			float2 uv_MainTex = i.uv_texcoord * _MainTex_ST.xy + _MainTex_ST.zw;
-			float3 ase_worldNormal = i.worldNormal;
-			float3 ase_vertexNormal = mul( unity_WorldToObject, float4( ase_worldNormal, 0 ) );
-			float4 lerpResult9 = lerp( _Color , _UpColor , saturate( ( ase_vertexNormal.y + (-1.0 + (_ColorPosition - 0.0) * (1.0 - -1.0) / (1.0 - 0.0)) ) ));
-			float3 ase_worldPos = i.worldPos;
-			float3 ase_worldViewDir = normalize( UnityWorldSpaceViewDir( ase_worldPos ) );
-			float fresnelNdotV1 = dot( ase_worldNormal, ase_worldViewDir );
-			float fresnelNode1 = ( 0.0 + _FresnelScale * pow( 1.0 - fresnelNdotV1, _FresnelPower ) );
-			float temp_output_49_0 = saturate( fresnelNode1 );
-			float4 temp_output_22_0 = ( ( ( tex2D( _MainTex, uv_MainTex ) * lerpResult9 * ( 1.0 - temp_output_49_0 ) ) + ( temp_output_49_0 * _FresnelColor ) ) * i.vertexColor );
-			o.Albedo = temp_output_22_0.rgb;
-			o.Emission = ( temp_output_22_0 * _Emission ).rgb;
-			o.Alpha = i.vertexColor.a;
-		}
-
-		ENDCG
-		CGPROGRAM
-		#pragma surface surf Lambert alpha:fade keepalpha fullforwardshadows noshadow 
-
-		ENDCG
-	}
-	Fallback "Diffuse"
+        void surf(Input i, inout SurfaceOutput o)
+        {
+            float2 uv_MainTex = i.uv_texcoord * _MainTex_ST.xy + _MainTex_ST.zw;
+            float3 ase_worldNormal = i.worldNormal;
+            float3 ase_vertexNormal = mul(unity_WorldToObject, float4(ase_worldNormal, 0));
+            float4 lerpResult9 = lerp(_Color, _UpColor,
+                  saturate((ase_vertexNormal.y + (-1.0 + (_ColorPosition - 0.0) * (1.0 - -1.0) / (1.0 - 0.0)))));
+            float3 ase_worldPos = i.worldPos;
+            float3 ase_worldViewDir = normalize(UnityWorldSpaceViewDir(ase_worldPos));
+            float fresnelNdotV1 = dot(ase_worldNormal, ase_worldViewDir);
+            float fresnelNode1 = (0.0 + _FresnelScale * pow(1.0 - fresnelNdotV1, _FresnelPower));
+            float temp_output_49_0 = saturate(fresnelNode1);
+            float4 temp_output_22_0 = (((tex2D(_MainTex, uv_MainTex) * lerpResult9 * (1.0 - temp_output_49_0)) + (
+                temp_output_49_0 * _FresnelColor)) * i.vertexColor);
+            o.Albedo = temp_output_22_0.rgb;
+            o.Emission = (temp_output_22_0 * _Emission).rgb;
+            o.Alpha = i.vertexColor.a;
+        }
+        ENDCG
+        CGPROGRAM
+        #pragma surface surf Lambert alpha:fade keepalpha fullforwardshadows noshadow
+        ENDCG
+    }
+    Fallback "Diffuse"
 }
 /*ASEBEGIN
 Version=16800

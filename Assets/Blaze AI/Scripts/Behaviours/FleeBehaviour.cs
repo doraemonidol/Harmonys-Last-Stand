@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -5,7 +6,7 @@ namespace BlazeAISpace
 {
     [AddComponentMenu("Blaze AI/Flee Behaviour")]
     public class FleeBehaviour : BlazeBehaviour
-    {   
+    {
         #region PROPERTIES
 
         [Tooltip("The distance to run to away from the target.")]
@@ -19,16 +20,21 @@ namespace BlazeAISpace
 
         [Tooltip("Go to a specific position.")]
         public bool goToPosition;
+
         [Tooltip("Set the specific position to go to.")]
         public Vector3 setPosition;
+
         [Tooltip("Shows the specific position point in the scene view (green circle marked as flee position)")]
         public bool showPosition;
+
         [Tooltip("Fire an event when the specific position is reached.")]
         public UnityEvent reachEvent;
 
         [Tooltip("Play an audio when fleeing. Set the audio in the audio scriptable. Fleeing array.")]
         public bool playAudio;
-        [Tooltip("If enabled, an audio will always play when fleeing. If set to false, there is a 50/50 chance whether an audio will be played or not.")]
+
+        [Tooltip(
+            "If enabled, an audio will always play when fleeing. If set to false, there is a 50/50 chance whether an audio will be played or not.")]
         public bool alwaysPlayAudio;
 
         public UnityEvent onStateEnter;
@@ -39,17 +45,14 @@ namespace BlazeAISpace
         #region BEHAVIOUR VARS
 
         public BlazeAI blaze { private set; get; }
-        bool isFirstRun = true;
-        GameObject lastEnemy;
-        Vector3 fleePosition;
+        private bool isFirstRun = true;
+        private GameObject lastEnemy;
 
-        public Vector3 fleeingTo {
-            get { return fleePosition; }
-        }
+        public Vector3 fleeingTo { get; private set; }
 
-        bool isMoving;
-        float cornersDist;
-        int _framesElapsed = 0;
+        private bool isMoving;
+        private float cornersDist;
+        private int _framesElapsed;
 
         #endregion
 
@@ -63,15 +66,15 @@ namespace BlazeAISpace
 
         public override void Open()
         {
-            if (isFirstRun) {
-                OnStart();
-            }
+            if (isFirstRun) OnStart();
 
             onStateEnter.Invoke();
             _framesElapsed = 5;
-            
-            if (blaze == null) {
-                Debug.LogWarning($"No Blaze AI component found in the gameobject: {gameObject.name}. AI behaviour will have issues.");
+
+            if (blaze == null)
+            {
+                Debug.LogWarning(
+                    $"No Blaze AI component found in the gameobject: {gameObject.name}. AI behaviour will have issues.");
                 return;
             }
 
@@ -81,12 +84,11 @@ namespace BlazeAISpace
 
         public override void Close()
         {
-            if (blaze == null) {
-                return;
-            }
+            if (blaze == null) return;
 
             // reset flags, except if hit state
-            if (blaze.state != BlazeAI.State.hit) {
+            if (blaze.state != BlazeAI.State.hit)
+            {
                 lastEnemy = null;
                 blaze.isFleeing = false;
             }
@@ -96,13 +98,15 @@ namespace BlazeAISpace
 
         public override void Main()
         {
-            if (blaze.enemyToAttack != null) {
+            if (blaze.enemyToAttack != null)
+            {
                 lastEnemy = blaze.enemyToAttack;
                 Flee();
                 return;
             }
-            
-            if (lastEnemy != null) {
+
+            if (lastEnemy != null)
+            {
                 Flee();
                 return;
             }
@@ -110,40 +114,37 @@ namespace BlazeAISpace
             blaze.SetState(BlazeAI.State.alert);
         }
 
-        void OnValidate()
+        private void OnValidate()
         {
-            if (blaze == null) {
-                blaze = GetComponent<BlazeAI>();
-            }
+            if (blaze == null) blaze = GetComponent<BlazeAI>();
 
-            if (goToPosition && setPosition == Vector3.zero) {
-                setPosition = transform.position;
-            }
+            if (goToPosition && setPosition == Vector3.zero) setPosition = transform.position;
         }
 
-        #if UNITY_EDITOR
-        void OnDrawGizmosSelected()
+#if UNITY_EDITOR
+        private void OnDrawGizmosSelected()
         {
             if (blaze == null) return;
 
-            if (goToPosition && showPosition) 
+            if (goToPosition && showPosition)
             {
-                if (blaze.groundLayers.value == 0) {
-                    Debug.LogWarning("Ground layers property not set. Make sure to set the ground layers in the main Blaze inspector (general tab) in order to see the flee points visually.");
-                }
+                if (blaze.groundLayers.value == 0)
+                    Debug.LogWarning(
+                        "Ground layers property not set. Make sure to set the ground layers in the main Blaze inspector (general tab) in order to see the flee points visually.");
 
                 RaycastHit hit;
-                if (Physics.Raycast(setPosition, -Vector3.up, out hit, Mathf.Infinity, blaze.groundLayers)) {
+                if (Physics.Raycast(setPosition, -Vector3.up, out hit, Mathf.Infinity, blaze.groundLayers))
+                {
                     Debug.DrawRay(transform.position, setPosition - transform.position, new Color(1f, 0.3f, 0f), 0.1f);
                     Debug.DrawRay(setPosition, hit.point - setPosition, new Color(1f, 0.3f, 0f), 0.1f);
 
-                    UnityEditor.Handles.color = new Color(0.3f, 1f, 0f);
-                    UnityEditor.Handles.DrawWireDisc(hit.point, blaze.transform.up, 0.5f);
-                    UnityEditor.Handles.Label(hit.point + new Vector3(0, 1, 0), "Flee Position");
+                    Handles.color = new Color(0.3f, 1f, 0f);
+                    Handles.DrawWireDisc(hit.point, blaze.transform.up, 0.5f);
+                    Handles.Label(hit.point + new Vector3(0, 1, 0), "Flee Position");
                 }
             }
         }
-        #endif
+#endif
 
         #endregion
 
@@ -151,19 +152,20 @@ namespace BlazeAISpace
 
         public virtual void Flee()
         {
-            if (goToPosition) 
+            if (goToPosition)
             {
-                if (_framesElapsed >= 5) 
+                if (_framesElapsed >= 5)
                 {
                     cornersDist = blaze.CalculateCornersDistanceFrom(transform.position, setPosition);
                     _framesElapsed = 0;
                 }
-                else {
+                else
+                {
                     _framesElapsed++;
                 }
-                
-                float radius = blaze.navmeshAgent.radius * 2;
-                if (cornersDist <= radius) 
+
+                var radius = blaze.navmeshAgent.radius * 2;
+                if (cornersDist <= radius)
                 {
                     reachEvent.Invoke();
                     blaze.SetState(BlazeAI.State.alert);
@@ -174,38 +176,35 @@ namespace BlazeAISpace
                 return;
             }
 
-            
-            if (isMoving) 
+
+            if (isMoving)
             {
-                Move(fleePosition);
+                Move(fleeingTo);
                 return;
             }
 
 
-            float distance = (transform.position - lastEnemy.transform.position).sqrMagnitude;
-            if (distance >= distanceRun * distanceRun) 
-            {
-                if (blaze.enemyToAttack == null) 
+            var distance = (transform.position - lastEnemy.transform.position).sqrMagnitude;
+            if (distance >= distanceRun * distanceRun)
+                if (blaze.enemyToAttack == null)
                 {
                     blaze.SetState(BlazeAI.State.alert);
                     return;
                 }
-            }
 
-            
-            Vector3 fleeDir = lastEnemy.transform.position - transform.position;
-            fleePosition = transform.position - fleeDir;
 
-            if (!blaze.IsPathReachable(fleePosition)) {
-                fleePosition = blaze.RandomSpherePoint(transform.position, distanceRun);
-            }
+            var fleeDir = lastEnemy.transform.position - transform.position;
+            fleeingTo = transform.position - fleeDir;
 
-            Move(fleePosition);
+            if (!blaze.IsPathReachable(fleeingTo)) fleeingTo = blaze.RandomSpherePoint(transform.position, distanceRun);
+
+            Move(fleeingTo);
         }
 
         public virtual void Move(Vector3 pos)
         {
-            if (blaze.MoveTo(pos, moveSpeed, turnSpeed, moveAnim, moveAnimT)) {
+            if (blaze.MoveTo(pos, moveSpeed, turnSpeed, moveAnim, moveAnimT))
+            {
                 isMoving = false;
                 return;
             }
@@ -213,16 +212,15 @@ namespace BlazeAISpace
             isMoving = true;
         }
 
-        void PlayAudio()
+        private void PlayAudio()
         {
             if (blaze == null) return;
             if (blaze.IsAudioScriptableEmpty() || !playAudio) return;
 
-            if (!alwaysPlayAudio) {
-                int rand = Random.Range(0, 2);
-                if (rand == 0) {
-                    return;
-                }
+            if (!alwaysPlayAudio)
+            {
+                var rand = Random.Range(0, 2);
+                if (rand == 0) return;
             }
 
             blaze.PlayAudio(blaze.audioScriptable.GetAudio(AudioScriptable.AudioType.Fleeing));

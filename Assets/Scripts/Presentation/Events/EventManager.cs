@@ -5,12 +5,12 @@ namespace Presentation.Events
 {
     public class EventManager
     {
-        private EffectManager _effectManager;
+        private EffectUIManager _effectUIManager;
         private MovementManager _movementManager;
         
         public EventManager()
         {
-            _effectManager = new EffectManager();
+            _effectUIManager = new EffectUIManager();
             _movementManager = new MovementManager();
         }
         

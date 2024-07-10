@@ -8,9 +8,10 @@ namespace BlazeAISpace
 
         public void GetHeight()
         {
-            Collider coll = GetComponent<Collider>();
+            var coll = GetComponent<Collider>();
 
-            if (coll == null) {
+            if (coll == null)
+            {
                 heightOfObject = -1;
                 return;
             }

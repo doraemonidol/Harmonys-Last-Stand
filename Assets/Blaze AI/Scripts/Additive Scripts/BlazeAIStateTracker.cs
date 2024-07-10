@@ -1,23 +1,23 @@
 #if UNITY_EDITOR
 using UnityEngine;
-using BlazeAISpace;
 
 [AddComponentMenu("Blaze AI/Additive Scripts/Blaze AI State Tracker")]
 public class BlazeAIStateTracker : MonoBehaviour
 {
-    BlazeAI blaze;
+    private BlazeAI blaze;
 
-    void Start()
+    private void Start()
     {
-        blaze = GetComponent<BlazeAI>();    
+        blaze = GetComponent<BlazeAI>();
     }
 
     public string GetState()
     {
         string text;
-        SpareState spareState = blaze.CurrentSpareState();
+        var spareState = blaze.CurrentSpareState();
 
-        if (spareState != null) {
+        if (spareState != null)
+        {
             text = $"Spare State ({spareState.stateName})";
             return text;
         }
@@ -30,7 +30,7 @@ public class BlazeAIStateTracker : MonoBehaviour
     {
         blaze = GetComponent<BlazeAI>();
         if (blaze == null) return false;
-        
+
         return true;
     }
 }

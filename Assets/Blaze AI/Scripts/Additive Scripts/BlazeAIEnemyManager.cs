@@ -6,31 +6,33 @@ public class BlazeAIEnemyManager : MonoBehaviour
 {
     [Tooltip("The amount of time in seconds to send an enemy to attack.")]
     public float attackTimer = 5f;
+
     [Tooltip("Setting this to false won't let enemies attack instead they'll just be in attack idle state.")]
     public bool callEnemies = true;
 
     #region SYSTEM VARIABLES
 
-    float _timer = 0f;
-    Transform lastSelectedAI;
-    int attackDir = -1;
+    private float _timer;
+    private Transform lastSelectedAI;
+    private int attackDir = -1;
 
-    public List<BlazeAI> targetedBy = new List<BlazeAI>();
-    public List<BlazeAI> potentialEnemies = new List<BlazeAI>();
-    List<BlazeAI> enemiesScheduled = new List<BlazeAI>();
+    public List<BlazeAI> targetedBy = new();
+    public List<BlazeAI> potentialEnemies = new();
+    private readonly List<BlazeAI> enemiesScheduled = new();
 
     #endregion
-    
+
     #region UNITY METHODS
 
-    void Awake()
+    private void Awake()
     {
         enabled = false;
     }
 
-    public virtual void Update ()
+    public virtual void Update()
     {
-        if (enemiesScheduled.Count == 0) {
+        if (enemiesScheduled.Count == 0)
+        {
             lastSelectedAI = null;
             return;
         }
@@ -42,33 +44,38 @@ public class BlazeAIEnemyManager : MonoBehaviour
 
 
         // remove unwanted AIs
-        for (int i=0; i<enemiesScheduled.Count; i+=1) {
+        for (var i = 0; i < enemiesScheduled.Count; i += 1)
+        {
             // AI doesn't have a target
-            if (enemiesScheduled[i].enemyToAttack == null) {
+            if (enemiesScheduled[i].enemyToAttack == null)
+            {
                 RemoveEnemy(enemiesScheduled[i]);
                 continue;
             }
 
             // AI has a target but it's not this transform or it's children
-            if (!enemiesScheduled[i].enemyToAttack.transform.IsChildOf(transform)) {
+            if (!enemiesScheduled[i].enemyToAttack.transform.IsChildOf(transform))
+            {
                 RemoveEnemy(enemiesScheduled[i]);
                 continue;
             }
 
             // if AI is dead
-            if (enemiesScheduled[i].state == BlazeAI.State.death) {
+            if (enemiesScheduled[i].state == BlazeAI.State.death)
+            {
                 RemoveEnemy(enemiesScheduled[i]);
-                continue;
             }
         }
-        
+
 
         // randomize enemies list and choose one to attack
-        if (callEnemies && enemiesScheduled.Count > 0) 
+        if (callEnemies && enemiesScheduled.Count > 0)
         {
             // if only 1 AI then there's no need for further logic -> just make that AI attack
-            if (enemiesScheduled.Count == 1) {
-                if (enemiesScheduled[0].enemyToAttack != null) {
+            if (enemiesScheduled.Count == 1)
+            {
+                if (enemiesScheduled[0].enemyToAttack != null)
+                {
                     enemiesScheduled[0].Attack();
                     lastSelectedAI = enemiesScheduled[0].transform;
                 }
@@ -79,30 +86,33 @@ public class BlazeAIEnemyManager : MonoBehaviour
             if (attackDir + 1 > 2) attackDir = 0;
             else attackDir++;
 
-            if (attackDir == 0) {
+            if (attackDir == 0)
+            {
                 FrontAttack();
                 return;
             }
 
-            if (attackDir == 1) {
+            if (attackDir == 1)
+            {
                 BackAttack();
                 return;
             }
-            
+
             // if attackDir == 2 -> then shuffle and choose a random AI that's not the last selected one
             Shuffle();
-            
-            // loop the AIs and make any AI with target to attack
-            for (int i=0; i<enemiesScheduled.Count; i++) {
-                BlazeAI selectedAI = enemiesScheduled[i];
 
-                if (enemiesScheduled.Count > 1) {
-                    if (selectedAI.enemyToAttack != null && selectedAI.transform != lastSelectedAI) {
+            // loop the AIs and make any AI with target to attack
+            for (var i = 0; i < enemiesScheduled.Count; i++)
+            {
+                var selectedAI = enemiesScheduled[i];
+
+                if (enemiesScheduled.Count > 1)
+                    if (selectedAI.enemyToAttack != null && selectedAI.transform != lastSelectedAI)
+                    {
                         selectedAI.Attack();
                         lastSelectedAI = selectedAI.transform;
                         break;
                     }
-                }
             }
         }
     }
@@ -137,17 +147,11 @@ public class BlazeAIEnemyManager : MonoBehaviour
     // remove a specific enemy from the list
     public virtual void RemoveEnemy(BlazeAI enemy)
     {
-        if (targetedBy.IndexOf(enemy) >= 0) {
-            targetedBy.Remove(enemy);
-        }
+        if (targetedBy.IndexOf(enemy) >= 0) targetedBy.Remove(enemy);
 
-        if (enemiesScheduled.IndexOf(enemy) >= 0) { 
-            enemiesScheduled.Remove(enemy);
-        }
+        if (enemiesScheduled.IndexOf(enemy) >= 0) enemiesScheduled.Remove(enemy);
 
-        if (potentialEnemies.IndexOf(enemy) >= 0) {
-            potentialEnemies.Remove(enemy);
-        }
+        if (potentialEnemies.IndexOf(enemy) >= 0) potentialEnemies.Remove(enemy);
 
         if (enemiesScheduled.Count == 0) enabled = false;
     }
@@ -157,15 +161,16 @@ public class BlazeAIEnemyManager : MonoBehaviour
         float frontMostDir = -1;
         BlazeAI bestSelectedAI = null;
 
-        for (int i=0; i<enemiesScheduled.Count; i++) {
-            BlazeAI enemyItem = enemiesScheduled[i];
-            Vector3 directionToAI = Vector3.Normalize(enemyItem.transform.position - transform.position);
-            float dot = Vector3.Dot(transform.forward, directionToAI);
+        for (var i = 0; i < enemiesScheduled.Count; i++)
+        {
+            var enemyItem = enemiesScheduled[i];
+            var directionToAI = Vector3.Normalize(enemyItem.transform.position - transform.position);
+            var dot = Vector3.Dot(transform.forward, directionToAI);
 
-            if (dot >= frontMostDir && lastSelectedAI != enemyItem.transform) {
+            if (dot >= frontMostDir && lastSelectedAI != enemyItem.transform)
+            {
                 frontMostDir = dot;
                 bestSelectedAI = enemyItem;
-                continue;
             }
         }
 
@@ -178,15 +183,16 @@ public class BlazeAIEnemyManager : MonoBehaviour
         float backMostDir = 1;
         BlazeAI bestSelectedAI = null;
 
-        for (int i=0; i<enemiesScheduled.Count; i++) {
-            BlazeAI enemyItem = enemiesScheduled[i];
-            Vector3 directionToAI = Vector3.Normalize(enemyItem.transform.position - transform.position);
-            float dot = Vector3.Dot(transform.forward, directionToAI);
+        for (var i = 0; i < enemiesScheduled.Count; i++)
+        {
+            var enemyItem = enemiesScheduled[i];
+            var directionToAI = Vector3.Normalize(enemyItem.transform.position - transform.position);
+            var dot = Vector3.Dot(transform.forward, directionToAI);
 
-            if (dot <= backMostDir && lastSelectedAI != enemyItem.transform) {
+            if (dot <= backMostDir && lastSelectedAI != enemyItem.transform)
+            {
                 backMostDir = dot;
                 bestSelectedAI = enemyItem;
-                continue;
             }
         }
 
@@ -200,7 +206,8 @@ public class BlazeAIEnemyManager : MonoBehaviour
         var count = enemiesScheduled.Count;
         var last = count - 1;
 
-        for (var i = 0; i < last; ++i) {
+        for (var i = 0; i < last; ++i)
+        {
             var r = Random.Range(i, count);
             var tmp = enemiesScheduled[i];
 
