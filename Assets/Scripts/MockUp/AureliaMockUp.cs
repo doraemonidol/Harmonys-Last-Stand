@@ -110,22 +110,23 @@ namespace MockUp
 
         private void ProcessTranslation()
          {
-             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+             Debug.Log(Input.GetAxisRaw("Horizontal") + " " + Input.GetAxisRaw("Vertical"));
+             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
              {
                  var currentDirection = new Vector3(0, 0, 0);
-                 if (Input.GetAxis("Horizontal") > 0)
+                 if (Input.GetAxisRaw("Horizontal") > 0)
                  {
                      currentDirection.x = 1;
                  }
-                 else if (Input.GetAxis("Horizontal") < 0)
+                 else if (Input.GetAxisRaw("Horizontal") < 0)
                  {
                      currentDirection.x = -1;
                  }
-                 if (Input.GetAxis("Vertical") > 0)
+                 if (Input.GetAxisRaw("Vertical") > 0)
                  {
                      currentDirection.z = 1;
                  }
-                 else if (Input.GetAxis("Vertical") < 0)
+                 else if (Input.GetAxisRaw("Vertical") < 0)
                  {
                      currentDirection.z = -1;
                  }
@@ -149,7 +150,7 @@ namespace MockUp
                      ["identity"] = this.LogicHandle,
                      ["direction"] = direction
                  };
-                 
+                 Debug.Log("Move Event");
                  LogicLayer.GetInstance().Observe(eventd);
              }
          }
@@ -229,9 +230,14 @@ namespace MockUp
                         _ => throw new Exception("Invalid direction")
                     };
                     
+                    
                     distance *= 10;
                     
-                    transform.Translate(directionVector.x * distance * Time.deltaTime, 0, directionVector.z * distance * Time.deltaTime);
+                    if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+                    {
+                        Debug.Log("Begin Movement");
+                        transform.Translate(directionVector * (distance * Time.deltaTime), Space.World);
+                    }
                     break;
                 case "dead":
                     // Debug.Log("Aurelia Dead Animation");

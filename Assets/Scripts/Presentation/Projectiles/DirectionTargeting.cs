@@ -55,8 +55,11 @@ namespace Presentation.Projectiles
                 if (ps != null)
                     Destroy (muzzleVFX, ps.main.duration);
                 else {
-                    var psChild = muzzleVFX.transform.GetChild(0).GetComponent<ParticleSystem>();
-                    Destroy (muzzleVFX, psChild.main.duration);
+                    if (muzzleVFX.transform.childCount > 0)
+                    {
+                        var psChild = muzzleVFX.transform.GetChild(0).GetComponent<ParticleSystem>();
+                        Destroy(muzzleVFX, psChild.main.duration);
+                    }
                 }
             }
         }
