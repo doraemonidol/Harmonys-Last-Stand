@@ -30,7 +30,7 @@ namespace MockUp
         public override void Start()
         {
             LogicLayer.GetInstance().Instantiate(EntityType.AURELIA, this);
-            EquipWeapon(weapons[_activeWeapon]);
+            // EquipWeapon(weapons[_activeWeapon]);
             
             _rotateToMouse = GetComponent<RotateToMouseScript>();
             if (!_rotateToMouse)
@@ -61,6 +61,7 @@ namespace MockUp
         {
             for (int i = 0; i < normalSkills.Count; i++)
             {
+                normalSkills[i] = (PlayerNormalSkill)weapons[_activeWeapon].GetNormalSkills()[i];
                 normalSkills[i].UpdateChannelingTime(timeScaleFactor);
                 normalSkills[i].AttachRotator(_rotateToMouse);
                 normalSkills[i].AttachFirePoint(firePoint);
@@ -70,6 +71,7 @@ namespace MockUp
         
             for (int i = 0; i < specialSkills.Count; i++)
             {
+                specialSkills[i] = (PlayerSpecialSkill)weapons[_activeWeapon].GetSpecialSkills()[i];
                 specialSkills[i].AttachRotator(_rotateToMouse);
                 specialSkills[i].AttachFirePoint(firePoint);
                 specialSkills[i].AttachTarget(target);
@@ -106,11 +108,16 @@ namespace MockUp
         {
             ProcessTranslation();
             ProcessSkillCasting();
+            
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                _activeWeapon = (_activeWeapon + 1) % weapons.Count;
+                UpdateCurrentSkills();
+            }
         }
 
         private void ProcessTranslation()
          {
-             Debug.Log(Input.GetAxisRaw("Horizontal") + " " + Input.GetAxisRaw("Vertical"));
              if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
              {
                  var currentDirection = new Vector3(0, 0, 0);
@@ -150,7 +157,7 @@ namespace MockUp
                      ["identity"] = this.LogicHandle,
                      ["direction"] = direction
                  };
-                 Debug.Log("Move Event");
+                 // Debug.Log("Move Event");
                  LogicLayer.GetInstance().Observe(eventd);
              }
          }
@@ -230,12 +237,11 @@ namespace MockUp
                         _ => throw new Exception("Invalid direction")
                     };
                     
-                    
                     distance *= 10;
                     
                     if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
                     {
-                        Debug.Log("Begin Movement");
+                        // Debug.Log("Begin Movement");
                         transform.Translate(directionVector * (distance * Time.deltaTime), Space.World);
                     }
                     break;

@@ -2,6 +2,7 @@ namespace Common
 {
     public enum EntityTypeEnum
     {
+        NONE,
         AURELIA,
         TROOP,
         VIOLIN,

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using DTT.AreaOfEffectRegions;
+using Logic;
 using UnityEngine;
 
 public class PlayerNormalSkill : PlayerSkill
@@ -16,9 +17,8 @@ public class PlayerNormalSkill : PlayerSkill
     private LineRegion _lineRegion;
     private ArcRegion _arcRegion;
     private ScatterLineRegion _scatterLineRegion;
-    public void Start()
+    public override void Start()
     {
-        base.Start();
         isChanneling = false;
         if (skillIndicator)
         {
@@ -31,10 +31,9 @@ public class PlayerNormalSkill : PlayerSkill
         }
     }
 
-    void Update()
+    public override void Update()
     {
-        base.Update();
-        if (!skillIndicator)
+        if (skillIndicator == null)
         {
             return;
         }

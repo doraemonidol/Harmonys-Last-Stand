@@ -22,4 +22,13 @@ public class PlayerSpecialSkill : PlayerSkill
         Debug.LogError("Can't Channel Special Skill");
         return 0;
     }
+
+    public override void Start()
+    {
+        
+    }
+
+    public override void Update()
+    {
+    }
 }

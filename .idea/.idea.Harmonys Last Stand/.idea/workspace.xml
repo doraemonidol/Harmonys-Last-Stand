@@ -6,9 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="a6d8f654-96a8-4d8c-b60c-233031c2437c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Common/EntityTypeEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Common/EntityTypeEnum.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/DirectionTargeting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/DirectionTargeting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/SkillMockUp.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/SkillMockUp.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerNormalSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerNormalSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerSpecialSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerSpecialSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossSkill.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +103,7 @@
       <workItem from="1720594009942" duration="93000" />
       <workItem from="1720594121896" duration="9830000" />
       <workItem from="1721195333408" duration="803000" />
-      <workItem from="1721204740708" duration="1779000" />
+      <workItem from="1721204740708" duration="6934000" />
     </task>
     <servers />
   </component>

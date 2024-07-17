@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using Debug = UnityEngine.Debug;
 
-public abstract class BaseSkill : MonoBehaviour
+public abstract class BaseSkill : PSkill
 {
     [Header("VFX")]
     [SerializeField] protected VFX preCastVfx;
@@ -35,12 +35,6 @@ public abstract class BaseSkill : MonoBehaviour
     [Header("Sound effects")]
     [SerializeField] private AudioClip castingSound;
     [SerializeField] private AudioClip hitSound;
-    
-    // Start is called before the first frame update
-    public void Start()
-    {
-        Debug.Log("Base Class Start");
-    }
 
     public void AttachRotator(RotateToDirection rotator)
     {
@@ -61,11 +55,6 @@ public abstract class BaseSkill : MonoBehaviour
     {
         if (virtualCamera)
             _cameraShakeSimpleScript = virtualCamera.GetComponent<CameraShakeSimpleScript>();
-    }
-
-    // Update is called once per frame
-    public void Update()
-    {
     }
     
     public void StartCasting()
