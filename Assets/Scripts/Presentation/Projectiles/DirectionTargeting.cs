@@ -17,8 +17,9 @@ namespace Presentation.Projectiles
         private RotateToDirection _rotateToMouse;
         private GameObject _target;
         
-        public override void Start()
+        public void Start()
         {
+            base.Start();
             StartPos = transform.position;
             _rb = GetComponent<Rigidbody>();
             

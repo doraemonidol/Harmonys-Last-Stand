@@ -1,3 +1,4 @@
+using Common;
 using UnityEngine.Serialization;
 
 namespace Presentation
@@ -6,5 +7,6 @@ namespace Presentation
     {
         public int ID { get; set; }
         public bool isReady = true;
+        public Identity Owner;
     }
 }

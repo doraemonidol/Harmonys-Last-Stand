@@ -6,9 +6,9 @@ namespace Presentation.Projectiles
     {
         [SerializeField] private float _maximalRange = 10f;
         [SerializeField] private float _spreadSpeed = 1f;
-        public override void Start()
+        public void Start()
         {
-            
+            base.Start();
         }
 
         public override void FixedUpdate()

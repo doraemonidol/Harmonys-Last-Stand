@@ -6,7 +6,7 @@ namespace Presentation.Projectiles
     public class SummonClone : StaticTargeting
     {
         [SerializeField] public float range = 10f;
-        public override void Start()
+        public void Start()
         {
             Debug.Log("Summon Clone Start");
             base.Start();

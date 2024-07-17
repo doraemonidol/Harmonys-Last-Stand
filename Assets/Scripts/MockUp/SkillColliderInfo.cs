@@ -1,10 +1,18 @@
 using Common;
+using UnityEngine;
 
 namespace MockUp
 {
-    public class SkillColliderInfo
+    public class SkillColliderInfo : MonoBehaviour
     {
-        public Identity Attacker;
-        public Identity Skill;
+        [SerializeField] public Identity Attacker;
+        [SerializeField] public Identity Skill;
+        
+        // add constructor
+        public SkillColliderInfo(Identity attacker, Identity skill)
+        {
+            Attacker = attacker;
+            Skill = skill;
+        }
     }
 }

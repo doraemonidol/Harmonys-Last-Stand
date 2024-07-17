@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 54674166311131586}
   - component: {fileID: 111889018376725686}
   - component: {fileID: -706355681785940193}
+  - component: {fileID: -8335469775657741451}
   m_Layer: 0
   m_Name: vfx_Projectile_MelodicSlash
   m_TagString: Untagged
@@ -5439,6 +5440,19 @@ MonoBehaviour:
   rotateAmount: 45
   speed: 15
   accuracy: 100
+--- !u!114 &-8335469775657741451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607489160101874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac691cddb40f09649bf222b809e73326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximalRange: 100
 --- !u!1 &1799161408891886
 GameObject:
   m_ObjectHideFlags: 0

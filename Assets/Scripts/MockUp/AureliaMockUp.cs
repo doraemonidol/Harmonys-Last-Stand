@@ -59,6 +59,8 @@ namespace MockUp
         
         void UpdateCurrentSkills()
         {
+            weapons[_activeWeapon].SetOwner(this.LogicHandle);
+            
             for (int i = 0; i < normalSkills.Count; i++)
             {
                 normalSkills[i] = (PlayerNormalSkill)weapons[_activeWeapon].GetNormalSkills()[i];

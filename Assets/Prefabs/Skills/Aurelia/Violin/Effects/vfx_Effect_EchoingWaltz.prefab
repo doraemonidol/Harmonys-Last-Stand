@@ -75,6 +75,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1204db3e8bde4bd479ea3cfa202e9e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityType: 0
+  isReady: 1
   preCastVfx:
     vfx: {fileID: 0}
     duration: 0
@@ -352,6 +354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a452852caa312b94dacd8263f796bf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityType: 0
+  isReady: 1
   preCastVfx:
     vfx: {fileID: 0}
     duration: 0
@@ -782,6 +786,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1204db3e8bde4bd479ea3cfa202e9e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityType: 0
+  isReady: 1
   preCastVfx:
     vfx: {fileID: 0}
     duration: 0
@@ -888,6 +894,7 @@ GameObject:
   - component: {fileID: -1046102140506458762}
   - component: {fileID: 1713858923261390346}
   - component: {fileID: 8780451500572809556}
+  - component: {fileID: -5090073499885163616}
   m_Layer: 2
   m_Name: vfx_Effect_EchoingWaltz
   m_TagString: Player
@@ -1216,6 +1223,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &-5090073499885163616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7990345093284203910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4212b989a5edc0d43983dfc65aeb9c61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 6
 --- !u!1 &8279852902054054832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a452852caa312b94dacd8263f796bf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityType: 0
+  isReady: 1
   preCastVfx:
     vfx: {fileID: 0}
     duration: 0

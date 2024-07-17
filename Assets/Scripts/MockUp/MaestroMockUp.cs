@@ -1,3 +1,4 @@
+using System;
 using Common;
 using DTO;
 using Logic;
@@ -5,6 +6,7 @@ using Logic.Facade;
 using Logic.Helper;
 using Presentation;
 using UnityEngine;
+using Random = UnityEngine.Random;
 using Time = UnityEngine.Time;
 
 namespace MockUp
@@ -149,7 +151,12 @@ namespace MockUp
 
         private void OnCollisionEnter(Collision other)
         {
+            // Debug.Log("Collided with " + other.gameObject.name);
             if (other.gameObject.GetComponent<SkillColliderInfo>() == null) return;
+            
+            Debug.Log(other.gameObject.GetComponent<SkillColliderInfo>().Attacker + " used " + 
+                      other.gameObject.GetComponent<SkillColliderInfo>().Skill + " on " + 
+                      this.LogicHandle);
             
             var eventd = new EventDto
             {
@@ -160,6 +167,11 @@ namespace MockUp
                 ["skill"] = other.gameObject.GetComponent<SkillColliderInfo>().Skill
             };
             LogicLayer.GetInstance().Observe(eventd);
+        }
+
+        private void OnParticleCollision(GameObject other)
+        {
+            Debug.Log("Particle Collided with " + other.name);
         }
     }
 }

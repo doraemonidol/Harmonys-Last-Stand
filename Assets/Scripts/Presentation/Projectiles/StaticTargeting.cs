@@ -4,20 +4,28 @@ namespace Presentation.Projectiles
 {
     public class StaticTargeting : ProjectileMovement
     {
-        
-        public override void Start()
+        public void Start()
         {
+            base.Start();
             var muzzleVfx = Instantiate(muzzlePrefab, transform.position, Quaternion.identity);
+            
+            muzzleVfx.transform.parent = transform;
+            AssignSkillCollideInfo(this.skillCollideInfo);
             
             var ps = muzzleVfx.GetComponent<ParticleSystem>();
             if (ps != null)
             {
                 Destroy(muzzleVfx, ps.main.duration);
+                Destroy(gameObject, ps.main.duration);
             }
             else
             {
-                var psChild = muzzleVfx.transform.GetChild(0).GetComponent<ParticleSystem>();
-                Destroy(muzzleVfx, psChild.main.duration);
+                if (muzzleVfx.transform.childCount > 0)
+                {
+                    var psChild = muzzleVfx.transform.GetChild(0).GetComponent<ParticleSystem>();
+                    Destroy(muzzleVfx, psChild.main.duration);
+                    Destroy(gameObject, psChild.main.duration);
+                }
             }
         }
 
