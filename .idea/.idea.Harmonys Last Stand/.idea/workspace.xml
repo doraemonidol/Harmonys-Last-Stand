@@ -5,11 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6d8f654-96a8-4d8c-b60c-233031c2437c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/EnemyActionType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/EnemyActionType.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/EnemyCollision.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/EnemyCollision.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Circle Centre 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Circle Centre 2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Body 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Body 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Head 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Head 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FantasySpellsEffectsPack/Materials/Effect_68_Materials/Effect_68_Arrow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FantasySpellsEffectsPack/Materials/Effect_68_Materials/Effect_68_Arrow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FantasySpellsEffectsPack/Scripts/Object/SimpleObjectMake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FantasySpellsEffectsPack/Scripts/Object/SimpleObjectMake.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Monsters Ultimate Pack 06 Cute Series/Death Cute Series/FBX/Death.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Monsters Ultimate Pack 06 Cute Series/Death Cute Series/FBX/Death.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Monsters Ultimate Pack 06 Cute Series/Death Mage Cute Series/FBX/Death Mage.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Monsters Ultimate Pack 06 Cute Series/Death Mage Cute Series/FBX/Death Mage.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Amadeus/Effects/vfx_Effect_SymphonyStorm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Amadeus/Effects/vfx_Effect_SymphonyStorm.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Amadeus/Parts/vfx_ENCORE_EnergyShotRing.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Amadeus/Parts/vfx_ENCORE_EnergyShotRing.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Amadeus/Projectiles/vfx_Projectile_ENCORE.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Amadeus/Projectiles/vfx_Projectile_ENCORE.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Amadeus/Projectiles/vfx_Projectile_RequiemWrath.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Amadeus/Projectiles/vfx_Projectile_RequiemWrath.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/Flute/MysticMelody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/Flute/MysticMelody.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/Flute/WhistlingWind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/Flute/WhistlingWind.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/AmadeusMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/AmadeusMockUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/MaestroMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/MaestroMockUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/SkillColliderInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/SkillColliderInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/Troop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/Troop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/WeaponMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/WeaponMockUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCastSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCastSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossCastSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossCastSkill.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/ProjectileMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/ProjectileMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/VFX.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VFX.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_1(NotScriptBased)/Effects/Effect_15_PowerOfGravity/Effect_15_PhantomShow/Effect_15_CardSide(Base).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_1(NotScriptBased)/Effects/Effect_15_PowerOfGravity/Effect_15_PhantomShow/Effect_15_CardSide(Base).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +135,8 @@
       <workItem from="1721204740708" duration="9915000" />
       <workItem from="1721252826313" duration="6433000" />
       <workItem from="1721264020799" duration="13675000" />
+      <workItem from="1721284592746" duration="12687000" />
+      <workItem from="1721335270852" duration="6816000" />
     </task>
     <servers />
   </component>
@@ -118,25 +150,23 @@
     <option name="unityProjectFolder" value="true" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs</url>
-          <line>115</line>
-          <properties documentPath="D:\Programming\Unity\Harmonys Last Stand\Assets\Scripts\BaseSkill.cs" containingFunctionPresentation="Method 'RenderVFX'">
-            <startOffsets>
-              <option value="3201" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3256" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/StaticTargeting.cs</url>
           <line>15</line>

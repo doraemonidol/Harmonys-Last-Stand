@@ -172,6 +172,20 @@ namespace MockUp
         private void OnParticleCollision(GameObject other)
         {
             Debug.Log("Particle Collided with " + other.name);
+            if (other.GetComponent<SkillColliderInfo>() == null) return;
+            Debug.Log(other.GetComponent<SkillColliderInfo>().Attacker + " used " + 
+                      other.GetComponent<SkillColliderInfo>().Skill + " on " + 
+                      this.LogicHandle);
+            
+            var eventd = new EventDto
+            {
+                Event = "GET_ATTACKED",
+                ["attacker"] = other.gameObject.GetComponent<SkillColliderInfo>().Attacker,
+                ["target"] = this.LogicHandle,
+                ["context"] = null,
+                ["skill"] = other.gameObject.GetComponent<SkillColliderInfo>().Skill
+            };
+            LogicLayer.GetInstance().Observe(eventd);
         }
     }
 }

@@ -31,6 +31,7 @@ namespace Presentation.Projectiles
                     current.AddComponent<SkillColliderInfo>();
                     current.GetComponent<SkillColliderInfo>().Attacker = (Identity)info["Attacker"];
                     current.GetComponent<SkillColliderInfo>().Skill = (Identity)info["Skill"];
+                    current.GetComponent<SkillColliderInfo>().affectCooldown = (float)info["affectCooldown"];
                 }
                 foreach (Transform child in current.transform)
                 {

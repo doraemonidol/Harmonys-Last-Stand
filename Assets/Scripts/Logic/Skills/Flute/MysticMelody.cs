@@ -23,13 +23,17 @@ namespace Logic.Skills.Flute
 
         public override void Affect(ICharacter attacker, ICharacter target, EventDto context)
         {
-            var boostAmount = GameContext.GetInstance().Get("dmg+");
-            var finalDmg = 10 * (100 + boostAmount) / 100;
+            
+        }
+
+        public override void Activate(ICharacter activator)
+        {
+            base.Activate(activator);
             var args = new EventDto
             {
-                ["timeout"] = finalDmg,
+                ["timeout"] = 10000,
             };
-            attacker.ReceiveEffect(EffectHandle.Shielded, args);
+            User.ReceiveEffect(EffectHandle.Resistance, args);
         }
     }
 }

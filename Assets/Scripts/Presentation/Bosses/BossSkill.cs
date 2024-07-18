@@ -1,9 +1,13 @@
 using Logic;
+using Logic.Helper;
+using Time = UnityEngine.Time;
 
 namespace Presentation.Bosses
 {
     public class BossSkill : BaseSkill
     {
+        public float nextCastTime;
+        
         public override void Start()
         {
             
@@ -24,6 +28,11 @@ namespace Presentation.Bosses
                     isReady = true;
                     break;
             }
+        }
+
+        public bool IsOnCoolDown()
+        {
+            return Time.time < nextCastTime;
         }
     }
 }

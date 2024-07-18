@@ -7,6 +7,7 @@ namespace MockUp
     {
         [SerializeField] public Identity Attacker;
         [SerializeField] public Identity Skill;
+        [SerializeField] public float affectCooldown = 0;
         
         // add constructor
         public SkillColliderInfo(Identity attacker, Identity skill)

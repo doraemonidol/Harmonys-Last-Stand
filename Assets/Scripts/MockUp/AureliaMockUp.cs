@@ -26,11 +26,13 @@ namespace MockUp
         [SerializeField] private CinemachineVirtualCamera virtualCamera;
         [SerializeField] public float timeScaleFactor = 0.3f;
         private EffectUIManager _effectUIManager;
+        private Dictionary<Identity, float> skillNextAffectedTime = new Dictionary<Identity, float>();
 
         public override void Start()
         {
             LogicLayer.GetInstance().Instantiate(EntityType.AURELIA, this);
             // EquipWeapon(weapons[_activeWeapon]);
+            Debug.Log("Aurelia: " + this.LogicHandle);
             
             _rotateToMouse = GetComponent<RotateToMouseScript>();
             if (!_rotateToMouse)
@@ -283,7 +285,13 @@ namespace MockUp
                     // Debug.Log("Aurelia Clone Animation");
                     break;
                 case EffectType.RESISTANCE:
-                    // Debug.Log("Aurelia Resistance Animation");
+                    duration = (int)visitor["args"]["timeout"];
+                    _effectUIManager.AddEffect(new EffectUI()
+                    {
+                        Name = EffectType.RESISTANCE,
+                        StartTime = Time.time,
+                        Duration = duration
+                    });
                     break;
                 case EffectType.JINX:
                     // Debug.Log("Aurelia Jinx Animation");
@@ -385,17 +393,54 @@ namespace MockUp
 
         private void OnCollisionEnter(Collision other)
         {
-            if (other.gameObject.GetComponent<SkillColliderInfo>() == null) return;
-            
-            var eventd = new EventDto
+            SkillColliderInfo info = other.gameObject.GetComponent<SkillColliderInfo>();
+            if (info)
             {
-                Event = "GET_ATTACKED",
-                ["attacker"] = other.gameObject.GetComponent<SkillColliderInfo>().Attacker,
-                ["target"] = this.LogicHandle,
-                ["context"] = null,
-                ["skill"] = other.gameObject.GetComponent<SkillColliderInfo>().Skill
-            };
-            LogicLayer.GetInstance().Observe(eventd);
+                if ( !skillNextAffectedTime.ContainsKey(info.Skill) || Time.time > skillNextAffectedTime[info.Skill])
+                {
+                    Debug.Log("Aurelia Collided with " + other.gameObject.name);
+                    // Debug.Log(other.GetComponent<SkillColliderInfo>().Attacker + " used " + 
+                    //           other.GetComponent<SkillColliderInfo>().Skill + " on " + 
+                    //           this.LogicHandle);
+                    skillNextAffectedTime[info.Skill] = Time.time + info.affectCooldown;
+
+                    var eventd = new EventDto
+                    {
+                        Event = "GET_ATTACKED",
+                        ["attacker"] = info.Attacker,
+                        ["target"] = this.LogicHandle,
+                        ["context"] = null,
+                        ["skill"] = info.Skill
+                    };
+                    LogicLayer.GetInstance().Observe(eventd);
+                }
+            }
+        }
+
+        private void OnParticleCollision(GameObject other)
+        {
+            SkillColliderInfo info = other.GetComponent<SkillColliderInfo>();
+            if (info)
+            {
+                if ( !skillNextAffectedTime.ContainsKey(info.Skill) || Time.time > skillNextAffectedTime[info.Skill])
+                {
+                    Debug.Log("Aurelia Particle Collided with " + other.name);
+                    // Debug.Log(other.GetComponent<SkillColliderInfo>().Attacker + " used " + 
+                    //           other.GetComponent<SkillColliderInfo>().Skill + " on " + 
+                    //           this.LogicHandle);
+                    skillNextAffectedTime[info.Skill] = Time.time + info.affectCooldown;
+
+                    var eventd = new EventDto
+                    {
+                        Event = "GET_ATTACKED",
+                        ["attacker"] = info.Attacker,
+                        ["target"] = this.LogicHandle,
+                        ["context"] = null,
+                        ["skill"] = info.Skill
+                    };
+                    LogicLayer.GetInstance().Observe(eventd);
+                }
+            }
         }
     }
 }

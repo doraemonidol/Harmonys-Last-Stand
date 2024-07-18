@@ -120,6 +120,7 @@ public abstract class BaseSkill : PSkill
                 {
                     {"Attacker", this.Owner},
                     {"Skill", this.LogicHandle},
+                    {"affectCooldown", vfx.affectCooldown}
                 }
             );
         }
@@ -135,10 +136,5 @@ public abstract class BaseSkill : PSkill
         {
             Destroy(instantiatedVfx, vfx.duration);
         }
-    }
-    
-    public bool IsOnCooldown()
-    {
-        return _skillState == SkillState.OnCooldown;
     }
 }

@@ -64,18 +64,18 @@ public class PlayerCastSkill: MonoBehaviour
         {
             if (Input.GetMouseButtonDown(i) && _currentSkill == -1)
             {
-                if (!normalSkills[i].IsOnCooldown())
-                {
-                    normalSkills[i].StartCasting();
-                }
-                
-                if (!specialSkills[i].IsOnCooldown())
-                {
-                    _currentSkill = i;
-                    _beginChannelingTime = Time.time;
-                    normalSkills[i].StartChanneling();
-                    Debug.Log("Start Channeling Skill " + i);
-                }
+            //     if (!normalSkills[i].IsOnCooldown())
+            //     {
+            //         normalSkills[i].StartCasting();
+            //     }
+            //     
+            //     if (!specialSkills[i].IsOnCooldown())
+            //     {
+            //         _currentSkill = i;
+            //         _beginChannelingTime = Time.time;
+            //         normalSkills[i].StartChanneling();
+            //         Debug.Log("Start Channeling Skill " + i);
+            //     }
             }
 
             if (_currentSkill != -1 && Time.time - _beginChannelingTime >= 0.1f)

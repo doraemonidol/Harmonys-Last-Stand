@@ -1,27 +1,44 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Common;
 using Presentation;
+using Presentation.Bosses;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 
+[Serializable]
 public abstract class BossMovement : PresentationObject
 {
-    private NavMeshAgent _navMeshAgent;
-    private GameObject _player;
+    protected NavMeshAgent navMeshAgent;
+    protected GameObject player;
 
-    private Animator _animator;
-    // Start is called before the first frame update
-    void Start()
+    protected Animator animator;
+    [Header("Enemy Base")]
+    [SerializeField] protected float attackRange;
+    
+    [SerializeField] protected List<EnemyCollision> enemyCollisions;
+
+    public override void Start()
     {
-        _animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
-        _navMeshAgent = GetComponent<NavMeshAgent>();
-        _player = GameObject.FindWithTag("Player");
-        _animator.SetTrigger("Move");
+        animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        player = GameObject.FindWithTag("Player");
+        animator.SetTrigger(EnemyActionType.Move);
+    }
+
+    public void UpdateEnemyCollision()
+    {
+        foreach (var enemyCollision in enemyCollisions)
+        {
+            enemyCollision.LogicHandle = LogicHandle;
+        }
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-        _navMeshAgent.SetDestination(_player.transform.position);
+        navMeshAgent.SetDestination(player.transform.position);
     }
 }
