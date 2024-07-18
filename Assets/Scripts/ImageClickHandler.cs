@@ -20,6 +20,14 @@ public class ImageClickHandler : MonoBehaviour
         gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = item.image;
     }
 
+    public void InitializeDisplayer(TextMeshProUGUI displayName, TextMeshProUGUI detail, TextMeshProUGUI money, Image displayImage)
+    {
+        this.displayName = displayName;
+        this.detail = detail;
+        this.money = money;
+        this.displayImage = displayImage;
+    }
+
     private void Start()
     {
         // Find the child image (assumes there's only one child with an Image component)

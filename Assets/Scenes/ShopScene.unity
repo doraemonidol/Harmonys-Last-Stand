@@ -686,11 +686,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8941883290844265636, guid: 6e65179c51c6e43a49d3b03a5e5fe53c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -23
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 8941883290844265636, guid: 6e65179c51c6e43a49d3b03a5e5fe53c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 354
+      value: 349
       objectReference: {fileID: 0}
     - target: {fileID: 8941883290844265636, guid: 6e65179c51c6e43a49d3b03a5e5fe53c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -788,7 +788,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1106175830}
   m_Father: {fileID: 1660390304}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -816,7 +817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 88bfddd4a26d84a43bf873b72fcb5b22, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1703124ab80204adfa0b48b91af6df5e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -968,6 +969,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045198984}
   m_CullTransparentMesh: 1
+--- !u!1 &1106175829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1106175830}
+  - component: {fileID: 1106175832}
+  - component: {fileID: 1106175831}
+  m_Layer: 5
+  m_Name: DisplayItem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1106175830
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106175829}
+  m_LocalRotation: {x: -0, y: -0, z: -0.16844651, w: 0.98571086}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1041214823}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -19.395}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.53000003, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 3}
+  m_SizeDelta: {x: 131.8651, y: 137.8636}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1106175831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106175829}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1106175832
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106175829}
+  m_CullTransparentMesh: 1
 --- !u!1 &1264662190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,7 +1174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 0
-    m_Right: 0
+    m_Right: 380
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
@@ -1121,15 +1197,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.6117647}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.15686275}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c513f45a9dd234284b7d4670d4f29703, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: d678d67d2454e47b7b12d945860217b1, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1137,7 +1213,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 14.41
 --- !u!222 &1271579433
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1221,20 +1297,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageClickHandlerPrefab: {fileID: 3277731520189855484, guid: 718a728c010094434a3f52a3c3e35760, type: 3}
   parentTransform: {fileID: 1271589102}
-  displayImage: {fileID: 1041214824}
-  itemSprites:
-  - {fileID: 21300000, guid: b2594b12f1a884927b248a71dbfeca5e, type: 3}
-  - {fileID: 21300000, guid: b2594b12f1a884927b248a71dbfeca5e, type: 3}
-  - {fileID: 21300000, guid: b2594b12f1a884927b248a71dbfeca5e, type: 3}
-  - {fileID: 21300000, guid: b2594b12f1a884927b248a71dbfeca5e, type: 3}
-  - {fileID: 21300000, guid: b2594b12f1a884927b248a71dbfeca5e, type: 3}
-  - {fileID: 21300000, guid: b2594b12f1a884927b248a71dbfeca5e, type: 3}
-  - {fileID: 21300000, guid: b2594b12f1a884927b248a71dbfeca5e, type: 3}
-  - {fileID: 21300000, guid: b2594b12f1a884927b248a71dbfeca5e, type: 3}
-  - {fileID: 21300000, guid: b2594b12f1a884927b248a71dbfeca5e, type: 3}
-  - {fileID: 21300000, guid: b2594b12f1a884927b248a71dbfeca5e, type: 3}
-  - {fileID: 21300000, guid: b2594b12f1a884927b248a71dbfeca5e, type: 3}
-  - {fileID: 21300000, guid: b2594b12f1a884927b248a71dbfeca5e, type: 3}
+  displayImage: {fileID: 1106175831}
+  displayName: {fileID: 595537717}
+  detail: {fileID: 1045198986}
+  money: {fileID: 187249180}
+  items:
+  - money: 100
+    detail: 'A deep, cobalt blue potion to rejuvenate one''s magical energies and
+      enhance spellcasting prowess '
+    image: {fileID: 21300000, guid: 4063b9288463440b3b1c856867ddfcc9, type: 3}
+    itemType: 2
+    name: Item 1
+  - money: 200
+    detail: healing potion gleams with a warm, golden glow to mend wounds and restore
+      vitality
+    image: {fileID: 21300000, guid: f8a18c7abd5e3418380e7a8dc371bd7a, type: 3}
+    itemType: 2
+    name: Item 2
+  - money: 300
+    detail: Translucent, shimmering liquid to temporary invisibility
+    image: {fileID: 21300000, guid: c7e17da5729fb443883f21371454d258, type: 3}
+    itemType: 2
+    name: Item 3
+  - money: 400
+    detail: Crimson potion fills the bottle with a fierce, pulsating energy hints
+      at the immense strength
+    image: {fileID: 21300000, guid: df597a48f1ebf4bcb9c33fa085c442d0, type: 3}
+    itemType: 2
+    name: Item 4
 --- !u!1 &1306136220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,7 +1617,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1434957779}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1271589104}
+        m_TargetAssemblyTypeName: ImageClickManager, Assembly-CSharp
+        m_MethodName: BuyItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1434957779
 MonoBehaviour:
   m_ObjectHideFlags: 0

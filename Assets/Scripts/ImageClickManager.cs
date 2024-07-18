@@ -22,39 +22,16 @@ public class ImageClickManager : MonoBehaviour
     [SerializeField]
     private List<Item> items;
 
-    private void Start()
+    private Item activeItem;
+
+    public void Start()
     {
-        InitializeItems();
         InitializeImageClickHandlers();
     }
 
-    private void InitializeItems()
+    public void SetCurrentItem(Item item)
     {
-        //  for (int i = 0; i < 12; i++)
-        // {
-        //     // Sprite itemSprite = null;
-
-        //     // #if UNITY_EDITOR
-        //     // // Load the sprite from the Assets/Itemlist folder using AssetDatabase
-        //     // string path = $"Assets/Sprites/Itemlist/Item1.png";
-        //     // itemSprite = AssetDatabase.LoadAssetAtPath<Sprite>(path);
-        //     // Debug.Log("Path: " + path);
-        //     // #endif
-
-        //     // if (itemSprite == null)
-        //     // {
-        //     //     Debug.LogWarning($"Assets/Itemlist/Item{i + 1}.png not found in Assets folder");
-        //     //     continue;
-        //     // }
-
-        //     // Initialize each item with dummy data for demonstration purposes
-        //     items.Add(new Item(
-        //         Random.Range(0, 100), // Random money amount
-        //         "Detail for item " + i, // Item detail
-        //         itemSprites[i], // Assign your sprite here
-        //         (ItemType)Random.Range(0, System.Enum.GetValues(typeof(ItemType)).Length) // Random item type
-        //     ));
-        // }
+        activeItem = item;
     }
 
     private void InitializeImageClickHandlers()
@@ -64,9 +41,12 @@ public class ImageClickManager : MonoBehaviour
             GameObject newImageClickHandler = Instantiate(imageClickHandlerPrefab, parentTransform);
             ImageClickHandler handler = newImageClickHandler.GetComponent<ImageClickHandler>();
             handler.SetItem(items[i]);
-            handler.displayImage = displayImage; // Assign the display image
-            handler.displayName.text = items[i].name;
-
+            handler.InitializeDisplayer(displayName, detail, money, displayImage);
         }
+    }
+
+    public void BuyItem()
+    {
+        Debug.Log("Item bought: " + activeItem.name);
     }
 }
