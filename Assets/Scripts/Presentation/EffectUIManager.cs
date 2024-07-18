@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Common;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,8 @@ namespace Presentation
         [SerializeField] private ProgressBar progressBar;
         [SerializeField] private TextMeshProUGUI effectText;
         [SerializeField] private Canvas canvas;
+        [SerializeField] private GameObject shieldPrefab;
+        [SerializeField] private GameObject resistancePrefab;
         
         public void AddEffect(EffectUI effect)
         {
@@ -35,17 +38,21 @@ namespace Presentation
                 }
                 else
                 {
+                    deactivatePrefab(toRemove.Name);
+                    activatePrefab(toRemove.Name);
                     effects.Add(effect);
                 }
             } else
             {
+                activatePrefab(effect.Name);
                 effects.Add(effect);
             }
         }
 
         public void Start()
         {
-            // StartCoroutine(Test());
+            shieldPrefab.gameObject.SetActive(false);
+            resistancePrefab.gameObject.SetActive(false);
         }
         
         IEnumerator Test()
@@ -73,6 +80,7 @@ namespace Presentation
             {
                 if (Time.time > effects[i].StartTime + effects[i].Duration)
                 {
+                    deactivatePrefab(effects[i].Name);
                     effects.RemoveAt(i);
                 }
                 else
@@ -89,6 +97,30 @@ namespace Presentation
             canvas.gameObject.SetActive(true);
             progressBar.SetEffect(effects[effects.Count - 1]);
             effectText.text = effects[effects.Count - 1].Name;
+        }
+
+        public void deactivatePrefab(string name)
+        {
+            if (name == EffectType.SHIELD)
+            {
+                shieldPrefab.gameObject.SetActive(false);
+            }
+            else if (name == EffectType.RESISTANCE)
+            {
+                resistancePrefab.gameObject.SetActive(false);
+            }
+        }
+        
+        public void activatePrefab(string name)
+        {
+            if (name == EffectType.SHIELD)
+            {
+                shieldPrefab.gameObject.SetActive(true);
+            }
+            else if (name == EffectType.RESISTANCE)
+            {
+                resistancePrefab.gameObject.SetActive(true);
+            }
         }
     }
 }

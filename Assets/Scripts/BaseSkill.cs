@@ -23,7 +23,6 @@ public abstract class BaseSkill : PSkill
     protected RotateToDirection Rotator;
 
     [Header("Skill Timings")] [SerializeField]
-    private float cooldownTime = 1f;
 
     private SkillState _skillState = SkillState.Idle;
 
@@ -102,10 +101,6 @@ public abstract class BaseSkill : PSkill
             StartCoroutine(RenderVFX(postCastVfx));
             yield return new WaitForSeconds(postCastVfx.duration);
         }
-
-        _skillState = SkillState.OnCooldown;
-
-        StartCoroutine(Cooldown());
     }
 
     private IEnumerator RenderVFX(VFX vfx)
@@ -140,12 +135,6 @@ public abstract class BaseSkill : PSkill
         {
             Destroy(instantiatedVfx, vfx.duration);
         }
-    }
-    
-    private IEnumerator Cooldown()
-    {
-        yield return new WaitForSeconds(cooldownTime);
-        _skillState = SkillState.Idle;
     }
     
     public bool IsOnCooldown()

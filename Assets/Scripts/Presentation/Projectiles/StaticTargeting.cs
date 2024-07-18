@@ -24,7 +24,7 @@ namespace Presentation.Projectiles
                 {
                     var psChild = muzzleVfx.transform.GetChild(0).GetComponent<ParticleSystem>();
                     Destroy(muzzleVfx, psChild.main.duration);
-                    Destroy(gameObject, psChild.main.duration);
+                    Destroy(gameObject, psChild.main.duration + 2);
                 }
             }
         }

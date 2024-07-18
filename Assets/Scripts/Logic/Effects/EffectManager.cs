@@ -52,7 +52,7 @@ namespace Logic.Effects
                 EffectHandle.DisableSilent => "disable_silent",
                 EffectHandle.DisableStunt => "disable_stunt",
                 EffectHandle.DisableShielded => "disable_shielded",
-                _ => throw new Exception("Thrown at Aurelia.IntoEventString(). Invalid effect type.")
+                _ => throw new Exception("Thrown at Aurelia.IntoEventString(). Invalid effect type." + ev)
             };
         }
         

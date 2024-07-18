@@ -26,7 +26,7 @@ namespace Presentation.Projectiles
             while (stack.Count > 0)
             {
                 GameObject current = stack.Pop();
-                if (current.GetComponent<Collider>() != null)
+                if (current.GetComponent<SkillColliderInfo>() == null)
                 {
                     current.AddComponent<SkillColliderInfo>();
                     current.GetComponent<SkillColliderInfo>().Attacker = (Identity)info["Attacker"];

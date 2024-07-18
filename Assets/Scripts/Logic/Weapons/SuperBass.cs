@@ -8,8 +8,8 @@ namespace Logic.Weapons
         public SuperBass()
         {
             Skills.Add(AcSkill.TransformInto(WeaponHandle.SuperBass, this, 1));
-            Skills.Add(AcSkill.TransformInto(WeaponHandle.SuperBass, this, 2));
             Skills.Add(AcSkill.TransformInto(WeaponHandle.SuperBass, this, 3));
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.SuperBass, this, 2));
             Skills.Add(AcSkill.TransformInto(WeaponHandle.SuperBass, this, 4));
         }
     }

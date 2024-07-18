@@ -52,6 +52,9 @@ namespace Presentation.Projectiles
                 var muzzleVFX = Instantiate (muzzlePrefab, transform.position, Quaternion.identity);
                 muzzleVFX.transform.parent = transform;
                 muzzleVFX.transform.forward = gameObject.transform.forward + _offset;
+                
+                AssignSkillCollideInfo(this.skillCollideInfo);
+                
                 var ps = muzzleVFX.GetComponent<ParticleSystem>();
                 if (ps != null)
                     Destroy (muzzleVFX, ps.main.duration);
@@ -80,7 +83,7 @@ namespace Presentation.Projectiles
             if (!other.gameObject.CompareTag("Bullet") && !_collided)
             {
                 _collided = true;
-                Debug.Log("Collided with " + other.gameObject.name);
+                // Debug.Log("Collided with " + other.gameObject.name);
 
                 if (trails.Count > 0)
                 {
