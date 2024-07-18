@@ -9,7 +9,7 @@ using Time = UnityEngine.Time;
 
 namespace MockUp
 {
-    public class Troop : PresentationObject
+    public class Troop : BossMovement
     {
         public override void Start()
         {

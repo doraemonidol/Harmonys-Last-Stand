@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a6d8f654-96a8-4d8c-b60c-233031c2437c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Flute/Projectiles/vfx_Projectile_TempestTones.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Flute/Projectiles/vfx_Projectile_TempestTones.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Circle Centre 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Circle Centre 2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/Troop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/Troop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +104,7 @@
       <workItem from="1721195333408" duration="803000" />
       <workItem from="1721204740708" duration="9915000" />
       <workItem from="1721252826313" duration="6433000" />
-      <workItem from="1721264020799" duration="7942000" />
+      <workItem from="1721264020799" duration="13675000" />
     </task>
     <servers />
   </component>
@@ -140,10 +142,10 @@
           <line>15</line>
           <properties documentPath="D:\Programming\Unity\Harmonys Last Stand\Assets\Scripts\Presentation\Projectiles\StaticTargeting.cs" containingFunctionPresentation="Method 'Start'">
             <startOffsets>
-              <option value="489" />
+              <option value="488" />
             </startOffsets>
             <endOffsets>
-              <option value="504" />
+              <option value="503" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />
