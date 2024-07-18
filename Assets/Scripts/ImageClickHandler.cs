@@ -37,6 +37,7 @@ public class ImageClickHandler : MonoBehaviour
     // This method will be called when an image slot is clicked
     public void OnImageClick()
     {
+        this.transform.parent.GetComponent<ImageClickManager>().SetCurrentItem(item);
         displayImage.enabled = true;
         displayImage.sprite = item.image;
         displayName.text = item.name; 
