@@ -380,10 +380,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUTTON
+  m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6e56e879263624a2c811a4119538ae38, type: 2}
-  m_sharedMaterial: {fileID: -8632220756613646083, guid: 6e56e879263624a2c811a4119538ae38, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c8f2a238bafb547839356a75b040682e, type: 2}
+  m_sharedMaterial: {fileID: 7124387484104936323, guid: c8f2a238bafb547839356a75b040682e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
