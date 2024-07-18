@@ -7,7 +7,7 @@ namespace Presentation.Projectiles
         public void Start()
         {
             base.Start();
-            var muzzleVfx = Instantiate(muzzlePrefab, transform.position, Quaternion.identity);
+            var muzzleVfx = Instantiate(muzzlePrefab, transform.position, transform.rotation);
             
             muzzleVfx.transform.parent = transform;
             AssignSkillCollideInfo(this.skillCollideInfo);

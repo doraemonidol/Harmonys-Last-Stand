@@ -6,24 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a6d8f654-96a8-4d8c-b60c-233031c2437c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Circle Centre 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Circle Centre 2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Body 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Body 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Head 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Head 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Flute/Effects/vfx_Effect_TranquilTune.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Flute/Effects/vfx_Effect_TranquilTune.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Flute/Parts/vfx_Muzzle_WhistlingWind.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Flute/Parts/vfx_Muzzle_WhistlingWind.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Flute/Projectiles/vfx_Projectile_TempestTones.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Flute/Projectiles/vfx_Projectile_TempestTones.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Flute/Projectiles/vfx_Projectile_WhistlingWind.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Aurelia/Flute/Projectiles/vfx_Projectile_WhistlingWind.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Effects/EffectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Effects/EffectManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Weapons/Flute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Weapons/Flute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Weapons/Guitar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Weapons/Guitar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Weapons/Piano.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Weapons/Piano.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Weapons/Saxophone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Weapons/Saxophone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Weapons/SuperBass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Weapons/SuperBass.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/EffectUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/EffectUIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/DirectionTargeting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/DirectionTargeting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/ProjectileMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/ProjectileMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/StaticTargeting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/StaticTargeting.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +102,7 @@
       <workItem from="1721195333408" duration="803000" />
       <workItem from="1721204740708" duration="9915000" />
       <workItem from="1721252826313" duration="6433000" />
-      <workItem from="1721264020799" duration="4470000" />
+      <workItem from="1721264020799" duration="7942000" />
     </task>
     <servers />
   </component>
@@ -143,10 +127,10 @@
           <line>115</line>
           <properties documentPath="D:\Programming\Unity\Harmonys Last Stand\Assets\Scripts\BaseSkill.cs" containingFunctionPresentation="Method 'RenderVFX'">
             <startOffsets>
-              <option value="3198" />
+              <option value="3201" />
             </startOffsets>
             <endOffsets>
-              <option value="3253" />
+              <option value="3256" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="3" />

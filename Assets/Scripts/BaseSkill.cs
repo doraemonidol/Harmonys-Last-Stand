@@ -87,7 +87,7 @@ public abstract class BaseSkill : PSkill
             yield return new WaitForSeconds(preCastVfx.duration);
         }
 
-        Debug.Log("Skill State: Casting");
+        // Debug.Log("Skill State: Casting");
         _skillState = SkillState.Casting;
         if (projectileVfx.HasVFX())
         {
