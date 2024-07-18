@@ -19,19 +19,13 @@ public class ImageClickManager : MonoBehaviour
     public TextMeshProUGUI displayName; 
     public TextMeshProUGUI detail;
     public TextMeshProUGUI money;
+    
     [SerializeField]
     private List<Item> items;
-
-    private Item activeItem;
 
     public void Start()
     {
         InitializeImageClickHandlers();
-    }
-
-    public void SetCurrentItem(Item item)
-    {
-        activeItem = item;
     }
 
     private void InitializeImageClickHandlers()
@@ -43,10 +37,5 @@ public class ImageClickManager : MonoBehaviour
             handler.SetItem(items[i]);
             handler.InitializeDisplayer(displayName, detail, money, displayImage);
         }
-    }
-
-    public void BuyItem()
-    {
-        Debug.Log("Item bought: " + activeItem.name);
     }
 }

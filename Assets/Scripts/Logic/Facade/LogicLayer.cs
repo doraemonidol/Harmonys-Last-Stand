@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Common;
+using Common.Context;
 using DTO;
 using Logic.Helper;
 using Logic.MainCharacters;
@@ -257,67 +258,74 @@ namespace Logic.Facade
                     skill.Affect(attacker, victim, context);
                     break;
                 }
-                case "BUY_OUT_GAME":
-                    var item = eventDto["item"] as int? ?? -1;
+                case "BUY":
+                    var item = (ItemType) eventDto["item"];
+                    var ctx = GameContext.GetInstance();
+                    var boostTarget = 0;
+                    var currentTarget = 0;
+                    var boostAmount = 0;
                     switch (item)
                     {
-                        case Item.HEALTH_POTION:
+                        case ItemType.AtkSpdPotion:
                         {
+                            currentTarget = ctx.Get("dfatk-spd");
+                            boostTarget = BoostHandles.BoostDefAtkSpd;
+                            boostAmount = GameStats.ATK_SPEED_POTION_PERMANENT_BOOST;
+                            break;
+                        }         
+                        case ItemType.DamagePotion:
+                        {
+                            currentTarget = ctx.Get("dfdmg");
+                            boostTarget = BoostHandles.BoostDefDamage;
+                            boostAmount = GameStats.DAMAGE_POTION_PERMANENT_BOOST;
                             break;
                         }
-                        case Item.MANA_POTION:
+                        case ItemType.HealthPotion:
                         {
+                            currentTarget = ctx.Get("dfhp");
+                            boostTarget = BoostHandles.BoostDefHealth;
+                            boostAmount = GameStats.DAMAGE_POTION_PERMANENT_BOOST;
                             break;
                         }
-                        case Item.ATK_SPEED_POTION:
+                        case ItemType.MovSpdPotion:
                         {
+                            currentTarget = ctx.Get("dfmov-spd");
+                            boostTarget = BoostHandles.BoostDefMovSpd;
+                            boostAmount = GameStats.MOVE_SPEED_POTION_PERMANENT_BOOST;
                             break;
                         }
-                        case Item.MOVE_SPEED_POTION:
+                        case ItemType.TmpDamagePotion:
                         {
+                            currentTarget = ctx.Get("dmg");
+                            boostTarget = BoostHandles.BoostDamage;
+                            boostAmount = GameStats.DAMAGE_POTION_TEMPORARY_BOOST;
                             break;
                         }
-                        case Item.DAMAGE_POTION:
+                        case ItemType.TmpHealthPortion:
                         {
+                            currentTarget = ctx.Get("hp");
+                            boostTarget = BoostHandles.BoostHealth;
+                            boostAmount = GameStats.HEALTH_POTION_TEMPORARY_BOOST;
                             break;
                         }
-                        case Item.PIANO:
-                        case Item.FLUTE:
-                        case Item.SUPER_BASS:
-                        case Item.GUITAR:
-                        case Item.SAXOPHONE:
-                        case Item.VIOLIN:
+                        case ItemType.TmpAtkSpdPotion:
+                        {
+                            currentTarget = ctx.Get("atk-spd");
+                            boostTarget = BoostHandles.BoostAtkSpd;
+                            boostAmount = GameStats.ATK_SPEED_POTION_TEMPORARY_BOOST;
                             break;
+                        }
+                        case ItemType.TmpMovSpdPotion:
+                        {
+                            currentTarget = ctx.Get("mov-spd");
+                            boostTarget = BoostHandles.BoostMovSpd;
+                            boostAmount = GameStats.MOVE_SPEED_POTION_TEMPORARY_BOOST;
+                            break;
+                        }
                     }
+                    var boost = (int) (currentTarget * (100 + boostAmount) / 100f) - currentTarget;
+                    ctx.Do(boostTarget, boost);
                     break;
-                case "BUY_IN_GAME":
-                {
-                    var _item = eventDto["item"] as int? ?? -1;
-                    switch (_item)
-                    {
-                        case Item.HEALTH_POTION:
-                        {
-                            break;
-                        }
-                        case Item.MANA_POTION:
-                        {
-                            break;
-                        }
-                        case Item.ATK_SPEED_POTION:
-                        {
-                            break;
-                        }
-                        case Item.MOVE_SPEED_POTION:
-                        {
-                            break;
-                        }
-                        case Item.DAMAGE_POTION:
-                        {
-                            break;
-                        }
-                    }
-                    break;
-                }
                 default:
                     throw new Exception("Unknown event.");
             }

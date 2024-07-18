@@ -21,7 +21,7 @@ namespace Common.Context
         
         private static ArrayList Inventory { get; } = new ArrayList();
         
-        private static int Money { get; set; } = 0;
+        public  int Money { get; set; } = 0;
         public bool Saved { get; set; }
         
         private GameContext()
@@ -52,6 +52,18 @@ namespace Common.Context
         { 
             switch (actionHandle)
             {
+                case BoostHandles.BoostDefHealth:
+                    _attributes.Query("+", "hp", value);
+                    break;
+                case BoostHandles.BoostDefDamage:
+                    _attributes.Query("+", "dmg", value);
+                    break;
+                case BoostHandles.BoostDefAtkSpd:
+                    _attributes.Query("+", "atk-spd", value);
+                    break;
+                case BoostHandles.BoostDefMovSpd:
+                    _attributes.Query("+", "mov-spd", value);
+                    break;
                 case BoostHandles.BoostMovSpd:
                     _attributes.Query("+", "mov-spd+", value);
                     break;

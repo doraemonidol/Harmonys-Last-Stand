@@ -2,6 +2,10 @@ namespace Logic.Helper
 {
     public static class BoostHandles
     {
+        public const int BoostDefMovSpd = 20;
+        public const int BoostDefAtkSpd = 21;
+        public const int BoostDefDamage = 222;
+        public const int BoostDefHealth = 23;
         public const int BoostMovSpd = 0;
         public const int BoostDamage = 1;
         public const int BoostHealth = 2;
