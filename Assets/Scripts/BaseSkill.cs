@@ -72,7 +72,7 @@ public abstract class BaseSkill : PSkill
         }
     }
 
-    private IEnumerator PlayVFX()
+    public IEnumerator PlayVFX()
     {
         _skillState = SkillState.PreCasting;
 

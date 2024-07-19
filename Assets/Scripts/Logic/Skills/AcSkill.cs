@@ -13,6 +13,7 @@ using Logic.Skills.SonicBass;
 using Logic.Skills.Violin;
 using Logic.Villains;
 using Logic.Weapons;
+using Presentation.Maestro;
 
 namespace Logic.Skills
 {

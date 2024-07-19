@@ -39,6 +39,6 @@ public abstract class BossMovement : PresentationObject
     // Update is called once per frame
     public override void Update()
     {
-        navMeshAgent.SetDestination(player.transform.position);
+        // navMeshAgent.SetDestination(player.transform.position);
     }
 }
