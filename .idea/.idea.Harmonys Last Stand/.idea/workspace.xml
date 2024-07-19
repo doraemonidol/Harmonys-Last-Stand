@@ -4,43 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6d8f654-96a8-4d8c-b60c-233031c2437c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/EnemyActionType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/EnemyActionType.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/EnemyCollision.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/EnemyCollision.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Circle Centre 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Circle Centre 2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Body 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Body 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Head 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Head 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FantasySpellsEffectsPack/Materials/Effect_68_Materials/Effect_68_Arrow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FantasySpellsEffectsPack/Materials/Effect_68_Materials/Effect_68_Arrow.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FantasySpellsEffectsPack/Scripts/Object/SimpleObjectMake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FantasySpellsEffectsPack/Scripts/Object/SimpleObjectMake.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Monsters Ultimate Pack 06 Cute Series/Death Cute Series/FBX/Death.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Monsters Ultimate Pack 06 Cute Series/Death Cute Series/FBX/Death.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Monsters Ultimate Pack 06 Cute Series/Death Mage Cute Series/FBX/Death Mage.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Monsters Ultimate Pack 06 Cute Series/Death Mage Cute Series/FBX/Death Mage.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Amadeus/Effects/vfx_Effect_SymphonyStorm.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Amadeus/Effects/vfx_Effect_SymphonyStorm.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Amadeus/Parts/vfx_ENCORE_EnergyShotRing.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Amadeus/Parts/vfx_ENCORE_EnergyShotRing.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Amadeus/Projectiles/vfx_Projectile_ENCORE.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Amadeus/Projectiles/vfx_Projectile_ENCORE.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Amadeus/Projectiles/vfx_Projectile_RequiemWrath.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Amadeus/Projectiles/vfx_Projectile_RequiemWrath.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/Flute/MysticMelody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/Flute/MysticMelody.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/Flute/WhistlingWind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/Flute/WhistlingWind.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/AmadeusMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/AmadeusMockUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/MaestroMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/MaestroMockUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/SkillColliderInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/SkillColliderInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/Troop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/Troop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/WeaponMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/WeaponMockUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCastSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCastSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossCastSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossCastSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/ProjectileMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Projectiles/ProjectileMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/VFX.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VFX.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_1(NotScriptBased)/Effects/Effect_15_PowerOfGravity/Effect_15_PhantomShow/Effect_15_CardSide(Base).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_1(NotScriptBased)/Effects/Effect_15_PowerOfGravity/Effect_15_PhantomShow/Effect_15_CardSide(Base).prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-    </list>
+    <list default="true" id="a6d8f654-96a8-4d8c-b60c-233031c2437c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +15,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/bc/d12351fe/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.13/Editor/BurstDisassembler.Core.ARM64.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.performance.profile-analyzer@1.2.2/Editor/Units.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -138,6 +104,7 @@
       <workItem from="1721284592746" duration="12687000" />
       <workItem from="1721335270852" duration="6816000" />
       <workItem from="1721344337805" duration="10000" />
+      <workItem from="1721351021365" duration="3096000" />
     </task>
     <servers />
   </component>
