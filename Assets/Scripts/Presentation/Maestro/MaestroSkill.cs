@@ -15,6 +15,7 @@ namespace Presentation.Maestro
         protected Animator animator;
         protected GameObject target;
         protected NavMeshAgent navMeshAgent;
+        [SerializeField] protected float attackRange;
         
         public override void Start()
         {
@@ -71,6 +72,8 @@ namespace Presentation.Maestro
         }
 
         public abstract IEnumerator StartCasting();
+        
+        public abstract IEnumerator StartHitting();
 
         public override void AcceptAndUpdate(EventUpdateVisitor visitor)
         {
