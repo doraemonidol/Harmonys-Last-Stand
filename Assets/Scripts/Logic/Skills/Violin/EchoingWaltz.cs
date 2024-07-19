@@ -14,15 +14,18 @@ namespace Logic.Skills.Violin
         public EchoingWaltz(Weapon owner, long coolDownTime) : base(owner, coolDownTime)
         {
         }
+        
+        public void Activate(ICharacter activator)
+        {
+            base.Activate(activator);
+            User.ReceiveEffect(EffectHandle.Clone, new EventDto
+            {
+                ["timeout"] = 20000,
+            });
+        }
 
         public override void Affect(ICharacter attacker, ICharacter target, EventDto context)
         {
-            var boostAmount = GameContext.GetInstance().Get("dmg+");
-            var finalDmg = 25 * (100 + boostAmount) / 100;
-            target.ReceiveEffect(EffectHandle.GetHit, new EventDto
-            {
-                [EffectHandle.HpReduce] = finalDmg,
-            });
         }
     }
 }

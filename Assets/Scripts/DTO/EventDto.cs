@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Common;
 
 namespace DTO
 {
@@ -13,7 +14,14 @@ namespace DTO
         public object this[string key]
         {
             get => Arguments.GetValueOrDefault(key);
-            set => Arguments[key] = value;
+            set
+            {
+                if (key == "timeout")
+                {
+                    Arguments[key] = (int)value * GameStats.BASE_TIME_UNIT;
+                }
+                else Arguments[key] = value;
+            } 
         }
     }
 }

@@ -21,10 +21,7 @@ namespace Logic.Skills.LudwigVanVortex
             {
                 [EffectHandle.HpReduce] = 20,
             });
-            target.ReceiveEffect(EffectHandle.Fear, new EventDto
-            {
-                ["timeout"] = 2, 
-            });
+            target.ReceiveEffect(EffectHandle.KnockBack);
         }
     }
 }

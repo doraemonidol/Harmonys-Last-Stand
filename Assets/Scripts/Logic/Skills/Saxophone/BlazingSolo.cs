@@ -1,3 +1,4 @@
+using Common;
 using Common.Context;
 using DTO;
 using Logic.Helper;
@@ -23,7 +24,7 @@ namespace Logic.Skills.Saxophone
             {
                 [EffectHandle.HpReduce] = finalDmg,
                 [EffectHandle.HpDrain] = 3,
-                ["timeout"] = 10,
+                ["timeout"] = 10 * GameStats.BASE_TIME_UNIT,
             };
             target.ReceiveEffect(EffectHandle.GetHit, args);
             target.ReceiveEffect(EffectHandle.Bleeding, args);

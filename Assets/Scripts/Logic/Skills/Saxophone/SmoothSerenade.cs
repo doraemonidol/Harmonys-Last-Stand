@@ -1,4 +1,5 @@
 using System;
+using Common;
 using DTO;
 using Logic.Helper;
 using Logic.MainCharacters;
@@ -23,7 +24,7 @@ namespace Logic.Skills.Saxophone
             ((IMainCharacter)User).ReceiveEffect(EffectHandle.Healing, new EventDto
             {
                 [EffectHandle.HpGain] = 5,
-                ["timeout"] = 10,
+                ["timeout"] = 10 * GameStats.BASE_TIME_UNIT,
             });
         }
 

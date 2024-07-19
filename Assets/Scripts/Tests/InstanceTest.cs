@@ -355,7 +355,29 @@ namespace Tests
         [Test]
         public void TestCharacterTakeEffectRooted()
         {
+            var villain = new GameObject().AddComponent<MaestroMockUp>();
+            villain.Start();
+            var aurelia = new GameObject().AddComponent<AureliaMockUp>();
+            aurelia.Start();
             
+            LogicLayer.GetInstance().Observe(new EventDto
+            {
+                Event = "GET_ATTACKED",
+                ["attacker"] = villain.LogicHandle,
+                ["target"] = aurelia.LogicHandle,
+                ["context"] = new EventDto
+                {
+                    ["cxt"] = "pre",
+                },
+                ["skill"] = villain.weapon.GetSpecialSkills()[0].LogicHandle,
+            });
+            
+            LogicLayer.GetInstance().Observe(new EventDto
+            {
+                Event = "MOVE",
+                ["identity"] = aurelia.LogicHandle,
+                ["direction"] = ActionEvent.MoveUp,
+            });
         }
         
         [Test]

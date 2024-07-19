@@ -30,6 +30,7 @@ namespace Logic.MainCharacters
 
         public Aurelia(List<int> wpLists)
         {
+            GameContext.GetInstance().MainCharacter = this;
             _effectManager = new EffectManager();
             _weapons = new List<Weapon>();
             foreach (var weapon in wpLists)
@@ -87,7 +88,6 @@ namespace Logic.MainCharacters
                         {
                             return;
                         }
-
                         _effectManager.Add(new Stunt(this, timeout));
                         break;
                     }
@@ -108,7 +108,6 @@ namespace Logic.MainCharacters
                         {
                             return;
                         }
-
                         _effectManager.Add(new Fear(this, timeout));
                         break;
                     }
@@ -135,7 +134,7 @@ namespace Logic.MainCharacters
                         {
                             return;
                         }
-
+                        _effectManager.Add(new Rooted(this, timeout));
                         break;
                     }
                     case EffectHandle.SlowDown:
@@ -155,17 +154,19 @@ namespace Logic.MainCharacters
                         {
                             return;
                         }
-
+                        _effectManager.Add(new Silent(this, timeout));
                         break;
                     }
                     case EffectHandle.Clone:
                     {
                         var timeout = (int)args![EffectHandle.Timeout];
+                        _effectManager.Add(new Clone(this, timeout));
                         break;
                     }
                     case EffectHandle.Resistance:
                     {
                         var timeout = (int)args![EffectHandle.Timeout];
+                        _effectManager.Add(new Resistance(this, timeout));
                         break;
                     }
                     case EffectHandle.Charm:

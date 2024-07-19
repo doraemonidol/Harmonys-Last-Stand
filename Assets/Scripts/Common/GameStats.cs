@@ -21,5 +21,7 @@ namespace Common
         public const int MAESTRO_ATKSPEED = 100;
         public const int MAESTRO_MOVSPEED = 100;
         public const int MAESTRO_ATTACK = 100;
+
+        public const int BASE_TIME_UNIT = 1000;
     }
 }
