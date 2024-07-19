@@ -5,34 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6d8f654-96a8-4d8c-b60c-233031c2437c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/MaestroSkill.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/MaestroSkill.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/PPhantomStab.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/PPhantomStab.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Meastro/Meastro_controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Characters/Meastro/Meastro_controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Body 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Body 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Head 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Head 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Materials/Alts/PolygonHorrorCarnival_Mat_01_A.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonHorrorCarnival/Materials/Alts/PolygonHorrorCarnival_Mat_01_A.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Maestro/Maestro_Model.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Maestro/Maestro_Model.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Maestro/Parts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Maestro/Parts.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Maestro/Parts/SpikeSkill.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Maestro/Parts/SpikeSkill.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Maestro/Projectiles.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Maestro/Projectiles.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Maestro/Projectiles/vfx_Projectile_PowerChord.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Maestro/Projectiles/vfx_Projectile_PowerChord.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Maestro/Projectiles/vfx_Projectile_StringStrike.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Maestro/Projectiles/vfx_Projectile_StringStrike.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Maestro/Projectiles/vfx_skill_1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Maestro/Projectiles/vfx_skill_1.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BaseSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/AcSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/AcSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/MaestroMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/MaestroMockUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_2(ScriptBased)/Materials/Effect_12_Materials/Effect_12_Explosion.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_2(ScriptBased)/Materials/Effect_12_Materials/Effect_12_Explosion.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_2(ScriptBased)/Materials/Effect_12_Materials/Effect_12_Explosion_2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SpecialSkillsEffectsPack/AllEffects/EffectsSet_2(ScriptBased)/Materials/Effect_12_Materials/Effect_12_Explosion_2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/MaestroSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/MaestroSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/PPhantomStab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/PPhantomStab.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +117,7 @@
       <workItem from="1721362346589" duration="8908000" />
       <workItem from="1721374117160" duration="3328000" />
       <workItem from="1721377823295" duration="6072000" />
+      <workItem from="1721424055180" duration="3351000" />
     </task>
     <servers />
   </component>
