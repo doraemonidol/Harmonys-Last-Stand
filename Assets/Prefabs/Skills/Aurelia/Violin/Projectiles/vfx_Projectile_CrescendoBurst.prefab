@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9024179828451374807}
   - component: {fileID: 6738400398916239938}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: vfx_Projectile_CrescendoBurst
   m_TagString: Untagged
   m_Icon: {fileID: 0}

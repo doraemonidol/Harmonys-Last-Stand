@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4023352614410070}
   - component: {fileID: 5091968319497908288}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: vfx_Effect_TranquilTune
   m_TagString: Untagged
   m_Icon: {fileID: 0}

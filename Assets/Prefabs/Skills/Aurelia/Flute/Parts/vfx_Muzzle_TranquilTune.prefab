@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4597009519077214}
   - component: {fileID: 198546194400147484}
   - component: {fileID: 199195998402571448}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_67_Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4853,7 +4853,7 @@ GameObject:
   - component: {fileID: 4621086501508808}
   - component: {fileID: 198458109190951832}
   - component: {fileID: 199106339499407702}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_67_Particle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9695,7 +9695,7 @@ GameObject:
   - component: {fileID: 4229865169323206}
   - component: {fileID: 198809142741901230}
   - component: {fileID: 199122461904831930}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_67_Smoke_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14537,7 +14537,7 @@ GameObject:
   - component: {fileID: 4816568415583158}
   - component: {fileID: 198879823848766848}
   - component: {fileID: 199346872837209268}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_67_Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19377,7 +19377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4023352614410070}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: vfx_Muzzle_TranquilTune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19415,7 +19415,7 @@ GameObject:
   - component: {fileID: 4090692777570096}
   - component: {fileID: 198146752083044924}
   - component: {fileID: 199674667401789710}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_67_Distort
   m_TagString: Untagged
   m_Icon: {fileID: 0}

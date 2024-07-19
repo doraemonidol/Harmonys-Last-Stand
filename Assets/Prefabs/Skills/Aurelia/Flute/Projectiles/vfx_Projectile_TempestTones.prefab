@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2983936735563213036}
   - component: {fileID: 3815691821005705440}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: vfx_Projectile_TempestTones
   m_TagString: Bullet
   m_Icon: {fileID: 0}

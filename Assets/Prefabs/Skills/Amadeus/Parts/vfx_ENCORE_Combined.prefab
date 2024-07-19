@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4161029913604788}
   - component: {fileID: 114061256621177324}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: vfx_ENCORE_Combined
   m_TagString: Untagged
   m_Icon: {fileID: 0}

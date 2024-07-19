@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4407127645151926}
   - component: {fileID: 198323512253678430}
   - component: {fileID: 199443723826072764}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_68_Ring_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4655,7 +4655,7 @@ GameObject:
   - component: {fileID: 4673552800212592}
   - component: {fileID: 198463676602864316}
   - component: {fileID: 199840033365573500}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_68_Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9299,7 +9299,7 @@ GameObject:
   - component: {fileID: 4846268237036402}
   - component: {fileID: 198714389475008798}
   - component: {fileID: 199726582828700012}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_68_Ring_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13941,7 +13941,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4839633471395290}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: vfx_ENCORE_EnergyShotRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13978,7 +13978,7 @@ GameObject:
   - component: {fileID: 4951678966339576}
   - component: {fileID: 198077365739927340}
   - component: {fileID: 199670383774313720}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_68_Distort
   m_TagString: Untagged
   m_Icon: {fileID: 0}

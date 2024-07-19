@@ -12,7 +12,7 @@ namespace Presentation.Bosses
         private void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.CompareTag("Enemy")) return;
-            Debug.Log(this.LogicHandle + "EnemyCollision Tag: " + other.gameObject.tag + " " + other.gameObject.name);
+            // Debug.Log(this.LogicHandle + "EnemyCollision Tag: " + other.gameObject.tag + " " + other.gameObject.name);
             
             if (other.gameObject.GetComponent<SkillColliderInfo>() == null) return;
             
@@ -34,6 +34,7 @@ namespace Presentation.Bosses
 
         private void OnParticleCollision(GameObject other)
         {
+            Debug.Log(this.LogicHandle + "Particle Collided with " + other.name);
             if (other.GetComponent<SkillColliderInfo>())
             {
                 Debug.Log(this.LogicHandle + "Particle Collided with " + other.name);

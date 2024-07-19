@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2983936735243743549}
   - component: {fileID: 2983936735243743548}
   - component: {fileID: 2983936735243743551}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_15_SliceCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -3696,12 +3696,12 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
-    multiplyColliderForceByParticleSize: 0
+    multiplyColliderForceByParticleSize: 1
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
     m_Planes:
@@ -3767,7 +3767,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3820,7 +3820,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -3875,7 +3875,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 9
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4942,7 +4942,7 @@ GameObject:
   - component: {fileID: 2983936735563213036}
   - component: {fileID: 5219196729279957942}
   - component: {fileID: 4267715739812230238}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: vfx_Muzzle_TempestTones
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -9777,7 +9777,7 @@ GameObject:
   - component: {fileID: 2983936735898750489}
   - component: {fileID: 2983936735898750488}
   - component: {fileID: 2983936735898750491}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_15_MainCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14699,7 +14699,7 @@ GameObject:
   - component: {fileID: 2983936735972895452}
   - component: {fileID: 2983936735972895455}
   - component: {fileID: 2983936735972895454}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_15_Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14804,7 +14804,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -17394,7 +17394,7 @@ ParticleSystem:
     inWorldSpace: 0
     multiplyDragByParticleSize: 1
     multiplyDragByParticleVelocity: 1
-    dampen: 0.1
+    dampen: 0.05
     drag:
       serializedVersion: 2
       minMaxState: 0
@@ -19630,7 +19630,7 @@ GameObject:
   - component: {fileID: 2983936736488378936}
   - component: {fileID: 2983936736488378939}
   - component: {fileID: 2983936736488378938}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_15_SliceCard_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19735,7 +19735,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.65
+      scalar: 1.6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -23310,9 +23310,9 @@ ParticleSystem:
     type: 1
     collisionMode: 0
     colliderForce: 0
-    multiplyColliderForceByParticleSize: 0
-    multiplyColliderForceByParticleSpeed: 0
-    multiplyColliderForceByCollisionAngle: 0
+    multiplyColliderForceByParticleSize: 1
+    multiplyColliderForceByParticleSpeed: 1
+    multiplyColliderForceByCollisionAngle: 1
     m_Planes:
     - {fileID: 0}
     - {fileID: 0}
@@ -23376,7 +23376,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.01
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -23429,7 +23429,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.2
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -23479,12 +23479,12 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    minKillSpeed: 0
+    minKillSpeed: 100
     maxKillSpeed: 10000
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 8
+      m_Bits: 9
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5

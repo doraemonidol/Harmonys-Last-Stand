@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1450895818009761071}
   - component: {fileID: 1450895818009761073}
   - component: {fileID: 1450895818009761072}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_32_Wind_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4911,7 +4911,7 @@ GameObject:
   - component: {fileID: 1450895818092069199}
   - component: {fileID: 1450895818092069201}
   - component: {fileID: 1450895818092069200}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_32_Wind_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9811,7 +9811,7 @@ GameObject:
   - component: {fileID: 1450895818454427039}
   - component: {fileID: 1450895818454427041}
   - component: {fileID: 1450895818454427040}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_32_Wind_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14711,7 +14711,7 @@ GameObject:
   - component: {fileID: 1450895818803675365}
   - component: {fileID: 1450895818803675367}
   - component: {fileID: 1450895818803675366}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_32_Wind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19612,7 +19612,7 @@ GameObject:
   - component: {fileID: 8139431060191239198}
   - component: {fileID: 8889142717096095757}
   - component: {fileID: 2946183482538410542}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_32_Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24514,7 +24514,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 260
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -24533,7 +24533,7 @@ GameObject:
   - component: {fileID: 968344171009009532}
   - component: {fileID: 74148869636679974}
   - component: {fileID: 554919927495330614}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_32_Wind_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29433,7 +29433,7 @@ GameObject:
   - component: {fileID: 4710568659728330024}
   - component: {fileID: 7544093199515870262}
   - component: {fileID: 8176445088914292728}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_32_Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34332,7 +34332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7652162249332188880}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_32_Winds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34369,7 +34369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4116285548265114538}
   - component: {fileID: 7579633284073917658}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: vfx_Muzzle_WhistlingWind
   m_TagString: Untagged
   m_Icon: {fileID: 0}

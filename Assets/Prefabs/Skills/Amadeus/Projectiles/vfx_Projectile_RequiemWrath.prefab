@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104107114863222826}
   - component: {fileID: 7595588281406506943}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: vfx_Projectile_RequiemWrath
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4316502435638066}
   - component: {fileID: 198055019482778082}
   - component: {fileID: 199740213804452046}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Derbis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4931,7 +4931,7 @@ GameObject:
   - component: {fileID: 199491664286389906}
   - component: {fileID: 82966374770990374}
   - component: {fileID: 7237525262340924801}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: vfx_Muzzle_CrescendoBurst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9993,10 +9993,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 260
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -10015,7 +10015,7 @@ GameObject:
   - component: {fileID: 4553982161653586}
   - component: {fileID: 198558571252158206}
   - component: {fileID: 199817712802893244}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: StartWind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14924,7 +14924,7 @@ GameObject:
   - component: {fileID: 4743590388038694}
   - component: {fileID: 198756450940646540}
   - component: {fileID: 199024629610274426}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Distortion(Delete for HD and LW)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19824,7 +19824,7 @@ GameObject:
   - component: {fileID: 4984632286121210}
   - component: {fileID: 198550510351085846}
   - component: {fileID: 199129340448049670}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CoreWind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24760,7 +24760,7 @@ GameObject:
   - component: {fileID: 4628686572447488}
   - component: {fileID: 198500997094044978}
   - component: {fileID: 199889952912060322}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29669,7 +29669,7 @@ GameObject:
   - component: {fileID: 4403268435576100}
   - component: {fileID: 198454220743630688}
   - component: {fileID: 199511286130287270}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34569,7 +34569,7 @@ GameObject:
   - component: {fileID: 4629484886291602}
   - component: {fileID: 198527451800872616}
   - component: {fileID: 199989924130110328}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShockWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39469,7 +39469,7 @@ GameObject:
   - component: {fileID: 4235795953214736}
   - component: {fileID: 198957390837340710}
   - component: {fileID: 199201104837262690}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Feathers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44378,7 +44378,7 @@ GameObject:
   - component: {fileID: 4328111337861828}
   - component: {fileID: 198821037178694524}
   - component: {fileID: 199449964068170384}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49350,7 +49350,7 @@ GameObject:
   - component: {fileID: 4797182504611642}
   - component: {fileID: 198326011995105814}
   - component: {fileID: 199254331942255048}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SparksMidle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54252,7 +54252,7 @@ GameObject:
   - component: {fileID: 199171281688911188}
   - component: {fileID: 108112360174375356}
   - component: {fileID: 294223123053864444}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light(Delete for HD)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59246,7 +59246,7 @@ GameObject:
   - component: {fileID: 4815755887746806}
   - component: {fileID: 198415222995722298}
   - component: {fileID: 199476229827653114}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MagicText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64155,7 +64155,7 @@ GameObject:
   - component: {fileID: 4295817935204242}
   - component: {fileID: 198600870650757466}
   - component: {fileID: 199363240321913410}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}

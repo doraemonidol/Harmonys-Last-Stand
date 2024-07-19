@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -1161310849047800438}
   - component: {fileID: -8380490030332712056}
   - component: {fileID: -1716354625973739046}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: vfx_Projectile_WhistlingWind
   m_TagString: Bullet
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8055738141670048710}
   - component: {fileID: 1723582478473367051}
   - component: {fileID: 7520726154053288809}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_28_Sphere_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4929,7 +4929,7 @@ GameObject:
   - component: {fileID: 1195863241405297411}
   - component: {fileID: 3173961299902563217}
   - component: {fileID: 3977138506109632360}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_28_Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9847,7 +9847,7 @@ GameObject:
   - component: {fileID: 6104107113015724251}
   - component: {fileID: 6104107113015724250}
   - component: {fileID: 6104107113015724245}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_28_ParticleBeam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14758,7 +14758,7 @@ GameObject:
   - component: {fileID: 6104107113229620049}
   - component: {fileID: 8013805917943148685}
   - component: {fileID: 2393909291097908975}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_28_Beam
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -19690,7 +19690,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 12
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -19709,7 +19709,7 @@ GameObject:
   - component: {fileID: 6104107114445071220}
   - component: {fileID: 6104107114445071223}
   - component: {fileID: 6104107114445071222}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_28_ChargeLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24551,7 +24551,7 @@ GameObject:
   - component: {fileID: 6104107114863222826}
   - component: {fileID: 1610314659635026729}
   - component: {fileID: 8699586960549815145}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: vfx_Muzzle_RequiemWrath
   m_TagString: Untagged
   m_Icon: {fileID: 0}

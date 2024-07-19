@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4175724221962164}
   - component: {fileID: 96660694867418570}
-  m_Layer: 3
+  m_Layer: 2
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 4572622955309552}
   - component: {fileID: 198765345971197024}
   - component: {fileID: 199285294356792230}
-  m_Layer: 3
+  m_Layer: 2
   m_Name: Leafs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4998,7 +4998,7 @@ GameObject:
   - component: {fileID: 4312408608713502}
   - component: {fileID: 198310119662004396}
   - component: {fileID: 199085450165201728}
-  m_Layer: 3
+  m_Layer: 2
   m_Name: Inside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9907,7 +9907,7 @@ GameObject:
   - component: {fileID: 4797056694412298}
   - component: {fileID: 198949030234276754}
   - component: {fileID: 199602778024048596}
-  m_Layer: 3
+  m_Layer: 2
   m_Name: Rings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14752,7 +14752,7 @@ GameObject:
   - component: {fileID: 54813845547034192}
   - component: {fileID: 136757934063241816}
   - component: {fileID: 71661269111794978}
-  m_Layer: 3
+  m_Layer: 2
   m_Name: vfx_Projectile_PowerChord
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -19694,7 +19694,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 260
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0

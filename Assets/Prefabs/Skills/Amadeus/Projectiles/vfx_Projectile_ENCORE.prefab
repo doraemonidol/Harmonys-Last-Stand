@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -2069847260942615642}
   - component: {fileID: 8662881165878365284}
   - component: {fileID: 7116772848491718213}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: vfx_Projectile_ENCORE
   m_TagString: Untagged
   m_Icon: {fileID: 0}

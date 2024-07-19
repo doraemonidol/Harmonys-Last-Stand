@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 774628112877673901}
   - component: {fileID: 4091936896689423218}
   - component: {fileID: 431802490427820123}
-  m_Layer: 0
+  - component: {fileID: 3268764982065538630}
+  - component: {fileID: 2125212729781228131}
+  m_Layer: 2
   m_Name: vfx_Effect_SymphonyStorm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4855,6 +4857,76 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!50 &3268764982065538630
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4462249695417771607}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!66 &2125212729781228131
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4462249695417771607}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths: []
+  m_CompositePaths:
+    m_Paths: []
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+  m_UseDelaunayMesh: 0
+  m_CompositeGameObject: {fileID: 4462249695417771607}
 --- !u!1001 &2049348328070255339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4867,9 +4939,17 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753237060846, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957753545396102, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Name
       value: Effect_15_CardSide(Base)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957753545396102, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2584957753545396217, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_RootOrder
@@ -4915,6 +4995,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753822561756, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957753822561758, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -4923,9 +5007,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753942828711, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957754899933929, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957754899933940, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957755140096496, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2584957755140096498, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
@@ -4934,6 +5030,10 @@ PrefabInstance:
     - target: {fileID: 7702802462677732301, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921433081144190684, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4957,9 +5057,17 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753237060846, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957753545396102, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Name
       value: Effect_15_CardSide(Base)_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957753545396102, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2584957753545396217, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_RootOrder
@@ -5005,6 +5113,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753822561756, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957753822561758, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -5013,9 +5125,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753942828711, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957754899933929, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957754899933940, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957755140096496, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2584957755140096498, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
@@ -5024,6 +5148,10 @@ PrefabInstance:
     - target: {fileID: 7702802462677732301, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921433081144190684, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5047,9 +5175,17 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753237060846, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957753545396102, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Name
       value: Effect_15_CardSide(Base)_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957753545396102, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2584957753545396217, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_RootOrder
@@ -5095,6 +5231,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753822561756, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957753822561758, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -5103,9 +5243,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753942828711, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957754899933929, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957754899933940, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957755140096496, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2584957755140096498, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
@@ -5114,6 +5266,10 @@ PrefabInstance:
     - target: {fileID: 7702802462677732301, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921433081144190684, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5137,9 +5293,17 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753237060846, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957753545396102, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Name
       value: Effect_15_CardSide(Base)_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957753545396102, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2584957753545396217, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_RootOrder
@@ -5185,6 +5349,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753822561756, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957753822561758, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -5193,9 +5361,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753942828711, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957754899933929, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957754899933940, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957755140096496, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2584957755140096498, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
@@ -5204,6 +5384,10 @@ PrefabInstance:
     - target: {fileID: 7702802462677732301, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921433081144190684, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5227,9 +5411,17 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753237060846, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957753545396102, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Name
       value: Effect_15_CardSide(Base)_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957753545396102, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2584957753545396217, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_RootOrder
@@ -5275,6 +5467,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753822561756, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957753822561758, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -5283,9 +5479,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753942828711, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957754899933929, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957754899933940, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957755140096496, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2584957755140096498, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
@@ -5294,6 +5502,10 @@ PrefabInstance:
     - target: {fileID: 7702802462677732301, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921433081144190684, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5317,9 +5529,17 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753237060846, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957753545396102, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Name
       value: Effect_15_CardSide(Base)_8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957753545396102, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2584957753545396217, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_RootOrder
@@ -5365,6 +5585,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753822561756, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957753822561758, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -5373,9 +5597,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753942828711, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957754899933929, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957754899933940, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957755140096496, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2584957755140096498, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
@@ -5384,6 +5620,10 @@ PrefabInstance:
     - target: {fileID: 7702802462677732301, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921433081144190684, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5407,9 +5647,17 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753237060846, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957753545396102, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Name
       value: Effect_15_CardSide(Base)_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957753545396102, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2584957753545396217, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_RootOrder
@@ -5455,6 +5703,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753822561756, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957753822561758, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -5463,9 +5715,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753942828711, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957754899933929, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957754899933940, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957755140096496, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2584957755140096498, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
@@ -5474,6 +5738,10 @@ PrefabInstance:
     - target: {fileID: 7702802462677732301, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921433081144190684, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5497,9 +5765,17 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753237060846, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957753545396102, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Name
       value: Effect_15_CardSide(Base)_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957753545396102, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2584957753545396217, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_RootOrder
@@ -5545,6 +5821,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753822561756, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957753822561758, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -5553,9 +5833,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2584957753942828711, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2584957754899933929, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957754899933940, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584957755140096496, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2584957755140096498, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
@@ -5564,6 +5856,10 @@ PrefabInstance:
     - target: {fileID: 7702802462677732301, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921433081144190684, guid: a25d060d64357144cb4a85e70019e6a3, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

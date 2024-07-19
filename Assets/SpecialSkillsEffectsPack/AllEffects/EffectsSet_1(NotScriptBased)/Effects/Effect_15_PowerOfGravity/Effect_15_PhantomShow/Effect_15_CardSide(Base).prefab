@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2584957753237060833}
   - component: {fileID: 2584957753237060835}
   - component: {fileID: 2584957753237060832}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_15_ParticleRelease
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4910,7 +4910,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2584957753545396217}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_15_CardSide(Base)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4948,7 +4948,7 @@ GameObject:
   - component: {fileID: 2584957753822561759}
   - component: {fileID: 2584957753822561745}
   - component: {fileID: 2584957753822561758}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_15_Shockwave
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -9848,7 +9848,7 @@ GameObject:
   - component: {fileID: 2584957753942828710}
   - component: {fileID: 2584957753942828696}
   - component: {fileID: 2584957753942828697}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_15_Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14759,7 +14759,7 @@ GameObject:
   - component: {fileID: 2584957754899933929}
   - component: {fileID: 2584957754899933942}
   - component: {fileID: 2993270022424027595}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_15_Card
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -19691,7 +19691,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 12
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -19711,7 +19711,7 @@ GameObject:
   - component: {fileID: 2584957755140096501}
   - component: {fileID: 2584957755140096498}
   - component: {fileID: 308040164891287379}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_15_Chain
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -24712,7 +24712,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 12
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -24732,7 +24732,7 @@ GameObject:
   - component: {fileID: 97139388040314739}
   - component: {fileID: 7702802462677732301}
   - component: {fileID: 1956687979150656937}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Effect_15_Card_2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
