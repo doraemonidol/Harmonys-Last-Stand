@@ -6233,7 +6233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -10787,6 +10787,7 @@ MonoBehaviour:
     autoDestroy: 1
   attackRange: 0
   radius: 16
+  speed: 24
   prefab: {fileID: 2828738592699254034, guid: bfbbab6523f60a54080527e57256962c, type: 3}
   renderers:
   - {fileID: 850578690619112353}

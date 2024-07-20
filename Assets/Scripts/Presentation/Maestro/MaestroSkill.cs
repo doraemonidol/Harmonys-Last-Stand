@@ -56,7 +56,7 @@ namespace Presentation.Maestro
             }
         }
 
-        protected IEnumerator StartPrecastVFX()
+        public IEnumerator StartPrecastVFX()
         {
             if (preCastVfx.HasVFX())
             {
