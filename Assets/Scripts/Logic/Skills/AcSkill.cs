@@ -14,6 +14,7 @@ using Logic.Skills.Violin;
 using Logic.Villains;
 using Logic.Weapons;
 using Presentation.Maestro;
+using JackInTheBoxMayhem = Logic.Skills.MaestroMachina.JackInTheBoxMayhem;
 
 namespace Logic.Skills
 {
