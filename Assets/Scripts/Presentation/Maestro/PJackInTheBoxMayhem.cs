@@ -29,8 +29,8 @@ namespace Presentation.Maestro
         public override IEnumerator StartCasting()
         {
             animator.SetTrigger(EnemyActionType.CastSpell2);
+            yield return new WaitForSeconds(1.2f);
             StartCoroutine(StartPrecastVFX());
-            yield return new WaitForSeconds(1.5f);
             SpawnResources();
             yield return new WaitForSeconds(1f);
         }
@@ -53,11 +53,14 @@ namespace Presentation.Maestro
                     {
                         if (Random.Range(0, 101) < spawnChance)
                         {
-                            GameObject jackBox = Instantiate(jackInTheBoxPrefab, hit.point + new Vector3(0, 3.0f, 0), Quaternion.identity);
+                            float randomHeight = Random.Range(10.0f, 25.0f);
+                            GameObject jackBox = Instantiate(jackInTheBoxPrefab, hit.point, Quaternion.identity);
                             jackBox.transform.GetChild(0).gameObject.AddComponent<SkillColliderInfo>().Initialize(
                                 attacker: this.Owner,
                                 skill: this.LogicHandle
                             );
+
+                            jackBox.GetComponent<Rigidbody>().AddForce(Vector3.up * randomHeight, ForceMode.Impulse);
                         }
                     }
                 }

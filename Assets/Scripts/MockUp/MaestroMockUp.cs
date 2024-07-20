@@ -18,7 +18,7 @@ namespace MockUp
     public class MaestroMockUp : BossMovement
     {
 
-        private float _nextCastTime;
+        private float _nextCastTime = 0;
 
         [Header("Boss Stats")] [SerializeField]
         private WeaponMockUp _weapon;
@@ -109,8 +109,10 @@ namespace MockUp
             if (testingSkill != -1)
                 skillIndex = testingSkill;
 
+            Debug.Log("Check casting skill " + skillIndex);
             if (CheckStartCast(skillIndex))
             {
+                Debug.Log("Start casting skill " + skillIndex);
                 // Change z of gameObject.transform.rotation to -144
                 gameObject.transform.localRotation = Quaternion.Euler(0, -144, 0);
                 navMeshAgent.isStopped = true;
@@ -123,7 +125,7 @@ namespace MockUp
                         animator.SetTrigger(EnemyActionType.CastSpell2);
                         break;
                     case 2:
-                        animator.SetTrigger(EnemyActionType.CastSpell3);
+                        // animator.SetTrigger(EnemyActionType.CastSpell3);
                         break;
                     case 3:
                         animator.SetTrigger(EnemyActionType.CastSpell4);
