@@ -1673,7 +1673,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.6585803, b: 0.13679248, a: 1}
   m_Intensity: 5000
   m_Range: 47.7
   m_SpotAngle: 38.147533
@@ -2004,6 +2004,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Forge_Smelter_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4418160572144966, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.87317044
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418160572144966, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.53152
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418160572144966, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8867647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418160572144966, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4923412771087636, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.650024
@@ -2054,6 +2070,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4923412771087636, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
   m_PrefabInstance: {fileID: 682000536}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &693801474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 693801476}
+  - component: {fileID: 693801475}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &693801475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693801474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: c12c35d705e9944e09df15bd35ee6ef6, type: 2}
+--- !u!4 &693801476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693801474}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5131167, y: 0.48652977, z: 0.48652977, w: 0.5131167}
+  m_LocalPosition: {x: 815.3, y: -6.8, z: -684.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &704886631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2763,8 +2828,32 @@ PrefabInstance:
       value: SM_Env_Dwarf_Forge_Smelter_01 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 4418160572144966, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8944967
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418160572144966, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.67311233
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418160572144966, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8920731
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418160572144966, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923412771087636, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.93813
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923412771087636, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.93813
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923412771087636, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.93813
       objectReference: {fileID: 0}
     - target: {fileID: 4923412771087636, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2772,7 +2861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4923412771087636, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.61408
       objectReference: {fileID: 0}
     - target: {fileID: 4923412771087636, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3259,7 +3348,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.8004648, b: 0.3160377, a: 1}
   m_Intensity: 5000
   m_Range: 47.7
   m_SpotAngle: 38.147533
@@ -4223,6 +4312,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Forge_Smelter_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4418160572144966, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.94840395
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418160572144966, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.62879
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418160572144966, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.958779
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418160572144966, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4923412771087636, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.35003662
@@ -4756,7 +4861,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.77686745, b: 0.3726415, a: 1}
   m_Intensity: 900
   m_Range: 44.4
   m_SpotAngle: 88.03278
@@ -5626,7 +5731,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.80311334, b: 0.13679248, a: 1}
   m_Intensity: 900
   m_Range: 44.4
   m_SpotAngle: 88.03278
@@ -6102,7 +6207,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9433962, g: 0.8401593, b: 0.6007476, a: 1}
   m_Intensity: 7000
   m_Range: 40.3
   m_SpotAngle: 73.36066
@@ -6185,7 +6290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1989980519
 Light:
   m_ObjectHideFlags: 0
@@ -6197,7 +6302,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0, g: 0.13258465, b: 0.6509434, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -6372,6 +6477,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Dwarf_Forge_Smelter_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4418160572144966, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0047575
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418160572144966, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5647782
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418160572144966, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0400897
+      objectReference: {fileID: 0}
+    - target: {fileID: 4418160572144966, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923412771087636, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1033
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923412771087636, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0748
+      objectReference: {fileID: 0}
     - target: {fileID: 4923412771087636, guid: e38defb93c3160441af64e1c19cd5efd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -63
@@ -6506,8 +6635,8 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8000
+  m_Color: {r: 1, g: 0.8376121, b: 0.1745283, a: 1}
+  m_Intensity: 7000
   m_Range: 56
   m_SpotAngle: 76.29508
   m_InnerSpotAngle: 67.4918
@@ -6587,4 +6716,5 @@ SceneRoots:
   - {fileID: 1649720419}
   - {fileID: 564825204}
   - {fileID: 1153007594}
+  - {fileID: 693801476}
   - {fileID: 1872685873}
