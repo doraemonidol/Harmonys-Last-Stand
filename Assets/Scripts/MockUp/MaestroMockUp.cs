@@ -41,7 +41,8 @@ namespace MockUp
             {
                 ["animator"] = animator,
                 ["target"] = target,
-                ["navMeshAgent"] = navMeshAgent
+                ["navMeshAgent"] = navMeshAgent,
+                ["firePoint"] = firePoint
             };
             
             for (int i = 0; i < _weapon.GetSkills().Count; i++)

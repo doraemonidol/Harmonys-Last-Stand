@@ -18,6 +18,15 @@ namespace Presentation.Maestro
         {
             if (state == SkillState.Casting)
             {
+                if (Time.time > endCastingTime)
+                {
+                    state = SkillState.Idle;
+                    for (int i = 0; i < renderers.Count; i++)
+                    {
+                        renderers[i].enabled = true;
+                    }
+                }
+                
                 if (Vector3.Distance(target.transform.position, navMeshAgent.transform.position) < attackRange)
                 {
                     state = SkillState.PostCasting;
@@ -130,6 +139,7 @@ namespace Presentation.Maestro
             navMeshAgent.speed = speed;
             navMeshAgent.isStopped = false;
             state = SkillState.Casting;
+            endCastingTime = Time.time + timeout;
         }
     }
 }

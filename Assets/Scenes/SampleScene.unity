@@ -10256,6 +10256,7 @@ MonoBehaviour:
     affectCooldown: 0
     transform: {fileID: 358191963}
     autoDestroy: 1
+  timeout: 20
   attackRange: 0
   jackInTheBoxPrefab: {fileID: 1802990093106007197, guid: 92e9583b456d35e45822b9064d3b475a, type: 3}
   spawnChance: 20
@@ -10724,12 +10725,13 @@ MonoBehaviour:
     affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 1
+  timeout: 6
   attackRange: 8
   renderers:
   - {fileID: 850578690619112353}
   - {fileID: 150268454}
   - {fileID: 239950351}
-  dangerRange: 0
+  dangerRange: 6
   speed: 15
 --- !u!1 &5543030589871653534
 GameObject:
@@ -10785,14 +10787,17 @@ MonoBehaviour:
     affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 1
+  timeout: 6
   attackRange: 0
   radius: 16
-  speed: 24
+  speed: 0.8
   prefab: {fileID: 2828738592699254034, guid: bfbbab6523f60a54080527e57256962c, type: 3}
   renderers:
   - {fileID: 850578690619112353}
   - {fileID: 150268454}
   - {fileID: 239950351}
+  projectilePrefab: {fileID: 2140030127646823571, guid: 1c8b2f598e0aa6c4d9148af4aa638814, type: 3}
+  hitPrefab: {fileID: 2757201901509235903, guid: 4de3ea2614f4f6d4d8f9aafe78be2cca, type: 3}
   rotateToMouseScript: {fileID: 1902544012}
 --- !u!1001 &5978879046400450282
 PrefabInstance:

@@ -61,7 +61,7 @@ namespace Logic.Skills
             return (!Locked) && (Time.WhatIsIt() >= NextTimeToAvailable);
         }
         
-        public static AcSkill TransformInto(int wpName, Weapon wp, int index, int coolDownTime = 5000, ICharacter user = null)
+        public static AcSkill TransformInto(int wpName, Weapon wp, int index, int coolDownTime = 200, ICharacter user = null)
         {
             return wpName switch
             {

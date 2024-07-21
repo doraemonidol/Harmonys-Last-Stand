@@ -15,6 +15,9 @@ namespace Presentation.Maestro
         protected Animator animator;
         protected GameObject target;
         protected NavMeshAgent navMeshAgent;
+        protected GameObject firePoint;
+        [SerializeField] protected float timeout;
+        protected float endCastingTime;
         [SerializeField] protected float attackRange;
         
         public override void Start()
@@ -53,6 +56,15 @@ namespace Presentation.Maestro
             else
             {
                 Debug.LogError("MaestroSkill: NavMeshAgent not found");
+            }
+            
+            if (data.TryGetValue("firePoint", out var value3))
+            {
+                firePoint = (GameObject) value3;
+            }
+            else
+            {
+                Debug.LogError("MaestroSkill: FirePoint not found");
             }
         }
 

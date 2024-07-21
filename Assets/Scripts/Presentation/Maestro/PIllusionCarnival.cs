@@ -4,6 +4,7 @@ using UnityEngine;
 using MockUp;
 using Common;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 
 namespace Presentation.Maestro
 {
@@ -15,16 +16,22 @@ namespace Presentation.Maestro
         [SerializeField] private List<Renderer> renderers;
         private List<GameObject> _illusions = new List<GameObject>();
         private float currentAngle;
+        [SerializeField] private GameObject projectilePrefab;
+        [SerializeField] private GameObject hitPrefab;
 
         [SerializeField] private RotateToMouseScript rotateToMouseScript;
+        private bool _playerSuccessful = false;
 
         public override IEnumerator StartCasting()
         {
+            _illusions.Clear();
+            _playerSuccessful = false;
             Dictionary<string, object> data = new Dictionary<string, object>
             {
-                ["preCastVfx"] = preCastVfx
+                ["preCastVfx"] = preCastVfx,
+                ["illusionCarnival"] = this
             };
-            state = SkillState.Casting;
+            state = SkillState.PreCasting;
             animator.SetTrigger(EnemyActionType.CastSpell1);
             yield return new WaitForSeconds(1.8f);
             StartCoroutine(StartPrecastVFX());
@@ -43,6 +50,8 @@ namespace Presentation.Maestro
                 GameObject illusion = Instantiate(prefab, new Vector3(x, 0, z) + target.transform.position , Quaternion.identity);
                 _illusions.Add(illusion);
             }
+
+            _illusions[1].GetComponent<IllusionController>().isReal = true;
             
             // navMeshAgent.transform.position = _illusions[1].transform.position;
             //
@@ -52,7 +61,7 @@ namespace Presentation.Maestro
             // oldSpeed = navMeshAgent.speed;
             for (int i = 0; i < _illusions.Count; i++)
             {
-                NavMeshAgent agent = _illusions[i].GetComponent<NavMeshAgent>();
+                // NavMeshAgent agent = _illusions[i].GetComponent<NavMeshAgent>();
                 // agent.speed = speed;
                 // agent.acceleration = navMeshAgent.acceleration;
                 // agent.angularSpeed = navMeshAgent.angularSpeed;
@@ -60,6 +69,9 @@ namespace Presentation.Maestro
                 
                 StartCoroutine(_illusions[i].GetComponent<IllusionController>().ShowIllusion(data));
             }
+            
+            state = SkillState.Casting;
+            endCastingTime = Time.time + timeout;
             
             // StartCoroutine(StartPrecastVFX());
             yield return new WaitForSeconds(0.3f);
@@ -74,12 +86,6 @@ namespace Presentation.Maestro
 
         }
 
-        public override IEnumerator StartHitting()
-        {
-            throw new System.NotImplementedException();
-        }
-
-
         // Start is called before the first frame update
         public override void Start()
         {
@@ -92,40 +98,116 @@ namespace Presentation.Maestro
         {
             if (state == SkillState.Casting)
             {
-                var navMeshAgent0 = _illusions[0].GetComponent<NavMeshAgent>();
-                if (!navMeshAgent0.pathPending)
+                if (Time.time > endCastingTime)
                 {
-                    // Debug.Log("Maestro Path is not pending");
-                    // Debug.Log(navMeshAgent.remainingDistance + " " + navMeshAgent.stoppingDistance);
-                    if (navMeshAgent0.remainingDistance <= navMeshAgent0.stoppingDistance)
-                    {
-                        // Debug.Log("Maestro Stopping distance");
-                        // if (!navMeshAgent.hasPath || navMeshAgent.velocity.sqrMagnitude == 0f)
-                        {
-                            var center = target.transform.position;
-                            var angle = 4 * Mathf.PI * Time.deltaTime;
+                    FailCast();
+                }
+                var center = target.transform.position;
+                var angle = speed * Mathf.PI * Time.deltaTime;
 
-                            // move navMeshAgent of illusion around target a radius of radius an angle of 0.1 * Mathf.PI
-                            for (int i = 0; i < _illusions.Count; i++)
-                            {
-                                var currentPosition = _illusions[i].transform.position;
-                                var x = (currentPosition.x - center.x) * Mathf.Cos(angle) -
-                                    (currentPosition.z - center.z) * Mathf.Sin(angle) + center.x;
-                                var z = (currentPosition.x - center.x) * Mathf.Sin(angle) +
-                                    (currentPosition.z - center.z) * Mathf.Cos(angle) + center.z;
-                                _illusions[i].GetComponent<NavMeshAgent>().SetDestination(new Vector3(x, 0, z));
-                            }
-
-
-                        }
-
-                    }
+                // move navMeshAgent of illusion around target a radius of radius an angle of 0.1 * Mathf.PI
+                for (int i = 0; i < _illusions.Count; i++)
+                {
+                    var currentPosition = _illusions[i].transform.position;
+                    var x = (currentPosition.x - center.x) * Mathf.Cos(angle) -
+                        (currentPosition.z - center.z) * Mathf.Sin(angle) + center.x;
+                    var z = (currentPosition.x - center.x) * Mathf.Sin(angle) +
+                        (currentPosition.z - center.z) * Mathf.Cos(angle) + center.z;
+                    
+                    // Raycast to Ground Layer and get the y
+                    // RaycastHit hit;
+                    // if (Physics.Raycast(new Vector3(x, 100, z), Vector3.down, out hit, 200, 1 << 8))
+                    // {
+                    //     x = hit.point.x;
+                    //     z = hit.point.z;
+                    // }
+                    _illusions[i].transform.position = new Vector3(x, this.transform.position.y, z);
+                    var nextX = (x - center.x) * Mathf.Cos(angle) -
+                        (z - center.z) * Mathf.Sin(angle) + center.x;
+                    var nextZ = (x - center.x) * Mathf.Sin(angle) +
+                        (z - center.z) * Mathf.Cos(angle) + center.z;
+                    _illusions[i].transform.rotation = Quaternion.LookRotation(new Vector3(nextX, this.transform.position.y, nextZ) - _illusions[i].transform.position);
                 }
             }
             else
             {
                 // navMeshAgent.isStopped = false;
+                if (state == SkillState.PostCasting)
+                {
+                    if (_playerSuccessful)
+                    {
+                        
+                    }
+
+                }
             }
+        }
+
+        public void StopCasting()
+        {
+            
+        }
+        
+        public void FailCast()
+        {
+            state = SkillState.PostCasting;
+            // Aurelia Hit The Fake Illusion
+            _playerSuccessful = false;
+            Debug.Log("FailCast");
+            for (int i = 0; i < _illusions.Count; i++)
+            {
+                StartCoroutine(_illusions[i].GetComponent<IllusionController>().HideIllusion());
+            }
+            
+            Debug.Log("Hid All Illusions");
+
+            StartCoroutine(StartHitting());
+        }
+
+        public override IEnumerator StartHitting()
+        {
+            navMeshAgent.transform.position = target.transform.position + new Vector3(0, 0, 6);
+
+            // Laugh something...
+            yield return new WaitForSeconds(1.5f);
+
+            // move navMeshAgent of illusion a distance of 4 to the target
+
+            StartCoroutine(StartPrecastVFX());
+            yield return new WaitForSeconds(0.1f);
+            Instantiate(projectilePrefab, firePoint.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(0.2f);
+            GameObject hit = Instantiate(hitPrefab, target.transform.position, Quaternion.identity);
+            Destroy(hit, 1f);
+
+            yield return new WaitForSeconds(0.1f);
+            Debug.Log("Renderer Count: " + renderers.Count);
+            for (int i = 0; i < renderers.Count; i++)
+            {
+                renderers[i].enabled = true;
+            }
+            state = SkillState.Idle;
+        }
+
+        public void SuccessCast()
+        {
+            state = SkillState.PostCasting;
+            // Aurelia Hit The REAL Illusion
+            _playerSuccessful = true;
+            Debug.Log("SuccessCast");
+            navMeshAgent.transform.position = _illusions[1].transform.position;
+            navMeshAgent.transform.rotation = _illusions[1].transform.rotation;
+            for (int i = 0; i < _illusions.Count; i++)
+            {
+                StartCoroutine(_illusions[i].GetComponent<IllusionController>().HideIllusion(i != 1));
+            }
+            for (int i = 0; i < renderers.Count; i++)
+            {
+                renderers[i].enabled = true;
+            }
+            
+            // Injured animation
+            state = SkillState.Idle;
         }
     }
 }
