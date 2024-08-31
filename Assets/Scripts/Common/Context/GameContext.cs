@@ -24,7 +24,7 @@ namespace Common.Context
         
         public ICharacter MainCharacter { get; set; }
         
-        private static int Money { get; set; } = 0;
+        public int Money { get; set; } = 0;
         public bool Saved { get; set; }
         
         private GameContext()
