@@ -6,6 +6,7 @@ namespace Common
     {
         public static readonly int Move = Animator.StringToHash("Move");
         public static readonly int Attack = Animator.StringToHash("Attack");
+        public static readonly int SpecialAttack = Animator.StringToHash("SpecialAttack");
         public static readonly int Die = Animator.StringToHash("Die");
         public static readonly int CastSpell1 = Animator.StringToHash("CastSpell1");
         public static readonly int CastSpell2 = Animator.StringToHash("CastSpell2");

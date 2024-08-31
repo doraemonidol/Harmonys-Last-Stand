@@ -7,6 +7,7 @@ using Logic;
 using Logic.Facade;
 using Logic.Helper;
 using Presentation;
+using Presentation.UI;
 using UnityEngine;
 using Time = UnityEngine.Time;
 
@@ -27,6 +28,13 @@ namespace MockUp
         [SerializeField] public float timeScaleFactor = 0.3f;
         private EffectUIManager _effectUIManager;
         private Dictionary<Identity, float> skillNextAffectedTime = new Dictionary<Identity, float>();
+        [SerializeField] private HealthBar healthBar;
+
+        private void SetHealth(int health, int maxHealth)
+        {
+            healthBar.currentHealth = health;
+            healthBar.maxHealth = maxHealth;
+        }
 
         public override void Start()
         {
