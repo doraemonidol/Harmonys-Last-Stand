@@ -96,5 +96,10 @@ namespace Presentation.Maestro
         {
             return state == SkillState.Idle;
         }
+
+        public float GetTimeout()
+        {
+            return timeout;
+        }
     }
 }

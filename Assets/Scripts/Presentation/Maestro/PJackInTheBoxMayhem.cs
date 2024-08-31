@@ -53,7 +53,7 @@ namespace Presentation.Maestro
                     {
                         if (Random.Range(0, 101) < spawnChance)
                         {
-                            float randomHeight = Random.Range(10.0f, 25.0f);
+                            float randomHeight = Random.Range(5.0f, 15.0f);
                             GameObject jackBox = Instantiate(jackInTheBoxPrefab, hit.point, Quaternion.identity);
                             jackBox.transform.GetChild(0).gameObject.AddComponent<SkillColliderInfo>().Initialize(
                                 attacker: this.Owner,
@@ -61,6 +61,7 @@ namespace Presentation.Maestro
                             );
 
                             jackBox.GetComponent<Rigidbody>().AddForce(Vector3.up * randomHeight, ForceMode.Impulse);
+                            Destroy(jackBox, timeout);
                         }
                     }
                 }

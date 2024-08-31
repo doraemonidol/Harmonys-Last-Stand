@@ -97,8 +97,6 @@ namespace MockUp
         {
             if (Time.time < _nextCastTime) return;
 
-            _nextCastTime = Time.time + Random.Range(3.0f, 10.0f);
-
             // var eventd = new EventDto
             // {
             //     Event = "VILLAIN_CAST",
@@ -113,6 +111,8 @@ namespace MockUp
             Debug.Log("Check casting skill " + skillIndex);
             if (CheckStartCast(skillIndex))
             {
+
+                _nextCastTime = Time.time + Random.Range(3.0f, 10.0f) + _skills[skillIndex].GetTimeout();
                 Debug.Log("Start casting skill " + skillIndex);
                 // Change z of gameObject.transform.rotation to -144
                 gameObject.transform.localRotation = Quaternion.Euler(0, -144, 0);
