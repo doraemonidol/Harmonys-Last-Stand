@@ -1,166 +1,176 @@
 Shader "Hovl/Particles/Lightning"
 {
-	Properties
-	{	
-		_MainTexture("Main Texture", 2D) = "white" {}
-		_Noise("Noise", 2D) = "white" {}
-		_FlowMap("Flow Map", 2D) = "white" {}
-		_VFlowSpeed("V Flow Speed", Float) = 2
-		_UFlowSpeed("U Flow Speed", Float) = 4
-		_FlowStrength("Flow Strength", Float) = 0.1
-		_Color("Color", Color) = (1,1,1,1)
-		_Emission("Emission", Float) = 2
-		_ShinnySpeed("Shinny Speed", Float) = 30
-		[Toggle]_UseShinny("Use Shinny", Float) = 0
-		[MaterialToggle] _Usedepth ("Use depth?", Float ) = 0
-		_InvFade ("Soft Particles Factor", Range(0.01,3.0)) = 1.0
-	}
+    Properties
+    {
+        _MainTexture("Main Texture", 2D) = "white" {}
+        _Noise("Noise", 2D) = "white" {}
+        _FlowMap("Flow Map", 2D) = "white" {}
+        _VFlowSpeed("V Flow Speed", Float) = 2
+        _UFlowSpeed("U Flow Speed", Float) = 4
+        _FlowStrength("Flow Strength", Float) = 0.1
+        _Color("Color", Color) = (1,1,1,1)
+        _Emission("Emission", Float) = 2
+        _ShinnySpeed("Shinny Speed", Float) = 30
+        [Toggle]_UseShinny("Use Shinny", Float) = 0
+        [MaterialToggle] _Usedepth ("Use depth?", Float ) = 0
+        _InvFade ("Soft Particles Factor", Range(0.01,3.0)) = 1.0
+    }
 
 
-	Category 
-	{
-		SubShader
-		{
-			Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" "PreviewType"="Plane" }
-			Blend SrcAlpha OneMinusSrcAlpha
-			ColorMask RGB
-			Cull Off
-			Lighting Off 
-			ZWrite Off
-			ZTest LEqual
-			
-			Pass {
-			
-				CGPROGRAM
-				#ifndef UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX
+    Category
+    {
+        SubShader
+        {
+            Tags
+            {
+                "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" "PreviewType"="Plane"
+            }
+            Blend SrcAlpha OneMinusSrcAlpha
+            ColorMask RGB
+            Cull Off
+            Lighting Off
+            ZWrite Off
+            ZTest LEqual
+
+            Pass
+            {
+
+                CGPROGRAM
+                #ifndef UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX
 				#define UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input)
-				#endif
-				#pragma vertex vert
-				#pragma fragment frag
-				#pragma target 2.0
-				#pragma multi_compile_particles
-				#pragma multi_compile_fog
-				#include "UnityShaderVariables.cginc"
+                #endif
+                #pragma vertex vert
+                #pragma fragment frag
+                #pragma target 2.0
+                #pragma multi_compile_particles
+                #pragma multi_compile_fog
+                #include "UnityShaderVariables.cginc"
 
 
-				#include "UnityCG.cginc"
+                #include "UnityCG.cginc"
 
-				struct appdata_t 
-				{
-					float4 vertex : POSITION;
-					fixed4 color : COLOR;
-					float4 texcoord : TEXCOORD0;
-					UNITY_VERTEX_INPUT_INSTANCE_ID
-					float4 ase_texcoord1 : TEXCOORD1;
-				};
+                struct appdata_t
+                {
+                    float4 vertex : POSITION;
+                    fixed4 color : COLOR;
+                    float4 texcoord : TEXCOORD0;
+                    UNITY_VERTEX_INPUT_INSTANCE_ID
+                    float4 ase_texcoord1 : TEXCOORD1;
+                };
 
-				struct v2f 
-				{
-					float4 vertex : SV_POSITION;
-					fixed4 color : COLOR;
-					float4 texcoord : TEXCOORD0;
-					UNITY_FOG_COORDS(1)
-					#ifdef SOFTPARTICLES_ON
+                struct v2f
+                {
+                    float4 vertex : SV_POSITION;
+                    fixed4 color : COLOR;
+                    float4 texcoord : TEXCOORD0;
+                    UNITY_FOG_COORDS(1)
+                    #ifdef SOFTPARTICLES_ON
 					float4 projPos : TEXCOORD2;
-					#endif
-					UNITY_VERTEX_INPUT_INSTANCE_ID
-					UNITY_VERTEX_OUTPUT_STEREO
-					float4 ase_texcoord3 : TEXCOORD3;
-				};
-				
-				
-				#if UNITY_VERSION >= 560
+                    #endif
+                    UNITY_VERTEX_INPUT_INSTANCE_ID
+                    UNITY_VERTEX_OUTPUT_STEREO
+                    float4 ase_texcoord3 : TEXCOORD3;
+                };
+
+
+                #if UNITY_VERSION >= 560
 				UNITY_DECLARE_DEPTH_TEXTURE( _CameraDepthTexture );
-				#else
-				uniform sampler2D_float _CameraDepthTexture;
-				#endif
+                #else
+                uniform sampler2D_float _CameraDepthTexture;
+                #endif
 
-				//Don't delete this comment
-				// uniform sampler2D_float _CameraDepthTexture;
+                //Don't delete this comment
+                // uniform sampler2D_float _CameraDepthTexture;
 
-				uniform float _InvFade;
-				uniform sampler2D _Noise;
-				uniform sampler2D _MainTexture;
-				uniform float4 _MainTexture_ST;
-				uniform sampler2D _FlowMap;
-				uniform float _UFlowSpeed;
-				uniform float _VFlowSpeed;
-				uniform float _FlowStrength;
-				uniform float _UseShinny;
-				uniform float _ShinnySpeed;
-				uniform float4 _Color;
-				uniform float _Emission;
-				uniform fixed _Usedepth;
+                uniform float _InvFade;
+                uniform sampler2D _Noise;
+                uniform sampler2D _MainTexture;
+                uniform float4 _MainTexture_ST;
+                uniform sampler2D _FlowMap;
+                uniform float _UFlowSpeed;
+                uniform float _VFlowSpeed;
+                uniform float _FlowStrength;
+                uniform float _UseShinny;
+                uniform float _ShinnySpeed;
+                uniform float4 _Color;
+                uniform float _Emission;
+                uniform fixed _Usedepth;
 
-				v2f vert ( appdata_t v  )
-				{
-					v2f o;
-					UNITY_SETUP_INSTANCE_ID(v);
-					UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
-					UNITY_TRANSFER_INSTANCE_ID(v, o);
-					o.ase_texcoord3 = v.ase_texcoord1;
+                v2f vert(appdata_t v)
+                {
+                    v2f o;
+                    UNITY_SETUP_INSTANCE_ID(v);
+                    UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+                    UNITY_TRANSFER_INSTANCE_ID(v, o);
+                    o.ase_texcoord3 = v.ase_texcoord1;
 
-					v.vertex.xyz +=  float3( 0, 0, 0 ) ;
-					o.vertex = UnityObjectToClipPos(v.vertex);
-					#ifdef SOFTPARTICLES_ON
+                    v.vertex.xyz += float3(0, 0, 0);
+                    o.vertex = UnityObjectToClipPos(v.vertex);
+                    #ifdef SOFTPARTICLES_ON
 						o.projPos = ComputeScreenPos (o.vertex);
 						COMPUTE_EYEDEPTH(o.projPos.z);
-					#endif
-					o.color = v.color;
-					o.texcoord = v.texcoord;
-					UNITY_TRANSFER_FOG(o,o.vertex);
-					return o;
-				}
+                    #endif
+                    o.color = v.color;
+                    o.texcoord = v.texcoord;
+                    UNITY_TRANSFER_FOG(o, o.vertex);
+                    return o;
+                }
 
-				fixed4 frag ( v2f i  ) : SV_Target
-				{
-					UNITY_SETUP_INSTANCE_ID( i );
-					UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX( i );
-					
-					#ifdef SOFTPARTICLES_ON
+                fixed4 frag(v2f i) : SV_Target
+                {
+                    UNITY_SETUP_INSTANCE_ID(i);
+                    UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+
+                    #ifdef SOFTPARTICLES_ON
 						float sceneZ = LinearEyeDepth (SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, UNITY_PROJ_COORD(i.projPos)));
 						float partZ = i.projPos.z;
 						float fade = saturate (_InvFade * (sceneZ-partZ));
 						i.color.a *= fade;
-					#endif
+                    #endif
 
-					float2 uv0_MainTexture = i.texcoord.xy * _MainTexture_ST.xy + _MainTexture_ST.zw;
-					float2 UV23 = uv0_MainTexture;
-					float4 uv159 = i.ase_texcoord3;
-					uv159.xy = i.ase_texcoord3.xy * float2( 1,1 ) + float2( 0,0 );
-					float T79 = uv159.w;
-					float2 temp_output_81_0 = ( uv0_MainTexture + T79 );
-					float2 panner2 = ( sin( ( _UFlowSpeed * _Time.y ) ) * float2( 1,0 ) + temp_output_81_0);
-					float2 panner3 = ( ( _VFlowSpeed * _Time.y ) * float2( -0.1,1 ) + temp_output_81_0);
-					float2 panner4 = ( ( ( _VFlowSpeed * 0.25 ) * _Time.y ) * float2( 0.1,0.75 ) + temp_output_81_0);
-					float2 appendResult20 = (float2(tex2D( _FlowMap, panner2 ).r , ( ( tex2D( _FlowMap, panner3 ).g + tex2D( _FlowMap, panner4 ).g ) / 2.0 )));
-					float4 tex2DNode27 = tex2D( _MainTexture, ( UV23 + ( appendResult20 * _FlowStrength ) ) );
-					float temp_output_33_0 = ( tex2D( _Noise, UV23 ).g * tex2DNode27.g );
-					float clampResult35 = clamp( ( temp_output_33_0 * 16.0 * temp_output_33_0 ) , 0.0 , 1.0 );
-					float V24 = uv0_MainTexture.y;
-					float clampResult56 = clamp( ( ( V24 + (-1.0 + (uv159.x - 0.0) * (1.0 - -1.0) / (1.0 - 0.0)) ) * 2.0 ) , 0.0 , 1.0 );
-					float W75 = uv159.z;
-					float temp_output_45_0 = ( _Time.y * ( _ShinnySpeed - W75 ) );
-					float blendOpSrc50 = sin( temp_output_45_0 );
-					float blendOpDest50 = sin( ( temp_output_45_0 / 3.0 ) );
-					float clampResult52 = clamp( ( ( saturate( ( blendOpSrc50 + blendOpDest50 ) )) + 0.2 ) , 0.0 , 1.0 );
-					float temp_output_54_0 = ( tex2DNode27.r * clampResult56 * lerp(1.0,clampResult52,_UseShinny) );
-					float2 panner66 = ( 1.0 * _Time.y * float2( 0,0.2 ) + ( UV23 + T79 ));
-					float clampResult73 = clamp( pow( ( ( tex2DNode27.g * ( 1.0 - tex2DNode27.g ) ) + ( tex2DNode27.g * tex2D( _Noise, panner66 ).r ) ) , uv159.y ) , 0.0 , 1.0 );
-					float4 appendResult43 = (float4((( ( clampResult35 + ( ( tex2DNode27.r + 0.1 ) * 6.0 ) + temp_output_54_0 ) * _Color * i.color * _Emission )).rgb , ( _Color.a * i.color.a * temp_output_54_0 * clampResult73 )));
-					
+                    float2 uv0_MainTexture = i.texcoord.xy * _MainTexture_ST.xy + _MainTexture_ST.zw;
+                    float2 UV23 = uv0_MainTexture;
+                    float4 uv159 = i.ase_texcoord3;
+                    uv159.xy = i.ase_texcoord3.xy * float2(1, 1) + float2(0, 0);
+                    float T79 = uv159.w;
+                    float2 temp_output_81_0 = (uv0_MainTexture + T79);
+                    float2 panner2 = (sin((_UFlowSpeed * _Time.y)) * float2(1, 0) + temp_output_81_0);
+                    float2 panner3 = ((_VFlowSpeed * _Time.y) * float2(-0.1, 1) + temp_output_81_0);
+                    float2 panner4 = (((_VFlowSpeed * 0.25) * _Time.y) * float2(0.1, 0.75) + temp_output_81_0);
+                    float2 appendResult20 = (float2(tex2D(_FlowMap, panner2).r,
+                      ((tex2D(_FlowMap, panner3).g + tex2D(_FlowMap, panner4).g) / 2.0)));
+                    float4 tex2DNode27 = tex2D(_MainTexture, (UV23 + (appendResult20 * _FlowStrength)));
+                    float temp_output_33_0 = (tex2D(_Noise, UV23).g * tex2DNode27.g);
+                    float clampResult35 = clamp((temp_output_33_0 * 16.0 * temp_output_33_0), 0.0, 1.0);
+                    float V24 = uv0_MainTexture.y;
+                    float clampResult56 = clamp(((V24 + (-1.0 + (uv159.x - 0.0) * (1.0 - -1.0) / (1.0 - 0.0))) * 2.0),
+                                                0.0, 1.0);
+                    float W75 = uv159.z;
+                    float temp_output_45_0 = (_Time.y * (_ShinnySpeed - W75));
+                    float blendOpSrc50 = sin(temp_output_45_0);
+                    float blendOpDest50 = sin((temp_output_45_0 / 3.0));
+                    float clampResult52 = clamp(((saturate((blendOpSrc50 + blendOpDest50))) + 0.2), 0.0, 1.0);
+                    float temp_output_54_0 = (tex2DNode27.r * clampResult56 * lerp(1.0, clampResult52, _UseShinny));
+                    float2 panner66 = (1.0 * _Time.y * float2(0, 0.2) + (UV23 + T79));
+                    float clampResult73 = clamp(
+                        pow(((tex2DNode27.g * (1.0 - tex2DNode27.g)) + (tex2DNode27.g * tex2D(_Noise, panner66).r)),
+                            uv159.y), 0.0, 1.0);
+                    float4 appendResult43 = (float4(
+                        (((clampResult35 + ((tex2DNode27.r + 0.1) * 6.0) + temp_output_54_0) * _Color * i.color *
+                            _Emission)).rgb, (_Color.a * i.color.a * temp_output_54_0 * clampResult73)));
 
-					fixed4 col = appendResult43;
-					UNITY_APPLY_FOG(i.fogCoord, col);
-					return col;
-				}
-				ENDCG 
-			}
-		}	
-	}
-	
-	
-	
+
+                    fixed4 col = appendResult43;
+                    UNITY_APPLY_FOG(i.fogCoord, col);
+                    return col;
+                }
+                ENDCG
+            }
+        }
+    }
+
+
+
 }
 /*ASEBEGIN
 Version=17000

@@ -31,12 +31,12 @@ namespace Logic.Villains
 
         protected Villain()
         {
-            _effectManager = new EffectManager();
+            _effectManager = new EffectManager(this);
         }
 
         protected Villain(LogicObject another) : base(another)
         {
-            _effectManager = new EffectManager();
+            _effectManager = new EffectManager(this);
             State = new MmSkillCasting(this);
         }
         

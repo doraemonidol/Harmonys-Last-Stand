@@ -3,15 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - Ground
+  - PostProcessing
+  - Player
   - 
   - 
   - 
@@ -34,9 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Top
   m_SortingLayers:
   - name: Default
     uniqueID: 0

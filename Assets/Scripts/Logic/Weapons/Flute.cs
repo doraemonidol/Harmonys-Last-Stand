@@ -8,8 +8,8 @@ namespace Logic.Weapons
         public Flute()
         {
             Skills.Add(AcSkill.TransformInto(WeaponHandle.Flute, this, 1));
-            Skills.Add(AcSkill.TransformInto(WeaponHandle.Flute, this, 2));
             Skills.Add(AcSkill.TransformInto(WeaponHandle.Flute, this, 3));
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.Flute, this, 2));
             Skills.Add(AcSkill.TransformInto(WeaponHandle.Flute, this, 4));
         }
         

@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DelayActive : MonoBehaviour
 {
     public GameObject[] m_activeObj;
     public float m_delayTime;
-    float m_time;
+    private float m_time;
 
     private void Start()
     {
@@ -14,11 +12,11 @@ public class DelayActive : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Time.time > m_time + m_delayTime)
-            for(int i = 0; i< m_activeObj.Length; i++)
-                if(m_activeObj[i] != null)
+            for (var i = 0; i < m_activeObj.Length; i++)
+                if (m_activeObj[i] != null)
                     m_activeObj[i].SetActive(true);
     }
 }

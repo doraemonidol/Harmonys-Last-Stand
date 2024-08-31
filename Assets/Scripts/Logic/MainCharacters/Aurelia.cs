@@ -25,7 +25,7 @@ namespace Logic.MainCharacters
         public Aurelia()
         {
             _weapons = new List<Weapon>();
-            _effectManager = new EffectManager();
+            _effectManager = new EffectManager(this);
         }
 
         public Aurelia(List<int> wpLists)
@@ -66,6 +66,7 @@ namespace Logic.MainCharacters
                     case EffectHandle.Bleeding:
                     {
                         var timeout = (int)args![EffectHandle.Timeout];
+
                         if (_effectManager.CheckIfEffectApply(EffectHandle.Resistance))
                         {
                             return;
@@ -73,6 +74,16 @@ namespace Logic.MainCharacters
 
                         var hpDrain = (int)args![EffectHandle.HpDrain];
                         
+                        this.NotifySubscribers(new EventUpdateVisitor {
+                            ["ev"] = {
+                                ["type"] = EffectType.BLEEDING,
+                            },
+                            ["args"] = {
+                                ["timeout"] = timeout,
+                                ["hpDrain"] = hpDrain
+                            },
+                        });
+
                         _effectManager.Add(new Bleeding(this, timeout,
                             new Dictionary<string, int>
                             {
@@ -88,6 +99,19 @@ namespace Logic.MainCharacters
                         {
                             return;
                         }
+
+                        this.NotifySubscribers(new EventUpdateVisitor
+                        {
+                            ["ev"] =
+                            {
+                                ["type"] = EffectType.STUNT
+                            },
+                            ["args"] = 
+                            {
+                                ["timeout"] = timeout
+                            }
+                        });
+
                         _effectManager.Add(new Stunt(this, timeout));
                         break;
                     }
@@ -98,6 +122,17 @@ namespace Logic.MainCharacters
                         {
                             return;
                         }
+                        this.NotifySubscribers(new EventUpdateVisitor
+                        {
+                            ["ev"] =
+                            {
+                                ["type"] = EffectType.HALLUCINATION
+                            },
+                            ["args"] = 
+                            {
+                                ["timeout"] = timeout
+                            }
+                        });
                         _effectManager.Add(new Hallucination(this, timeout));
                         break;
                     }
@@ -108,6 +143,17 @@ namespace Logic.MainCharacters
                         {
                             return;
                         }
+                        this.NotifySubscribers(new EventUpdateVisitor
+                        {
+                            ["ev"] =
+                            {
+                                ["type"] = EffectType.FEAR
+                            },
+                            ["args"] = 
+                            {
+                                ["timeout"] = timeout
+                            }
+                        });
                         _effectManager.Add(new Fear(this, timeout));
                         break;
                     }
@@ -118,12 +164,34 @@ namespace Logic.MainCharacters
                         {
                             return;
                         }
+                        this.NotifySubscribers(new EventUpdateVisitor
+                        {
+                            ["ev"] =
+                            {
+                                ["type"] = EffectType.NEARSIGHT
+                            },
+                            ["args"] = 
+                            {
+                                ["timeout"] = timeout
+                            }
+                        });
                         _effectManager.Add(new Nearsight(this, timeout));
                         break;
                     }
                     case EffectHandle.Shielded:
                     {
                         var timeout = (int)args![EffectHandle.Timeout];
+                        this.NotifySubscribers(new EventUpdateVisitor
+                        {
+                            ["ev"] =
+                            {
+                                ["type"] = EffectType.SHIELD
+                            },
+                            ["args"] = 
+                            {
+                                ["timeout"] = timeout
+                            }
+                        });
                         _effectManager.Add(new Shielded(this, timeout));
                         break;
                     }
@@ -141,10 +209,18 @@ namespace Logic.MainCharacters
                     {
                         var timeout = (int)args![EffectHandle.Timeout];
                         if (_effectManager.CheckIfEffectApply(EffectHandle.Resistance))
+                        this.NotifySubscribers(new EventUpdateVisitor
                         {
-                            return;
-                        }
-
+                            ["ev"] =
+                            {
+                                ["type"] = EffectType.ROOTED
+                            },
+                            ["args"] = 
+                            {
+                                ["timeout"] = timeout
+                            }
+                        });
+                        _effectManager.Add(new Rooted(this, timeout));
                         break;
                     }
                     case EffectHandle.Silent:
@@ -154,19 +230,56 @@ namespace Logic.MainCharacters
                         {
                             return;
                         }
+                        this.NotifySubscribers(new EventUpdateVisitor
+                        {
+                            ["ev"] =
+                            {
+                                ["type"] = EffectType.SILENT
+                            },
+                            ["args"] = 
+                            {
+                                ["timeout"] = timeout
+                            }
+                        });
                         _effectManager.Add(new Silent(this, timeout));
                         break;
                     }
                     case EffectHandle.Clone:
                     {
                         var timeout = (int)args![EffectHandle.Timeout];
+                        if (_effectManager.CheckIfEffectApply(EffectHandle.Resistance))
+                        {
+                            return;
+                        }
+                        this.NotifySubscribers(new EventUpdateVisitor
+                        {
+                            ["ev"] =
+                            {
+                                ["type"] = EffectType.CLONE
+                            },
+                            ["args"] = 
+                            {
+                                ["timeout"] = timeout
+                            }
+                        });
+
                         _effectManager.Add(new Clone(this, timeout));
                         break;
                     }
                     case EffectHandle.Resistance:
                     {
                         var timeout = (int)args![EffectHandle.Timeout];
-                        _effectManager.Add(new Resistance(this, timeout));
+                        this.NotifySubscribers(new EventUpdateVisitor
+                        {
+                            ["ev"] =
+                            {
+                                ["type"] = EffectType.RESISTANCE
+                            },
+                            ["args"] = 
+                            {
+                                ["timeout"] = timeout
+                            }
+                        });
                         break;
                     }
                     case EffectHandle.Charm:
@@ -176,18 +289,61 @@ namespace Logic.MainCharacters
                         {
                             return;
                         }
+                        this.NotifySubscribers(new EventUpdateVisitor
+                        {
+                            ["ev"] =
+                            {
+                                ["type"] = EffectType.CHARM
+                            },
+                            ["args"] = 
+                            {
+                                ["timeout"] = timeout
+                            }
+                        });
                         _effectManager.Add(new Charm(this, timeout));
                         break;
                     }
                     case EffectHandle.Healing:
                     {
                         var timeout = (int)args![EffectHandle.Timeout];
-                        _context.Do(BoostHandles.BoostHealth, (int)args![EffectHandle.HpGain]);
+                        this.NotifySubscribers(new EventUpdateVisitor
+                        {
+                            ["ev"] =
+                            {
+                                ["type"] = EffectType.HEALING,
+                            },
+                            ["args"] = 
+                            {
+                                ["timeout"] = timeout,
+                                ["boostHp"] = (int)args![EffectHandle.HpGain],
+                            }
+                        });
+                        _effectManager.Add(new Healing(this, timeout, new Dictionary<string, int>
+                        {
+                            ["boostHp"] = (int)args![EffectHandle.HpGain],
+                        }));
+                        // _context.Do(BoostHandles.BoostHealth, (int)args![EffectHandle.HpGain]);
                         break;
                     }
                     case EffectHandle.Jinxed:
                     {
                         var timeout = (int)args![EffectHandle.Timeout];
+                        this.NotifySubscribers(new EventUpdateVisitor
+                        {
+                            ["ev"] =
+                            {
+                                ["type"] = EffectType.JINX
+                            }, 
+                            ["args"] = 
+                            {
+                                ["timeout"] = timeout,
+                                ["boostHp"] = (int)args!["boostHp"],
+                                ["boostMSp"] = (int)args!["boostMSp"],
+                                ["boostAtkSpd"] = (int)args!["boostAtkSpd"],
+                                ["boostMana"] = (int)args!["boostMana"],
+                                ["boostDmg"] = (int)args!["boostDmg"],
+                            }
+                        });
                         _effectManager.Add(new Jinxed(this, timeout, new Dictionary<string, int>
                         {
                             ["boostHp"] = (int)args!["boostHp"],
@@ -205,6 +361,22 @@ namespace Logic.MainCharacters
                             return;
                         }
                         var timeout = (int)args![EffectHandle.Timeout];
+                        this.NotifySubscribers(new EventUpdateVisitor
+                        {
+                            ["ev"] =
+                            {
+                                ["type"] = EffectType.EXHAUSTED
+                            },
+                            ["args"] = 
+                            {
+                                ["timeout"] = timeout,
+                                ["exHp"] = (int)args!["exHp"],
+                                ["exMSp"] = (int)args!["exMSp"],
+                                ["exAtkSpd"] = (int)args!["exAtkSpd"],
+                                ["exMana"] = (int)args!["exMana"],
+                                ["exDmg"] = (int)args!["exDmg"],
+                            }
+                        });
                         _effectManager.Add(new Exhaust(this, timeout, new Dictionary<string, int>
                         {
                             ["exHp"] = (int)args!["exHp"],
@@ -223,6 +395,17 @@ namespace Logic.MainCharacters
                         {
                             fdmg *= 0.3f;
                         }
+                        this.NotifySubscribers(new EventUpdateVisitor
+                        {
+                            ["ev"] =
+                            {
+                                ["type"] = EffectType.GET_HIT
+                            },
+                            ["args"] = 
+                            {
+                                ["dmg"] = fdmg
+                            }
+                        });
                         _context.Do(BoostHandles.ReduceHealth, (int) fdmg);
                         var currentHp = GameContext.GetInstance().Get("hp");
                         if (IsDead(currentHp)) OnDead();
@@ -239,13 +422,6 @@ namespace Logic.MainCharacters
                     case EffectHandle.DisableHealing:
                     case EffectHandle.DisableSilent:
                     case EffectHandle.DisableShielded:
-                        this.NotifySubscribers(new EventUpdateVisitor
-                        {
-                            ["ev"] =
-                            {
-                                ["type"] = IntoEventString(ev),
-                            }
-                        });
                         break;
                     case EffectHandle.DisableExhausted:
                     case EffectHandle.DisableJinxed:
@@ -258,26 +434,6 @@ namespace Logic.MainCharacters
                 Debug.Log("Thrown at Aurelia.ReceiveEffect(). Arguments is null.\n" + e.StackTrace);
                 throw;
             }
-        }
-
-        private static string IntoEventString(int ev)
-        {
-            return ev switch
-            {
-                EffectHandle.DisableHealing => "disable_healing",
-                EffectHandle.DisableHallucinate => "disable_hallucination",
-                EffectHandle.DisableExhausted => "disable_exhausted",
-                EffectHandle.DisableBleeding => "disable_bleeding",
-                EffectHandle.DisableCharm => "disable_charm",
-                EffectHandle.DisableClone => "disable_clone",
-                EffectHandle.DisableFear => "disable_fear",
-                EffectHandle.DisableJinxed => "disable_jinxed",
-                EffectHandle.DisableNearsight => "disable_nearsight",
-                EffectHandle.DisableRooted => "disable_rooted",
-                EffectHandle.DisableSilent => "disable_silent",
-                EffectHandle.DisableStunt => "disable_stunt",
-                _ => throw new Exception("Thrown at Aurelia.IntoEventString(). Invalid effect type.")
-            };
         }
 
         public bool IsEffectApplied(int ef)
@@ -335,10 +491,10 @@ namespace Logic.MainCharacters
                 case Action.MoveRight:
                 case Action.MoveUp:
                 case Action.MoveDown:
-                case Action.MoveUpRight:
                 case Action.MoveUpLeft:
-                case Action.MoveDownRight:
+                case Action.MoveUpRight:
                 case Action.MoveDownLeft:
+                case Action.MoveDownRight:
                 {
                     var logicAction = action;
                     

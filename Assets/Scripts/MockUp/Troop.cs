@@ -9,15 +9,30 @@ using Time = UnityEngine.Time;
 
 namespace MockUp
 {
-    public class Troop : PresentationObject
+    public class Troop : BossMovement
     {
         public override void Start()
         {
-            LogicLayer.GetInstance().Instantiate(Google.Search("ins", "mae"), this);
+            base.Start();
+            LogicLayer.GetInstance().Instantiate(Google.Search("ins", "troop"), this);
+            UpdateEnemyCollision();
         }
 
         public override void Update()
         {
+            base.Update();
+            if (Vector3.Distance(transform.position, player.transform.position) <= attackRange)
+            {
+                navMeshAgent.isStopped = true;
+                if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+                    animator.SetTrigger(EnemyActionType.Attack);
+            }
+            else
+            {
+                navMeshAgent.isStopped = false;
+                if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Move"))
+                    animator.SetTrigger(EnemyActionType.Move);
+            }
         }
 
         public override void AcceptAndUpdate(EventUpdateVisitor visitor)
@@ -103,21 +118,6 @@ namespace MockUp
                     Debug.LogError("Unknown Event: " + visitor["ev"]["type"]);
                     break;
             }
-        }
-
-        private void OnCollisionEnter(Collision other)
-        {
-            if (other.gameObject.GetComponent<SkillColliderInfo>() == null) return;
-            
-            var eventd = new EventDto
-            {
-                Event = "GET_ATTACKED",
-                ["attacker"] = other.gameObject.GetComponent<SkillColliderInfo>().Attacker,
-                ["target"] = this.LogicHandle,
-                ["context"] = null,
-                ["skill"] = other.gameObject.GetComponent<SkillColliderInfo>().Skill
-            };
-            LogicLayer.GetInstance().Observe(eventd);
         }
     }
 }

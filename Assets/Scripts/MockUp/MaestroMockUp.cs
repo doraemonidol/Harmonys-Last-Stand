@@ -1,48 +1,161 @@
+using System;
+using System.Collections.Generic;
 using Common;
 using DTO;
 using Logic;
 using Logic.Facade;
 using Logic.Helper;
 using Presentation;
+using Presentation.Bosses;
+using Presentation.Maestro;
 using UnityEngine;
+using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 using Time = UnityEngine.Time;
 
 namespace MockUp
 {
-    public class MaestroMockUp : PresentationObject
+    public class MaestroMockUp : BossMovement
     {
-        private float lastCastTime = 0.0f;
-        private float cooldownTime = 1.0f;
-        public WeaponMockUp weapon;
-        
+
+        private float _nextCastTime = 0;
+
+        [Header("Boss Stats")] [SerializeField]
+        private WeaponMockUp _weapon;
+        // private BossCastSkill _bossCastSkill;
+
+        [SerializeField] private List<MaestroSkill> _skills;
+
+        [Header("Skill Casting")] [SerializeField]
+        private RotateToTargetScript _rotateToTarget;
+
+        [SerializeField] private GameObject firePoint;
+        [SerializeField] private GameObject target;
+        [SerializeField] private int testingSkill;
+
+        private void InitializeSkills()
+        {
+            _weapon.SetOwner(this.LogicHandle);
+            Debug.Log("Maestro: " + this.LogicHandle);
+            Dictionary<string, Object> data = new Dictionary<string, Object>
+            {
+                ["animator"] = animator,
+                ["target"] = target,
+                ["navMeshAgent"] = navMeshAgent,
+                ["firePoint"] = firePoint
+            };
+            
+            for (int i = 0; i < _weapon.GetSkills().Count; i++)
+            {
+                _skills.Add((MaestroSkill)_weapon.GetSkills()[i]);
+                _skills[i].Attach(data);
+            }
+        }
+
         public override void Start()
         {
-            weapon = new GameObject().AddComponent<WeaponMockUp>();
-            
-            weapon.Start(); // In further development, this should be called in the derived class for the weapon of Maestro
-            
-            LogicLayer.GetInstance().Instantiate(Google.Search("ins", "mae"), this);
+            if (!_rotateToTarget)
+            {
+                Debug.LogError("Please assign RotateToTargetScript to the boss");
+            }
+
+            base.Start();
+            // _bossCastSkill = GetComponent<BossCastSkill>();
+            LogicLayer.GetInstance().Instantiate(Google.Search("ins", "ama"), this);
+            UpdateEnemyCollision();
+            InitializeSkills();
         }
 
         public override void Update()
         {
-            
+            base.Update();
+
+            if (Vector3.Distance(transform.position, player.transform.position) <= attackRange)
+            {
+                navMeshAgent.isStopped = true;
+                if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+                    animator.SetTrigger(EnemyActionType.Attack);
+                return;
+            }
+
             VillainCastSkill();
+
+            // bool isCasting = false;
+            // for (int i = 1; i <= _skills.Count; i++)
+            // {
+            //     if (animator.GetCurrentAnimatorStateInfo(0).IsName("CastSpell" + i.ToString()))
+            //     {
+            //         isCasting = true;
+            //         break;
+            //     }
+            // }
+            //
+            // navMeshAgent.isStopped = isCasting;
         }
 
         private void VillainCastSkill()
         {
-            if (Time.time - lastCastTime < cooldownTime) return;
-            
-            lastCastTime = Time.time;
-            cooldownTime = Random.Range(1.0f, 5.0f);
-            
-            var eventd = new EventDto
+            if (Time.time < _nextCastTime) return;
+
+            // var eventd = new EventDto
+            // {
+            //     Event = "VILLAIN_CAST",
+            //     ["id"] = this.LogicHandle
+            // };
+            // LogicLayer.GetInstance().Observe(eventd);
+
+            int skillIndex = Random.Range(0, _skills.Count);
+            if (testingSkill != -1)
+                skillIndex = testingSkill;
+
+            Debug.Log("Check casting skill " + skillIndex);
+            if (CheckStartCast(skillIndex))
             {
-                Event = "VILLAIN_CAST",
-                ["id"] = this.LogicHandle
-            };
-            LogicLayer.GetInstance().Observe(eventd);
+
+                _nextCastTime = Time.time + Random.Range(3.0f, 10.0f) + _skills[skillIndex].GetTimeout();
+                Debug.Log("Start casting skill " + skillIndex);
+                // Change z of gameObject.transform.rotation to -144
+                gameObject.transform.localRotation = Quaternion.Euler(0, -144, 0);
+                navMeshAgent.isStopped = true;
+                switch (skillIndex)
+                {
+                    case 0:
+                        animator.SetTrigger(EnemyActionType.CastSpell1);
+                        break;
+                    case 1:
+                        animator.SetTrigger(EnemyActionType.CastSpell2);
+                        break;
+                    case 2:
+                        // animator.SetTrigger(EnemyActionType.CastSpell3);
+                        break;
+                    case 3:
+                        animator.SetTrigger(EnemyActionType.CastSpell4);
+                        break;
+                    default:
+                        Debug.LogError("Amadeus Unknown Cast: " + skillIndex);
+                        break;
+                }
+            }
+        }
+
+        public bool CheckStartCast(int skillIndex)
+        {
+            // if (skillIndex < 0 || skillIndex >= skills.Count) return false;
+            // if (!skills[skillIndex].IsOnCoolDown())
+            // {
+            // _skills[skillIndex].nextCastTime = Time.time + Random.Range(1.0f, 10.0f);
+            if (_skills[skillIndex].IsReady())
+            {
+                StartCoroutine(_skills[skillIndex].StartCasting());
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            // }
+            //
+            // return false;
         }
 
         public override void AcceptAndUpdate(EventUpdateVisitor visitor)
@@ -50,120 +163,102 @@ namespace MockUp
             switch (visitor["ev"]["type"])
             {
                 case "dead":
-                    Debug.Log("Maestro Dead Animation");
+                    Debug.Log("Amadeus Dead Animation");
                     break;
                 case "start-effect":
                     switch (visitor["args"]["name"])
                     {
                         case EffectType.STUNT:
-                            Debug.Log("Maestro Stunt Animation");
+                            Debug.Log("Amadeus Stunt Animation");
                             break;
                         case EffectType.BLEEDING:
-                            Debug.Log("Maestro Bleeding Animation");
+                            Debug.Log("Amadeus Bleeding Animation");
                             break;
                         case EffectType.KNOCKBACK:
-                            Debug.Log("Maestro Knockback Animation");
+                            Debug.Log("Amadeus Knockback Animation");
                             break;
                         case EffectType.SLEEPY:
-                            Debug.Log("Maestro Sleepy Animation");
+                            Debug.Log("Amadeus Sleepy Animation");
                             break;
                         case EffectType.RESONANCE:
-                            Debug.Log("Maestro Resonance Animation");
+                            Debug.Log("Amadeus Resonance Animation");
                             break;
                         case EffectType.ROOTED:
-                            Debug.Log("Maestro Rooted Animation");
+                            Debug.Log("Amadeus Rooted Animation");
                             break;
                         case EffectType.EXHAUSTED:
-                            Debug.Log("Maestro Exhausted Animation");
+                            Debug.Log("Amadeus Exhausted Animation");
                             break;
                         case EffectType.GET_HIT:
-                            Debug.Log("Maestro Get Hit Animation");
-                            break;
-                        case EffectType.RESURRECTION:
-                            Debug.Log("Maestro Resurrection Animation");
+                            Debug.Log("Amadeus Get Hit Animation");
                             break;
                         default:
-                            Debug.Log("Maestro Default Animation");
+                            Debug.Log("Amadeus Default Animation");
                             break;
                     }
+
                     break;
                 case "end-effect":
                     switch (visitor["args"]["name"])
                     {
                         case EffectType.STUNT:
-                            Debug.Log("Maestro Stunt Animation End");
+                            Debug.Log("Amadeus Stunt Animation End");
                             break;
                         case EffectType.BLEEDING:
-                            Debug.Log("Maestro Bleeding Animation End");
+                            Debug.Log("Amadeus Bleeding Animation End");
                             break;
                         case EffectType.KNOCKBACK:
-                            Debug.Log("Maestro Knockback Animation End");
+                            Debug.Log("Amadeus Knockback Animation End");
                             break;
                         case EffectType.SLEEPY:
-                            Debug.Log("Maestro Sleepy Animation End");
+                            Debug.Log("Amadeus Sleepy Animation End");
                             break;
                         case EffectType.RESONANCE:
-                            Debug.Log("Maestro Resonance Animation End");
+                            Debug.Log("Amadeus Resonance Animation End");
                             break;
                         case EffectType.ROOTED:
-                            Debug.Log("Maestro Rooted Animation End");
+                            Debug.Log("Amadeus Rooted Animation End");
                             break;
                         case EffectType.EXHAUSTED:
-                            Debug.Log("Maestro Exhausted Animation End");
+                            Debug.Log("Amadeus Exhausted Animation End");
                             break;
                         case EffectType.GET_HIT:
-                            Debug.Log("Maestro Get Hit Animation End");
-                            break;
-                        case EffectType.RESURRECTION:
-                            Debug.Log("Maestro Resurrection Animation End");
+                            Debug.Log("Amadeus Get Hit Animation End");
                             break;
                         default:
-                            Debug.Log("Maestro Default Animation End");
+                            Debug.Log("Amadeus Default Animation End");
                             break;
                     }
+
                     break;
                 case "cast":
                     switch (visitor["args"]["skill-index"])
                     {
                         case 0:
-                            Debug.Log("Maestro Cast Skill 0 Animation");
+                            Debug.Log("Amadeus Cast Skill 0 Animation");
                             break;
                         case 1:
-                            Debug.Log("Maestro Cast Skill 1 Animation");
+                            Debug.Log("Amadeus Cast Skill 1 Animation");
                             break;
                         case 2:
-                            Debug.Log("Maestro Cast Skill 2 Animation");
+                            Debug.Log("Amadeus Cast Skill 2 Animation");
                             break;
                         case 3:
-                            Debug.Log("Maestro Cast Skill 3 Animation");
+                            Debug.Log("Amadeus Cast Skill 3 Animation");
                             break;
                         case 4:
-                            Debug.Log("Maestro Cast Skill 4 Animation");
+                            Debug.Log("Amadeus Cast Skill 4 Animation");
                             break;
                         default:
-                            Debug.LogError("Maestro Unknown Cast: " + visitor["args"]["skill-index"]);
+                            Debug.LogError("Amadeus Unknown Cast: " + visitor["args"]["skill-index"]);
                             break;
                     }
+
                     break;
                 default:
                     Debug.LogError("Unknown Event: " + visitor["ev"]["type"]);
                     break;
             }
-        }
-
-        private void OnCollisionEnter(Collision other)
-        {
-            if (other.gameObject.GetComponent<SkillColliderInfo>() == null) return;
-            
-            var eventd = new EventDto
-            {
-                Event = "GET_ATTACKED",
-                ["attacker"] = other.gameObject.GetComponent<SkillColliderInfo>().Attacker,
-                ["target"] = this.LogicHandle,
-                ["context"] = null,
-                ["skill"] = other.gameObject.GetComponent<SkillColliderInfo>().Skill
-            };
-            LogicLayer.GetInstance().Observe(eventd);
         }
     }
 }

@@ -8,6 +8,7 @@ namespace Presentation
 {
     public abstract class PresentationObject : MonoBehaviour
     {
+        [SerializeField] public EntityTypeEnum entityType;
         public Identity SelfHandle { get; set; }
         
         public Identity LogicHandle { get; set; }

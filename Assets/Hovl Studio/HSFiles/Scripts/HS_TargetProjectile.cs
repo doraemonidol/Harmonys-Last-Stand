@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HS_TargetProjectile : MonoBehaviour
 {
@@ -8,71 +6,52 @@ public class HS_TargetProjectile : MonoBehaviour
     public GameObject hit;
     public GameObject flash;
     public GameObject[] Detached;
-    public bool LocalRotation = false;
-    private Transform target;
-    private Vector3 targetOffset;
-    private float startDistanceToTarget;
-
-    [Space]
-    [Header("PROJECTILE PATH")]
-    private float randomUpAngle;
-    private float randomSideAngle;
+    public bool LocalRotation;
     public float sideAngle = 25;
     public float upAngle = 20;
+    private float randomSideAngle;
 
-    void Start()
+    [Space] [Header("PROJECTILE PATH")] private float randomUpAngle;
+
+    private float startDistanceToTarget;
+    private Transform target;
+    private Vector3 targetOffset;
+
+    private void Start()
     {
         FlashEffect();
         newRandom();
     }
 
-    void newRandom()
-    {
-        randomUpAngle = Random.Range(0, upAngle);
-        randomSideAngle = Random.Range(-sideAngle, sideAngle);
-    }
-
-    //Link from another script
-    //TARGET POSITION + TARGET OFFSET
-    public void UpdateTarget(Transform targetPosition , Vector3 Offset)
-    {
-        target = targetPosition;
-        targetOffset = Offset;
-        startDistanceToTarget = Vector3.Distance((target.position + targetOffset), transform.position);
-    }
-
-    void Update()
+    private void Update()
     {
         if (target == null)
         {
             foreach (var detachedPrefab in Detached)
-            {
                 if (detachedPrefab != null)
-                {
                     detachedPrefab.transform.parent = null;
-                }
-            }
             Destroy(gameObject);
             return;
         }
 
-        float distanceToTarget = Vector3.Distance((target.position + targetOffset), transform.position);
-        float angleRange = (distanceToTarget - 10) / 60;
+        var distanceToTarget = Vector3.Distance(target.position + targetOffset, transform.position);
+        var angleRange = (distanceToTarget - 10) / 60;
         if (angleRange < 0) angleRange = 0;
 
-        float saturatedDistanceToTarget = (distanceToTarget / startDistanceToTarget);
+        var saturatedDistanceToTarget = distanceToTarget / startDistanceToTarget;
         if (saturatedDistanceToTarget < 0.5)
-            saturatedDistanceToTarget -= (0.5f - saturatedDistanceToTarget);
+            saturatedDistanceToTarget -= 0.5f - saturatedDistanceToTarget;
         saturatedDistanceToTarget -= angleRange;
         if (saturatedDistanceToTarget <= 0)
             saturatedDistanceToTarget = 0;
 
-        Vector3 forward = ((target.position + targetOffset) - transform.position);
-        Vector3 crossDirection = Vector3.Cross(forward, Vector3.up);
-        Quaternion randomDeltaRotation = Quaternion.Euler(0, randomSideAngle*saturatedDistanceToTarget, 0) * Quaternion.AngleAxis(randomUpAngle * saturatedDistanceToTarget, crossDirection);
-        Vector3 direction = randomDeltaRotation * forward;
+        var forward = target.position + targetOffset - transform.position;
+        var crossDirection = Vector3.Cross(forward, Vector3.up);
+        var randomDeltaRotation = Quaternion.Euler(0, randomSideAngle * saturatedDistanceToTarget, 0) *
+                                  Quaternion.AngleAxis(randomUpAngle * saturatedDistanceToTarget, crossDirection);
+        var direction = randomDeltaRotation * forward;
 
-        float distanceThisFrame = Time.deltaTime * speed;
+        var distanceThisFrame = Time.deltaTime * speed;
 
         if (direction.magnitude <= distanceThisFrame)
         {
@@ -84,7 +63,22 @@ public class HS_TargetProjectile : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(direction);
     }
 
-    void FlashEffect()
+    private void newRandom()
+    {
+        randomUpAngle = Random.Range(0, upAngle);
+        randomSideAngle = Random.Range(-sideAngle, sideAngle);
+    }
+
+    //Link from another script
+    //TARGET POSITION + TARGET OFFSET
+    public void UpdateTarget(Transform targetPosition, Vector3 Offset)
+    {
+        target = targetPosition;
+        targetOffset = Offset;
+        startDistanceToTarget = Vector3.Distance(target.position + targetOffset, transform.position);
+    }
+
+    private void FlashEffect()
     {
         if (flash != null)
         {
@@ -103,15 +97,12 @@ public class HS_TargetProjectile : MonoBehaviour
         }
     }
 
-    void HitTarget()
+    private void HitTarget()
     {
         if (hit != null)
         {
             var hitRotation = transform.rotation;
-            if (LocalRotation == true)
-            {
-                hitRotation = Quaternion.Euler(0, 0, 0);
-            }
+            if (LocalRotation) hitRotation = Quaternion.Euler(0, 0, 0);
             var hitInstance = Instantiate(hit, target.position + targetOffset, hitRotation);
             var hitPs = hitInstance.GetComponent<ParticleSystem>();
             if (hitPs != null)
@@ -124,14 +115,14 @@ public class HS_TargetProjectile : MonoBehaviour
                 Destroy(hitInstance, hitPsParts.main.duration);
             }
         }
+
         foreach (var detachedPrefab in Detached)
-        {
             if (detachedPrefab != null)
             {
                 detachedPrefab.transform.parent = null;
                 Destroy(detachedPrefab, 1);
             }
-        }
+
         Destroy(gameObject);
     }
 }

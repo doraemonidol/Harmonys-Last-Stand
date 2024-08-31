@@ -1,149 +1,157 @@
 Shader "Hovl/Particles/Fire"
 {
-	Properties
-	{
-		_Tex1("Tex1", 2D) = "white" {}
-		_Tex2("Tex2", 2D) = "white" {}
-		_Mask("Mask", 2D) = "white" {}
-		_SpeedTex1("Speed Tex1", Vector) = (0,0,0,0)
-		_SpeedTex2XYEmission("Speed Tex2 XY / Emission", Vector) = (0,0,0,0)
-		_Color2("Color 2", Color) = (1,0,0,1)
-		_Color1("Color 1", Color) = (1,0.5423229,0,1)
-		_Opacity("Opacity", Range( 0 , 3)) = 1
-		[MaterialToggle] _Usedepth ("Use depth?", Float ) = 0
-		_Depthpower("Depth power", Float) = 1
-		[HideInInspector] _texcoord( "", 2D ) = "white" {}
-	}
+    Properties
+    {
+        _Tex1("Tex1", 2D) = "white" {}
+        _Tex2("Tex2", 2D) = "white" {}
+        _Mask("Mask", 2D) = "white" {}
+        _SpeedTex1("Speed Tex1", Vector) = (0,0,0,0)
+        _SpeedTex2XYEmission("Speed Tex2 XY / Emission", Vector) = (0,0,0,0)
+        _Color2("Color 2", Color) = (1,0,0,1)
+        _Color1("Color 1", Color) = (1,0.5423229,0,1)
+        _Opacity("Opacity", Range( 0 , 3)) = 1
+        [MaterialToggle] _Usedepth ("Use depth?", Float ) = 0
+        _Depthpower("Depth power", Float) = 1
+        [HideInInspector] _texcoord( "", 2D ) = "white" {}
+    }
 
-	Category 
-	{
-		SubShader
-		{
-			Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" "PreviewType"="Plane" }
-			Blend SrcAlpha OneMinusSrcAlpha
-			ColorMask RGB
-			Cull Off
-			Lighting Off 
-			ZWrite Off
-			ZTest LEqual
-			
-			Pass {	
-				CGPROGRAM
-				#ifndef UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX
+    Category
+    {
+        SubShader
+        {
+            Tags
+            {
+                "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" "PreviewType"="Plane"
+            }
+            Blend SrcAlpha OneMinusSrcAlpha
+            ColorMask RGB
+            Cull Off
+            Lighting Off
+            ZWrite Off
+            ZTest LEqual
+
+            Pass
+            {
+                CGPROGRAM
+                #ifndef UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX
 				#define UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input)
-				#endif
-				#pragma vertex vert
-				#pragma fragment frag
-				#pragma target 2.0
-				#pragma multi_compile_particles
-				#pragma multi_compile_fog
-				#include "UnityShaderVariables.cginc"
-				#include "UnityCG.cginc"
+                #endif
+                #pragma vertex vert
+                #pragma fragment frag
+                #pragma target 2.0
+                #pragma multi_compile_particles
+                #pragma multi_compile_fog
+                #include "UnityShaderVariables.cginc"
+                #include "UnityCG.cginc"
 
-				struct appdata_t 
-				{
-					float4 vertex : POSITION;
-					fixed4 color : COLOR;
-					float4 texcoord : TEXCOORD0;
-					UNITY_VERTEX_INPUT_INSTANCE_ID	
-				};
+                struct appdata_t
+                {
+                    float4 vertex : POSITION;
+                    fixed4 color : COLOR;
+                    float4 texcoord : TEXCOORD0;
+                    UNITY_VERTEX_INPUT_INSTANCE_ID
+                };
 
-				struct v2f 
-				{
-					float4 vertex : SV_POSITION;
-					fixed4 color : COLOR;
-					float4 texcoord : TEXCOORD0;
-					UNITY_FOG_COORDS(1)
-					#ifdef SOFTPARTICLES_ON
+                struct v2f
+                {
+                    float4 vertex : SV_POSITION;
+                    fixed4 color : COLOR;
+                    float4 texcoord : TEXCOORD0;
+                    UNITY_FOG_COORDS(1)
+                    #ifdef SOFTPARTICLES_ON
 					float4 projPos : TEXCOORD2;
-					#endif
-					UNITY_VERTEX_INPUT_INSTANCE_ID
-					UNITY_VERTEX_OUTPUT_STEREO
-				};
-					
-				#if UNITY_VERSION >= 560
+                    #endif
+                    UNITY_VERTEX_INPUT_INSTANCE_ID
+                    UNITY_VERTEX_OUTPUT_STEREO
+                };
+
+                #if UNITY_VERSION >= 560
 				UNITY_DECLARE_DEPTH_TEXTURE( _CameraDepthTexture );
-				#else
-				uniform sampler2D_float _CameraDepthTexture;
-				#endif
+                #else
+                uniform sampler2D_float _CameraDepthTexture;
+                #endif
 
-				//Don't delete this comment
-				// uniform sampler2D_float _CameraDepthTexture;
+                //Don't delete this comment
+                // uniform sampler2D_float _CameraDepthTexture;
 
-				uniform float4 _SpeedTex2XYEmission;
-				uniform float4 _Color1;
-				uniform float4 _Color2;
-				uniform sampler2D _Tex1;
-				uniform float4 _SpeedTex1;
-				uniform float4 _Tex1_ST;
-				uniform sampler2D _Tex2;
-				uniform float4 _Tex2_ST;
-				uniform sampler2D _Mask;
-				uniform float4 _Mask_ST;
-				uniform float _Opacity;
-				uniform fixed _Usedepth;
-				uniform float _Depthpower;
+                uniform float4 _SpeedTex2XYEmission;
+                uniform float4 _Color1;
+                uniform float4 _Color2;
+                uniform sampler2D _Tex1;
+                uniform float4 _SpeedTex1;
+                uniform float4 _Tex1_ST;
+                uniform sampler2D _Tex2;
+                uniform float4 _Tex2_ST;
+                uniform sampler2D _Mask;
+                uniform float4 _Mask_ST;
+                uniform float _Opacity;
+                uniform fixed _Usedepth;
+                uniform float _Depthpower;
 
-				v2f vert ( appdata_t v  )
-				{
-					v2f o;
-					UNITY_SETUP_INSTANCE_ID(v);
-					UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
-					UNITY_TRANSFER_INSTANCE_ID(v, o);
+                v2f vert(appdata_t v)
+                {
+                    v2f o;
+                    UNITY_SETUP_INSTANCE_ID(v);
+                    UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+                    UNITY_TRANSFER_INSTANCE_ID(v, o);
 
-					v.vertex.xyz +=  float3( 0, 0, 0 ) ;
-					o.vertex = UnityObjectToClipPos(v.vertex);
-					#ifdef SOFTPARTICLES_ON
+                    v.vertex.xyz += float3(0, 0, 0);
+                    o.vertex = UnityObjectToClipPos(v.vertex);
+                    #ifdef SOFTPARTICLES_ON
 						o.projPos = ComputeScreenPos (o.vertex);
 						COMPUTE_EYEDEPTH(o.projPos.z);
-					#endif
-					o.color = v.color;
-					o.texcoord = v.texcoord;
-					UNITY_TRANSFER_FOG(o,o.vertex);
-					return o;
-				}
+                    #endif
+                    o.color = v.color;
+                    o.texcoord = v.texcoord;
+                    UNITY_TRANSFER_FOG(o, o.vertex);
+                    return o;
+                }
 
-				fixed4 frag ( v2f i  ) : SV_Target
-				{
-					UNITY_SETUP_INSTANCE_ID( i );
-					UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX( i );
-					
-					float lp = 1;
-					#ifdef SOFTPARTICLES_ON
+                fixed4 frag(v2f i) : SV_Target
+                {
+                    UNITY_SETUP_INSTANCE_ID(i);
+                    UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+
+                    float lp = 1;
+                    #ifdef SOFTPARTICLES_ON
 						float sceneZ = LinearEyeDepth (SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, UNITY_PROJ_COORD(i.projPos)));
 						float partZ = i.projPos.z;
 						float fade = saturate ((sceneZ-partZ) / _Depthpower);
 						lp *= lerp(1, fade, _Usedepth);
 						i.color.a *= lp;
-					#endif
+                    #endif
 
-					float Emission39 = _SpeedTex2XYEmission.z;
-					float2 appendResult16 = (float2(_SpeedTex1.x , _SpeedTex1.y));
-					float2 uv0_Tex1 = i.texcoord.xy * _Tex1_ST.xy + _Tex1_ST.zw;
-					float2 panner7 = ( 1.0 * _Time.y * appendResult16 + uv0_Tex1);
-					float4 uv0_Tex2 = i.texcoord;
-					uv0_Tex2.xy = i.texcoord.xy * _Tex2_ST.xy + _Tex2_ST.zw;
-					float2 appendResult14 = (float2(_SpeedTex1.z , _SpeedTex1.w));
-					float2 panner8 = ( 1.0 * _Time.y * appendResult14 + uv0_Tex1);
-					float2 appendResult52 = (float2(uv0_Tex2.z , uv0_Tex2.w));
-					float4 tex2DNode4 = tex2D( _Tex1, ( panner8 + appendResult52 ) );
-					float2 appendResult21 = (float2(_SpeedTex2XYEmission.x , _SpeedTex2XYEmission.y));
-					float2 panner20 = ( 1.0 * _Time.y * appendResult21 + uv0_Tex2.xy);
-					float4 tex2DNode5 = tex2D( _Tex2, ( panner20 + appendResult52 ) );
-					float2 uv_Mask = i.texcoord.xy * _Mask_ST.xy + _Mask_ST.zw;
-					float4 tex2DNode6 = tex2D( _Mask, uv_Mask );
-					float temp_output_27_0 = ( ( ( ( ( tex2D( _Tex1, ( panner7 + uv0_Tex2.z ) ).r + tex2DNode4.r ) * tex2DNode4.r * tex2DNode5.g ) + ( tex2DNode6.b * 0.5 ) ) * tex2DNode5.g ) * tex2DNode6.b );
-					float4 lerpResult33 = lerp( _Color1 , _Color2 , temp_output_27_0);
-					float4 appendResult92 = (float4((( Emission39 * lerpResult33 * i.color )).rgb , saturate( ( _Color1.a * _Color2.a * temp_output_27_0 * i.color.a * _Opacity ) )));
+                    float Emission39 = _SpeedTex2XYEmission.z;
+                    float2 appendResult16 = (float2(_SpeedTex1.x, _SpeedTex1.y));
+                    float2 uv0_Tex1 = i.texcoord.xy * _Tex1_ST.xy + _Tex1_ST.zw;
+                    float2 panner7 = (1.0 * _Time.y * appendResult16 + uv0_Tex1);
+                    float4 uv0_Tex2 = i.texcoord;
+                    uv0_Tex2.xy = i.texcoord.xy * _Tex2_ST.xy + _Tex2_ST.zw;
+                    float2 appendResult14 = (float2(_SpeedTex1.z, _SpeedTex1.w));
+                    float2 panner8 = (1.0 * _Time.y * appendResult14 + uv0_Tex1);
+                    float2 appendResult52 = (float2(uv0_Tex2.z, uv0_Tex2.w));
+                    float4 tex2DNode4 = tex2D(_Tex1, (panner8 + appendResult52));
+                    float2 appendResult21 = (float2(_SpeedTex2XYEmission.x, _SpeedTex2XYEmission.y));
+                    float2 panner20 = (1.0 * _Time.y * appendResult21 + uv0_Tex2.xy);
+                    float4 tex2DNode5 = tex2D(_Tex2, (panner20 + appendResult52));
+                    float2 uv_Mask = i.texcoord.xy * _Mask_ST.xy + _Mask_ST.zw;
+                    float4 tex2DNode6 = tex2D(_Mask, uv_Mask);
+                    float temp_output_27_0 = (((((tex2D(_Tex1, (panner7 + uv0_Tex2.z)).r + tex2DNode4.r) * tex2DNode4.r
+                        * tex2DNode5.g) + (tex2DNode6.b * 0.5)) * tex2DNode5.g) * tex2DNode6.b);
+                    float4 lerpResult33 = lerp(_Color1, _Color2, temp_output_27_0);
+                    float4 appendResult92 = (float4(((Emission39 * lerpResult33 * i.color)).rgb,
+                                                    saturate(
+                                                        (_Color1.a * _Color2.a * temp_output_27_0 * i.color.a *
+                                                            _Opacity))));
 
-					fixed4 col = appendResult92;
-					UNITY_APPLY_FOG(i.fogCoord, col);
-					return col;
-				}
-				ENDCG 
-			}
-		}	
-	}
+                    fixed4 col = appendResult92;
+                    UNITY_APPLY_FOG(i.fogCoord, col);
+                    return col;
+                }
+                ENDCG
+            }
+        }
+    }
 }
 /*ASEBEGIN
 Version=16800

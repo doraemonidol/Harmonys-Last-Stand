@@ -13,7 +13,8 @@ using Logic.Skills.SonicBass;
 using Logic.Skills.Violin;
 using Logic.Villains;
 using Logic.Weapons;
-using Presentation;
+using Presentation.Maestro;
+using JackInTheBoxMayhem = Logic.Skills.MaestroMachina.JackInTheBoxMayhem;
 
 namespace Logic.Skills
 {
@@ -60,7 +61,7 @@ namespace Logic.Skills
             return (!Locked) && (Time.WhatIsIt() >= NextTimeToAvailable);
         }
         
-        public static AcSkill TransformInto(int wpName, Weapon wp, int index, int coolDownTime = 5000, ICharacter user = null)
+        public static AcSkill TransformInto(int wpName, Weapon wp, int index, int coolDownTime = 200, ICharacter user = null)
         {
             return wpName switch
             {

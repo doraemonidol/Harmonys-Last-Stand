@@ -9,61 +9,60 @@
 #pragma warning disable 0414 // private field assigned but not used.
 
 using System.Collections;
-using System.Collections.Generic;
-using Cinemachine;
 using UnityEngine;
 
-public class CameraShakeSimpleScript : MonoBehaviour {
+namespace GabrielAguiarProductions.Unique_Projectiles_Volume_1.Scripts.UniqueProjectiles
+{
+    public class CameraShakeSimpleScript : MonoBehaviour
+    {
+        private Animation anim;
 
-	private bool _isRunning = false;
-	public CinemachineVirtualCamera vcam;
-	private CinemachineTransposer transposer;
+        private bool isRunning;
 
-	void Start () {
-		vcam = GetComponent<CinemachineVirtualCamera> ();
-		transposer = vcam.GetCinemachineComponent<CinemachineTransposer>();
-		
-		if (vcam == null) {
-			Debug.LogError ("No virtual camera assigned to the CameraShakeSimpleScript script.");
-		}
-		
-		if (transposer == null) {
-			Debug.LogError ("No transposer found on the virtual camera.");
-		}
-	}
+        private void Start()
+        {
+            anim = GetComponent<Animation>();
+        }
 
-	public void ShakeCamera() {	
-		ShakeCaller (0.25f, 0.05f);
-	}
+        public void ShakeCamera()
+        {
+            if (anim != null)
+                anim.Play(anim.clip.name);
+            else
+                ShakeCaller(0.25f, 0.1f);
+        }
 
-	//other shake option
-	void ShakeCaller (float amount, float duration){
-		StartCoroutine (Shake(amount, duration));
-	}
+        //other shake option
+        public void ShakeCaller(float amount, float duration)
+        {
+            StartCoroutine(Shake(amount, duration));
+        }
 
-	private IEnumerator Shake (float amount, float duration){
-		_isRunning = true;
+        private IEnumerator Shake(float amount, float duration)
+        {
+            isRunning = true;
 
-		Vector3 originalOffset = transposer.m_FollowOffset;
-		int counter = 0;
+            var originalPos = transform.localPosition;
+            var counter = 0;
 
-		while (duration > 0.01f) {
-			counter++;
+            while (duration > 0.01f)
+            {
+                counter++;
 
-			var x = Random.Range (-1f, 1f) * (amount/counter);
-			var y = Random.Range (-1f, 1f) * (amount/counter);
-			
-			transposer.m_FollowOffset += new Vector3(x, y, 0);
+                var x = Random.Range(-1f, 1f) * (amount / counter);
+                var y = Random.Range(-1f, 1f) * (amount / counter);
 
-			// transform.localPosition = Vector3.Lerp (transform.localPosition, new Vector3 (originalPos.x + x, originalPos.y + y, originalPos.z), 0.5f);
+                transform.localPosition = Vector3.Lerp(transform.localPosition,
+                    new Vector3(originalPos.x + x, originalPos.y + y, originalPos.z), 0.5f);
 
-			duration -= Time.deltaTime;
-			
-			yield return new WaitForSeconds (0.02f);
-		}
+                duration -= Time.deltaTime;
 
-		transposer.m_FollowOffset = originalOffset;
+                yield return new WaitForSeconds(0.1f);
+            }
 
-		_isRunning = false;
-	}
+            transform.localPosition = originalPos;
+
+            isRunning = false;
+        }
+    }
 }

@@ -16,12 +16,6 @@ namespace MockUp
         public WeaponMockUp weapon;
         public override void Start()
         {
-            
-            
-            weapon = new GameObject().AddComponent<WeaponMockUp>();
-            
-            weapon.Start(); // In further development, this should be called in the derived class for the weapon of Ludwig
-            
             LogicLayer.GetInstance().Instantiate(Google.Search("ins", "lud"), this);
         }
 

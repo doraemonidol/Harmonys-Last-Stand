@@ -9,8 +9,8 @@ namespace Logic.Weapons
         public Guitar()
         {
             Skills.Add(AcSkill.TransformInto(WeaponHandle.Guitar, this, 1));
-            Skills.Add(AcSkill.TransformInto(WeaponHandle.Guitar, this, 2));
             Skills.Add(AcSkill.TransformInto(WeaponHandle.Guitar, this, 3));
+            Skills.Add(AcSkill.TransformInto(WeaponHandle.Guitar, this, 2));
             Skills.Add(AcSkill.TransformInto(WeaponHandle.Guitar, this, 4));
         }
     }

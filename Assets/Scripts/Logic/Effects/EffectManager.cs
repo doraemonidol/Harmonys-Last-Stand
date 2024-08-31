@@ -3,14 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using Common.Context;
 using Logic.Helper;
+using Logic.MainCharacters;
 
 namespace Logic.Effects
 {
     public class EffectManager
     {
+
+
         private readonly Dictionary<int, ArrayList> _effects = new();
         
         private readonly object _lock = new object();
+
+        private LogicObject _user;
         
         // Assume that there are 32 effects in total.
         // private int _effectRoll = 0;
@@ -24,6 +29,31 @@ namespace Logic.Effects
                 _effects.Add(i, new ArrayList());
                 _effectRoll.Add(0);
             }
+        }
+
+        public EffectManager(LogicObject user) : this() {
+            _user = user;
+        }
+
+        public static string IntoEventString(int ev)
+        {
+            return ev switch
+            {
+                EffectHandle.DisableHealing => "disable_healing",
+                EffectHandle.DisableHallucinate => "disable_hallucination",
+                EffectHandle.DisableExhausted => "disable_exhausted",
+                EffectHandle.DisableBleeding => "disable_bleeding",
+                EffectHandle.DisableCharm => "disable_charm",
+                EffectHandle.DisableClone => "disable_clone",
+                EffectHandle.DisableFear => "disable_fear",
+                EffectHandle.DisableJinxed => "disable_jinxed",
+                EffectHandle.DisableNearsight => "disable_nearsight",
+                EffectHandle.DisableRooted => "disable_rooted",
+                EffectHandle.DisableSilent => "disable_silent",
+                EffectHandle.DisableStunt => "disable_stunt",
+                EffectHandle.DisableShielded => "disable_shielded",
+                _ => throw new Exception("Thrown at Aurelia.IntoEventString(). Invalid effect type." + ev)
+            };
         }
         
         public void Refresh(int effectHandle)
@@ -39,6 +69,17 @@ namespace Logic.Effects
                         Remove((EffectCommand)effect);
                     }
                 }
+
+                if (_effects[effectHandle].Count == 0)
+                {
+                    _effectRoll[effectHandle] = 0;
+
+                    _user.NotifySubscribers(new EventUpdateVisitor {
+                        ["ev"] = {
+                            ["type"] = IntoEventString(effectHandle),
+                        }
+                    });
+                }
             }
         }
         
@@ -48,6 +89,7 @@ namespace Logic.Effects
             {
                 _effects[effect.Handle].Add(effect);
                 effect.GetManagedBy(this);
+                
                 if (effect.Handle == EffectHandle.Jinxed)
                 {
                     UpdateStatsWhenJinxedStart(effect);

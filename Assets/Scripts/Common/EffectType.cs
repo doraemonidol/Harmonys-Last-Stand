@@ -20,5 +20,7 @@ namespace Common
         public const string RESONANCE = "resonance";
         public const string EXHAUSTED = "exhausted";
         public const string RESURRECTION = "resurrection";
+        public const string SILENT = "silent";
+        public const string HEALING = "healing";
     }
 }

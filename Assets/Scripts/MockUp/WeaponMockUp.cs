@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using Common;
 using Logic;
 using Logic.Facade;
 using Logic.Helper;
 using Presentation;
+using UnityEngine;
 
 namespace MockUp
 {
@@ -10,19 +12,17 @@ namespace MockUp
     {
         public override void Start()
         {
-            NormalSkills = new List<PSkill>
-            {
-                gameObject.AddComponent<Wp1>(),
-                gameObject.AddComponent<Wp1>(),
-            };
-            
-            SpecialSkills = new List<PSkill>
-            {
-                gameObject.AddComponent<Wp1>(),
-                gameObject.AddComponent<Wp1>(),
-            };
-
-            LogicLayer.GetInstance().Instantiate(Google.Search("ins", "wma"), this);
+            LogicLayer.GetInstance().Instantiate(EntityType.GetEntityType(entityType), this);
+            // Debug.Log("Weapon: " + entityType.ToString() + " ("+ this.LogicHandle + ") with " + normalSkills.Count + " normal skills and " + specialSkills.Count + " special skills");
+            // foreach (var skill in normalSkills)
+            // {
+            //     Debug.Log("Normal skill: " + skill.LogicHandle);
+            // }
+            //
+            // foreach (var skill in specialSkills)
+            // {
+            //     Debug.Log("Special skill: " + skill.LogicHandle);
+            // }
         }
 
         public override void Update()

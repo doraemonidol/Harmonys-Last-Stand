@@ -1,40 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class VariousEffectsScene : MonoBehaviour {
+public class VariousEffectsScene : MonoBehaviour
+{
+    public static float m_gaph_scenesizefactor = 1;
 
     public Transform[] m_effects;
     public GameObject scaleform;
-    public  GameObject[] m_destroyObjects = new GameObject[30];
+    public GameObject[] m_destroyObjects = new GameObject[30];
     public GameObject FriendlyEnemyObject;
-    GameObject gm;
-    public  int inputLocation;
+    public int inputLocation;
     public Text m_scalefactor;
-    public static float m_gaph_scenesizefactor = 1;
     public Text m_effectName;
-    int index = 0;
+    private GameObject gm;
+    private int index;
 
-    void Awake()
+    private void Awake()
     {
         inputLocation = 0;
-        m_effectName.text = m_effects[index].name.ToString();
+        m_effectName.text = m_effects[index].name;
         MakeObject();
-
     }
 
-	void Update ()
+    private void Update()
     {
         InputKey();
         if (index < 70)
             FriendlyEnemyObject.SetActive(false);
         else
             FriendlyEnemyObject.SetActive(true);
-
     }
 
-    void InputKey()
+    private void InputKey()
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
@@ -48,7 +45,7 @@ public class VariousEffectsScene : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            if (index >= m_effects.Length-1)
+            if (index >= m_effects.Length - 1)
                 index = 0;
             else
                 index++;
@@ -60,17 +57,17 @@ public class VariousEffectsScene : MonoBehaviour {
             MakeObject();
     }
 
-    void MakeObject()
+    private void MakeObject()
     {
         DestroyGameObject();
         gm = Instantiate(m_effects[index],
             m_effects[index].transform.position,
             m_effects[index].transform.rotation).gameObject;
-        m_effectName.text = (index+1) +" : "+m_effects[index].name.ToString();
+        m_effectName.text = index + 1 + " : " + m_effects[index].name;
         scaleform.transform.position = gm.transform.position;
         gm.transform.parent = scaleform.transform;
-        gm.transform.localScale = new Vector3(1,1,1);
-        float submit_scalefactor = m_gaph_scenesizefactor;
+        gm.transform.localScale = new Vector3(1, 1, 1);
+        var submit_scalefactor = m_gaph_scenesizefactor;
         if (index < 70)
             submit_scalefactor *= 0.5f;
         gm.transform.localScale = new Vector3(submit_scalefactor, submit_scalefactor, submit_scalefactor);
@@ -78,19 +75,16 @@ public class VariousEffectsScene : MonoBehaviour {
         inputLocation++;
     }
 
-    void DestroyGameObject()
+    private void DestroyGameObject()
     {
-        for(int i = 0; i < inputLocation; i++)
-        {
-            Destroy(m_destroyObjects[i]);
-        }
+        for (var i = 0; i < inputLocation; i++) Destroy(m_destroyObjects[i]);
         inputLocation = 0;
     }
 
     public void GetSizeFactor()
     {
-        m_gaph_scenesizefactor = float.Parse(m_scalefactor.text.ToString());
-        float submit_scalefactor = m_gaph_scenesizefactor;
+        m_gaph_scenesizefactor = float.Parse(m_scalefactor.text);
+        var submit_scalefactor = m_gaph_scenesizefactor;
         if (index < 70)
             submit_scalefactor *= 0.5f;
         gm.transform.localScale = new Vector3(submit_scalefactor, submit_scalefactor, submit_scalefactor);
