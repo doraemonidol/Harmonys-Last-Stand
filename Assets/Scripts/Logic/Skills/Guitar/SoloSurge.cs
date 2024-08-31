@@ -1,3 +1,4 @@
+using Common;
 using DTO;
 using Logic.Helper;
 using Logic.Weapons;
@@ -24,7 +25,7 @@ namespace Logic.Skills.Guitar
                 ["boostAtkSpd"] = 0,
                 ["boostMana"] = 0,
                 ["boostDmg"] = 30,
-                ["timeout"] = 10000,
+                ["timeout"] = 10,
             }; 
             User.ReceiveEffect(EffectHandle.Jinxed, args);
         }

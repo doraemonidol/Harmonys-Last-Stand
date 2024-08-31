@@ -1,5 +1,6 @@
 using System.Collections;
 using Common.Context.Attributes;
+using Logic;
 using Logic.Context.Attributes;
 using Logic.Helper;
 
@@ -21,7 +22,9 @@ namespace Common.Context
         
         private static ArrayList Inventory { get; } = new ArrayList();
         
-        public  int Money { get; set; } = 0;
+        public ICharacter MainCharacter { get; set; }
+        
+        private static int Money { get; set; } = 0;
         public bool Saved { get; set; }
         
         private GameContext()

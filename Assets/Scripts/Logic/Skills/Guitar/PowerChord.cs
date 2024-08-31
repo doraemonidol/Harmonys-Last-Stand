@@ -1,3 +1,4 @@
+using Common;
 using Common.Context;
 using DTO;
 using Logic.Effects;
@@ -21,11 +22,11 @@ namespace Logic.Skills.Guitar
         public override void Affect(ICharacter attacker, ICharacter target, EventDto context)
         {
             var boostAmount = GameContext.GetInstance().Get("dmg+");
-            var finalDmg = 30 * (100 + boostAmount) / 100;
+            var finalDmg = 25 * (100 + boostAmount) / 100;
             var args = new EventDto
             {
                 [EffectHandle.HpReduce] = finalDmg,
-                ["timeout"] = 3,
+                ["timeout"] = 2,
             };
             target.ReceiveEffect(EffectHandle.GetHit, args);
             target.ReceiveEffect(EffectHandle.Stunt, args);

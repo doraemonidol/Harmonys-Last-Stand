@@ -1,4 +1,5 @@
 using System;
+using Common;
 using DTO;
 using Logic.Helper;
 using Logic.MainCharacters;
@@ -26,7 +27,7 @@ namespace Logic.Skills.Piano
                 ["movspd"] = 30,
                 ["atkspd"] = 20,
                 ["hp"] = 0,
-                ["timeout"] = 10,
+                ["timeout"] = 10 * GameStats.BASE_TIME_UNIT,
             });
         }
 

@@ -27,7 +27,11 @@ namespace Logic.Skills.LudwigVanVortex
             target.ReceiveEffect(effect, new EventDto
             {
                 ["timeout"] = timeout,
-                ["slow"] = 50,
+                ["exHp"] = 0,
+                ["exMSp"] = 50,
+                ["exAtkSpd"] = 0,
+                ["exMana"] = 0,
+                ["exDmg"] = 0,
             });
         }
     }

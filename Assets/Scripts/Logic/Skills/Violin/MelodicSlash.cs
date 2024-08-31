@@ -18,7 +18,7 @@ namespace Logic.Skills.Violin
         public override void Affect(ICharacter attacker, ICharacter target, EventDto context)
         {
             var boostAmount = GameContext.GetInstance().Get("dmg+");
-            var finalDmg = 10 * (100 + boostAmount) / 100;
+            var finalDmg = 25 * (100 + boostAmount) / 100;
             target.ReceiveEffect(EffectHandle.GetHit, new EventDto
             {
                 [EffectHandle.HpReduce] = finalDmg,

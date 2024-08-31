@@ -1,3 +1,4 @@
+using Common;
 using DTO;
 using Logic.Helper;
 using Logic.MainCharacters;
@@ -20,8 +21,8 @@ namespace Logic.Skills.Piano
             base.Activate(activator);
             User.ReceiveEffect(EffectHandle.Healing, new EventDto
             {
-                ["timeout"] = 5,
-                ["HpHeal"] = 50,
+                ["timeout"] = 10 * GameStats.BASE_TIME_UNIT,
+                [EffectHandle.HpGain] = 5,
             });
         }
 

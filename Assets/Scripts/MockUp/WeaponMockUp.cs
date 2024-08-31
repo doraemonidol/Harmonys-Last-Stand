@@ -19,9 +19,10 @@ namespace MockUp
             SpecialSkills = new List<PSkill>
             {
                 gameObject.AddComponent<Wp1>(),
+                gameObject.AddComponent<Wp1>(),
             };
 
-            LogicLayer.GetInstance().Instantiate(Google.Search("ins", "wam"), this);
+            LogicLayer.GetInstance().Instantiate(Google.Search("ins", "wma"), this);
         }
 
         public override void Update()

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using Common.Context;
 using DTO;
 using Logic.Facade;
 using Logic.Helper;
@@ -115,7 +116,7 @@ namespace Logic.Skills.MaestroMachina
                 case "pre":
                     target.ReceiveEffect(EffectHandle.Rooted, new EventDto
                     {
-                        ["timeout"] = 5,
+                        ["timeout"] = 10,
                     });
                     break;
                 case "post":

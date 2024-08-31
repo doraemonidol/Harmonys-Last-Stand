@@ -1,3 +1,4 @@
+using Common;
 using Common.Context;
 using DTO;
 using Logic.Helper;
@@ -24,7 +25,7 @@ namespace Logic.Skills.Saxophone
             var args = new EventDto
             {
                 [EffectHandle.HpReduce] = 15,
-                ["timeout"] = 1,
+                ["timeout"] = 1 * GameStats.BASE_TIME_UNIT,
             };
             target.ReceiveEffect(EffectHandle.GetHit, args);
             target.ReceiveEffect(EffectHandle.Rooted, args);

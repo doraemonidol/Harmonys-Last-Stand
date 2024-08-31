@@ -22,14 +22,6 @@ namespace Common
         public const int MAESTRO_MOVSPEED = 100;
         public const int MAESTRO_ATTACK = 100;
 
-        public const int HEALTH_POTION_PERMANENT_BOOST = 20;
-        public const int DAMAGE_POTION_PERMANENT_BOOST = 20;
-        public const int MOVE_SPEED_POTION_PERMANENT_BOOST = 20;
-        public const int ATK_SPEED_POTION_PERMANENT_BOOST = 20;
-        
-        public const int HEALTH_POTION_TEMPORARY_BOOST = 50;
-        public const int DAMAGE_POTION_TEMPORARY_BOOST = 50;
-        public const int MOVE_SPEED_POTION_TEMPORARY_BOOST = 50;
-        public const int ATK_SPEED_POTION_TEMPORARY_BOOST = 50;
+        public const int BASE_TIME_UNIT = 1000;
     }
 }

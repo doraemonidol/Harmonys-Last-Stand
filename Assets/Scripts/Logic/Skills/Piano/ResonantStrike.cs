@@ -1,3 +1,4 @@
+using Common;
 using Common.Context;
 using DTO;
 using Logic.Helper;
@@ -22,7 +23,7 @@ namespace Logic.Skills.Piano
             var args = new EventDto
             {
                 [EffectHandle.HpReduce] = finalDmg,
-                ["timeout"] = 500,
+                ["timeout"] = (int)0.5 * GameStats.BASE_TIME_UNIT,
             };
             target.ReceiveEffect(EffectHandle.GetHit, args);
             target.ReceiveEffect(EffectHandle.Stunt, args);

@@ -1,3 +1,4 @@
+using Common;
 using DTO;
 using Logic.Helper;
 using Logic.Weapons;
@@ -18,7 +19,7 @@ namespace Logic.Skills.SonicBass
         {
             var args = new EventDto
             {
-                ["timeout"] = 10,
+                ["timeout"] = 10 * GameStats.BASE_TIME_UNIT,
             };
             target.ReceiveEffect(EffectHandle.Resonance, args);
         }
