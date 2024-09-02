@@ -14,8 +14,28 @@ namespace Presentation
         [SerializeField] private ProgressBar progressBar;
         [SerializeField] private TextMeshProUGUI effectText;
         [SerializeField] private Canvas canvas;
+        
+        [Header("Effect Prefabs")]
+        [SerializeField] private GameObject stuntPrefab;
+        [SerializeField] private GameObject bleedingPrefab;
+        [SerializeField] private GameObject hallucinationPrefab;
+        [SerializeField] private GameObject fearPrefab;
+        [SerializeField] private GameObject nearsightPrefab;
         [SerializeField] private GameObject shieldPrefab;
+        [SerializeField] private GameObject rootedPrefab;
         [SerializeField] private GameObject resistancePrefab;
+        [SerializeField] private GameObject jinxPrefab;
+        [SerializeField] private GameObject knockbackPrefab;
+        [SerializeField] private GameObject reversePrefab;
+        [SerializeField] private GameObject charmPrefab;
+        [SerializeField] private GameObject getHitPrefab;
+        [SerializeField] private GameObject sleepyPrefab;
+        [SerializeField] private GameObject resonancePrefab;
+        [SerializeField] private GameObject exhaustedPrefab;
+        [SerializeField] private GameObject resurrectionPrefab;
+        [SerializeField] private GameObject silentPrefab;
+        [SerializeField] private GameObject healingPrefab;
+        [SerializeField] private GameObject voidPrefab;
         
         public void AddEffect(EffectUI effect)
         {
@@ -51,8 +71,27 @@ namespace Presentation
 
         public void Start()
         {
+            stuntPrefab.gameObject.SetActive(false);
+            bleedingPrefab.gameObject.SetActive(false);
+            hallucinationPrefab.gameObject.SetActive(false);
+            // fearPrefab.gameObject.SetActive(false);
+            nearsightPrefab.gameObject.SetActive(false);
             shieldPrefab.gameObject.SetActive(false);
+            rootedPrefab.gameObject.SetActive(false);
             resistancePrefab.gameObject.SetActive(false);
+            jinxPrefab.gameObject.SetActive(false);
+            knockbackPrefab.gameObject.SetActive(false);
+            reversePrefab.gameObject.SetActive(false);
+            charmPrefab.gameObject.SetActive(false);
+            getHitPrefab.gameObject.SetActive(false);
+            sleepyPrefab.gameObject.SetActive(false);
+            resonancePrefab.gameObject.SetActive(false);
+            exhaustedPrefab.gameObject.SetActive(false);
+            resurrectionPrefab.gameObject.SetActive(false);
+            silentPrefab.gameObject.SetActive(false);
+            healingPrefab.gameObject.SetActive(false);
+            voidPrefab.gameObject.SetActive(false);
+            StartCoroutine(Test());
         }
         
         IEnumerator Test()
@@ -60,16 +99,142 @@ namespace Presentation
             yield return new WaitForSeconds(4);
             AddEffect(new EffectUI()
             {
-                Name = "Test",
+                Name = EffectType.STUNT,
                 StartTime = Time.time,
-                Duration = 10
+                Duration = 2
             });
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(2);
             AddEffect(new EffectUI()
             {
-                Name = "Test 2",
+                Name = EffectType.BLEEDING,
                 StartTime = Time.time,
-                Duration = 4
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.HALLUCINATION,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.FEAR,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.NEARSIGHT,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.SHIELD,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.ROOTED,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.RESISTANCE,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.JINX,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.KNOCKBACK,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.REVERSE,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.CHARM,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.GET_HIT,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.SLEEPY,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.RESONANCE,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.EXHAUSTED,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.RESURRECTION,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.SILENT,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.HEALING,
+                StartTime = Time.time,
+                Duration = 2
+            });
+            yield return new WaitForSeconds(2);
+            AddEffect(new EffectUI()
+            {
+                Name = EffectType.VOID,
+                StartTime = Time.time,
+                Duration = 2
             });
         }
 
@@ -98,28 +263,111 @@ namespace Presentation
             progressBar.SetEffect(effects[effects.Count - 1]);
             effectText.text = effects[effects.Count - 1].Name;
         }
-
-        public void deactivatePrefab(string name)
+        
+        private GameObject getEffectPrefab(string name)
         {
-            if (name == EffectType.SHIELD)
+            if (name == EffectType.STUNT)
             {
-                shieldPrefab.gameObject.SetActive(false);
+                return stuntPrefab;
+            }
+            else if (name == EffectType.BLEEDING)
+            {
+                return bleedingPrefab;
+            }
+            else if (name == EffectType.HALLUCINATION)
+            {
+                return hallucinationPrefab;
+            }
+            else if (name == EffectType.FEAR)
+            {
+                return fearPrefab;
+            }
+            else if (name == EffectType.NEARSIGHT)
+            {
+                return nearsightPrefab;
+            }
+            else if (name == EffectType.SHIELD)
+            {
+                return shieldPrefab;
+            }
+            else if (name == EffectType.ROOTED)
+            {
+                return rootedPrefab;
             }
             else if (name == EffectType.RESISTANCE)
             {
-                resistancePrefab.gameObject.SetActive(false);
+                return resistancePrefab;
+            }
+            else if (name == EffectType.JINX)
+            {
+                return jinxPrefab;
+            }
+            else if (name == EffectType.KNOCKBACK)
+            {
+                return knockbackPrefab;
+            }
+            else if (name == EffectType.REVERSE)
+            {
+                return reversePrefab;
+            }
+            else if (name == EffectType.CHARM)
+            {
+                return charmPrefab;
+            }
+            else if (name == EffectType.GET_HIT)
+            {
+                return getHitPrefab;
+            }
+            else if (name == EffectType.SLEEPY)
+            {
+                return sleepyPrefab;
+            }
+            else if (name == EffectType.RESONANCE)
+            {
+                return resonancePrefab;
+            }
+            else if (name == EffectType.EXHAUSTED)
+            {
+                return exhaustedPrefab;
+            }
+            else if (name == EffectType.RESURRECTION)
+            {
+                return resurrectionPrefab;
+            }
+            else if (name == EffectType.SILENT)
+            {
+                return silentPrefab;
+            }
+            else if (name == EffectType.HEALING)
+            {
+                return healingPrefab;
+            }
+            else if (name == EffectType.VOID)
+            {
+                return voidPrefab;
+            }
+            return null;
+        }
+
+        public void deactivatePrefab(string name)
+        {
+            GameObject prefab = getEffectPrefab(name);
+            if (prefab != null)
+            {
+                prefab.gameObject.SetActive(false);
+            } else {
+                Debug.LogError("Prefab not found: " + name);
             }
         }
         
         public void activatePrefab(string name)
         {
-            if (name == EffectType.SHIELD)
+            GameObject prefab = getEffectPrefab(name);
+            if (prefab != null)
             {
-                shieldPrefab.gameObject.SetActive(true);
-            }
-            else if (name == EffectType.RESISTANCE)
-            {
-                resistancePrefab.gameObject.SetActive(true);
+                prefab.gameObject.SetActive(true);
+            } else {
+                Debug.LogError("Prefab not found: " + name);
             }
         }
     }

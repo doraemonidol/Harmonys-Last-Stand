@@ -6,54 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="ddd7aca8-1b86-452c-8319-d86abc9fe976" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Additive.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Additive.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Circle116cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Circle116cg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Flare21cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Flare21cg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Flare6cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Flare6cg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Flash21bcg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Flash21bcg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/FlashGroundCG.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/FlashGroundCG.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Distortion.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Distortion.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Flare4cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Flare4cg.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Glow1cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Glow1cg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Lightning11cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Lightning11cg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Point11cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Point11cg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Point12cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Point12cg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Smoke3cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Smoke3cg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Snow4bcg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Snow4bcg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Stone3bcg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Stone3bcg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Trail21bcg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Trail21bcg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Trail68bcg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Trail68bcg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/TwoSides21.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/TwoSides21.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Add_CenterGlow.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Add_CenterGlow.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Add_CenterGlow.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Add_CenterGlow.shader.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_CenterGlow.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_CenterGlow.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_CenterGlow.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_CenterGlow.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Gradient17cg2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Gradient17cg2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Smoke21bcg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Smoke21bcg.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Trail21cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Trail21cg.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_LinePath.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_LinePath.shader" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_TwoSides.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_TwoSides.shader" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_TwoSides.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_TwoSides.shader.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/DissolveNoise.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/DissolveNoise.shader" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Distortion.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Distortion.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Circle116.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Circle116.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Flare21.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Flare21.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Flare6.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Flare6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Flare6.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Flare6.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Flash21.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Flash21.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Noise13.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Noise13.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Point11.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Point11.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Point11.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Point11.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Smoke24.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Smoke24.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Snow4.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Snow4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Snow4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Snow4.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Trail58.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Trail58.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Waves21.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Waves21.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Waves21.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Waves21.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_black.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_black.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_black2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_black2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_cube.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_cube.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_plane.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_plane.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_white.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_white.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Maestro/Parts/Jackbox.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Maestro/Parts/Jackbox.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Toon Projectiles 2/Materials/Floor2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Toon Projectiles 2/Materials/Floor2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Toon Projectiles 2/Materials/Glow2bcg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Toon Projectiles 2/Materials/Glow2bcg.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/VFXScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VFXScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/JackBoxController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/JackBoxController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/PIllusionCarnival.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/PIllusionCarnival.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/PPhantomStab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/PPhantomStab.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Common/EffectType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Common/EffectType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/EffectUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/EffectUIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,25 +43,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;newer-logic&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "newer-vfx-hung",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Nhat Hung\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Nhat Hung\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Nhat Hung\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Nhat Hung\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Nhat Hung\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\Nhat Hung\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.29f1\Editor\Unity.exe" />
@@ -138,7 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1725102153269</updated>
       <workItem from="1725102167471" duration="1080000" />
-      <workItem from="1725266328600" duration="4021000" />
+      <workItem from="1725266328600" duration="7553000" />
     </task>
     <servers />
   </component>
