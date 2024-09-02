@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 using Common.Context;
 using DTO;
 using Logic.Effects;
@@ -177,7 +178,19 @@ namespace Logic.Villains
             lock (_lock)
             {
                 this.Heath -= dmg;
-            
+                
+                this.NotifySubscribers(new EventUpdateVisitor
+                {
+                    ["ev"] =
+                    {
+                        ["type"] = "decrease-health"
+                    },
+                    ["args"] =
+                    {
+                        ["health"] = new StringBuilder().Append(this.Heath).ToString(),
+                    }
+                });
+                
                 if (IsDead(this.Heath)) OnDead();
             }
         }
