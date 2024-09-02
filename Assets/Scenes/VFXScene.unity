@@ -985,6 +985,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372815460}
   m_CullTransparentMesh: 1
+--- !u!114 &384099154 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4511876358091927894, guid: 21a9cceeb33a8b94187d959bb5c00337, type: 3}
+  m_PrefabInstance: {fileID: 888895733}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd93182630894ee4ac47432591f2cd42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &428188842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,7 +1107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!195 &439484977
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1158,7 +1169,7 @@ MonoBehaviour:
   _rotateToTarget: {fileID: 1271588900}
   firePoint: {fileID: 1271588898}
   target: {fileID: 1902544001}
-  testingSkill: 2
+  testingSkill: 0
 --- !u!1001 &516229020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8719,9 +8730,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityType: 18
   normalSkills:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1455008167}
+  - {fileID: 1813240258}
+  - {fileID: 384099154}
   specialSkills: []
 --- !u!1 &1403955631
 GameObject:
@@ -8807,6 +8818,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1204db3e8bde4bd479ea3cfa202e9e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1455008167 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9070495949371642631, guid: 21a9cceeb33a8b94187d959bb5c00337, type: 3}
+  m_PrefabInstance: {fileID: 888895733}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd93182630894ee4ac47432591f2cd42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1460782814
@@ -9635,6 +9657,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693760178}
   m_CullTransparentMesh: 1
+--- !u!114 &1813240258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6535309827024878219, guid: 21a9cceeb33a8b94187d959bb5c00337, type: 3}
+  m_PrefabInstance: {fileID: 888895733}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd93182630894ee4ac47432591f2cd42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1822056280
 GameObject:
   m_ObjectHideFlags: 0
@@ -9652,7 +9685,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!195 &1822056282
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -9663,7 +9696,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 0
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -9712,7 +9745,7 @@ MonoBehaviour:
   _rotateToTarget: {fileID: 188246090}
   firePoint: {fileID: 188246088}
   target: {fileID: 1902544001}
-  testingSkill: 4
+  testingSkill: 2
 --- !u!1 &1835912288
 GameObject:
   m_ObjectHideFlags: 0
@@ -10218,6 +10251,7 @@ MonoBehaviour:
   target: {fileID: 0}
   virtualCamera: {fileID: 2139190074}
   timeScaleFactor: 0.3
+  healthBar: {fileID: 0}
 --- !u!1 &1927775826 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3501522210643059124, guid: 3da243a40a44cfa4b8b5b0af6217d7e1, type: 3}

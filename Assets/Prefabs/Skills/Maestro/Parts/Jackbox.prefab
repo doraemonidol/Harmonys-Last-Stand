@@ -150,6 +150,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 20
   jackBox: {fileID: 4357906752325487739}
+  appearVFX:
+    vfx: {fileID: 655000492561922844, guid: 2672b5311e9fb86438077524564d080e, type: 3}
+    duration: 4
+    affectCooldown: 0
+    transform: {fileID: 4355345431470389767}
+    autoDestroy: 1
 --- !u!136 &2460243188052620396
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class JackBoxController : MonoBehaviour
     private float spawnTime;
     private bool collided = false;
     [SerializeField] private GameObject jackBox;
+    [SerializeField] private VFX appearVFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +36,16 @@ public class JackBoxController : MonoBehaviour
         {
             collided = true;
             Debug.Log("Player hit jackbox");
-            jackBox.SetActive(true);
-            Destroy(gameObject, 1f);
+            StartCoroutine(StartAppearVFX());
         }
+    }
+    
+    IEnumerator StartAppearVFX()
+    {
+        // GameObject vfx = Instantiate(appearVFX.vfx, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.3f);
+        jackBox.SetActive(true);
+        // Destroy(vfx, appearVFX.duration);
+        Destroy(gameObject, 1f);
     }
 }

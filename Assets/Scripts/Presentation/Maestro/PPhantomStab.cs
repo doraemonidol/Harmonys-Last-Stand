@@ -102,6 +102,7 @@ namespace Presentation.Maestro
             navMeshAgent.SetDestination(target.transform.position);
             // navMeshAgent.isStopped = true;
             navMeshAgent.speed = oldSpeed;
+            
             StartCoroutine(StartPrecastVFX());
             yield return new WaitForSeconds(0.3f);
             for (int i = 0; i < renderers.Count; i++)
@@ -109,7 +110,7 @@ namespace Presentation.Maestro
                 renderers[i].enabled = true;
             }
             
-            // animator.SetTrigger("HitSpell1");
+            // animator.SetTrigger(EnemyActionType.SpecialAttack);
             yield return new WaitForSeconds(1.2f);
             
             if (Vector3.Distance(target.transform.position, navMeshAgent.transform.position) < dangerRange)

@@ -6,447 +6,54 @@
   <component name="ChangeListManager">
     <list default="true" id="ddd7aca8-1b86-452c-8319-d86abc9fe976" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys-Last-Stand/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/AdminWindow.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/AdminWindow.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/Contents.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/Contents/PatchBuildsContent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/Contents/PatchBuildsContent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/Contents/PatchContent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/Contents/PatchContent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/Contents/PatchInfoContent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/Contents/PatchInfoContent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/Contents/PatchLauncherContent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/Contents/PatchLauncherContent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/Contents/PatchOptionsContent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/Contents/PatchOptionsContent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/Contents/PatchPatchesContent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/Contents/PatchPatchesContent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/PatchErrorPopup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/PatchErrorPopup.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/PatchPopup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/PatchPopup.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/PatchSidebar.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/PatchSidebar.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/PatchTipPopup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/PatchTipPopup.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/PatchTopbar.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/PatchTopbar.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/PatchTutorial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/PatchTutorial.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/PatchWindow.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/PatchWindow.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/PopupErrorType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/PopupErrorType.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/ThemeHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Components/ThemeHelper.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/AdminBuildContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/AdminBuildContext.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/AdminPatchContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/AdminPatchContext.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/AdminPatcherUpdateContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/AdminPatcherUpdateContext.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/AdminSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/AdminSettings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/BuildBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/BuildBuilder.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/Exceptions.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/Exceptions/ApplicationFolderIsEmptyException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/Exceptions/ApplicationFolderIsEmptyException.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/Exceptions/BuildAlreadyExistsException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/Exceptions/BuildAlreadyExistsException.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/Exceptions/SameVersionsException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/Exceptions/SameVersionsException.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/Exceptions/UpdaterFolderIsEmptyException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/Exceptions/UpdaterFolderIsEmptyException.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/Localization.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/Localization/IAdminLocalizedMessages.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/Localization/IAdminLocalizedMessages.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/PatchBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/PatchBuilder.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/Progresses.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/Progresses/BuilderProgress.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/Progresses/BuilderProgress.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/UpdaterBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Core/UpdaterBuilder.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/EditorHelpers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/EditorHelpers/Widget.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/EditorHelpers/Widget.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/EditorHelpers/WidgetContainer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/EditorHelpers/WidgetContainer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/EditorHelpers/WidgetFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/EditorHelpers/WidgetFactory.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Inspectors.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Inspectors/LauncherDataCustomInspector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Inspectors/LauncherDataCustomInspector.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Localization.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Localization/EnglishAdminLocalizedMessages.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Localization/EnglishAdminLocalizedMessages.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/Tutorial.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/Tutorial/Builds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/Tutorial/Builds.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/Tutorial/Builds2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/Tutorial/Builds2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/Tutorial/Launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/Tutorial/Launcher.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/Tutorial/Launcher2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/Tutorial/Launcher2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/Tutorial/Options.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/Tutorial/Options.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/Tutorial/Patches.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/Tutorial/Patches.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/Tutorial/Patches2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/Tutorial/Patches2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/editor_arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/editor_arrow.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/logo_editor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/logo_editor.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/oblique_filler.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Admin/Editor/Resources/Images/oblique_filler.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/BuildDefinition.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/BuildDefinition.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Compressing.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Compressing/Compressor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Compressing/Compressor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Compressing/ZipCompressor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Compressing/ZipCompressor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/IO.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/IO/DirectoriesManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/IO/DirectoriesManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/IO/FilePath.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/IO/FilePath.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/IO/FileSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/IO/FileSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/IO/FilesManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/IO/FilesManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/IO/IFileSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/IO/IFileSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/IO/LocalFileInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/IO/LocalFileInfo.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/IO/PathsManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/IO/PathsManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Logging.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Logging/ILogger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Logging/ILogger.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Logging/SimpleLogger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Logging/SimpleLogger.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/Adler32RollingChecksum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/Adler32RollingChecksum.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/AggregateCopyOperationsDecorator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/AggregateCopyOperationsDecorator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/BinaryComparer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/BinaryComparer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/BinaryDeltaReader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/BinaryDeltaReader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/BinaryDeltaWriter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/BinaryDeltaWriter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/BinaryFormat.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/BinaryFormat.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/ChunkSignature.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/ChunkSignature.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/ChunkSignatureChecksumComparer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/ChunkSignatureChecksumComparer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/CompatibilityException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/CompatibilityException.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/ConsoleProgressReporter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/ConsoleProgressReporter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/CorruptFileFormatException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/CorruptFileFormatException.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/DataRange.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/DataRange.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/DeltaApplier.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/DeltaApplier.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/DeltaBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/DeltaBuilder.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/DeltaFileApplier.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/DeltaFileApplier.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/DeltaFileBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/DeltaFileBuilder.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/DeltaStatistics.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/DeltaStatistics.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/HashAlgorithmWrapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/HashAlgorithmWrapper.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/IDeltaReader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/IDeltaReader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/IDeltaWriter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/IDeltaWriter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/IHashAlgorithm.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/IHashAlgorithm.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/IProgressReporter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/IProgressReporter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/IRollingChecksum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/IRollingChecksum.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/ISignatureReader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/ISignatureReader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/ISignatureWriter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/ISignatureWriter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/NullProgressReporter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/NullProgressReporter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/Signature.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/Signature.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/SignatureBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/SignatureBuilder.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/SignatureReader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/SignatureReader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/SupportedAlgorithms.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/SupportedAlgorithms.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/UsageException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Octodiff/UsageException.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/PatchDefinition.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/PatchDefinition.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/PatchOperation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/PatchOperation.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Serializing.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Serializing/ISerializer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Serializing/ISerializer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Serializing/SimpleJson.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Serializing/SimpleJson.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Settings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Settings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/UpdaterDefinition.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/UpdaterDefinition.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Utilities.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Utilities/Asserts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Utilities/Asserts/Assert.Always.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Utilities/Asserts/Assert.Always.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Utilities/Asserts/Assert.Debug.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Utilities/Asserts/Assert.Debug.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Utilities/Asserts/AssertFailedException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Utilities/Asserts/AssertFailedException.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Utilities/Debugger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Utilities/Debugger.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Utilities/FormatUtility.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Utilities/FormatUtility.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Utilities/Hashing.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Utilities/Hashing.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Utilities/Rijndael.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Utilities/Rijndael.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Versioning.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Versioning/IVersion.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Versioning/IVersion.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Versioning/IVersionFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Versioning/IVersionFactory.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Versioning/Version.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Core/Versioning/Version.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Art.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Art/Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Art/Sprites/close-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Art/Sprites/close-icon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Art/Sprites/options-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Art/Sprites/options-icon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Prefabs/BackgroundLauncherUpdater.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Prefabs/BackgroundLauncherUpdater.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Prefabs/Dialog.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Prefabs/Dialog.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Prefabs/Dispatcher.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Prefabs/Dispatcher.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Prefabs/InfoSection.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Prefabs/InfoSection.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Prefabs/OpenOptionsButton.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Prefabs/OpenOptionsButton.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Prefabs/Options.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Prefabs/Options.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Prefabs/ProgressBar.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Prefabs/ProgressBar.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/Images.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/Images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/Images/logo.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/Images/mhlab_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/Images/mhlab_logo.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/PatchDarkGUISkin.guiskin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/PatchDarkGUISkin.guiskin.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/PatchMainGUISkin.guiskin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/PatchMainGUISkin.guiskin.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/PatchPopupGUISkin.guiskin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/PatchPopupGUISkin.guiskin.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/PatchSecondaryGUISkin.guiskin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/PatchSecondaryGUISkin.guiskin.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/black.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/main_color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/main_color.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/on_focus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/on_focus.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/popup_backdrop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/popup_backdrop.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/secondary_color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Resources/secondary_color.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scenes/Launcher.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scenes/Launcher.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scenes/PreGame.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scenes/PreGame.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scenes/SampleGame.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scenes/SampleGame.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scenes/WIP -BackgroundLauncherUpdater.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scenes/WIP -BackgroundLauncherUpdater.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/BackgroundLauncherUpdater.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/BackgroundLauncherUpdater.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Exceptions.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Exceptions/NoAvailableBuildsException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Exceptions/NoAvailableBuildsException.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Exceptions/PatchCannotBeDownloadedException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Exceptions/PatchCannotBeDownloadedException.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked/ChunkStorage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked/ChunkStorage.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked/ChunkedDownloader.IDownloader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked/ChunkedDownloader.IDownloader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked/ChunkedDownloader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked/ChunkedDownloader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked/ChunkedDownloaderSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked/ChunkedDownloaderSettings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked/DownloadableChunk.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked/DownloadableChunk.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked/DownloaderCallbacks.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked/DownloaderCallbacks.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked/DownloaderContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked/DownloaderContext.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked/DownloaderSharedContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Chunked/DownloaderSharedContext.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Dropbox.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Dropbox/DropboxDownloader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Dropbox/DropboxDownloader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Dropbox/DropboxNetworkChecker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/Dropbox/DropboxNetworkChecker.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/GDrive.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/GDrive/GDriveDownloader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/GDrive/GDriveDownloader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/SmartDownloadMetrics.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/SmartDownloadMetrics.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/SmartDownloadSpeedMeter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/SmartDownloadSpeedMeter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/SmartDownloader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/Advanced/SmartDownloader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/DownloadEntry.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/DownloadEntry.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/DownloadMetrics.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/DownloadMetrics.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/DownloadSpeedMeter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/DownloadSpeedMeter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/DownloaderHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/DownloaderHelper.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/FileDownloader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/FileDownloader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/IDownloadMetrics.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/IDownloadMetrics.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/IDownloader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/IDownloader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/IDownloaderSpeedMeter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/IDownloaderSpeedMeter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/INetworkChecker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/INetworkChecker.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/NetworkChecker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/NetworkChecker.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/PreAuthenticatedWebClient.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IO/PreAuthenticatedWebClient.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IUpdater.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/IUpdater.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/LauncherSettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/LauncherSettings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Localization.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Localization/IUpdaterLocalizedMessages.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Localization/IUpdaterLocalizedMessages.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/PatcherUpdater.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/PatcherUpdater.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Progresses.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Progresses/UpdateProgress.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Progresses/UpdateProgress.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Properties.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Properties/PublishProfiles.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Properties/PublishProfiles/FolderProfile.pubxml.user.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Repairer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Repairer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Runners.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Runners/IUpdateRunner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Runners/IUpdateRunner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Runners/UpdateRunner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Runners/UpdateRunner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/SettingsOverride.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/SettingsOverride.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Updater.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Updater.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/UpdatingContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/UpdatingContext.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Utilities.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Utilities/ValidatorHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Core/Utilities/ValidatorHelper.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Dispatcher.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Dispatcher.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Launcher.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Launcher.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/LauncherBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/LauncherBase.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/LauncherData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/LauncherData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/LauncherUpdater.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/LauncherUpdater.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Localization.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Localization/EnglishUpdaterLocalizedMessages.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Localization/EnglishUpdaterLocalizedMessages.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/UI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/UI/Dialog.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/UI/Dialog.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/UI/OptionsScreen.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/UI/OptionsScreen.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/UI/ProgressBar.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/UI/ProgressBar.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Utilities.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Utilities/ApplicationStarter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Utilities/ApplicationStarter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Utilities/PrivilegesSetter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Launcher/Scripts/Utilities/PrivilegesSetter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/MHLab.Patch.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/MHLab.Patch.zip.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/PATCH - Updating System User Manual.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/PATCH - Updating System User Manual.pdf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins/Dropbox.Api.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins/Dropbox.Api.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins/ICSharpCode.SharpZipLib.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins/ICSharpCode.SharpZipLib.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins/Newtonsoft.Json.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins/Newtonsoft.Json.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins/System.Buffers.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins/System.Buffers.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins/System.Memory.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins/System.Memory.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins/System.Numerics.Vectors.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins/System.Numerics.Vectors.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins/System.Runtime.CompilerServices.Unsafe.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins/System.Runtime.CompilerServices.Unsafe.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins/System.Threading.Tasks.Extensions.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Plugins/System.Threading.Tasks.Extensions.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Utilities.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Utilities/ArgumentChecker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Utilities/ArgumentChecker.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Utilities/DebugHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Utilities/DebugHelper.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Utilities/ProgressReporter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Utilities/ProgressReporter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Utilities/Serializing.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Utilities/Serializing/JsonSerializer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/Utilities/Serializing/JsonSerializer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/VERSION.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MHLab/Patch/VERSION.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/InstanceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/InstanceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Additive.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Additive.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Circle116cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Circle116cg.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Flare21cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Flare21cg.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Flare6cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Flare6cg.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Flash21bcg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Flash21bcg.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/FlashGroundCG.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/FlashGroundCG.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Glow1cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Glow1cg.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Lightning11cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Lightning11cg.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Point11cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Point11cg.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Point12cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Point12cg.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Smoke3cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Smoke3cg.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Snow4bcg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Snow4bcg.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Stone3bcg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Stone3bcg.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Trail21bcg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Trail21bcg.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Trail68bcg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Trail68bcg.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/TwoSides21.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/TwoSides21.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Add_CenterGlow.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Add_CenterGlow.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Add_CenterGlow.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Add_CenterGlow.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_CenterGlow.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_CenterGlow.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_CenterGlow.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_CenterGlow.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_TwoSides.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_TwoSides.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_TwoSides.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_TwoSides.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/DissolveNoise.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/DissolveNoise.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Distortion.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Distortion.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Circle116.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Circle116.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Flare21.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Flare21.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Flare6.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Flare6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Flare6.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Flare6.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Flash21.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Flash21.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Noise13.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Noise13.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Point11.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Point11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Point11.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Point11.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Smoke24.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Smoke24.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Snow4.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Snow4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Snow4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Snow4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Trail58.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Trail58.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Waves21.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Waves21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Waves21.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Waves21.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_black.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_black.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_black2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_black2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_cube.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_cube.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_plane.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_plane.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_white.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Mirza Beig/Particle Systems/_Common/Materials/Demos/mat_cmn_demo_white.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skills/Maestro/Parts/Jackbox.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skills/Maestro/Parts/Jackbox.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VFXScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VFXScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/JackBoxController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/JackBoxController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/PIllusionCarnival.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/PIllusionCarnival.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/PPhantomStab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/PPhantomStab.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -456,34 +63,34 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2lQAu9TjNL3WsO78T6MOM30wfvb" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "newer-logic",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;newer-logic&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Nhat Hung\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Nhat Hung\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Nhat Hung\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Nhat Hung\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Nhat Hung\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Nhat Hung\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.29f1\Editor\Unity.exe" />
@@ -531,6 +138,7 @@
       <option name="presentableId" value="Default" />
       <updated>1725102153269</updated>
       <workItem from="1725102167471" duration="1080000" />
+      <workItem from="1725266328600" duration="4021000" />
     </task>
     <servers />
   </component>

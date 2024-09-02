@@ -166,26 +166,28 @@ namespace Presentation.Maestro
 
         public override IEnumerator StartHitting()
         {
-            navMeshAgent.transform.position = target.transform.position + new Vector3(0, 0, 6);
+            navMeshAgent.transform.position = target.transform.position + new Vector3(6, 0, 10);
 
+            yield return new WaitForSeconds(0.9f);
             // Laugh something...
-            yield return new WaitForSeconds(1.5f);
+            animator.SetTrigger(EnemyActionType.SpecialAttack);
+            yield return new WaitForSeconds(0.5f);
 
             // move navMeshAgent of illusion a distance of 4 to the target
 
             StartCoroutine(StartPrecastVFX());
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.4f);
+            for (int i = 0; i < renderers.Count; i++)
+            {
+                renderers[i].enabled = true;
+            }
+            yield return new WaitForSeconds(0.6f);
             Instantiate(projectilePrefab, firePoint.transform.position, Quaternion.identity);
             yield return new WaitForSeconds(0.2f);
             GameObject hit = Instantiate(hitPrefab, target.transform.position, Quaternion.identity);
             Destroy(hit, 1f);
 
-            yield return new WaitForSeconds(0.1f);
             Debug.Log("Renderer Count: " + renderers.Count);
-            for (int i = 0; i < renderers.Count; i++)
-            {
-                renderers[i].enabled = true;
-            }
             state = SkillState.Idle;
         }
 
