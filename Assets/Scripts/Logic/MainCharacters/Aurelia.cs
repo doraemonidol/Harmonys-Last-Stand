@@ -10,7 +10,6 @@ using Logic.Skills;
 using Logic.Weapons;
 using UnityEngine;
 using Action = Common.ActionEvent;
-using Object = UnityEngine.Object;
 
 namespace Logic.MainCharacters
 {
@@ -209,6 +208,7 @@ namespace Logic.MainCharacters
                     {
                         var timeout = (int)args![EffectHandle.Timeout];
                         if (_effectManager.CheckIfEffectApply(EffectHandle.Resistance))
+                            return;
                         this.NotifySubscribers(new EventUpdateVisitor
                         {
                             ["ev"] =
@@ -395,19 +395,19 @@ namespace Logic.MainCharacters
                         {
                             fdmg *= 0.3f;
                         }
+                        _context.Do(BoostHandles.ReduceHealth, (int) fdmg);
+                        var currentHp = GameContext.GetInstance().Get("hp");
                         this.NotifySubscribers(new EventUpdateVisitor
                         {
                             ["ev"] =
                             {
-                                ["type"] = EffectType.GET_HIT
+                                ["type"] = EffectType.GET_HIT,
                             },
                             ["args"] = 
                             {
-                                ["dmg"] = fdmg
+                                ["decrease-health"] = currentHp,
                             }
                         });
-                        _context.Do(BoostHandles.ReduceHealth, (int) fdmg);
-                        var currentHp = GameContext.GetInstance().Get("hp");
                         if (IsDead(currentHp)) OnDead();
                         break;
                     }
