@@ -7,6 +7,8 @@ using DTO;
 using Logic.Helper;
 using Logic.MainCharacters;
 using Logic.Skills;
+using Logic.Troops;
+using Logic.Troops.DeathStrategy;
 using Logic.Villains;
 using Logic.Villains.Amadeus;
 using Logic.Villains.Ludwig;
@@ -15,6 +17,7 @@ using Logic.Villains.States;
 using Logic.Weapons;
 using Presentation;
 using UnityEditor;
+using UnityEngine;
 
 namespace Logic.Facade
 {
@@ -58,6 +61,7 @@ namespace Logic.Facade
                 EntityType.AMADEUS => new AmadeusPrime(),
                 EntityType.LUDWIG => new LudwigVanVortex(),
                 EntityType.MAESTRO => new MaestroMachina(),
+                EntityType.TROOP => new Troop(),
                 _ => null
             };
         }
@@ -91,6 +95,11 @@ namespace Logic.Facade
                 case EntityType.AMADEUS:
                 case EntityType.LUDWIG:
                 case EntityType.MAESTRO:
+                case EntityType.TROOP:
+                case EntityType.TROOP11:
+                case EntityType.TROOP12:
+                case EntityType.TROOP21:
+                case EntityType.TROOP22:
                 {
                     var identity = new Identity();
                     var logicRef = Create(type);
@@ -154,6 +163,7 @@ namespace Logic.Facade
                 }
                 default:
                 {
+                    Debug.LogError("Unknown type.");
                     throw new Exception("Unknown type.");
                 }
             }

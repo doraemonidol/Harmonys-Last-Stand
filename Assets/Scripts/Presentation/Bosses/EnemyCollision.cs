@@ -9,6 +9,7 @@ namespace Presentation.Bosses
     public class EnemyCollision : MonoBehaviour
     {
         public Identity LogicHandle;
+        public string Handle;
         private void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.CompareTag("Enemy")) return;

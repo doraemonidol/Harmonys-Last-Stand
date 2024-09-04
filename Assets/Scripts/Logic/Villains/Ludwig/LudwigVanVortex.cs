@@ -8,10 +8,10 @@ namespace Logic.Villains.Ludwig
     {
         public LudwigVanVortex()
         : base(
-            LUDWIG_ATTACK,
+            LUDWIG_HEALTH,
             LUDWIG_ATKSPEED,
             LUDWIG_MOVSPEED,
-            LUDWIG_HEALTH
+            LUDWIG_ATTACK
         ) {
             VillainWeapon = Weapon.TransformInto(WeaponHandle.LwWeapon);
             State = new LwSkillCasting(this);

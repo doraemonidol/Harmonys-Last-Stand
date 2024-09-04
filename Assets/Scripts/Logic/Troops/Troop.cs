@@ -2,6 +2,7 @@ using System;
 using Logic.Helper;
 using Logic.Troops.DeathStrategy;
 using Logic.Villains;
+using static Common.GameStats;
 
 namespace Logic.Troops
 {
@@ -10,6 +11,15 @@ namespace Logic.Troops
         public int Handle { get; set; }
         
         private IDeathStrategy _deathStrategy;
+        
+        public Troop() : base(
+            TROOP_HEALTH,
+            TROOP_ATKSPEED,
+            TROOP_MOVSPEED,
+            TROOP_ATTACK
+        )
+        {
+        }
         
         public Troop(Troop another) : base(another)
         {

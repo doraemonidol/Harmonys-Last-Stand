@@ -21,6 +21,11 @@ namespace Common
         public const int MAESTRO_ATKSPEED = 100;
         public const int MAESTRO_MOVSPEED = 100;
         public const int MAESTRO_ATTACK = 100;
+
+        public const int TROOP_HEALTH = 30;
+        public const int TROOP_ATKSPEED = 30;
+        public const int TROOP_MOVSPEED = 30;
+        public const int TROOP_ATTACK = 30;
         
         public const int HEALTH_POTION_PERMANENT_BOOST = 20;
         public const int DAMAGE_POTION_PERMANENT_BOOST = 20;

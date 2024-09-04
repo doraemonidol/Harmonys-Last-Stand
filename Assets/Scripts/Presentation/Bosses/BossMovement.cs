@@ -29,6 +29,8 @@ public abstract class BossMovement : PresentationObject
 
     public override void Start()
     {
+        LogicLayer.GetInstance().Instantiate(EntityType.GetEntityType(entityType), this);
+        Debug.Log("Entity: " + this.LogicHandle + " " + entityType);
         isDead = false;
         animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -40,8 +42,7 @@ public abstract class BossMovement : PresentationObject
         {
             Debug.LogError("Please assign EffectUIManager to the boss");
         }
-        
-        LogicLayer.GetInstance().Instantiate(EntityType.GetEntityType(entityType), this);
+        UpdateEnemyCollision();
     }
     
     protected void SetHealth(int currentHealth, int maxHealth)
@@ -54,7 +55,9 @@ public abstract class BossMovement : PresentationObject
     {
         foreach (var enemyCollision in enemyCollisions)
         {
-            enemyCollision.LogicHandle = LogicHandle;
+            Debug.Log("Updating Enemy Collision");
+            enemyCollision.LogicHandle = this.LogicHandle;
+            enemyCollision.Handle = LogicHandle.Handle;
         }
     }
 
