@@ -82,7 +82,7 @@ public abstract class BossMovement : PresentationObject
         {
             return;
         }
-        // navMeshAgent.SetDestination(player.transform.position);
+        navMeshAgent.SetDestination(player.transform.position);
     }
 
     public override void AcceptAndUpdate(EventUpdateVisitor visitor)

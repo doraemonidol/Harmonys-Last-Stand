@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Common;
 using DTO;
 using Logic.Facade;
+using MockUp;
 using UnityEngine;
 
 public class JackBoxController : MonoBehaviour
@@ -38,6 +39,16 @@ public class JackBoxController : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        Debug.Log("Jackbox hit " + other.gameObject.name);
+        if (other.gameObject.CompareTag("Bullet") && !collided)
+        {
+            if (other.gameObject.GetComponent<SkillColliderInfo>() == null) return;
+            
+            collided = true;
+            Debug.Log("Player hit jackbox");
+            StartCoroutine(StartDestroyVFX());
+        }
+
         if (other.gameObject.CompareTag("Player") && !collided)
         {
             collided = true;
@@ -46,10 +57,9 @@ public class JackBoxController : MonoBehaviour
         }
     }
     
-    IEnumerator StartAppearVFX()
+    IEnumerator StartDestroyVFX()
     {
         // GameObject vfx = Instantiate(appearVFX.vfx, transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.3f);
         
         // var eventd = new EventDto
         // {
@@ -62,6 +72,27 @@ public class JackBoxController : MonoBehaviour
         // LogicLayer.GetInstance().Observe(eventd);
         
         jackBox.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        // Destroy(vfx, appearVFX.duration);
+        Destroy(gameObject);
+    }
+    
+    IEnumerator StartAppearVFX()
+    {
+        // GameObject vfx = Instantiate(appearVFX.vfx, transform.position, Quaternion.identity);
+        
+        // var eventd = new EventDto
+        // {
+        //     Event = "GET_ATTACKED",
+        //     ["attacker"] = MaestroLogicHandle,
+        //     ["target"] = AureliaLogicHandle,
+        //     ["context"] = null,
+        //     ["skill"] = LogicHandle
+        // };
+        // LogicLayer.GetInstance().Observe(eventd);
+        
+        jackBox.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
         // Destroy(vfx, appearVFX.duration);
         Destroy(gameObject, 1f);
     }

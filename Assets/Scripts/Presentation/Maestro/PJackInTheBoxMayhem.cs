@@ -28,11 +28,13 @@ namespace Presentation.Maestro
         
         public override IEnumerator StartCasting()
         {
+            state = SkillState.Casting;
             animator.SetTrigger(EnemyActionType.CastSpell2);
             yield return new WaitForSeconds(1.2f);
             StartCoroutine(StartPrecastVFX());
             SpawnResources();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(20f);
+            state = SkillState.Idle;
         }
 
         private void SpawnResources()

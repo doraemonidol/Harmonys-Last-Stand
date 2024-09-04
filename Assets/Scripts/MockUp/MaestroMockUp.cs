@@ -71,8 +71,6 @@ namespace MockUp
         {
             if (isDead)
                 return;
-            
-            base.Update();
 
             if (Vector3.Distance(transform.position, player.transform.position) <= attackRange)
             {
@@ -139,6 +137,11 @@ namespace MockUp
                         Debug.LogError("Maestro Unknown Cast: " + skillIndex);
                         break;
                 }
+            }
+            else
+            {
+                navMeshAgent.isStopped = false;
+                navMeshAgent.SetDestination(player.transform.position);
             }
         }
 

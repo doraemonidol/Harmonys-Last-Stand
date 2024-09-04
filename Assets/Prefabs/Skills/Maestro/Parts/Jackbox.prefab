@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -4393687626006360683}
   - component: {fileID: 7799870732350343090}
   - component: {fileID: 2460243188052620396}
+  - component: {fileID: 2607818428921021425}
   m_Layer: 3
   m_Name: Jackbox
   m_TagString: Enemy
@@ -107,8 +108,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.66, y: 0.45, z: 0.76}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.66, y: 2.76576, z: 0.76}
+  m_Center: {x: 0, y: 1.1578801, z: 0}
 --- !u!54 &-4393687626006360683
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -125,7 +126,7 @@ Rigidbody:
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -179,6 +180,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2607818428921021425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802990093106007197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1d71d71816640bbb55878e34bc92681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4359351848353849273
 PrefabInstance:
   m_ObjectHideFlags: 0
