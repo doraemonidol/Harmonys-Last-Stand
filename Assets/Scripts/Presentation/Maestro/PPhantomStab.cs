@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using Common;
+using DTO;
+using Logic.Facade;
+using MockUp;
 using UnityEngine;
 
 namespace Presentation.Maestro
@@ -113,9 +116,21 @@ namespace Presentation.Maestro
             // animator.SetTrigger(EnemyActionType.SpecialAttack);
             yield return new WaitForSeconds(1.2f);
             
+            // Debug.Log("Maestro Phantom Stab hit distance: " + Vector3.Distance(target.transform.position, navMeshAgent.transform.position));
+            
             if (Vector3.Distance(target.transform.position, navMeshAgent.transform.position) < dangerRange)
             {
                 // Send villain result
+                var eventd = new EventDto
+                {
+                    Event = "GET_ATTACKED",
+                    ["attacker"] = MaestroLogicHandle,
+                    ["target"] = target.GetComponent<AureliaMockUp>().LogicHandle,
+                    ["context"] = null,
+                    ["skill"] = this.LogicHandle
+                };
+                
+                LogicLayer.GetInstance().Observe(eventd);
             }
             
             state = SkillState.Idle;

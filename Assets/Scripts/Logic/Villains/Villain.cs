@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Common;
 using Common.Context;
 using DTO;
 using Logic.Effects;
@@ -14,17 +15,18 @@ namespace Logic.Villains
 {
     public abstract class Villain : LogicObject, ICharacter
     {
-        public int Heath { get; set; }
+        public int Health { get; set; }
+        public int MaxHeath { get; set; }
         
         public int AtkSpeed { get; set; }
         
         public int MovSpeed { get; set; }
         
-        private readonly object _lock = new object();
+        protected readonly object _lock = new object();
         
         public int Dmg { get; set; }
         
-        private readonly EffectManager _effectManager;
+        protected readonly EffectManager _effectManager;
 
         public Weapon VillainWeapon;
 
@@ -43,7 +45,8 @@ namespace Logic.Villains
         
         protected Villain(int hp, int atkSpeed, int movSpeed, int dmg) : this()
         {
-            Heath = hp;
+            MaxHeath = hp;
+            Health = hp;
             this.AtkSpeed = atkSpeed;
             this.MovSpeed = movSpeed;
             this.Dmg = dmg;
@@ -177,25 +180,28 @@ namespace Logic.Villains
 
             lock (_lock)
             {
-                this.Heath -= dmg;
+                this.Health -= dmg;
                 
                 this.NotifySubscribers(new EventUpdateVisitor
                 {
                     ["ev"] =
                     {
-                        ["type"] = "decrease-health"
+                        ["type"] = "start-effect"
                     },
                     ["args"] =
                     {
-                        ["health"] = new StringBuilder().Append(this.Heath).ToString(),
+                        ["name"] = EffectType.GET_HIT,
+                        ["current-health"] = this.Health,
+                        ["max-health"] = this.MaxHeath,
+                        ["damage"] = dmg,
                     }
                 });
                 
-                if (IsDead(this.Heath)) OnDead();
+                if (IsDead(this.Health)) OnDead();
             }
         }
 
-        private static bool IsDead(int currentHp)
+        protected static bool IsDead(int currentHp)
         {
             return currentHp <= 0;
         }

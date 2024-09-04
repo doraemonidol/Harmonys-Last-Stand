@@ -5,26 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ddd7aca8-1b86-452c-8319-d86abc9fe976" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/UI/EffectPrefabManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/UI/EffectPrefabManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Distortion.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Distortion.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Flare4cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Flare4cg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Glow1cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Glow1cg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Gradient17cg2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Gradient17cg2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Smoke21bcg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Smoke21bcg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Trail21cg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Materials/Trail21cg.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_LinePath.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_LinePath.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_TwoSides.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_TwoSides.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_TwoSides.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Blend_TwoSides.shader.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/DissolveNoise.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/DissolveNoise.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Distortion.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Shaders/Distortion.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Point11.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Point11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Point11.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Point11.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Trail58.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/HSFiles/Textures/Trail58.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Toon Projectiles 2/Materials/Floor2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Toon Projectiles 2/Materials/Floor2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hovl Studio/Toon Projectiles 2/Materials/Glow2bcg.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hovl Studio/Toon Projectiles 2/Materials/Glow2bcg.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Characters/Meastro/Meastro_controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Characters/Meastro/Meastro_controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Circle Centre 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Circle Centre 2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Body 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Body 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Monsters Ultimate Pack 06 Cute Series/Death Mage Cute Series/FBX/Death Mage.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Monsters Ultimate Pack 06 Cute Series/Death Mage Cute Series/FBX/Death Mage.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/VFXScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VFXScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Common/EffectType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Common/EffectType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Common/Context/Attributes/GCAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Common/Context/Attributes/GCAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Effects/EffectComand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Effects/EffectComand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Effects/EffectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Effects/EffectManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/MainCharacters/Aurelia.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/MainCharacters/Aurelia.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/MaestroMachina/IllusionCarnival.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/MaestroMachina/IllusionCarnival.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/MaestroMachina/PhantomStab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/MaestroMachina/PhantomStab.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Villains/Villain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Villains/Villain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/AmadeusMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/AmadeusMockUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/MaestroMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/MaestroMockUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/EffectUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/EffectUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/IllusionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/IllusionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/JackBoxController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/JackBoxController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/MaestroSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/MaestroSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/PIllusionCarnival.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/PIllusionCarnival.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/PJackInTheBoxMayhem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/PJackInTheBoxMayhem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/UI/HealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/UI/HealthBar.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +39,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/NUnitExtensions/Runner/CompositeWorkItem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -43,25 +52,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "newer-vfx-hung",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;newer-vfx-hung&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Nhat Hung\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Nhat Hung\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Nhat Hung\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Nhat Hung\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Nhat Hung\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Nhat Hung\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.29f1\Editor\Unity.exe" />
@@ -110,6 +119,10 @@
       <updated>1725102153269</updated>
       <workItem from="1725102167471" duration="1080000" />
       <workItem from="1725266328600" duration="7553000" />
+      <workItem from="1725280806331" duration="2966000" />
+      <workItem from="1725294416470" duration="5000" />
+      <workItem from="1725325456803" duration="8109000" />
+      <workItem from="1725348674843" duration="12967000" />
     </task>
     <servers />
   </component>

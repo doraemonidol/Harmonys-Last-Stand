@@ -1,6 +1,8 @@
+using Common;
 using DTO;
 using Logic.Helper;
 using Logic.Weapons;
+using UnityEngine;
 
 namespace Logic.Skills.MaestroMachina
 {
@@ -16,7 +18,9 @@ namespace Logic.Skills.MaestroMachina
 
         public override void Activate(ICharacter activator)
         {
+            // Debug.Log("Cooldown: " + this.CoolDownTime + " ms.");
             base.Activate(activator);
+            Debug.Log("RequiemResurrection activated.");
             User.ReceiveEffect(EffectHandle.Resurrect);
         }
 

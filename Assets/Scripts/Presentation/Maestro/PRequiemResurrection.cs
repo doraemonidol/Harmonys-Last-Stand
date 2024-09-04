@@ -14,6 +14,7 @@ namespace Presentation.Maestro
         
         public override IEnumerator StartCasting()
         {
+            state = SkillState.Casting;
             animator.SetTrigger(EnemyActionType.CastSpell3);
             yield return new WaitForSeconds(1.2f);
             StartCoroutine(StartPrecastVFX());

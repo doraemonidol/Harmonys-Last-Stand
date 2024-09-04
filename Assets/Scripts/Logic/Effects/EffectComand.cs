@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System.Threading;
 using Logic.Effects;
-using Logic.Helper;
+using UnityEngine;
+using Time = Logic.Helper.Time;
 
 namespace Logic.Effects
 {
@@ -44,6 +45,8 @@ namespace Logic.Effects
 
         public virtual void Execute()
         {
+            Debug.Log("EffectCommand.Execute() StartTime: " + Time.WhatIsIt());
+            Debug.Log("EffectCommand.Execute()" + EffectEndTime);
             var thread = new Thread(() =>
             {
                 

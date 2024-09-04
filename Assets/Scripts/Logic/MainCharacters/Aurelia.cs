@@ -201,6 +201,19 @@ namespace Logic.MainCharacters
                         {
                             return;
                         }
+                        
+                        NotifySubscribers(new EventUpdateVisitor
+                        {
+                            ["ev"] =
+                            {
+                                ["type"] = EffectType.ROOTED
+                            },
+                            ["args"] = 
+                            {
+                                ["timeout"] = timeout
+                            }
+                        });
+                        
                         _effectManager.Add(new Rooted(this, timeout));
                         break;
                     }
@@ -397,6 +410,7 @@ namespace Logic.MainCharacters
                         }
                         _context.Do(BoostHandles.ReduceHealth, (int) fdmg);
                         var currentHp = GameContext.GetInstance().Get("hp");
+                        var maxHp = GameContext.GetInstance().Get("dfhp");
                         this.NotifySubscribers(new EventUpdateVisitor
                         {
                             ["ev"] =
@@ -405,7 +419,9 @@ namespace Logic.MainCharacters
                             },
                             ["args"] = 
                             {
-                                ["decrease-health"] = currentHp,
+                                ["current-health"] = currentHp,
+                                ["max-health"] = maxHp,
+                                ["damage"] = dmg,
                             }
                         });
                         if (IsDead(currentHp)) OnDead();
@@ -416,6 +432,19 @@ namespace Logic.MainCharacters
                     case EffectHandle.DisableBleeding:
                     case EffectHandle.DisableNearsight:
                     case EffectHandle.DisableRooted:
+                        this.NotifySubscribers(new EventUpdateVisitor
+                        {
+                            ["ev"] =
+                            {
+                                ["type"] = "end-effect",
+                            },
+                            ["args"] = 
+                            {
+                                ["name"] = EffectType.ROOTED,
+                            }
+                        });
+                        _effectManager.Erase(EffectHandle.Rooted);
+                        break;
                     case EffectHandle.DisableFear:
                     case EffectHandle.DisableCharm:
                     case EffectHandle.DisableClone:
@@ -503,6 +532,10 @@ namespace Logic.MainCharacters
                         || _effectManager.CheckIfEffectApply(EffectHandle.Charm)
                         || _effectManager.CheckIfEffectApply(EffectHandle.Rooted)
                     ) {
+                        Debug.Log("Is Stunt: " + _effectManager.CheckIfEffectApply(EffectHandle.Stunt));
+                        Debug.Log("Is Fear: " + _effectManager.CheckIfEffectApply(EffectHandle.Fear));
+                        Debug.Log("Is Charmed: " + _effectManager.CheckIfEffectApply(EffectHandle.Charm));
+                        Debug.Log("Is Rooted: " + _effectManager.CheckIfEffectApply(EffectHandle.Rooted));
                         return;
                     }
                     
@@ -573,6 +606,12 @@ namespace Logic.MainCharacters
         {
             var _context = GameContext.GetInstance();
             _context.Do(BoostHandles.ReduceHealth, (int)args![EffectHandle.HpDrain]);
+            
+            this.ReceiveEffect(EffectHandle.GetHit, new EventDto
+            {
+                [EffectHandle.HpReduce] = (int)args![EffectHandle.HpDrain],
+            });
+            
             var currentHp = GameContext.GetInstance().Get("hp");
             if (IsDead(currentHp)) OnDead();
         }

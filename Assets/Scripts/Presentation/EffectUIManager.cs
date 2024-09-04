@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Common;
+using Presentation.UI;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 namespace Presentation
@@ -16,29 +18,13 @@ namespace Presentation
         [SerializeField] private Canvas canvas;
         
         [Header("Effect Prefabs")]
-        [SerializeField] private GameObject stuntPrefab;
-        [SerializeField] private GameObject bleedingPrefab;
-        [SerializeField] private GameObject hallucinationPrefab;
-        [SerializeField] private GameObject fearPrefab;
-        [SerializeField] private GameObject nearsightPrefab;
-        [SerializeField] private GameObject shieldPrefab;
-        [SerializeField] private GameObject rootedPrefab;
-        [SerializeField] private GameObject resistancePrefab;
-        [SerializeField] private GameObject jinxPrefab;
-        [SerializeField] private GameObject knockbackPrefab;
-        [SerializeField] private GameObject reversePrefab;
-        [SerializeField] private GameObject charmPrefab;
-        [SerializeField] private GameObject getHitPrefab;
-        [SerializeField] private GameObject sleepyPrefab;
-        [SerializeField] private GameObject resonancePrefab;
-        [SerializeField] private GameObject exhaustedPrefab;
-        [SerializeField] private GameObject resurrectionPrefab;
-        [SerializeField] private GameObject silentPrefab;
-        [SerializeField] private GameObject healingPrefab;
-        [SerializeField] private GameObject voidPrefab;
+        [SerializeField] private EffectPrefabManager effectPrefabManager;
+
+        private float lastUpdateFear = 0;
         
         public void AddEffect(EffectUI effect)
         {
+            effect.Duration /= GameStats.BASE_TIME_UNIT;
             EffectUI toRemove = null;
             for (int i = 0; i < effects.Count; i++)
             {
@@ -69,29 +55,48 @@ namespace Presentation
             }
         }
 
+        public void RemoveEffect(string name)
+        {
+            for (int i = 0; i < effects.Count; i++)
+            {
+                if (effects[i].Name == name)
+                {
+                    // deactivatePrefab(effects[i].Name);
+                    effects[i].Duration = 0;
+                    break;
+                }
+            }
+        }
+        
         public void Start()
         {
-            stuntPrefab.gameObject.SetActive(false);
-            bleedingPrefab.gameObject.SetActive(false);
-            hallucinationPrefab.gameObject.SetActive(false);
+            if (effectPrefabManager == null)
+            {
+                Debug.LogError("Please assign EffectPrefabManager to the boss");
+                return;
+            }
+            
+            effectPrefabManager.stuntPrefab.gameObject.SetActive(false);
+            effectPrefabManager.bleedingPrefab.gameObject.SetActive(false);
+            effectPrefabManager.hallucinationPrefab.gameObject.SetActive(false);
             // fearPrefab.gameObject.SetActive(false);
-            nearsightPrefab.gameObject.SetActive(false);
-            shieldPrefab.gameObject.SetActive(false);
-            rootedPrefab.gameObject.SetActive(false);
-            resistancePrefab.gameObject.SetActive(false);
-            jinxPrefab.gameObject.SetActive(false);
-            knockbackPrefab.gameObject.SetActive(false);
-            reversePrefab.gameObject.SetActive(false);
-            charmPrefab.gameObject.SetActive(false);
-            getHitPrefab.gameObject.SetActive(false);
-            sleepyPrefab.gameObject.SetActive(false);
-            resonancePrefab.gameObject.SetActive(false);
-            exhaustedPrefab.gameObject.SetActive(false);
-            resurrectionPrefab.gameObject.SetActive(false);
-            silentPrefab.gameObject.SetActive(false);
-            healingPrefab.gameObject.SetActive(false);
-            voidPrefab.gameObject.SetActive(false);
-            StartCoroutine(Test());
+            effectPrefabManager.nearsightPrefab.gameObject.SetActive(false);
+            effectPrefabManager.shieldPrefab.gameObject.SetActive(false);
+            effectPrefabManager.rootedPrefab.gameObject.SetActive(false);
+            effectPrefabManager.resistancePrefab.gameObject.SetActive(false);
+            effectPrefabManager.jinxPrefab.gameObject.SetActive(false);
+            effectPrefabManager.knockbackPrefab.gameObject.SetActive(false);
+            effectPrefabManager.reversePrefab.gameObject.SetActive(false);
+            effectPrefabManager.charmPrefab.gameObject.SetActive(false);
+            effectPrefabManager.getHitPrefab.gameObject.SetActive(false);
+            effectPrefabManager.sleepyPrefab.gameObject.SetActive(false);
+            effectPrefabManager.resonancePrefab.gameObject.SetActive(false);
+            effectPrefabManager.exhaustedPrefab.gameObject.SetActive(false);
+            effectPrefabManager.resurrectionPrefab.gameObject.SetActive(false);
+            effectPrefabManager.silentPrefab.gameObject.SetActive(false);
+            effectPrefabManager.healingPrefab.gameObject.SetActive(false);
+            effectPrefabManager.voidPrefab.gameObject.SetActive(false);
+            // StartCoroutine(Test());
         }
         
         IEnumerator Test()
@@ -245,7 +250,15 @@ namespace Presentation
             {
                 if (Time.time > effects[i].StartTime + effects[i].Duration)
                 {
+                    
+                    if (effects[i].Name == EffectType.FEAR)
+                    {
+                        this.gameObject.GetComponent<NavMeshAgent>().isStopped = true;
+                        this.gameObject.GetComponent<NavMeshAgent>().ResetPath();
+                    }
+                    
                     deactivatePrefab(effects[i].Name);
+                    Debug.Log("Removing effect");
                     effects.RemoveAt(i);
                 }
                 else
@@ -262,89 +275,98 @@ namespace Presentation
             canvas.gameObject.SetActive(true);
             progressBar.SetEffect(effects[effects.Count - 1]);
             effectText.text = effects[effects.Count - 1].Name;
+
+            if (IsAppliedEffect(EffectType.FEAR) && Time.time > lastUpdateFear + 0.4f)
+            {
+                this.gameObject.GetComponent<NavMeshAgent>().SetDestination(
+                    this.gameObject.transform.position + 
+                    new Vector3(UnityEngine.Random.Range(-8f, 8f), 0, UnityEngine.Random.Range(-8f, 8f))
+                );
+                lastUpdateFear = Time.time;
+            }
         }
         
         private GameObject getEffectPrefab(string name)
         {
             if (name == EffectType.STUNT)
             {
-                return stuntPrefab;
+                return effectPrefabManager.stuntPrefab;
             }
             else if (name == EffectType.BLEEDING)
             {
-                return bleedingPrefab;
+                return effectPrefabManager.bleedingPrefab;
             }
             else if (name == EffectType.HALLUCINATION)
             {
-                return hallucinationPrefab;
+                return effectPrefabManager.hallucinationPrefab;
             }
             else if (name == EffectType.FEAR)
             {
-                return fearPrefab;
+                return effectPrefabManager.fearPrefab;
             }
             else if (name == EffectType.NEARSIGHT)
             {
-                return nearsightPrefab;
+                return effectPrefabManager.nearsightPrefab;
             }
             else if (name == EffectType.SHIELD)
             {
-                return shieldPrefab;
+                return effectPrefabManager.shieldPrefab;
             }
             else if (name == EffectType.ROOTED)
             {
-                return rootedPrefab;
+                return effectPrefabManager.rootedPrefab;
             }
             else if (name == EffectType.RESISTANCE)
             {
-                return resistancePrefab;
+                return effectPrefabManager.resistancePrefab;
             }
             else if (name == EffectType.JINX)
             {
-                return jinxPrefab;
+                return effectPrefabManager.jinxPrefab;
             }
             else if (name == EffectType.KNOCKBACK)
             {
-                return knockbackPrefab;
+                return effectPrefabManager.knockbackPrefab;
             }
             else if (name == EffectType.REVERSE)
             {
-                return reversePrefab;
+                return effectPrefabManager.reversePrefab;
             }
             else if (name == EffectType.CHARM)
             {
-                return charmPrefab;
+                return effectPrefabManager.charmPrefab;
             }
             else if (name == EffectType.GET_HIT)
             {
-                return getHitPrefab;
+                return effectPrefabManager.getHitPrefab;
             }
             else if (name == EffectType.SLEEPY)
             {
-                return sleepyPrefab;
+                return effectPrefabManager.sleepyPrefab;
             }
             else if (name == EffectType.RESONANCE)
             {
-                return resonancePrefab;
+                return effectPrefabManager.resonancePrefab;
             }
             else if (name == EffectType.EXHAUSTED)
             {
-                return exhaustedPrefab;
+                return effectPrefabManager.exhaustedPrefab;
             }
             else if (name == EffectType.RESURRECTION)
             {
-                return resurrectionPrefab;
+                return effectPrefabManager.resurrectionPrefab;
             }
             else if (name == EffectType.SILENT)
             {
-                return silentPrefab;
+                return effectPrefabManager.silentPrefab;
             }
             else if (name == EffectType.HEALING)
             {
-                return healingPrefab;
+                return effectPrefabManager.healingPrefab;
             }
             else if (name == EffectType.VOID)
             {
-                return voidPrefab;
+                return effectPrefabManager.voidPrefab;
             }
             return null;
         }
@@ -369,6 +391,18 @@ namespace Presentation
             } else {
                 Debug.LogError("Prefab not found: " + name);
             }
+        }
+        
+        public bool IsAppliedEffect(string name)
+        {
+            for (int i = 0; i < effects.Count; i++)
+            {
+                if (effects[i].Name == name)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using Common.Context;
 using Logic.Helper;
 using Logic.MainCharacters;
+using UnityEngine;
 
 namespace Logic.Effects
 {
     public class EffectManager
     {
-
-
         private readonly Dictionary<int, ArrayList> _effects = new();
         
         private readonly object _lock = new object();
@@ -87,6 +86,7 @@ namespace Logic.Effects
         {
             lock (_lock)
             {
+                Debug.Log("EffectManager.Add() effect.Handle: " + effect.Handle);
                 _effects[effect.Handle].Add(effect);
                 effect.GetManagedBy(this);
                 
@@ -167,8 +167,11 @@ namespace Logic.Effects
         {
             lock (_lock)
             {
+                Debug.Log("EffectManager.Erase() effectHandle: " + effectHandle);
+                Debug.Log("Before erasing size: " + _effects[effectHandle].Count);
                 _effects[effectHandle].Clear();
                 _effectRoll[effectHandle] = 0;
+                Debug.Log("After erasing size: " + _effects[effectHandle].Count);
             }
         }
 
@@ -289,7 +292,10 @@ namespace Logic.Effects
 
         public bool CheckIfEffectApply(int effect)
         {
-            return (int)_effectRoll[effect] > 0;
+            lock (_lock)
+            {
+                return (int)_effectRoll[effect] > 0;
+            }
         }
     }
 }

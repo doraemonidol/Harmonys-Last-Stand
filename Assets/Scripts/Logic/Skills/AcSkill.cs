@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+using Common;
 using DTO;
 using Logic.Helper;
 using Logic.Skills.AmadeusPrime;
@@ -132,7 +133,7 @@ namespace Logic.Skills
                     1 => new PhantomStab(wp, coolDownTime),
                     2 => new JackInTheBoxMayhem(wp, coolDownTime),
                     3 => new IllusionCarnival(wp, coolDownTime),
-                    4 => new RequiemResurrection(wp, coolDownTime),
+                    4 => new RequiemResurrection(wp, 30 * GameStats.BASE_TIME_UNIT),
                     _ => throw new Exception("Unknown skill"),
                 },
                 _ => throw new Exception("Unknown weapon"),

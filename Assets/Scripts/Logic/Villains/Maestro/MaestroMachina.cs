@@ -1,7 +1,9 @@
 using System;
+using Common;
 using DTO;
 using Logic.Helper;
 using Logic.Weapons;
+using UnityEngine;
 using static Common.GameStats;
 
 namespace Logic.Villains.Maestro
@@ -27,28 +29,33 @@ namespace Logic.Villains.Maestro
         
         protected override void CustomReceiveEffect(int ev, EventDto args = null)
         {
+            Debug.Log("MaestroMachina CustomReceiveEffect" + ev + EffectHandle.Resurrect);
             if (ev == EffectHandle.Resurrect)
             {
                 this.NotifySubscribers(new EventUpdateVisitor
                 {
                     ["ev"] =
                     {
-                        ["type"] = "resurrect",
+                        ["type"] = "start-effect",
                     },
-                    ["stats"] =
+                    ["args"] =
                     {
-                        ["hp"] = 0.7f * MAESTRO_HEALTH,
+                        ["name"] = EffectType.RESURRECTION,
+                        ["current-health"] = (int)Mathf.Floor(0.7f * MAESTRO_HEALTH),
+                        ["max-health"] = MAESTRO_HEALTH,
                     }
                 });
+                this.Health = (int)Mathf.Floor(0.7f * MAESTRO_HEALTH);
             }
             else throw new Exception("Invalid effect type.");
         }
 
         public override void OnDead()
         {
-            if (base.GetAvailableSkills().Contains(4))
+            
+            if (base.GetAvailableSkills().Contains(3))
             {
-                this.VillainWeapon.Trigger(4, this);
+                this.VillainWeapon.Trigger(3, this);
             }
             else
             {

@@ -262,22 +262,71 @@ namespace MockUp
                     break;
                 case EffectType.STUNT:
                     // Debug.Log("Aurelia Stunt Animation");
+                    var duration = (int)visitor["args"]["timeout"];
+                    Debug.Log(duration);
+                    _effectUIManager.AddEffect(new EffectUI()
+                    {
+                        Name = EffectType.STUNT,
+                        StartTime = Time.time,
+                        Duration = duration
+                    });
                     break;
                 case EffectType.BLEEDING:
                     // Debug.Log("Aurelia Bleeding Animation");
+                    
+                    if (visitor["args"]["timeout"] == null)
+                    {
+                        var hpDrain = (int)visitor["args"][EffectHandle.HpDrain];
+                        
+                    }
+                    else
+                    {
+                        duration = (int)visitor["args"]["timeout"];
+                        Debug.Log(duration);
+                        _effectUIManager.AddEffect(new EffectUI()
+                        {
+                            Name = EffectType.BLEEDING,
+                            StartTime = Time.time,
+                            Duration = duration
+                        });
+                    }
                     break;
                 case EffectType.HALLUCINATION:
                     // Debug.Log("Aurelia Hallucination Animation");
+                    duration = (int)visitor["args"]["timeout"];
+                    Debug.Log(duration);
+                    _effectUIManager.AddEffect(new EffectUI()
+                    {
+                        Name = EffectType.HALLUCINATION,
+                        StartTime = Time.time,
+                        Duration = duration
+                    });
                     break;
                 case EffectType.FEAR:
                     // Debug.Log("Aurelia Fear Animation");
+                    duration = (int)visitor["args"]["timeout"];
+                    Debug.Log(duration);
+                    _effectUIManager.AddEffect(new EffectUI()
+                    {
+                        Name = EffectType.FEAR,
+                        StartTime = Time.time,
+                        Duration = duration
+                    });
                     break;
                 case EffectType.NEARSIGHT:
                     // Debug.Log("Aurelia Nearsight Animation");
+                    duration = (int)visitor["args"]["timeout"];
+                    Debug.Log(duration);
+                    _effectUIManager.AddEffect(new EffectUI()
+                    {
+                        Name = EffectType.NEARSIGHT,
+                        StartTime = Time.time,
+                        Duration = duration
+                    });
                     break;
                 case EffectType.SHIELD:
                     Debug.Log("Aurelia Shield Animation");
-                    var duration = (int)visitor["args"]["timeout"];
+                    duration = (int)visitor["args"]["timeout"];
                     Debug.Log(duration);
                     _effectUIManager.AddEffect(new EffectUI()
                     {
@@ -288,6 +337,14 @@ namespace MockUp
                     break;
                 case EffectType.ROOTED:
                     // Debug.Log("Aurelia Rooted Animation");
+                    duration = (int)visitor["args"]["timeout"];
+                    Debug.Log(duration);
+                    _effectUIManager.AddEffect(new EffectUI()
+                    {
+                        Name = EffectType.ROOTED,
+                        StartTime = Time.time,
+                        Duration = duration
+                    });
                     break;
                 case EffectType.CLONE:
                     // Debug.Log("Aurelia Clone Animation");
@@ -303,18 +360,55 @@ namespace MockUp
                     break;
                 case EffectType.JINX:
                     // Debug.Log("Aurelia Jinx Animation");
+                    duration = (int)visitor["args"]["timeout"];
+                    Debug.Log(duration);
+                    _effectUIManager.AddEffect(new EffectUI()
+                    {
+                        Name = EffectType.JINX,
+                        StartTime = Time.time,
+                        Duration = duration
+                    });
                     break;
                 case EffectType.KNOCKBACK:
                     // Debug.Log("Aurelia Knockback Animation");
+                    duration = (int)visitor["args"]["timeout"];
+                    Debug.Log(duration);
+                    _effectUIManager.AddEffect(new EffectUI()
+                    {
+                        Name = EffectType.KNOCKBACK,
+                        StartTime = Time.time,
+                        Duration = duration
+                    });
                     break;
                 case EffectType.REVERSE:
                     // Debug.Log("Aurelia Reverse Animation");
+                    duration = (int)visitor["args"]["timeout"];
+                    Debug.Log(duration);
+                    _effectUIManager.AddEffect(new EffectUI()
+                    {
+                        Name = EffectType.REVERSE,
+                        StartTime = Time.time,
+                        Duration = duration
+                    });
                     break;
                 case EffectType.CHARM:
                     // Debug.Log("Aurelia Charm Animation");
+                    duration = (int)visitor["args"]["timeout"];
+                    Debug.Log(duration);
+                    _effectUIManager.AddEffect(new EffectUI()
+                    {
+                        Name = EffectType.CHARM,
+                        StartTime = Time.time,
+                        Duration = duration
+                    });
                     break;
                 case EffectType.GET_HIT:
-                    // Debug.Log("Aurelia Get Hit Animation");
+                    var currentHealth = (int)visitor["args"]["current-health"];
+                    var maxHealth = (int)visitor["args"]["max-health"];
+                    var damage = (int)visitor["args"]["damage"];
+                    Debug.Log("Aurelia Get Hit " + damage + " damage" + " Current Health: " + currentHealth + " Max Health: " + maxHealth);
+                    SetHealth(currentHealth, maxHealth);
+                    
                     break;
                 case "end-effect":
                     switch (visitor["args"]["name"])
@@ -338,7 +432,8 @@ namespace MockUp
                             // Debug.Log("Aurelia Shield Animation End");
                             break;
                         case EffectType.ROOTED:
-                            // Debug.Log("Aurelia Rooted Animation End");
+                            Debug.Log("Aurelia Rooted Animation End");
+                            _effectUIManager.RemoveEffect(EffectType.ROOTED);
                             break;
                         case EffectType.CLONE:
                             // Debug.Log("Aurelia Clone Animation End");
@@ -389,12 +484,12 @@ namespace MockUp
                             // Debug.Log("Aurelia Cast Skill 4 Animation");
                             break;
                         default:
-                            // Debug.LogError("Aurelia Unknown Cast: " + visitor["args"]["skill-index"]);
+                            Debug.LogError("Aurelia Unknown Cast: " + visitor["args"]["skill-index"]);
                             break;
                     }
                     break;
                 default:
-                    // Debug.LogError("Unknown Event: " + visitor["ev"]["type"]);
+                    Debug.LogError("Unknown Event: " + visitor["ev"]["type"]);
                     break;
             }
         }

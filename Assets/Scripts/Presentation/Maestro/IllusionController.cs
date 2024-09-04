@@ -53,7 +53,7 @@ namespace Presentation.Maestro
             }
             yield return new WaitForSeconds(3f);
             
-            Destroy(this);
+            Destroy(this.gameObject);
         }
 
         private IEnumerator StartPrecastVFX()

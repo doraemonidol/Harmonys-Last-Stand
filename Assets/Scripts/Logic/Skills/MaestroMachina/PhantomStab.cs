@@ -42,7 +42,7 @@ namespace Logic.Skills.MaestroMachina
         public override void Activate(ICharacter activator)
         {
             base.Activate(activator);
-            Update();
+            // Update();
         }
 
         public override void Cancel()
@@ -55,9 +55,9 @@ namespace Logic.Skills.MaestroMachina
         {
             var eventd = new EventDto
             {
-                [EffectHandle.HpReduce] = 50,
-                [EffectHandle.HpDrain] = 10,
-                ["timeout"] = 10,
+                [EffectHandle.HpReduce] = 30,
+                [EffectHandle.HpDrain] = 5,
+                ["timeout"] = 5,
             };
             target.ReceiveEffect(EffectHandle.GetHit, eventd);
             target.ReceiveEffect(EffectHandle.Bleeding, eventd);

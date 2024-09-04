@@ -30,7 +30,7 @@ namespace Presentation.UI
             {
                 return;
             }
-            float fillAmount = currentHealth / maxHealth;
+            float fillAmount = (maxHealth - currentHealth) / maxHealth;
             if (healthText != null)
                 healthText.text = $"{currentHealth}/{maxHealth}";
             mask.fillAmount = fillAmount;

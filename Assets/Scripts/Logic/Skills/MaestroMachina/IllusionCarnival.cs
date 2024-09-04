@@ -98,7 +98,7 @@ namespace Logic.Skills.MaestroMachina
         public override void Activate(ICharacter activator)
         {
             base.Activate(activator);
-            Update();
+            // Update();
         }
 
         public override void Cancel()
@@ -110,24 +110,28 @@ namespace Logic.Skills.MaestroMachina
         public override void Affect(ICharacter attacker, ICharacter target, EventDto context)
         {
             var cxt = (string)context["cxt"];
-            if (cxt != "pre" && cxt != "post") throw new Exception("Invalid context");
+            if (cxt != "pre" && cxt != "post-fail" && cxt != "post-success") throw new Exception("Invalid context");
             switch (cxt)
             {
                 case "pre":
                     target.ReceiveEffect(EffectHandle.Rooted, new EventDto
                     {
-                        ["timeout"] = 10,
+                        ["timeout"] = 9,
                     });
                     break;
-                case "post":
+                case "post-fail":
                     target.ReceiveEffect(EffectHandle.GetHit, new EventDto
                     {
                         [EffectHandle.HpReduce] = 30,
                     });
-                    target.ReceiveEffect(EffectHandle.Stunt, new EventDto
-                    {
-                        ["timeout"] = 2,
-                    });
+                    target.ReceiveEffect(EffectHandle.DisableRooted, new EventDto());
+                    // target.ReceiveEffect(EffectHandle.Stunt, new EventDto
+                    // {
+                    //     ["timeout"] = 2,
+                    // });
+                    break;
+                case "post-success":
+                    target.ReceiveEffect(EffectHandle.DisableRooted, new EventDto());
                     break;
             }
         }

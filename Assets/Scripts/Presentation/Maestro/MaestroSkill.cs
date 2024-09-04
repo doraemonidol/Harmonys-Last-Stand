@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Common;
 using Logic;
 using Presentation.Bosses;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace Presentation.Maestro
         [SerializeField] protected float timeout;
         protected float endCastingTime;
         [SerializeField] protected float attackRange;
+        public Identity MaestroLogicHandle;
         
         public override void Start()
         {

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using MockUp;
 using Common;
+using DTO;
+using Logic.Facade;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
 
@@ -40,6 +42,19 @@ namespace Presentation.Maestro
             {
                 renderers[i].enabled = false;
             }
+            
+            var eventd = new EventDto
+            {
+                Event = "GET_ATTACKED",
+                ["attacker"] = MaestroLogicHandle,
+                ["target"] = target.GetComponent<AureliaMockUp>().LogicHandle,
+                ["context"] = new EventDto
+                {
+                    ["cxt"] = "pre"
+                },
+                ["skill"] = this.LogicHandle
+            };
+            LogicLayer.GetInstance().Observe(eventd);
 
             Quaternion targetAngle = rotateToMouseScript.GetRotation();
             for (int i = 0; i < 5; i++)
@@ -156,7 +171,7 @@ namespace Presentation.Maestro
             Debug.Log("FailCast");
             for (int i = 0; i < _illusions.Count; i++)
             {
-                StartCoroutine(_illusions[i].GetComponent<IllusionController>().HideIllusion());
+                StartCoroutine(_illusions[i].GetComponent<IllusionController>().HideIllusion(true));
             }
             
             Debug.Log("Hid All Illusions");
@@ -166,8 +181,9 @@ namespace Presentation.Maestro
 
         public override IEnumerator StartHitting()
         {
-            navMeshAgent.transform.position = target.transform.position + new Vector3(6, 0, 10);
-
+            navMeshAgent.transform.position = target.transform.position + new Vector3(8, 0, 14);
+            navMeshAgent.transform.rotation = new Quaternion(0, -144, 0, 0);
+            
             yield return new WaitForSeconds(0.9f);
             // Laugh something...
             animator.SetTrigger(EnemyActionType.SpecialAttack);
@@ -184,6 +200,20 @@ namespace Presentation.Maestro
             yield return new WaitForSeconds(0.6f);
             Instantiate(projectilePrefab, firePoint.transform.position, Quaternion.identity);
             yield return new WaitForSeconds(0.2f);
+            
+            var eventd = new EventDto
+            {
+                Event = "GET_ATTACKED",
+                ["attacker"] = MaestroLogicHandle,
+                ["target"] = target.GetComponent<AureliaMockUp>().LogicHandle,
+                ["context"] = new EventDto
+                    {
+                        ["cxt"] = "post-fail"
+                    },
+                ["skill"] = this.LogicHandle
+            };
+            LogicLayer.GetInstance().Observe(eventd);
+            
             GameObject hit = Instantiate(hitPrefab, target.transform.position, Quaternion.identity);
             Destroy(hit, 1f);
 
@@ -197,6 +227,17 @@ namespace Presentation.Maestro
             // Aurelia Hit The REAL Illusion
             _playerSuccessful = true;
             Debug.Log("SuccessCast");
+            var eventd = new EventDto
+            {
+                Event = "GET_ATTACKED",
+                ["attacker"] = MaestroLogicHandle,
+                ["target"] = target.GetComponent<AureliaMockUp>().LogicHandle,
+                ["context"] = new EventDto
+                {
+                    ["cxt"] = "post-success"
+                },
+                ["skill"] = this.LogicHandle
+            };
             navMeshAgent.transform.position = _illusions[1].transform.position;
             navMeshAgent.transform.rotation = _illusions[1].transform.rotation;
             for (int i = 0; i < _illusions.Count; i++)

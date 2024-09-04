@@ -23,8 +23,8 @@ namespace Logic.Skills.MaestroMachina
             
             var eventd = new EventDto
             {
-                [EffectHandle.HpReduce] = 40,
-                ["timeout"] = 5,
+                [EffectHandle.HpReduce] = 10,
+                ["timeout"] = 2,
                 ["dmg"] = 20,
                 ["movspd"] = 0,
                 ["atkspd"] = 0,
@@ -32,7 +32,7 @@ namespace Logic.Skills.MaestroMachina
                 ["hp"] = 0,
             };
             target.ReceiveEffect(EffectHandle.GetHit, eventd);
-            target.ReceiveEffect(EffectHandle.Exhausted, eventd);
+            target.ReceiveEffect(EffectHandle.Fear, eventd);
         }
     }
 }

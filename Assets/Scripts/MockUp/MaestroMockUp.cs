@@ -42,13 +42,14 @@ namespace MockUp
                 ["animator"] = animator,
                 ["target"] = target,
                 ["navMeshAgent"] = navMeshAgent,
-                ["firePoint"] = firePoint
+                ["firePoint"] = firePoint,
             };
             
             for (int i = 0; i < _weapon.GetSkills().Count; i++)
             {
                 _skills.Add((MaestroSkill)_weapon.GetSkills()[i]);
                 _skills[i].Attach(data);
+                _skills[i].MaestroLogicHandle = this.LogicHandle;
             }
         }
 
@@ -61,13 +62,16 @@ namespace MockUp
 
             base.Start();
             // _bossCastSkill = GetComponent<BossCastSkill>();
-            LogicLayer.GetInstance().Instantiate(Google.Search("ins", "ama"), this);
+            // LogicLayer.GetInstance().Instantiate(Google.Search("ins", "mae"), this);
             UpdateEnemyCollision();
             InitializeSkills();
         }
 
         public override void Update()
         {
+            if (isDead)
+                return;
+            
             base.Update();
 
             if (Vector3.Distance(transform.position, player.transform.position) <= attackRange)
@@ -104,7 +108,7 @@ namespace MockUp
             // };
             // LogicLayer.GetInstance().Observe(eventd);
 
-            int skillIndex = Random.Range(0, _skills.Count);
+            int skillIndex = Random.Range(0, _skills.Count - 1);
             if (testingSkill != -1)
                 skillIndex = testingSkill;
 
@@ -112,7 +116,7 @@ namespace MockUp
             if (CheckStartCast(skillIndex))
             {
 
-                _nextCastTime = Time.time + Random.Range(3.0f, 10.0f) + _skills[skillIndex].GetTimeout();
+                _nextCastTime = Time.time + Random.Range(5.0f, 10.0f) + _skills[skillIndex].GetTimeout();
                 Debug.Log("Start casting skill " + skillIndex);
                 // Change z of gameObject.transform.rotation to -144
                 gameObject.transform.localRotation = Quaternion.Euler(0, -144, 0);
@@ -132,7 +136,7 @@ namespace MockUp
                         animator.SetTrigger(EnemyActionType.CastSpell4);
                         break;
                     default:
-                        Debug.LogError("Amadeus Unknown Cast: " + skillIndex);
+                        Debug.LogError("Maestro Unknown Cast: " + skillIndex);
                         break;
                 }
             }
@@ -156,109 +160,6 @@ namespace MockUp
             // }
             //
             // return false;
-        }
-
-        public override void AcceptAndUpdate(EventUpdateVisitor visitor)
-        {
-            switch (visitor["ev"]["type"])
-            {
-                case "dead":
-                    Debug.Log("Amadeus Dead Animation");
-                    break;
-                case "start-effect":
-                    switch (visitor["args"]["name"])
-                    {
-                        case EffectType.STUNT:
-                            Debug.Log("Amadeus Stunt Animation");
-                            break;
-                        case EffectType.BLEEDING:
-                            Debug.Log("Amadeus Bleeding Animation");
-                            break;
-                        case EffectType.KNOCKBACK:
-                            Debug.Log("Amadeus Knockback Animation");
-                            break;
-                        case EffectType.SLEEPY:
-                            Debug.Log("Amadeus Sleepy Animation");
-                            break;
-                        case EffectType.RESONANCE:
-                            Debug.Log("Amadeus Resonance Animation");
-                            break;
-                        case EffectType.ROOTED:
-                            Debug.Log("Amadeus Rooted Animation");
-                            break;
-                        case EffectType.EXHAUSTED:
-                            Debug.Log("Amadeus Exhausted Animation");
-                            break;
-                        case EffectType.GET_HIT:
-                            Debug.Log("Amadeus Get Hit Animation");
-                            break;
-                        default:
-                            Debug.Log("Amadeus Default Animation");
-                            break;
-                    }
-
-                    break;
-                case "end-effect":
-                    switch (visitor["args"]["name"])
-                    {
-                        case EffectType.STUNT:
-                            Debug.Log("Amadeus Stunt Animation End");
-                            break;
-                        case EffectType.BLEEDING:
-                            Debug.Log("Amadeus Bleeding Animation End");
-                            break;
-                        case EffectType.KNOCKBACK:
-                            Debug.Log("Amadeus Knockback Animation End");
-                            break;
-                        case EffectType.SLEEPY:
-                            Debug.Log("Amadeus Sleepy Animation End");
-                            break;
-                        case EffectType.RESONANCE:
-                            Debug.Log("Amadeus Resonance Animation End");
-                            break;
-                        case EffectType.ROOTED:
-                            Debug.Log("Amadeus Rooted Animation End");
-                            break;
-                        case EffectType.EXHAUSTED:
-                            Debug.Log("Amadeus Exhausted Animation End");
-                            break;
-                        case EffectType.GET_HIT:
-                            Debug.Log("Amadeus Get Hit Animation End");
-                            break;
-                        default:
-                            Debug.Log("Amadeus Default Animation End");
-                            break;
-                    }
-
-                    break;
-                case "cast":
-                    switch (visitor["args"]["skill-index"])
-                    {
-                        case 0:
-                            Debug.Log("Amadeus Cast Skill 0 Animation");
-                            break;
-                        case 1:
-                            Debug.Log("Amadeus Cast Skill 1 Animation");
-                            break;
-                        case 2:
-                            Debug.Log("Amadeus Cast Skill 2 Animation");
-                            break;
-                        case 3:
-                            Debug.Log("Amadeus Cast Skill 3 Animation");
-                            break;
-                        case 4:
-                            Debug.Log("Amadeus Cast Skill 4 Animation");
-                            break;
-                        default:
-                            Debug.LogError("Amadeus Unknown Cast: " + visitor["args"]["skill-index"]);
-                            break;
-                    }
-
-                    break;
-                default:
-                    Debug.LogError("Unknown Event: " + visitor["ev"]["type"]);
-                    break;
-            }
         }
     }
 }

@@ -48,6 +48,7 @@ namespace Common.Context.Attributes
                     switch (vars)
                     {
                         case "dhp":
+                        case "dfhp":
                             return _dfHp;
                         case "dmana":
                             return _dfMana;
