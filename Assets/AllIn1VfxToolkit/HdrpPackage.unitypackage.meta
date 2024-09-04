@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/AllIn1VfxToolkit/HdrpPackage.unitypackage.meta
 guid: 9ae634111ecf44747b35d691b3797c99
+========
+guid: d615676296790b64fa17dd2b0df6bee3
+>>>>>>>> env:Assets/AllIn1VfxToolkit/UrpPackage.unitypackage.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
