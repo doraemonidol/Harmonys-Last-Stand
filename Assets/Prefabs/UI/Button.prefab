@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8806033976493431646
@@ -85,10 +85,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7548750344827546787}
   - component: {fileID: 8642045803308418688}
-  - component: {fileID: 2488019093099339881}
   - component: {fileID: 6685986326399751868}
   - component: {fileID: 5579962272771843056}
-  - component: {fileID: 2292947638912565770}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -116,7 +114,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 169.82, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8642045803308418688
 CanvasRenderer:
@@ -126,36 +124,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4227619741415875328}
   m_CullTransparentMesh: 1
---- !u!114 &2488019093099339881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4227619741415875328}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 46138c8ead4394a879b9d5cd8980ecef, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &6685986326399751868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,11 +164,11 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 2488019093099339881}
+  m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2292947638912565770}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
         m_MethodName: SwitchScene
         m_Mode: 1
@@ -221,25 +189,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4227619741415875328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b21ed5ffd654103909d12017e686b3, type: 3}
+  m_Script: {fileID: 11500000, guid: bd5e9b365b9db4944a8adc6de8b18cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 7130122515573654279}
   leftImage: {fileID: 3439517146474087245}
   rightImage: {fileID: 7384139608571260899}
---- !u!114 &2292947638912565770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4227619741415875328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d72aa3445969a487090e4d0bc29cf49c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: 1
 --- !u!1 &7384139608571260899
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +229,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3003778792062522628
@@ -349,8 +304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.1}
+  m_SizeDelta: {x: 0, y: 4.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7394097042372690655
 CanvasRenderer:
@@ -380,7 +335,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start game
+  m_text: Restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c8f2a238bafb547839356a75b040682e, type: 2}
   m_sharedMaterial: {fileID: 7124387484104936323, guid: c8f2a238bafb547839356a75b040682e, type: 2}

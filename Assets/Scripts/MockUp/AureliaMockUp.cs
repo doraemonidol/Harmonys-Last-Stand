@@ -7,6 +7,7 @@ using Logic;
 using Logic.Facade;
 using Logic.Helper;
 using Presentation;
+using Presentation.GUI;
 using Presentation.UI;
 using UnityEngine;
 using Time = UnityEngine.Time;
@@ -258,7 +259,8 @@ namespace MockUp
                     }
                     break;
                 case "dead":
-                    // Debug.Log("Aurelia Dead Animation");
+                    Debug.Log("Aurelia Dead Animation");
+                    GameManager.Instance.GameOver();
                     break;
                 case EffectType.STUNT:
                     // Debug.Log("Aurelia Stunt Animation");

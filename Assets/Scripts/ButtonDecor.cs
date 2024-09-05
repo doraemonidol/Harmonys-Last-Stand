@@ -21,13 +21,13 @@ public class ButtonHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         textRectTransform = buttonText.GetComponent<RectTransform>();
         Debug.Log("Text: " + buttonText.text);
-        UpdateImagePositions();
+        // UpdateImagePositions();
     }
 
     public void SetText(string newText)
     {
         buttonText.text = newText;
-        UpdateImagePositions();
+        // UpdateImagePositions();
     }
 
     private void UpdateImagePositions()
@@ -57,7 +57,7 @@ public class ButtonHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
         if (buttonText != null)
         {
             textRectTransform = buttonText.GetComponent<RectTransform>();
-            UpdateImagePositions();
+            // UpdateImagePositions();
         }
     }
 

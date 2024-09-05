@@ -5,21 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ddd7aca8-1b86-452c-8319-d86abc9fe976" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Troops/DeathStrategy/NormalDeathStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Troops/DeathStrategy/NormalDeathStrategy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/UI/EntityGUIOverlay.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/UI/EntityGUIOverlay.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Body 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Line Body 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Monsters Ultimate Pack 06 Cute Series/Death Cute Series/FBX/Death.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Monsters Ultimate Pack 06 Cute Series/Death Cute Series/FBX/Death.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Mozart/Death.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Mozart/Death.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VFXScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VFXScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Common/GameStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Common/GameStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Facade/LogicLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Facade/LogicLayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Troops/Troop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Troops/Troop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Villains/Ludwig/LudwigVanVortex.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Villains/Ludwig/LudwigVanVortex.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/Troop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/Troop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/EnemyCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/EnemyCollision.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/GameManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/GameManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/SceneManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/SceneManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/AbstractMonoBehaviour.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/AbstractMonoBehaviour.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/MonoBehaviorInstance.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/MonoBehaviorInstance.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Alternates/PolygonDungeonRealms_Mat_01_C.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Alternates/PolygonDungeonRealms_Mat_01_C.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Alternates/PolygonDungeonRealms_Mat_02_B.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Alternates/PolygonDungeonRealms_Mat_02_B.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Alternates/PolygonDungeonRealms_Mat_02_C.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Alternates/PolygonDungeonRealms_Mat_02_C.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Alternates/PolygonDungeonRealms_Mat_04_B.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Alternates/PolygonDungeonRealms_Mat_04_B.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Alternates/PolygonDungeonRealms_Mat_04_C.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Alternates/PolygonDungeonRealms_Mat_04_C.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Misc/FX_Portal_Dark.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Misc/FX_Portal_Dark.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Misc/GOLD_Coins.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Misc/GOLD_Coins.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Misc/PolygonDungeonRealms_Crystal_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Misc/PolygonDungeonRealms_Crystal_02.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Misc/PolygonDungeonRealms_Crystal_03.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Misc/PolygonDungeonRealms_Crystal_03.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Misc/SpiderWeb.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/Misc/SpiderWeb.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/PolygonDungeonRealms_Mat_02_A.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Materials/PolygonDungeonRealms_Mat_02_A.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Scenes/Demo_Forge_01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonDungeonRealms/Scenes/Demo_Forge_01.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/CameraHolder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/CameraHolder.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Button.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Button.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/IngameUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/IngameUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/TitleMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/TitleMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/#WIP/VFXScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/#WIP/VFXScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/BossScene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/BossScene1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/BossScene1/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/BossScene1/NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/LobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/LobbyScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ButtonDecor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ButtonDecor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Song-Of-Coronos SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Song-Of-Coronos SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/CrimsonPro-VariableFont_wght SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/CrimsonPro-VariableFont_wght SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +51,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Presentation/GUI/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/NUnitExtensions/Runner/CompositeWorkItem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -113,6 +135,8 @@
       <workItem from="1725325456803" duration="8109000" />
       <workItem from="1725348674843" duration="12967000" />
       <workItem from="1725403756814" duration="21767000" />
+      <workItem from="1725513899908" duration="4284000" />
+      <workItem from="1725533253292" duration="3700000" />
     </task>
     <servers />
   </component>
@@ -126,6 +150,17 @@
     <option name="unityProjectFolder" value="true" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
