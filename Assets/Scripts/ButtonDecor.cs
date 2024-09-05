@@ -7,11 +7,14 @@ using UnityEngine.UI;
 public class ButtonHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
-    private TextMeshProUGUI buttonText;
+    private TextMeshProUGUI buttonText; // The text component on the button
+
     [SerializeField]
-    private GameObject leftImage;
+    private GameObject leftImage; // The left image object
+
     [SerializeField]
-    private GameObject rightImage;
+    private GameObject rightImage; // The right image object
+
     private RectTransform textRectTransform; 
 
     void Start()
@@ -34,6 +37,7 @@ public class ButtonHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
             textRectTransform = buttonText.GetComponent<RectTransform>();
         }
 
+        // Use LayoutUtility to get the preferred width of the text
         float textWidth = LayoutUtility.GetPreferredWidth(textRectTransform);
 
         // Set positions for left and right images
@@ -43,6 +47,8 @@ public class ButtonHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
         leftImageRectTransform.anchoredPosition = new Vector2(-textWidth / 2 - 100, 0);
         rightImageRectTransform.anchoredPosition = new Vector2(textWidth / 2 + 100, 0);
 
+        leftImage.SetActive(false);
+        rightImage.SetActive(false);
         Debug.Log("Text width: " + textWidth);
     }
 
