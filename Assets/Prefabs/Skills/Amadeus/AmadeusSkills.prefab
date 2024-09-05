@@ -44,27 +44,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd93182630894ee4ac47432591f2cd42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityType: 0
+  isReady: 1
   preCastVfx:
     vfx: {fileID: 0}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   projectileVfx:
     vfx: {fileID: 6104107114863222821, guid: 395905bbd2930f44385a45f6784c4d6e, type: 3}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   postCastVfx:
     vfx: {fileID: 0}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   cameraShake: 0
   rotateToDirection: 1
-  cooldownTime: 3000
+  _skillState: 1
   useTarget: 0
   castingSound: {fileID: 0}
   hitSound: {fileID: 0}
+  nextCastTime: 0
 --- !u!1 &997547249107336904
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,27 +149,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd93182630894ee4ac47432591f2cd42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityType: 0
+  isReady: 1
   preCastVfx:
     vfx: {fileID: 0}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   projectileVfx:
     vfx: {fileID: 1151005057193380, guid: c6226c69eaccaf24987b9060641d0918, type: 3}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   postCastVfx:
     vfx: {fileID: 0}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   cameraShake: 0
   rotateToDirection: 1
-  cooldownTime: 5
+  _skillState: 1
   useTarget: 0
   castingSound: {fileID: 0}
   hitSound: {fileID: 0}
+  nextCastTime: 0
 --- !u!1 &8619947029505760023
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,24 +220,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd93182630894ee4ac47432591f2cd42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityType: 0
+  isReady: 1
   preCastVfx:
     vfx: {fileID: 0}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   projectileVfx:
     vfx: {fileID: 4462249695417771607, guid: 30830c94f818bd14ebfce56bc3c8de91, type: 3}
     duration: 0
-    transform: {fileID: 0}
+    affectCooldown: 0
+    transform: {fileID: 1423098500472646985, guid: bb2a793f926f7b643ba1ef3218223729, type: 3}
     autoDestroy: 0
   postCastVfx:
     vfx: {fileID: 0}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   cameraShake: 0
   rotateToDirection: 1
-  cooldownTime: 4000
+  _skillState: 1
   useTarget: 0
   castingSound: {fileID: 0}
   hitSound: {fileID: 0}
+  nextCastTime: 0

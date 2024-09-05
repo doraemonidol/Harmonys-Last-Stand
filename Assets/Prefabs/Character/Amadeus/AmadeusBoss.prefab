@@ -155,8 +155,8 @@ MonoBehaviour:
   _skills: []
   _rotateToTarget: {fileID: 2072427861090480448}
   firePoint: {fileID: 6626340040039146379}
-  target: {fileID: 0}
-  testingSkill: 0
+  target: {fileID: 1766240146447820792, guid: bb2a793f926f7b643ba1ef3218223729, type: 3}
+  testingSkill: -1
 --- !u!114 &6155509569464348780
 MonoBehaviour:
   m_ObjectHideFlags: 0
