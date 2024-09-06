@@ -23,6 +23,7 @@ namespace Logic.Weapons
                 WeaponHandle.ApWeapon => new ApWeapon(),
                 WeaponHandle.LwWeapon => new LwWeapon(),
                 WeaponHandle.MmWeapon => new MmWeapon(),
+                WeaponHandle.TrWeapon => new TroopWeapon(),
                 _ => throw new Exception("Weapon not found.")
             };
         }

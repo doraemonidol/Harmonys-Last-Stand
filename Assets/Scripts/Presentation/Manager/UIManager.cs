@@ -54,25 +54,28 @@ namespace Presentation.GUI
         {
             _sceneType = sceneType;
             
-            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != SceneBuildIndex.LOBBY)
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == SceneBuildIndex.LOBBY)
             {
-                return;
+                _overlay.SetActive(true);
+                _startGamePanel.SetActive(true);
+                switch (sceneType)
+                {
+                    case SceneTypeEnum.AMADEUS_TROOP:
+                        _amadeusConfirmationText.SetActive(true);
+                        break;
+                    case SceneTypeEnum.LUDWIG_TROOP:
+                        _ludwigConfirmationText.SetActive(true);
+                        break;
+                    case SceneTypeEnum.MAESTRO_TROOP:
+                        _maestroConfirmationText.SetActive(true);
+                        break;
+                }
+            }
+            else
+            {
+                SceneManager.Instance.LoadScene(sceneType);
             }
             
-            _overlay.SetActive(true);
-            _startGamePanel.SetActive(true);
-            switch (sceneType)
-            {
-                case SceneTypeEnum.AMADEUS_TROOP:
-                    _amadeusConfirmationText.SetActive(true);
-                    break;
-                case SceneTypeEnum.LUDWIG_TROOP:
-                    _ludwigConfirmationText.SetActive(true);
-                    break;
-                case SceneTypeEnum.MAESTRO_TROOP:
-                    _maestroConfirmationText.SetActive(true);
-                    break;
-            }
         }
         
         public void OnStartGameButtonClicked()

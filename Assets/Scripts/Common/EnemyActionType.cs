@@ -4,6 +4,7 @@ namespace Common
 {
     public class EnemyActionType
     {
+        public static readonly int Appear = Animator.StringToHash("Appear");
         public static readonly int Move = Animator.StringToHash("Move");
         public static readonly int Attack = Animator.StringToHash("Attack");
         public static readonly int SpecialAttack = Animator.StringToHash("SpecialAttack");

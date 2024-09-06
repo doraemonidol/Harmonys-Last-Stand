@@ -498,7 +498,7 @@ namespace MockUp
 
         private void OnCollisionEnter(Collision other)
         {
-            Debug.Log("Aurelia Collided with " + other.gameObject.name);
+            // Debug.Log("Aurelia Collided with " + other.gameObject.name);
             SkillColliderInfo info = other.gameObject.GetComponent<SkillColliderInfo>();
             if (info)
             {

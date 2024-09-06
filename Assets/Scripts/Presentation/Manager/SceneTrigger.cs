@@ -11,6 +11,7 @@ namespace Presentation.GUI
 
         private void OnTriggerEnter(Collider other)
         {
+            Debug.Log("OnTriggerEnter" + other.gameObject.name);
             if (other.gameObject.CompareTag("Player"))
             {
                 UIManager.Instance.OnLoadScene(sceneType);

@@ -11,5 +11,6 @@ namespace Logic.Helper
         public const int ApWeapon = 1116;
         public const int LwWeapon = 1117;
         public const int MmWeapon = 1118;
+        public const int TrWeapon = 1119;
     }
 }

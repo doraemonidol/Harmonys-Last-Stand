@@ -17,6 +17,7 @@ public abstract class BossMovement : PresentationObject
     protected NavMeshAgent navMeshAgent;
     protected GameObject player;
     protected bool isDead;
+    protected bool isAppeared = false;
 
     protected Animator animator;
     [Header("Enemy Base")]
@@ -35,7 +36,7 @@ public abstract class BossMovement : PresentationObject
         animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         player = GameObject.FindWithTag("Player");
-        animator.SetTrigger(EnemyActionType.Move);
+        // animator.SetTrigger(EnemyActionType.Move);
 
         _effectUIManager = GetComponent<EffectUIManager>();
         if (!_effectUIManager)
@@ -66,6 +67,12 @@ public abstract class BossMovement : PresentationObject
         isDead = true;
         navMeshAgent.isStopped = true;
         animator.SetTrigger(EnemyActionType.Die);
+        StartCoroutine(OnDeadAnimation());
+    }
+    
+    public virtual IEnumerator OnDeadAnimation()
+    {
+        yield return new WaitForSeconds(0);
     }
     
     public IEnumerator OnResurrection(int currentHealth, int maxHealth)

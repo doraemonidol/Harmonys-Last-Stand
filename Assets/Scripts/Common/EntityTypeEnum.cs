@@ -20,6 +20,7 @@ namespace Common
         MAESTRO,
         WEAPON_MAESTRO,
         WEAPON_LUDWIG,
-        WEAPON_AMADEUS
+        WEAPON_AMADEUS,
+        WEAPON_TROOP
     }
 }

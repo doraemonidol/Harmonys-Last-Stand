@@ -2,6 +2,7 @@ using System;
 using Logic.Helper;
 using Logic.Troops.DeathStrategy;
 using Logic.Villains;
+using Logic.Weapons;
 using static Common.GameStats;
 
 namespace Logic.Troops
@@ -19,6 +20,7 @@ namespace Logic.Troops
             TROOP_ATTACK
         )
         {
+            VillainWeapon = Weapon.TransformInto(WeaponHandle.TrWeapon);
         }
         
         public Troop(Troop another) : base(another)

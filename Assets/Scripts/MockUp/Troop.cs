@@ -1,3 +1,4 @@
+using System.Collections;
 using Common;
 using DTO;
 using Logic;
@@ -12,11 +13,20 @@ namespace MockUp
     public class Troop : BossMovement
     {
         public float eyeSight = 80f;
+        public WeaponMockUp weapon;
+        
         public override void Start()
         {
             base.Start();
             // LogicLayer.GetInstance().Instantiate(Google.Search("ins", "troop"), this);
             UpdateEnemyCollision();
+            
+            for (int i = 0; i < enemyCollisions.Count; i++)
+            {
+                SkillColliderInfo skillColliderInfo = enemyCollisions[i].gameObject.AddComponent<SkillColliderInfo>();
+                skillColliderInfo.Attacker = this.LogicHandle;
+                skillColliderInfo.Skill = weapon.GetSkills()[0].LogicHandle;
+            }
         }
 
         public override void Update()
@@ -26,6 +36,12 @@ namespace MockUp
             
             if (Vector3.Distance(transform.position, player.transform.position) <= eyeSight)
             {
+                if (!isAppeared)
+                {
+                    animator.SetTrigger(EnemyActionType.Appear);
+                    isAppeared = true;
+                }
+                
                 if (Vector3.Distance(transform.position, player.transform.position) <= attackRange)
                 {
                     navMeshAgent.isStopped = true;
@@ -44,6 +60,12 @@ namespace MockUp
             {
                 navMeshAgent.ResetPath();
             }
+        }
+        
+        public override IEnumerator OnDeadAnimation()
+        {
+            yield return new WaitForSeconds(1);
+            gameObject.SetActive(false);
         }
 
         // public override void AcceptAndUpdate(EventUpdateVisitor visitor)

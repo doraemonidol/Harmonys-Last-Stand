@@ -57,6 +57,7 @@ namespace Logic.Facade
                     or EntityType.WEAPON_MAESTRO
                     or EntityType.WEAPON_LUDWIG
                     or EntityType.WEAPON_AMADEUS
+                    or EntityType.WEAPON_TROOP
                         => Weapon.TransformInto(type),
                 EntityType.AMADEUS => new AmadeusPrime(),
                 EntityType.LUDWIG => new LudwigVanVortex(),
@@ -125,6 +126,7 @@ namespace Logic.Facade
                 case EntityType.WEAPON_LUDWIG:
                 case EntityType.WEAPON_MAESTRO:
                 case EntityType.WEAPON_AMADEUS:
+                case EntityType.WEAPON_TROOP:
                 {
                     var identity = new Identity();
 

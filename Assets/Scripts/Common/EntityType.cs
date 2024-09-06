@@ -22,6 +22,7 @@ namespace Common
         public const int WEAPON_MAESTRO = WeaponHandle.MmWeapon;
         public const int WEAPON_LUDWIG = WeaponHandle.LwWeapon;
         public const int WEAPON_AMADEUS = WeaponHandle.ApWeapon;
+        public const int WEAPON_TROOP = WeaponHandle.TrWeapon;
 
         public static int GetEntityType(EntityTypeEnum entityType)
         {
@@ -45,6 +46,7 @@ namespace Common
                 EntityTypeEnum.WEAPON_MAESTRO => WEAPON_MAESTRO,
                 EntityTypeEnum.WEAPON_LUDWIG => WEAPON_LUDWIG,
                 EntityTypeEnum.WEAPON_AMADEUS => WEAPON_AMADEUS,
+                EntityTypeEnum.WEAPON_TROOP => WEAPON_TROOP,
                 _ => throw new System.Exception("Entity type not found")
             };
         }

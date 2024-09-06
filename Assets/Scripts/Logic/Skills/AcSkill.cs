@@ -11,6 +11,7 @@ using Logic.Skills.MaestroMachina;
 using Logic.Skills.Piano;
 using Logic.Skills.Saxophone;
 using Logic.Skills.SonicBass;
+using Logic.Skills.Troop;
 using Logic.Skills.Violin;
 using Logic.Villains;
 using Logic.Weapons;
@@ -134,6 +135,11 @@ namespace Logic.Skills
                     2 => new JackInTheBoxMayhem(wp, coolDownTime),
                     3 => new IllusionCarnival(wp, coolDownTime),
                     4 => new RequiemResurrection(wp, 30 * GameStats.BASE_TIME_UNIT),
+                    _ => throw new Exception("Unknown skill"),
+                },
+                WeaponHandle.TrWeapon => index switch
+                {
+                    1 => new NormalAttack(wp, coolDownTime),
                     _ => throw new Exception("Unknown skill"),
                 },
                 _ => throw new Exception("Unknown weapon"),
