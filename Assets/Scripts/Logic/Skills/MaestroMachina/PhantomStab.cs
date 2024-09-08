@@ -20,10 +20,10 @@ namespace Logic.Skills.MaestroMachina
 
         private void Update()
         {
-            var next10Seconds = Time.WhatIsIt() + 10000;
+            var next10Seconds = CustomTime.WhatIsIt() + 10000;
             _inProcessThread = new Thread(() =>
             {
-                while (Time.WhatIsIt() < next10Seconds)
+                while (CustomTime.WhatIsIt() < next10Seconds)
                 {
                     Thread.Sleep(500);
                 }

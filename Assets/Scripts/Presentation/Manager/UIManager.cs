@@ -1,4 +1,5 @@
 using Common;
+using Presentation.Sound;
 using Runtime;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -10,19 +11,26 @@ namespace Presentation.GUI
         [Header("Overlays")]
         [SerializeField] private GameObject _overlay;
 
+        [Header("Main menu")]
+        [SerializeField] private GameObject _mainMenu;
+        [SerializeField] private GameObject _optionMenu;
+        
+        [Header("Option Menu")]
+        [SerializeField] private GameObject _audioSettings;
+        [SerializeField] private GameObject _controlSettings;
+
         [Header("Lobby")]
         [SerializeField] private GameObject _startGamePanel;
 
         [SerializeField] private GameObject _amadeusConfirmationText;
         [SerializeField] private GameObject _ludwigConfirmationText;
         [SerializeField] private GameObject _maestroConfirmationText;
-        [SerializeField] private SceneTypeEnum _sceneType;
+        [SerializeField] private string _sceneType;
     
         [Header("In game menu")]
         [SerializeField] private GameObject _ingameUI;
-
-        [Header("Game lose menu")]
         [SerializeField] private GameObject _losePanel;
+        [SerializeField] private GameObject _winPanel;
 
         [Header("Pause game menu")]
         [SerializeField] private GameObject _pauseGameMenu;
@@ -30,16 +38,30 @@ namespace Presentation.GUI
         // Start is called before the first frame update
         void Start()
         {
-            _overlay.SetActive(false);
+            // if current scene is not main menu, hide main menu
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == SceneBuildIndex.MAINMENU)
+            {
+                _mainMenu.SetActive(true);
+                _optionMenu.SetActive(false);
+                _audioSettings.SetActive(false);
+                _controlSettings.SetActive(false);
+            } else if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == SceneBuildIndex.LOBBY)
+            {
+                _overlay.SetActive(false);
             
-            _startGamePanel.SetActive(false);
-            _amadeusConfirmationText.SetActive(false);
-            _ludwigConfirmationText.SetActive(false);
-            _maestroConfirmationText.SetActive(false);
-            
-            // _ingameMenu.SetActive(false);
-            _losePanel.SetActive(false);
-            _pauseGameMenu.SetActive(false);
+                _startGamePanel.SetActive(false);
+                _amadeusConfirmationText.SetActive(false);
+                _ludwigConfirmationText.SetActive(false);
+                _maestroConfirmationText.SetActive(false);
+            }
+            else
+            {
+                _overlay.SetActive(false);
+                
+                _ingameUI.SetActive(true);
+                _losePanel.SetActive(false);
+                _pauseGameMenu.SetActive(false);
+            }
         }
 
         // Update is called once per frame
@@ -47,12 +69,93 @@ namespace Presentation.GUI
         {
         
         }
+        
+        #region Main Menu
+        
+        public void ShowMainMenu()
+        {
+            _mainMenu.SetActive(true);
+        }
+        
+        public void HideMainMenu()
+        {
+            _mainMenu.SetActive(false);
+        }
+        
+        public void ShowOptionMenu()
+        {
+            HideMainMenu();
+            _optionMenu.SetActive(true);
+        }
+        
+        public void HideOptionMenu()
+        {
+            _optionMenu.SetActive(false);
+        }
 
+        public void OnMainMenu_StartGame()
+        {
+            // create a new game save in player prefs
+            SceneManager.Instance.LoadScene(SceneType.LOBBY);
+        }
+        
+        public void OnQuitButtonClicked()
+        {
+            Application.Quit();
+        }
+        
+        #endregion
+
+        #region Option Menu
+        
+        public void ShowAudioSettings()
+        {
+            HideOptionMenu();
+            _audioSettings.SetActive(true);
+        }
+        
+        public void HideAudioSettings()
+        {
+            _audioSettings.SetActive(false);
+        }
+        
+        public void ShowControlSettings()
+        {
+            HideOptionMenu();
+            _controlSettings.SetActive(true);
+        }
+        
+        public void HideControlSettings()
+        {
+            _controlSettings.SetActive(false);
+        }
+        
+        public void OnMenu_Back()
+        {
+            if (_audioSettings.activeSelf)
+            {
+                HideAudioSettings();
+                ShowOptionMenu();
+            }
+            else if (_controlSettings.activeSelf)
+            {
+                HideControlSettings();
+                ShowOptionMenu();
+            }
+            else if (_optionMenu.activeSelf)
+            {
+                HideOptionMenu();
+                ShowMainMenu();
+            }
+        }
+        
+        #endregion
+        
         #region Lobby
 
         public void OnLoadScene(SceneTypeEnum sceneType)
         {
-            _sceneType = sceneType;
+            _sceneType = SceneType.GetScene(sceneType);
             
             if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == SceneBuildIndex.LOBBY)
             {
@@ -73,7 +176,7 @@ namespace Presentation.GUI
             }
             else
             {
-                SceneManager.Instance.LoadScene(sceneType);
+                SceneManager.Instance.LoadScene(_sceneType);
             }
             
         }
@@ -98,7 +201,9 @@ namespace Presentation.GUI
         }
 
         #endregion
-    
+
+        #region Ingame Menu
+        
         public void ShowIngameMenu()
         {
             _ingameUI.SetActive(true);
@@ -134,7 +239,28 @@ namespace Presentation.GUI
             GameManager.Instance.LoadMainMenu();
         }
         #endregion
+        
+        #region Win Panel
+        public void ShowWinPanel()
+        {
+            _overlay.SetActive(true);
+            _winPanel.SetActive(true);
+        }
+        
+        public void HideWinPanel()
+        {
+            _overlay.SetActive(false);
+            _winPanel.SetActive(false);
+        }
+        
+        public void OnWin_Continue()
+        {
+            HideWinPanel();
+            OnLoadScene(SceneTypeEnum.LOBBY);
+        }
+        #endregion
     
+        #region Pause Game Menu
         public void ShowPauseGameMenu()
         {
             _overlay.SetActive(true);
@@ -143,8 +269,36 @@ namespace Presentation.GUI
     
         public void HidePauseGameMenu()
         {
+            GameManager.Instance.IsGamePaused = false;
             _overlay.SetActive(false);
             _pauseGameMenu.SetActive(false);
         }
+        
+        public void OnPause_Continue()
+        {
+            HidePauseGameMenu();
+        }
+        
+        public void OnPause_Restart()
+        {
+            HidePauseGameMenu();
+            GameManager.Instance.RestartGame();
+        }
+        
+        public void OnPauseLobby_Quit()
+        {
+            HidePauseGameMenu();
+            GameManager.Instance.LoadMainMenu();
+        }
+        
+        public void OnPause_Quit()
+        {
+            HidePauseGameMenu();
+            SceneManager.Instance.LoadScene(SceneType.LOBBY);
+        }
+        
+        #endregion
+
+        #endregion
     }
 }

@@ -1,13 +1,57 @@
+using System.Collections.Generic;
 using Common;
+using Presentation.Manager;
 using Runtime;
+using UnityEngine;
 
 namespace Presentation.GUI
 {
     public class SceneManager : MonoBehaviorInstance<SceneManager>
     {
-        public void LoadScene(SceneTypeEnum sceneType)
+        [SerializeField] private List<SceneTrigger> _sceneTriggers;
+        
+        public bool IsCurrentScene(SceneTypeEnum sceneType)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(SceneType.GetScene(sceneType));
+            return UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == SceneType.GetScene(sceneType);
+        }
+        
+        public void InitializeGame(PlayerData data)
+        {
+            if (IsCurrentScene(SceneTypeEnum.LOBBY))
+            {
+                foreach (var sceneTrigger in _sceneTriggers)
+                {
+                    sceneTrigger.Deactivate();
+                }
+
+                if (_sceneTriggers.Count == 3)
+                {
+                    if (data.UnlockedAmadeus)
+                    {
+                        _sceneTriggers[0].Activate();
+                    }
+
+                    if (data.UnlockedLudwig)
+                    {
+                        _sceneTriggers[1].Activate();
+                    }
+
+                    if (data.UnlockedMaestro)
+                    {
+                        _sceneTriggers[2].Activate();
+                    }
+                }
+            }
+        }
+        
+        public void LoadScene(string sceneType)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneType);
+        }
+        
+        public void ReloadCurrentScene()
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         }
     }
 }

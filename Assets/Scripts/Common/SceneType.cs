@@ -25,5 +25,13 @@ namespace Common
             SceneTypeEnum.MAESTRO_BOSS => MAESTRO_BOSS,
             _ => throw new System.NotImplementedException()
         };
+        
+        public static string GetNextBossScene(SceneTypeEnum sceneType) => sceneType switch
+        {
+            SceneTypeEnum.AMADEUS_TROOP => AMADEUS_BOSS,
+            SceneTypeEnum.AMADEUS_BOSS => LUDWIG_BOSS,
+            SceneTypeEnum.LUDWIG_BOSS => MAESTRO_BOSS,
+            _ => throw new System.NotImplementedException()
+        };
     }
 }

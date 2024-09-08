@@ -7,6 +7,7 @@ using Logic.Facade;
 using Logic.Helper;
 using Presentation;
 using Presentation.Bosses;
+using Presentation.GUI;
 using Presentation.Maestro;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -69,7 +70,7 @@ namespace MockUp
 
         public override void Update()
         {
-            if (isDead)
+            if (isDead || GameManager.Instance.IsGamePaused)
                 return;
 
             if (Vector3.Distance(transform.position, player.transform.position) <= attackRange)

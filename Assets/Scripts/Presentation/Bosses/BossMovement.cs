@@ -6,6 +6,7 @@ using Logic;
 using Logic.Facade;
 using Presentation;
 using Presentation.Bosses;
+using Presentation.GUI;
 using Presentation.UI;
 using UnityEngine;
 using UnityEngine.AI;
@@ -62,7 +63,7 @@ public abstract class BossMovement : PresentationObject
         }
     }
 
-    public void OnDead()
+    public virtual void OnDead()
     {
         isDead = true;
         navMeshAgent.isStopped = true;
@@ -88,10 +89,8 @@ public abstract class BossMovement : PresentationObject
     // Update is called once per frame
     public override void Update()
     {
-        if (isDead)
-        {
+        if (isDead || GameManager.Instance.IsGamePaused)
             return;
-        }
         navMeshAgent.SetDestination(player.transform.position);
     }
 

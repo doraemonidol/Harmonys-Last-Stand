@@ -1,3 +1,4 @@
+using Common.Context;
 using DTO;
 using Logic.Helper;
 using Logic.Weapons;
@@ -16,14 +17,22 @@ namespace Logic.Skills.Flute
 
         public override void Affect(ICharacter attacker, ICharacter target, EventDto context)
         {
+            var boostAmount = GameContext.GetInstance().Get("dmg+");
+            var finalDmg = 5 * (100 + boostAmount) / 100;
             var args = new EventDto
             {
-                ["dmg"] = 20,
-                ["hp"] = 0,
-                ["mana"] = 0,
+                [EffectHandle.HpReduce] = finalDmg,
                 ["timeout"] = 10,
             };
-            target.ReceiveEffect(EffectHandle.Exhausted, args);
+            target.ReceiveEffect(EffectHandle.GetHit, args);
+            // var args = new EventDto
+            // {
+            //     ["dmg"] = 20,
+            //     ["hp"] = 0,
+            //     ["mana"] = 0,
+            //     ["timeout"] = 10,
+            // };
+            // target.ReceiveEffect(EffectHandle.Exhausted, args);
         }
     }
 }

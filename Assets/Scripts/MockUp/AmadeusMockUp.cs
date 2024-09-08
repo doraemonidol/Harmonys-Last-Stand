@@ -6,6 +6,7 @@ using Logic.Facade;
 using Logic.Helper;
 using Presentation;
 using Presentation.Bosses;
+using Presentation.GUI;
 using UnityEngine;
 using Time = UnityEngine.Time;
 
@@ -37,6 +38,12 @@ namespace MockUp
                 _skills[i].AttachTarget(target);
             }
         }
+
+        public override void OnDead()
+        {
+            base.OnDead();
+            GameManager.Instance.OnDefeatBoss(SceneTypeEnum.AMADEUS_BOSS);
+        }
         
         public override void Start()
         {
@@ -54,7 +61,7 @@ namespace MockUp
 
         public override void Update()
         {
-            if (isDead)
+            if (isDead || GameManager.Instance.IsGamePaused)
                 return;
             
             base.Update();

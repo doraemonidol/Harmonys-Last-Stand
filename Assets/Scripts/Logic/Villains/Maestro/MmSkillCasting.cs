@@ -55,7 +55,7 @@ namespace Logic.Villains.Maestro
             if (!isCastingDone) return;
             OnStateExit();
             Session.SkillCastingIds.Add(ChosenSkillId);
-            Session.SkillCastingTimes.Add(Time.WhatIsIt());
+            Session.SkillCastingTimes.Add(CustomTime.WhatIsIt());
             Owner.NotifySubscribers(new EventUpdateVisitor
             {
                 ["ev"] =

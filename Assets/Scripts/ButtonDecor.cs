@@ -20,7 +20,7 @@ public class ButtonHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
     void Start()
     {
         textRectTransform = buttonText.GetComponent<RectTransform>();
-        Debug.Log("Text: " + buttonText.text);
+        // Debug.Log("Text: " + buttonText.text);
         // UpdateImagePositions();
     }
 

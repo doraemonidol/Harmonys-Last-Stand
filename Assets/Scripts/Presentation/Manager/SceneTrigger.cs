@@ -8,6 +8,20 @@ namespace Presentation.GUI
     public class SceneTrigger : MonoBehaviour
     {
         [SerializeField] private SceneTypeEnum sceneType;
+        
+        public void Deactivate()
+        {
+            gameObject.transform.parent.gameObject.SetActive(false);
+        }
+        
+        public void Activate()
+        {
+            gameObject.transform.parent.gameObject.SetActive(true);
+        }
+
+        private void Start()
+        {
+        }
 
         private void OnTriggerEnter(Collider other)
         {

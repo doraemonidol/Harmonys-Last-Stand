@@ -30,6 +30,7 @@ namespace MockUp
         private EffectUIManager _effectUIManager;
         private Dictionary<Identity, float> skillNextAffectedTime = new Dictionary<Identity, float>();
         [SerializeField] private HealthBar healthBar;
+        private bool isDead = false;
 
         private void SetHealth(int health, int maxHealth)
         {
@@ -39,6 +40,7 @@ namespace MockUp
 
         public override void Start()
         {
+            isDead = false;
             LogicLayer.GetInstance().Instantiate(EntityType.AURELIA, this);
             // EquipWeapon(weapons[_activeWeapon]);
             Debug.Log("Aurelia: " + this.LogicHandle);
@@ -119,6 +121,9 @@ namespace MockUp
 
         public override void Update()
         {
+            if (isDead || GameManager.Instance.IsGamePaused)
+                return;
+            
             ProcessTranslation();
             ProcessSkillCasting();
             
@@ -126,6 +131,11 @@ namespace MockUp
             {
                 _activeWeapon = (_activeWeapon + 1) % weapons.Count;
                 UpdateCurrentSkills();
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                GameManager.Instance.PauseGame();
             }
         }
 

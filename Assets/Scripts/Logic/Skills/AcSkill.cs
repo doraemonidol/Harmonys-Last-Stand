@@ -60,7 +60,7 @@ namespace Logic.Skills
 
         public bool IsAvailable()
         {
-            return (!Locked) && (Time.WhatIsIt() >= NextTimeToAvailable);
+            return (!Locked) && (CustomTime.WhatIsIt() >= NextTimeToAvailable);
         }
         
         public static AcSkill TransformInto(int wpName, Weapon wp, int index, int coolDownTime = 200, ICharacter user = null)
@@ -156,12 +156,12 @@ namespace Logic.Skills
             {
                 throw new Exception("Exception thrown when trying to activate a locked skill");
             }
-            if (this.NextTimeToAvailable > Time.WhatIsIt())
+            if (this.NextTimeToAvailable > CustomTime.WhatIsIt())
             {
                 throw new Exception("Exception thrown when trying to activate a skill that is not available");
             }
             
-            this.NextTimeToAvailable = Time.WhatIsIt() + CoolDownTime;
+            this.NextTimeToAvailable = CustomTime.WhatIsIt() + CoolDownTime;
             
             this.Lock();
         }
@@ -184,7 +184,7 @@ namespace Logic.Skills
             CallVisitor("lock");
             _thread = new Thread(() =>
             {
-                while (Time.WhatIsIt() < this.NextTimeToAvailable)
+                while (CustomTime.WhatIsIt() < this.NextTimeToAvailable)
                 {
                     Thread.Sleep(500);
                 }

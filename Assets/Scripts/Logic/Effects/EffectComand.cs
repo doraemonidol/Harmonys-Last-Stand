@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading;
 using Logic.Effects;
+using Logic.Helper;
 using UnityEngine;
-using Time = Logic.Helper.Time;
 
 namespace Logic.Effects
 {
@@ -19,12 +19,12 @@ namespace Logic.Effects
         protected EffectCommand(ICharacter character)
         {
             Character = character;
-            EffectEndTime = Time.WhatIsIt() + 5000;
+            EffectEndTime = CustomTime.WhatIsIt() + 5000;
         }
 
         protected EffectCommand(ICharacter character, int timeout) : this(character)
         {
-            EffectEndTime = Time.WhatIsIt() + timeout;
+            EffectEndTime = CustomTime.WhatIsIt() + timeout;
         }
 
         protected EffectCommand(
@@ -45,12 +45,12 @@ namespace Logic.Effects
 
         public virtual void Execute()
         {
-            Debug.Log("EffectCommand.Execute() StartTime: " + Time.WhatIsIt());
+            Debug.Log("EffectCommand.Execute() StartTime: " + CustomTime.WhatIsIt());
             Debug.Log("EffectCommand.Execute()" + EffectEndTime);
             var thread = new Thread(() =>
             {
                 
-                while (Time.WhatIsIt() < EffectEndTime)
+                while (CustomTime.WhatIsIt() < EffectEndTime)
                 {
                     this.Update();
                     
@@ -67,7 +67,7 @@ namespace Logic.Effects
 
         public  bool IsExpired()
         {
-            var currentTime = Time.WhatIsIt();
+            var currentTime = CustomTime.WhatIsIt();
             return currentTime >= EffectEndTime;
         }
         
