@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Bullet
   - Enemy
+  - WPM1
+  - WPM2
+  - WPM3
+  - MaeTroop
+  - BlindHouse
+  - Grave
   layers:
   - Default
   - TransparentFX
