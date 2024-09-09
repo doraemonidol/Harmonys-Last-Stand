@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/IngameScenes/BossScene2.unity
     guid: c484d0c9d2aef5149b7a1a77138bc7cc
   - enabled: 1
+    path: Assets/Scenes/IngameScenes/TroopScene3.unity
+    guid: 97bd7f6fde7c6b245b8d36db330e0049
+  - enabled: 1
     path: Assets/Scenes/IngameScenes/BossScene3.unity
     guid: 7df5e81f387c243438c2b0e3b37d3d07
   m_configObjects: {}

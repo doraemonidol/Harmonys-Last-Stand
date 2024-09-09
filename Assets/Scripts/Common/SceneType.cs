@@ -10,8 +10,8 @@ namespace Common
         public const string AMADEUS_TROOP = "TroopScene1";
         public const string LUDWIG_BOSS = "BossScene2";
         public const string LUDWIG_TROOP = "TroopScene2";
-        public const string MAESTRO_TROOP = "BossScene3";
         public const string MAESTRO_BOSS = "BossScene3";
+        public const string MAESTRO_TROOP = "TroopScene3";
         
         public static string GetScene(SceneTypeEnum sceneType) => sceneType switch
         {
