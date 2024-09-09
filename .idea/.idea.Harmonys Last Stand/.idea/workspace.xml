@@ -5,54 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ddd7aca8-1b86-452c-8319-d86abc9fe976" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/DataKeyType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/DataKeyType.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/DataManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Sound.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Sound/MusicEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Sound/MusicEnum.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Sound/SoundEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Sound/SoundEnum.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Sound/SoundManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Sound/SoundManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Circle Centre 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DTT/Area of Effect Regions/Demo/Mesh Indicators/Materials/Circle Centre 2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonNatureBiomes/PNB_Enchanted_Forest/FX/Circle_Additive_FX 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonNatureBiomes/PNB_Enchanted_Forest/FX/Circle_Additive_FX 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment/---------Managers---------.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment/---------Managers---------.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/IngameUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/IngameUI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/OptionTitle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/OptionTitle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/TitleMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/TitleMenu.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/BossScene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/BossScene1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/LobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/LobbyScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/BossScene3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/BossScene3.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/TroopScene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/TroopScene1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/TroopScene1/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/TroopScene1/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MenuScenes/AudioMenu.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MenuScenes/AudioMenu.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MenuScenes/ControlMenu.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MenuScenes/ControlMenu.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MenuScenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MenuScenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MenuScenes/OptionScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MenuScenes/OptionScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ButtonDecor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ButtonDecor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Common/SceneType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Common/SceneType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Effects/EffectComand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Effects/EffectComand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Helper/Time.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Helper/CustomTime.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Helper/Time.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Helper/CustomTime.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/AcSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/AcSkill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/Flute/TranquilTune.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/Flute/TranquilTune.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/MaestroMachina/PhantomStab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Skills/MaestroMachina/PhantomStab.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Villains/Maestro/MmSkillCasting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Villains/Maestro/MmSkillCasting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/AmadeusMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/AmadeusMockUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/MaestroMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/MaestroMockUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/Troop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/Troop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Bosses/BossMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/SceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/SceneManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/SceneTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/SceneTrigger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Song-Of-Coronos SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/Song-Of-Coronos SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/CrimsonPro-VariableFont_wght SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/CrimsonPro-VariableFont_wght SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +109,7 @@
       <workItem from="1725533253292" duration="3700000" />
       <workItem from="1725569898862" duration="15192000" />
       <workItem from="1725655983293" duration="19316000" />
+      <workItem from="1725885985311" duration="1225000" />
     </task>
     <servers />
   </component>
