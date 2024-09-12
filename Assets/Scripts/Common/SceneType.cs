@@ -31,6 +31,7 @@ namespace Common
             SceneTypeEnum.AMADEUS_TROOP => AMADEUS_BOSS,
             SceneTypeEnum.AMADEUS_BOSS => LUDWIG_BOSS,
             SceneTypeEnum.LUDWIG_BOSS => MAESTRO_BOSS,
+            SceneTypeEnum.MAESTRO_BOSS => MAINMENU,
             _ => throw new System.NotImplementedException()
         };
     }

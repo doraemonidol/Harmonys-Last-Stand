@@ -714,8 +714,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1148712959}
-  - {fileID: 117540022}
   - {fileID: 1537180220}
+  - {fileID: 117540022}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &54039107
@@ -24520,7 +24520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6896765694762711650, guid: eb4bbd916f0007b43a4a86fa44a8a531, type: 3}
       propertyPath: sceneType
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7358800110543076989, guid: eb4bbd916f0007b43a4a86fa44a8a531, type: 3}
       propertyPath: m_LocalPosition.y

@@ -78,6 +78,8 @@ public abstract class BossMovement : PresentationObject
     
     public IEnumerator OnResurrection(int currentHealth, int maxHealth)
     {
+        animator.SetTrigger(EnemyActionType.Die);
+        yield return new WaitForSeconds(1.5f);
         animator.SetTrigger(EnemyActionType.CastSpell4);
         yield return new WaitForSeconds(1.5f);
         isDead = false;

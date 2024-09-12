@@ -165,5 +165,11 @@ namespace MockUp
             //
             // return false;
         }
+
+        public override void OnDead()
+        {
+            base.OnDead();
+            GameManager.Instance.OnDefeatBoss(SceneTypeEnum.MAESTRO_BOSS);
+        }
     }
 }
