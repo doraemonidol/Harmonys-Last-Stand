@@ -307,6 +307,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dfc4f7e77cf60b741ad27fba60550161, type: 3}
   - {fileID: 8300000, guid: 6217f78eb7b0a7b4ba939d5ce15ec057, type: 3}
   soundEffects: []
+  amadeusMusic:
+  - {fileID: 8300000, guid: d4f2319b48503874aa1f352585fa3720, type: 3}
+  - {fileID: 8300000, guid: 3eff210466d360c46addf30ac64d6ed9, type: 3}
+  ludwigMusic: []
+  maestroTroopMusic:
+  - {fileID: 8300000, guid: ed06ca9b821bfc84f8690c3d0e17ea01, type: 3}
+  maestroMusic:
+  - {fileID: 8300000, guid: 85d839d51dcdfc24f8a5cee953455444, type: 3}
+  - {fileID: 8300000, guid: 8caf2050c19901342882c348fb6d4036, type: 3}
+  - {fileID: 8300000, guid: ad051cd6dee1917428796e1a64fd9a71, type: 3}
   winBoss: 0
 --- !u!1 &8849210557827138186
 GameObject:

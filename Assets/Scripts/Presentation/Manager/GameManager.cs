@@ -45,6 +45,7 @@ namespace Presentation.GUI
         
         public void GameOver()
         {
+            IsGamePaused = true;
             UIManager.Instance.ShowLosePanel();
         }
 
