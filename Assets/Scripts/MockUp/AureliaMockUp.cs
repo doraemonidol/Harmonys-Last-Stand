@@ -125,12 +125,16 @@ namespace MockUp
                 return;
             
             ProcessTranslation();
-            ProcessSkillCasting();
             
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (_activeWeapon != -1)
             {
-                _activeWeapon = (_activeWeapon + 1) % weapons.Count;
-                UpdateCurrentSkills();
+                ProcessSkillCasting();
+
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    _activeWeapon = (_activeWeapon + 1) % weapons.Count;
+                    UpdateCurrentSkills();
+                }
             }
             
             if (Input.GetKeyDown(KeyCode.Escape))

@@ -35,8 +35,55 @@ Transform:
   - {fileID: 5505203279584806457}
   - {fileID: 1536051868789087291}
   - {fileID: 7910170509941224080}
+  - {fileID: 2885834193700077587}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3359900542323261183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2885834193700077587}
+  - component: {fileID: 7259467250606207854}
+  m_Layer: 0
+  m_Name: NotifyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2885834193700077587
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3359900542323261183}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7255506125522883170}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7259467250606207854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3359900542323261183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe2e3f0f4299634bbe0130f4d2068cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PersistentObject: 1
+  DataProcessorGameobjects: []
 --- !u!1 &6025587875758244361
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,6 +186,7 @@ MonoBehaviour:
   _losePanel: {fileID: 0}
   _winPanel: {fileID: 0}
   _pauseGameMenu: {fileID: 0}
+  _instructionPanel: {fileID: 0}
 --- !u!1 &6347892387045307467
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +307,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dfc4f7e77cf60b741ad27fba60550161, type: 3}
   - {fileID: 8300000, guid: 6217f78eb7b0a7b4ba939d5ce15ec057, type: 3}
   soundEffects: []
+  winBoss: 0
 --- !u!1 &8849210557827138186
 GameObject:
   m_ObjectHideFlags: 0

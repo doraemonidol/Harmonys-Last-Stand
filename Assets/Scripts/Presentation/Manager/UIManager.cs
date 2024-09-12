@@ -34,6 +34,9 @@ namespace Presentation.GUI
 
         [Header("Pause game menu")]
         [SerializeField] private GameObject _pauseGameMenu;
+        
+        [Header("Instruction Panel")]
+        [SerializeField] private GameObject _instructionPanel;
     
         // Start is called before the first frame update
         void Start()
@@ -61,6 +64,12 @@ namespace Presentation.GUI
                 _ingameUI.SetActive(true);
                 _losePanel.SetActive(false);
                 _pauseGameMenu.SetActive(false);
+                
+                if (_instructionPanel != null)
+                {
+                    GameManager.Instance.IsGamePaused = true;
+                    ShowInstruction();
+                }
             }
         }
 
@@ -159,6 +168,7 @@ namespace Presentation.GUI
             
             if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == SceneBuildIndex.LOBBY)
             {
+                Time.timeScale = 0;
                 _overlay.SetActive(true);
                 _startGamePanel.SetActive(true);
                 switch (sceneType)
@@ -183,6 +193,7 @@ namespace Presentation.GUI
         
         public void OnStartGameButtonClicked()
         {
+            Time.timeScale = 1;
             _overlay.SetActive(false);
             _startGamePanel.SetActive(false);
             _amadeusConfirmationText.SetActive(false);
@@ -295,6 +306,28 @@ namespace Presentation.GUI
         {
             HidePauseGameMenu();
             SceneManager.Instance.LoadScene(SceneType.LOBBY);
+        }
+        
+        #endregion
+        
+        
+        #region Instruction
+        public void ShowInstruction()
+        {
+            _overlay.SetActive(true);
+            _instructionPanel.SetActive(true);
+        }
+    
+        public void HideInstruction()
+        {
+            GameManager.Instance.IsGamePaused = false;
+            _overlay.SetActive(false);
+            _instructionPanel.SetActive(false);
+        }
+        
+        public void OnInstruction_Continue()
+        {
+            HideInstruction();
         }
         
         #endregion

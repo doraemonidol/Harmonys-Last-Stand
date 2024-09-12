@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Common;
 using Presentation.Manager;
@@ -9,7 +10,11 @@ namespace Presentation.GUI
     public class SceneManager : MonoBehaviorInstance<SceneManager>
     {
         [SerializeField] private List<SceneTrigger> _sceneTriggers;
-        
+
+        private void Start()
+        {
+        }
+
         public bool IsCurrentScene(SceneTypeEnum sceneType)
         {
             return UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == SceneType.GetScene(sceneType);
@@ -52,6 +57,14 @@ namespace Presentation.GUI
         public void ReloadCurrentScene()
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        }
+
+        public void UnlockSceneTrigger()
+        {
+            foreach (var sceneTrigger in _sceneTriggers)
+            {
+                sceneTrigger.gameObject.SetActive(true);
+            }
         }
     }
 }

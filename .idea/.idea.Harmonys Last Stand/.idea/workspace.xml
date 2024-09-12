@@ -5,8 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ddd7aca8-1b86-452c-8319-d86abc9fe976" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/BossScene3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/BossScene3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/TroopScene1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/TroopScene1.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/AutoRotateY.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/AutoRotateY.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/GraveInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/GraveInfo.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GraveSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/GraveManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GraveSpawner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/GraveManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaestroTroop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/MaestroTroop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaestroTroop.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Maestro/MaestroTroop.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/TroopScene3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/TroopScene3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/TroopScene3/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/TroopScene3/NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/TroopScene3/NavMesh.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/TroopScene3/NavMesh.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/SceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/SceneManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scripts.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scripts.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/CrimsonPro-VariableFont_wght SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/CrimsonPro-VariableFont_wght SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +40,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/NUnitExtensions/Runner/CompositeWorkItem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.testtools.codecoverage@1.2.5/Editor/CommandLineManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_InputField.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/VertexModifiers/Outline.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.4/Runtime/VisualScripting.Flow/Unit.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -36,7 +55,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;newer-vfx-hung&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;newer-vfx-hung+platformer&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -110,6 +129,11 @@
       <workItem from="1725569898862" duration="15192000" />
       <workItem from="1725655983293" duration="19316000" />
       <workItem from="1725885985311" duration="1225000" />
+      <workItem from="1725889772568" duration="684000" />
+      <workItem from="1725942204097" duration="1425000" />
+      <workItem from="1725974800096" duration="7931000" />
+      <workItem from="1726004392089" duration="3699000" />
+      <workItem from="1726126356489" duration="3969000" />
     </task>
     <servers />
   </component>

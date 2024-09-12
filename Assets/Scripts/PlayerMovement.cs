@@ -1,5 +1,6 @@
 using System.Collections;
        using System.Collections.Generic;
+       using Presentation.GUI;
        using UnityEngine;
        using UnityEngine.AI;
        using UnityEngine.Serialization;
@@ -16,6 +17,7 @@ using System.Collections;
            [SerializeField] private Rigidbody _rigidbody;
            [SerializeField] private Vector3 _currentDirection = Vector3.forward;
            private NavMeshAgent _agent;
+           public bool isDead;
            
            // Start is called before the first frame update
            void Start()
@@ -24,11 +26,15 @@ using System.Collections;
                _trailRenderer = GetComponent<TrailRenderer>();
                _agent = GetComponent<NavMeshAgent>();
                _agent.speed = _moveSpeed;
+               isDead = false;
            }
        
            // Update is called once per frame
            void Update()
            {
+               if (isDead || GameManager.Instance.IsGamePaused)
+                   return;
+               
                ProcessTranslation();
            }
        
