@@ -265,6 +265,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -438599658916548756, guid: 56ac32143c8566146a4a7065a73a2d11, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d2c92dd88ef7ddf4ca4d99fab54a465d, type: 2}
     - target: {fileID: 919132149155446097, guid: 56ac32143c8566146a4a7065a73a2d11, type: 3}
       propertyPath: m_Name
       value: Aurealia_lowres_cb
@@ -276,7 +280,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 56ac32143c8566146a4a7065a73a2d11, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1620775250}
   m_SourcePrefab: {fileID: 100100000, guid: 56ac32143c8566146a4a7065a73a2d11, type: 3}
 --- !u!1 &92940591
 GameObject:
@@ -1302,6 +1309,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10653da39d4d19c42b711d69faa9a749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1620775249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 56ac32143c8566146a4a7065a73a2d11, type: 3}
+  m_PrefabInstance: {fileID: 38233100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1620775250
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620775249}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b090e119f3f9f804c95be3722b8563e9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1633934001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,6 +1608,7 @@ MonoBehaviour:
   _trailRenderer: {fileID: 0}
   _rigidbody: {fileID: 0}
   _currentDirection: {x: 0, y: 0, z: 1}
+  isDead: 0
 --- !u!54 &1902544007
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2010,6 +2044,7 @@ MonoBehaviour:
   _trailRenderer: {fileID: 0}
   _rigidbody: {fileID: 0}
   _currentDirection: {x: 0, y: 0, z: 1}
+  isDead: 0
 --- !u!95 &2005054386
 Animator:
   serializedVersion: 5
