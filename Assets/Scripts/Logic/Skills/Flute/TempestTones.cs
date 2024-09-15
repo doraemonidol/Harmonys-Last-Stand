@@ -3,6 +3,7 @@ using Common.Context;
 using DTO;
 using Logic.Helper;
 using Logic.Weapons;
+using UnityEngine;
 
 namespace Logic.Skills.Flute
 {
@@ -19,7 +20,8 @@ namespace Logic.Skills.Flute
         public override void Affect(ICharacter attacker, ICharacter target, EventDto context)
         {
             var boostAmount = GameContext.GetInstance().Get("dmg+");
-            var finalDmg = 15 * (100 + boostAmount) / 100;
+            var finalDmg = 5 * (100 + boostAmount) / 100;
+            Debug.Log("TempestTones: " + finalDmg);
             var args1 = new EventDto
             {
                 [EffectHandle.HpReduce] = finalDmg,

@@ -95,8 +95,8 @@ namespace Logic.Skills
                 {
                     1 => new WhistlingWind(wp, coolDownTime),
                     2 => new TranquilTune(wp, coolDownTime),
-                    3 => new TempestTones(wp, coolDownTime),
-                    4 => new MysticMelody(wp, coolDownTime),
+                    4 => new TempestTones(wp, 6 * GameStats.BASE_TIME_UNIT),
+                    3 => new MysticMelody(wp, coolDownTime),
                     _ => throw new Exception("Unknown skill"),
                 },
                 WeaponHandle.Guitar => index switch

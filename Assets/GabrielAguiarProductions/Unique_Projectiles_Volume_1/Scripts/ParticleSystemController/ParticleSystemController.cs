@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using GabrielAguiarProductions.Unique_Projectiles_Volume_1.Scripts.ParticleSystemController;
 using UnityEngine;
 
 namespace GAP_ParticleSystemController

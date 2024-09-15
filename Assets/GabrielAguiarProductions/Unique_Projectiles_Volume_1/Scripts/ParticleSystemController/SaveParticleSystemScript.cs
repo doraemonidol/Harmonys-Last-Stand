@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using GAP_ParticleSystemController;
 using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
-namespace GAP_ParticleSystemController
+namespace GabrielAguiarProductions.Unique_Projectiles_Volume_1.Scripts.ParticleSystemController
 {
     public static class SaveParticleSystemScript
     {
@@ -96,9 +96,10 @@ namespace GAP_ParticleSystemController
         private static string GetPrefabFolder2018_3(GameObject prefabVFX)
         {
 #if UNITY_EDITOR
-            var prefabPath = PrefabStageUtility.GetPrefabStage(prefabVFX).prefabAssetPath;
-            var prefabFolderPath = Path.GetDirectoryName(prefabPath);
-            return prefabFolderPath;
+            // var prefabPath = PrefabStageUtility.GetPrefabStage(prefabVFX).assetPath;
+            // var prefabFolderPath = Path.GetDirectoryName(prefabPath);
+            // return prefabFolderPath;
+            return null;
 #else
             return null;
 #endif
@@ -109,8 +110,8 @@ namespace GAP_ParticleSystemController
         public static void SaveNestedPrefab(GameObject prefab)
         {
 #if UNITY_EDITOR
-            var prefabStage = PrefabStageUtility.GetPrefabStage(prefab);
-            PrefabUtility.SaveAsPrefabAsset(prefabStage.prefabContentsRoot, prefabStage.prefabAssetPath);
+            // var prefabStage = PrefabStageUtility.GetPrefabStage(prefab);
+            // PrefabUtility.SaveAsPrefabAsset(prefabStage.prefabContentsRoot, prefabStage.assetPath);
 #endif
         }
 #endif

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Common;
 using DTO;
 using Logic.Facade;
@@ -10,39 +11,25 @@ namespace Presentation.Bosses
     {
         public Identity LogicHandle;
         public string Handle;
+        private Dictionary<Identity, float> skillNextAffectedTime = new Dictionary<Identity, float>();
         private void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.CompareTag("Enemy")) return;
             // Debug.Log(this.LogicHandle + "EnemyCollision Tag: " + other.gameObject.tag + " " + other.gameObject.name);
             
-            if (other.gameObject.GetComponent<SkillColliderInfo>() == null) return;
+            SkillColliderInfo info = other.gameObject.GetComponent<SkillColliderInfo>();
             
-            Debug.Log("EnemyCollision: " + other.gameObject.name);
-            Debug.Log(other.gameObject.GetComponent<SkillColliderInfo>().Attacker + " used " + 
-                      other.gameObject.GetComponent<SkillColliderInfo>().Skill + " on " + 
-                      this.LogicHandle);
+            if (info == null) return;
             
-            var eventd = new EventDto
+            if (!skillNextAffectedTime.ContainsKey(info.Skill) || Time.time > skillNextAffectedTime[info.Skill])
             {
-                Event = "GET_ATTACKED",
-                ["attacker"] = other.gameObject.GetComponent<SkillColliderInfo>().Attacker,
-                ["target"] = LogicHandle,
-                ["context"] = null,
-                ["skill"] = other.gameObject.GetComponent<SkillColliderInfo>().Skill
-            };
-            LogicLayer.GetInstance().Observe(eventd);
-        }
-
-        private void OnParticleCollision(GameObject other)
-        {
-            Debug.Log(this.LogicHandle + "Particle Collided with " + other.name);
-            if (other.GetComponent<SkillColliderInfo>())
-            {
-                Debug.Log(this.LogicHandle + "Particle Collided with " + other.name);
-                // Debug.Log(other.GetComponent<SkillColliderInfo>().Attacker + " used " + 
-                //           other.GetComponent<SkillColliderInfo>().Skill + " on " + 
-                //           this.LogicHandle);
-
+                skillNextAffectedTime[info.Skill] = Time.time + info.affectCooldown;
+                
+                Debug.Log("EnemyCollision: " + other.gameObject.name);
+                Debug.Log(other.gameObject.GetComponent<SkillColliderInfo>().Attacker + " used " + 
+                          other.gameObject.GetComponent<SkillColliderInfo>().Skill + " on " + 
+                          this.LogicHandle);
+            
                 var eventd = new EventDto
                 {
                     Event = "GET_ATTACKED",
@@ -50,6 +37,33 @@ namespace Presentation.Bosses
                     ["target"] = LogicHandle,
                     ["context"] = null,
                     ["skill"] = other.gameObject.GetComponent<SkillColliderInfo>().Skill
+                };
+                LogicLayer.GetInstance().Observe(eventd);
+            }
+        }
+
+        private void OnParticleCollision(GameObject other)
+        {
+            SkillColliderInfo info = other.GetComponent<SkillColliderInfo>();
+            
+            if (info == null) return;
+            
+            if (!skillNextAffectedTime.ContainsKey(info.Skill) || Time.time > skillNextAffectedTime[info.Skill])
+            {
+                skillNextAffectedTime[info.Skill] = Time.time + info.affectCooldown;
+                
+                Debug.Log("EnemyCollision: " + other.name);
+                Debug.Log(other.GetComponent<SkillColliderInfo>().Attacker + " used " + 
+                          other.GetComponent<SkillColliderInfo>().Skill + " on " + 
+                          this.LogicHandle);
+            
+                var eventd = new EventDto
+                {
+                    Event = "GET_ATTACKED",
+                    ["attacker"] = other.GetComponent<SkillColliderInfo>().Attacker,
+                    ["target"] = LogicHandle,
+                    ["context"] = null,
+                    ["skill"] = other.GetComponent<SkillColliderInfo>().Skill
                 };
                 LogicLayer.GetInstance().Observe(eventd);
             }

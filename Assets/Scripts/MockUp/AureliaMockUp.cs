@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using Common;
@@ -30,6 +31,10 @@ namespace MockUp
         private EffectUIManager _effectUIManager;
         private Dictionary<Identity, float> skillNextAffectedTime = new Dictionary<Identity, float>();
         [SerializeField] private HealthBar healthBar;
+        [SerializeField] private Transform body;
+        private Animator _animator;
+        private bool isStopped = false;
+        
         private bool isDead = false;
 
         private void SetHealth(int health, int maxHealth)
@@ -65,6 +70,12 @@ namespace MockUp
             if (!_effectUIManager)
             {
                 Debug.LogError("Please assign EffectUIManager to the player");
+            }
+            
+            _animator = body.GetComponent<Animator>();
+            if (!_animator)
+            {
+                Debug.LogError("Please assign Animator to the player");
             }
         
             UpdateCurrentSkills();
@@ -145,6 +156,11 @@ namespace MockUp
 
         private void ProcessTranslation()
          {
+             if (isStopped)
+             {
+                 return;
+             }
+             
              if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
              {
                  var currentDirection = new Vector3(0, 0, 0);
@@ -167,14 +183,14 @@ namespace MockUp
 
                  int direction =  currentDirection switch
                  {
-                    {x: 1, z: 0} => ActionEvent.MoveRight,
-                    {x: -1, z: 0} => ActionEvent.MoveLeft,
-                    {x: 0, z: 1} => ActionEvent.MoveUp,
-                    {x: 0, z: -1} => ActionEvent.MoveDown,
-                    {x: 1, z: 1} => ActionEvent.MoveUpRight,
-                    {x: 1, z: -1} => ActionEvent.MoveDownRight,
-                    {x: -1, z: 1} => ActionEvent.MoveUpLeft,
-                    {x: -1, z: -1} => ActionEvent.MoveDownLeft,
+                    {x: 1, z: 0} => ActionEvent.MoveDownRight,
+                    {x: -1, z: 0} => ActionEvent.MoveUpLeft,
+                    {x: 0, z: 1} => ActionEvent.MoveUpRight,
+                    {x: 0, z: -1} => ActionEvent.MoveDownLeft,
+                    {x: 1, z: 1} => ActionEvent.MoveRight,
+                    {x: -1, z: -1} => ActionEvent.MoveLeft,
+                    {x: 1, z: -1} => ActionEvent.MoveDown,
+                    {x: -1, z: 1} => ActionEvent.MoveUp,
                     _ => throw new Exception("Invalid direction")
                 };
                  // Debug.Log("Observed Move Event" + Time.time);
@@ -186,8 +202,25 @@ namespace MockUp
                  };
                  // Debug.Log("Move Event");
                  LogicLayer.GetInstance().Observe(eventd);
+             } 
+             else
+             {
+                 _animator.SetBool("isRunning", false);
              }
          }
+
+        private void OnCasting()
+        {
+            isStopped = true;
+            body.rotation = Quaternion.LookRotation(_rotateToMouse.GetDirection());
+            StartCoroutine(OnCastEnd());
+        }
+        
+        private IEnumerator OnCastEnd()
+        {
+            yield return new WaitForSeconds(0.1f);
+            isStopped = false;
+        }
         
         void ProcessSkillCasting()
         {
@@ -205,6 +238,7 @@ namespace MockUp
                         };
                         LogicLayer.GetInstance().Observe(eventd);
                         normalSkills[i].StartCasting();
+                        OnCasting();
                     }
 
                     if (weapons[_activeWeapon].GetSpecialSkills()[i].isReady)
@@ -233,6 +267,7 @@ namespace MockUp
                         };
                         LogicLayer.GetInstance().Observe(eventd);
                         specialSkills[i].StartCasting();
+                        OnCasting();
                     }
                     _currentSkill = -1;
                 }
@@ -269,7 +304,9 @@ namespace MockUp
                     if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
                     {
                         // Debug.Log("Begin Movement");
+                        _animator.SetBool("isRunning", true);
                         transform.Translate(directionVector * (distance * Time.deltaTime), Space.World);
+                        body.rotation = Quaternion.LookRotation(directionVector);
                     }
                     break;
                 case "dead":
