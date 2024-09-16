@@ -39,6 +39,14 @@ namespace MockUp
         private bool isDead = false;
         public CloneCastSkill cloneCastSkill;
 
+        [SerializeField] private float dashingPower = 50f;
+        [SerializeField] private float dashDuration = 0.12f;
+        private float dashCooldown = 1f;
+        private bool isDashing = false;
+        private bool canDash = true;
+        private bool toDash = false;
+        private int oldDirection = 0;
+
         private void SetHealth(int health, int maxHealth)
         {
             healthBar.currentHealth = health;
@@ -237,6 +245,20 @@ namespace MockUp
              {
                  _animator.SetBool("isRunning", false);
              }
+             
+             if (Input.GetKeyDown(KeyCode.Space) && canDash)
+             {
+                 Debug.Log("Dash");
+                 toDash = true;
+                 var eventd = new EventDto
+                 {
+                     Event = "MOVE",
+                     ["identity"] = this.LogicHandle,
+                     ["direction"] = oldDirection
+                 };
+                 // Debug.Log("Move Event");
+                 LogicLayer.GetInstance().Observe(eventd);
+             }
          }
 
         private void OnCasting()
@@ -337,14 +359,23 @@ namespace MockUp
                         _ => throw new Exception("Invalid direction")
                     };
                     
-                    distance *= 10;
-                    
-                    if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+                    if (toDash)
                     {
-                        // Debug.Log("Begin Movement");
-                        _animator.SetBool("isRunning", true);
-                        transform.Translate(directionVector * (distance * Time.deltaTime), Space.World);
-                        body.rotation = Quaternion.LookRotation(directionVector);
+                        toDash = false;
+                        Debug.Log("oldDirection: " + oldDirection);
+                        Debug.Log("directionVector: " + directionVector);
+                        StartCoroutine(Dash(directionVector));
+                    } else if (!isDashing)
+                    {
+                        distance *= 10;
+                        if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+                        {
+                            oldDirection = direction;
+                            // Debug.Log("Begin Movement");
+                            _animator.SetBool("isRunning", true);
+                            transform.Translate(directionVector * (distance * Time.deltaTime), Space.World);
+                            body.rotation = Quaternion.LookRotation(directionVector);
+                        }
                     }
                     break;
                 case "dead":
@@ -583,6 +614,22 @@ namespace MockUp
                     Debug.LogError("Unknown Event: " + visitor["ev"]["type"]);
                     break;
             }
+        }
+
+        private IEnumerator Dash(Vector3 direction)
+        {
+            isDashing = true;
+            canDash = false;
+            float time = 0;
+            while (time < dashDuration)
+            {
+                transform.Translate(direction * (dashingPower * Time.deltaTime), Space.World);
+                time += Time.deltaTime;
+                yield return null;
+            }
+            isDashing = false;
+            yield return new WaitForSeconds(dashCooldown);
+            canDash = true;
         }
 
         private void OnCollisionEnter(Collision other)

@@ -159,6 +159,9 @@ MonoBehaviour:
     autoDestroy: 0
   cameraShake: 0
   rotateToDirection: 1
+  SkillDetailUI: {fileID: 0}
+  skillIcon: {fileID: 0}
+  newSkillIcon: {fileID: 0}
   _skillState: 1
   useTarget: 0
   castingSound: {fileID: 0}
@@ -853,6 +856,14 @@ PrefabInstance:
     - target: {fileID: 6853375656630942948, guid: 509da9e9425ca004d99d6775aa1d85eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744015953513336104, guid: 509da9e9425ca004d99d6775aa1d85eb, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744015953513336104, guid: 509da9e9425ca004d99d6775aa1d85eb, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

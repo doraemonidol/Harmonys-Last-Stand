@@ -212,7 +212,11 @@ namespace Logic.Villains
             {
                 ["ev"] =
                 {
-                    ["type"] = EffectType.RESONANCE,
+                    ["type"] = "start-effect"
+                },
+                ["args"] =
+                {
+                    ["name"] = EffectType.RESONANCE,
                 }
             });
             _effectManager.Add(new Resonance(this, (int)args["timeout"]));
@@ -224,7 +228,11 @@ namespace Logic.Villains
             {
                 ["ev"] =
                 {
-                    ["type"] = EffectType.SLEEPY,
+                    ["type"] = "start-effect"
+                },
+                ["args"] =
+                {
+                    ["name"] = EffectType.SLEEPY,
                 }
             });
             _effectManager.Add(new Sleepy(this, (int)args["timeout"]));
@@ -236,7 +244,11 @@ namespace Logic.Villains
             {
                 ["ev"] =
                 {
-                    ["type"] = EffectType.KNOCKBACK,
+                    ["type"] = "start-effect"
+                },
+                ["args"] =
+                {
+                    ["name"] = EffectType.KNOCKBACK,
                     ["distance"] = "2",
                 }
             });
@@ -248,7 +260,11 @@ namespace Logic.Villains
             {
                 ["ev"] =
                 {
-                    ["type"] = EffectType.BLEEDING,
+                    ["type"] = "start-effect"
+                },
+                ["args"] =
+                {
+                    ["name"] = EffectType.BLEEDING,
                 }
             });
             _effectManager.Add(new Bleeding(this, (int)args["timeout"]));
@@ -260,7 +276,11 @@ namespace Logic.Villains
             {
                 ["ev"] =
                 {
-                    ["type"] = EffectType.STUNT,
+                    ["type"] = "start-effect"
+                },
+                ["args"] =
+                {
+                    ["name"] = EffectType.STUNT,
                 }
             });
             _effectManager.Add(new Stunt(this, (int)args["timeout"]));

@@ -696,10 +696,12 @@ MonoBehaviour:
   specialSkills:
   - {fileID: 9137014725332272232}
   - {fileID: 2987722450381414549}
+  weapons: []
+  _activeWeapon: 0
   firePoint: {fileID: 395626364559484372}
   target: {fileID: 0}
-  timeScaleFactor: 0.3
   virtualCamera: {fileID: 0}
+  aurelia: {fileID: 0}
 --- !u!195 &7249316763959245703
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -760,13 +762,16 @@ MonoBehaviour:
   specialSkills:
   - {fileID: 4081111180741363093}
   - {fileID: 8540006828427828906}
-  _activeWeapon: 1
+  _activeWeapon: 0
   firePoint: {fileID: 395626364559484372}
   target: {fileID: 0}
   virtualCamera: {fileID: 0}
   timeScaleFactor: 0.3
   healthBar: {fileID: 0}
   body: {fileID: 4693542075568719128}
+  cloneCastSkill: {fileID: 0}
+  dashingPower: 28
+  dashDuration: 0.15
 --- !u!1 &1976042310398843015
 GameObject:
   m_ObjectHideFlags: 0
