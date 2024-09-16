@@ -46,6 +46,7 @@ namespace MockUp
         private bool canDash = true;
         private bool toDash = false;
         private int oldDirection = 0;
+        private SkillDetailUI dashSkillDetailUI;
 
         private void SetHealth(int health, int maxHealth)
         {
@@ -99,13 +100,11 @@ namespace MockUp
             {
                 skillDetailUIs.Add(skillDetailUI);
             }
-            if (skillDetailUIs.Count != 4)
-            {
-                Debug.LogError("Please assign 4 SkillDetailUI to the player. Only found " + skillDetailUIs.Count);
-            }
             
             // sort the skillDetailUIs by their name
             skillDetailUIs.Sort((a, b) => a.name.CompareTo(b.name));
+            
+            dashSkillDetailUI = skillDetailUIs[4];
         
             UpdateCurrentSkills();
         }
@@ -618,6 +617,7 @@ namespace MockUp
 
         private IEnumerator Dash(Vector3 direction)
         {
+            dashSkillDetailUI.Initialize(dashCooldown);
             isDashing = true;
             canDash = false;
             float time = 0;

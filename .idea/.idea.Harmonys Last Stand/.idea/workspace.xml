@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ddd7aca8-1b86-452c-8319-d86abc9fe976" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character/Amadeus/AmadeusTroop.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character/Amadeus/AmadeusTroop.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Logic/Villains/Villain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Logic/Villains/Villain.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MockUp/AureliaMockUp.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +139,7 @@
       <workItem from="1726411433553" duration="4188000" />
       <workItem from="1726438767476" duration="3253000" />
       <workItem from="1726442675494" duration="5812000" />
-      <workItem from="1726450284520" duration="3837000" />
+      <workItem from="1726450284520" duration="4929000" />
     </task>
     <servers />
   </component>
