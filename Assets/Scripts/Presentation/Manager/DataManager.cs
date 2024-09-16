@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Common;
 using Runtime;
 using UnityEngine;
@@ -10,7 +11,9 @@ namespace Presentation.Manager
         public bool UnlockedLudwig = false;
         public bool UnlockedMaestro = false;
         public int Money = 0;
-        
+        public EntityTypeEnum Weapon1 = EntityTypeEnum.FLUTE;
+        public EntityTypeEnum Weapon2 = EntityTypeEnum.VIOLIN;
+        public List<EntityTypeEnum> UnlockedWeapons = new List<EntityTypeEnum>();
     }
     public class DataManager : MonoBehaviorInstance<DataManager>
     {
@@ -54,6 +57,28 @@ namespace Presentation.Manager
         {
             PlayerData data = LoadData();
             data.Money += money;
+            SaveData(data);
+        }
+        
+        public void SetWeapon1(EntityTypeEnum weapon)
+        {
+            PlayerData data = LoadData();
+            if (weapon == data.Weapon2)
+            {
+                data.Weapon2 = data.Weapon1;
+            }
+            data.Weapon1 = weapon;
+            SaveData(data);
+        }
+        
+        public void SetWeapon2(EntityTypeEnum weapon)
+        {
+            PlayerData data = LoadData();
+            if (weapon == data.Weapon1)
+            {
+                data.Weapon1 = data.Weapon2;
+            }
+            data.Weapon2 = weapon;
             SaveData(data);
         }
     }

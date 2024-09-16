@@ -50,5 +50,33 @@ namespace Common
                 _ => throw new System.Exception("Entity type not found")
             };
         }
+        
+        public static string GetEntityName(EntityTypeEnum entityType)
+        {
+            return entityType switch
+            {
+                EntityTypeEnum.NONE => "None",
+                EntityTypeEnum.AURELIA => "Aurelia",
+                EntityTypeEnum.TROOP => "Troop",
+                EntityTypeEnum.VIOLIN => "Violin",
+                EntityTypeEnum.SAXOPHONE => "Saxophone",
+                EntityTypeEnum.SUPERBASS => "Superbass",
+                EntityTypeEnum.PIANO => "Piano",
+                EntityTypeEnum.FLUTE => "Flute",
+                EntityTypeEnum.GUITAR => "Guitar",
+                EntityTypeEnum.TROOP11 => "Troop11",
+                EntityTypeEnum.TROOP12 => "Troop12",
+                EntityTypeEnum.TROOP21 => "Troop21",
+                EntityTypeEnum.TROOP22 => "Troop22",
+                EntityTypeEnum.AMADEUS => "Amadeus",
+                EntityTypeEnum.LUDWIG => "Ludwig",
+                EntityTypeEnum.MAESTRO => "Maestro",
+                EntityTypeEnum.WEAPON_MAESTRO => "Maestro Weapon",
+                EntityTypeEnum.WEAPON_LUDWIG => "Ludwig Weapon",
+                EntityTypeEnum.WEAPON_AMADEUS => "Amadeus Weapon",
+                EntityTypeEnum.WEAPON_TROOP => "Troop Weapon",
+                _ => throw new System.Exception("Entity type not found")
+            };
+        }
     }
 }

@@ -55,12 +55,20 @@
         /// <returns></returns>
         public virtual bool RayCast(Vector2 hitPointNormalized, BookActionDelegate action)
         {
+            Debug.Log("Raycasting at " + hitPointNormalized);
             // no camera available, exit
             if (pageViewCamera == null) return false;
-
-            // cast a ray
+            
+            Debug.Log("Have Camera");
+            
+            // draw a ray
+            Debug.DrawRay(pageViewCamera.ViewportPointToRay(hitPointNormalized).origin, pageViewCamera.ViewportPointToRay(hitPointNormalized).direction * maxRayCastDistance, Color.red, 100f);
+            // camera is rotated (90, 45, 0) so the ray is not straight
+            
+            // cast a ray from the camera to the hit point
+            
             RaycastHit hit;
-            if (Physics.Raycast(pageViewCamera.ViewportPointToRay(hitPointNormalized), out hit, maxRayCastDistance, raycastLayerMask))
+            if (Physics.Raycast(pageViewCamera.ViewportPointToRay(hitPointNormalized), out hit, maxRayCastDistance))
             {
                 Debug.Log("Raycast Hit: " + hit.collider.gameObject.name + " at " + hit.point + " with normal " + hit.normal + " and distance " + hit.distance + " from camera");
                 // call virtual hit method

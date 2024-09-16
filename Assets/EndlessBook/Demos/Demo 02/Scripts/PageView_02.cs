@@ -1,5 +1,7 @@
 ﻿
 
+using Presentation.GUI;
+
 namespace echo17.EndlessBook.Demo02
 {
     using System;
@@ -38,6 +40,7 @@ namespace echo17.EndlessBook.Demo02
 
         protected override bool HandleHit(RaycastHit hit, BookActionDelegate action)
         {
+            UIManager.Instance.ShowWeaponConfirmationPanel(BookController.Instance.GetCurrentWeapon());
             return true;
         }
     }

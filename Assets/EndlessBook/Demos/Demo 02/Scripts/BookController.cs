@@ -1,6 +1,9 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using Common;
 using echo17.EndlessBook;
 using echo17.EndlessBook.Demo02;
+using Presentation.GUI;
 using Runtime;
 using UnityEngine;
 
@@ -35,7 +38,6 @@ namespace echo17.EndlessBook.Demo02
     /// </summary>
     public class BookController : MonoBehaviorInstance<BookController>
     {
-        public bool isOpening = false;
         /// <summary>
         /// Make sure the audio is off so that we don't get an open sound at the beginning
         /// </summary>
@@ -128,6 +130,36 @@ namespace echo17.EndlessBook.Demo02
             // turn on the audio now that the book state is set the first time,
             // otherwise we'd hear a noise and no change would occur
             audioOn = true;
+        }
+
+        private void Update()
+        {
+            if (!GameManager.Instance.isOpeningBook)
+            {
+                Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+                if (Vector3.Distance(player.position, transform.position) < 20F)
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        GameManager.Instance.OpenBook();
+                    }
+                }
+            }
+        }
+
+        public EntityTypeEnum GetCurrentWeapon()
+        {
+            switch (book.CurrentLeftPageNumber)
+            {
+                case 1:
+                    return EntityTypeEnum.FLUTE;
+                case 3:
+                    return EntityTypeEnum.VIOLIN;
+                case 5:
+                    return EntityTypeEnum.SUPERBASS;
+            }
+
+            return EntityTypeEnum.NONE;
         }
 
         /// <summary>
@@ -377,6 +409,7 @@ namespace echo17.EndlessBook.Demo02
         /// <param name="dragging">Whether we were dragging</param>
         protected virtual void TouchPadTouchUpDetected(TouchPad.PageEnum page, Vector2 hitPointNormalized, bool dragging)
         {
+            Debug.Log("TouchPadTouchUpDetected");
             switch (book.CurrentState)
             {
                 case EndlessBook.StateEnum.ClosedFront:
@@ -443,6 +476,7 @@ namespace echo17.EndlessBook.Demo02
 
                             if (pageView != null)
                             {
+                                Debug.Log("PageView is not null");
                                 // cast a ray into the page and exit if we hit something (don't turn the page)
                                 if (pageView.RayCast(hitPointNormalized, BookAction))
                                 {
@@ -698,11 +732,6 @@ namespace echo17.EndlessBook.Demo02
                             onCompleted: OnBookStateChanged,
                             onPageTurnStart: OnPageTurnStart,
                             onPageTurnEnd: OnPageTurnEnd);
-        }
-
-        public void CloseBook()
-        {
-            isOpening = false;
         }
     }
 }

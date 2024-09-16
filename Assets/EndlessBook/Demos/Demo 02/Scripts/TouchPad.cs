@@ -269,10 +269,10 @@
             Ray ray = mainCamera.ScreenPointToRay(mousePosition);
             RaycastHit hit;
             
-            Debug.Log("Ray: " + ray);
+            // Debug.Log("Ray: " + ray);
             
             // Draw the ray
-            Debug.DrawRay(ray.origin, ray.direction * 5000, Color.red);
+            // Debug.DrawRay(ray.origin, ray.direction * 5000, Color.red);
 
             // cast the ray against the collider mask
             if (Physics.Raycast(ray, out hit, 5000, pageTouchPadLayerMask))
@@ -296,11 +296,34 @@
                 hitPositionNormalized = new Vector2((hit.point.x - pageRects[pageIndex].xMin) / pageRects[pageIndex].width,
                                                         (hit.point.z - pageRects[pageIndex].yMin) / pageRects[pageIndex].height
                                                         );
+                
+                // Rotate the hitPositionNormalized around the center of the page 45 degrees
+                hitPositionNormalized = RotatePointAroundPivot(hitPositionNormalized, new Vector2(0.5f, 0.5f), 45f);
 
                 return true;
             }
 
             return false;
+        }
+
+        private Vector2 RotatePointAroundPivot(Vector2 hitPositionNormalized, Vector2 vector2, float f)
+        {
+            float angle = f * Mathf.Deg2Rad;
+            float s = Mathf.Sin(angle);
+            float c = Mathf.Cos(angle);
+
+            // translate point back to origin:
+            hitPositionNormalized.x -= vector2.x;
+            hitPositionNormalized.y -= vector2.y;
+
+            // rotate point
+            float xnew = hitPositionNormalized.x * c - hitPositionNormalized.y * s;
+            float ynew = hitPositionNormalized.x * s + hitPositionNormalized.y * c;
+
+            // translate point back:
+            hitPositionNormalized.x = xnew + vector2.x;
+            hitPositionNormalized.y = ynew + vector2.y;
+            return hitPositionNormalized;
         }
     }
 }

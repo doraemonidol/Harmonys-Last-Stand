@@ -14,10 +14,13 @@ namespace Presentation.GUI
             get => Time.timeScale == 0;
             set => Time.timeScale = value ? 0 : 1;
         }
+        public Cinemachine.CinemachineVirtualCamera BookCamera;
+        public bool isOpeningBook = false;
         
         private void Start()
         {
             Debug.Log("Game Manager Start");
+            BookCamera.gameObject.SetActive(false);
         }
 
         private void OnEnable()
@@ -63,9 +66,19 @@ namespace Presentation.GUI
             UIManager.Instance.ShowWinPanel();
         }
 
-        public void EquipWeapon()
+        public void OpenBook()
         {
-            UIManager.Instance.ShowWeaponPanel();
+            Debug.Log("Open Book");
+            isOpeningBook = true;
+            UIManager.Instance.OpenBook();
+            BookCamera.gameObject.SetActive(true);
+        }
+        
+        public void CloseBook()
+        {
+            isOpeningBook = false;
+            UIManager.Instance.CloseBook();
+            BookCamera.gameObject.SetActive(false);
         }
     }
 }

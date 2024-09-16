@@ -4211,6 +4211,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f30f9b309cb224a7a82c8930dbf96bf1, type: 3}
+    - target: {fileID: 3613630518182661447, guid: 433f2929083632748a337f5d0711da0d, type: 3}
+      propertyPath: maxRayCastDistance
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 4177744308756340226, guid: 433f2929083632748a337f5d0711da0d, type: 3}
       propertyPath: m_Name
       value: PageView_05
@@ -11602,7 +11606,7 @@ Transform:
   - {fileID: 8542866783477661218}
   - {fileID: 1569757040}
   - {fileID: 2041283317}
-  - {fileID: 986676938}
+  - {fileID: 733899140}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &553972531 stripped
@@ -13850,13 +13854,14 @@ GameObject:
   - component: {fileID: 646772495}
   - component: {fileID: 646772494}
   - component: {fileID: 646772493}
+  - component: {fileID: 646772497}
   m_Layer: 5
   m_Name: EquipWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &646772493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13930,6 +13935,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 700, y: 345.1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &646772497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646772492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667a93eda38a4eb08f02c5b17a77351d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon1Text: {fileID: 744497336}
+  weapon2Text: {fileID: 347882144}
 --- !u!1001 &648271998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15294,7 +15313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94bb71e89d501be40b3b9f6004553212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOpening: 0
   book: {fileID: 2041283318}
   openCloseTime: 0.7
   groupPageTurnType: 1
@@ -15323,16 +15341,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733899138}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0.38268343, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.29850745, y: 0.29850745, z: 0.29850745}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 386132293}
   - {fileID: 1739981909}
   - {fileID: 31545463}
   - {fileID: 1399448892}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 551793185}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &733950318
 PrefabInstance:
@@ -19617,7 +19635,7 @@ PrefabInstance:
       objectReference: {fileID: 1646445988}
     - target: {fileID: 6685986326399751868, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnStartGameButtonClicked
+      value: OnSetWeapon1
       objectReference: {fileID: 0}
     - target: {fileID: 6685986326399751868, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -19653,7 +19671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7548750344827546787, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7548750344827546787, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_AnchorMin.x
@@ -19661,7 +19679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7548750344827546787, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7548750344827546787, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_SizeDelta.x
@@ -19701,11 +19719,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7548750344827546787, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 7548750344827546787, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 7548750344827546787, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -20065,12 +20083,12 @@ GameObject:
   - component: {fileID: 986676940}
   - component: {fileID: 986676939}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: BookCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &986676938
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20078,19 +20096,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986676937}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 612804827}
-  m_Father: {fileID: 551793185}
+  m_Father: {fileID: 2897061288286699549}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 284.99997}
+  m_SizeDelta: {x: 1013, y: 570}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &986676939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23989,6 +24007,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 26bd48326fc3b4f4eb9f7a09113d9dd6, type: 3}
+    - target: {fileID: 3613630518182661447, guid: 433f2929083632748a337f5d0711da0d, type: 3}
+      propertyPath: maxRayCastDistance
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 4177744308756340226, guid: 433f2929083632748a337f5d0711da0d, type: 3}
       propertyPath: m_Name
       value: PageView_03
@@ -29147,6 +29169,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 2.100006
       objectReference: {fileID: 0}
+    - target: {fileID: 6685986326399751868, guid: add94a433ee084958b99c366ab2e0184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1646445988}
+    - target: {fileID: 6685986326399751868, guid: add94a433ee084958b99c366ab2e0184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnOpenBook_Back
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685986326399751868, guid: add94a433ee084958b99c366ab2e0184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Presentation.GUI.UIManager, Scripts
+      objectReference: {fileID: 0}
     - target: {fileID: 7130122515573654279, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_text
       value: Back
@@ -33619,6 +33653,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7242901819949165592, guid: c77417edd5e1b1a48acc1fc4dcb5fc3d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7867864651608363850, guid: c77417edd5e1b1a48acc1fc4dcb5fc3d, type: 3}
       propertyPath: m_Text
       value: The violin channels a balance of elegance and power, capable of both
@@ -34205,7 +34243,7 @@ PrefabInstance:
       objectReference: {fileID: 1646445988}
     - target: {fileID: 6685986326399751868, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnStartGameButtonClicked
+      value: OnSetWeapon2
       objectReference: {fileID: 0}
     - target: {fileID: 6685986326399751868, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -34241,7 +34279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7548750344827546787, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7548750344827546787, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_AnchorMin.x
@@ -34249,7 +34287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7548750344827546787, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7548750344827546787, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_SizeDelta.x
@@ -34289,11 +34327,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7548750344827546787, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 525
       objectReference: {fileID: 0}
     - target: {fileID: 7548750344827546787, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 7548750344827546787, guid: add94a433ee084958b99c366ab2e0184, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -34379,14 +34417,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824635261}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.656664, y: 0.2714883, z: -0.27530804, w: 0.64752764}
+  m_LocalRotation: {x: 0.6532815, y: 0.27059805, z: -0.27059805, w: 0.6532815}
   m_LocalPosition: {x: 122.42998, y: 3.7620964, z: -43.55828}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 953365714}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 70.739006, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 45, z: 0}
 --- !u!1001 &1827147763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36014,6 +36052,10 @@ PrefabInstance:
       propertyPath: _sceneTriggers.Array.data[2]
       value: 
       objectReference: {fileID: 815370914}
+    - target: {fileID: 9176727825417757822, guid: d647695c9b8c0b7498314fb3b98e1ed6, type: 3}
+      propertyPath: BookCamera
+      value: 
+      objectReference: {fileID: 1824635262}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -40554,6 +40596,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4222727545631856326}
+  - {fileID: 986676938}
   - {fileID: 4716399014722936269}
   - {fileID: 646772496}
   - {fileID: 941842734}
@@ -40931,7 +40974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &5271961405977113229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41653,7 +41696,6 @@ SceneRoots:
   - {fileID: 551793185}
   - {fileID: 316310779}
   - {fileID: 1601500458}
-  - {fileID: 733899140}
   - {fileID: 1824635263}
   - {fileID: 7306298682128771514}
   - {fileID: 658521593}
