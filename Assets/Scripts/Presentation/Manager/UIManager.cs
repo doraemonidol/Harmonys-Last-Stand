@@ -26,6 +26,9 @@ namespace Presentation.GUI
         [SerializeField] private GameObject _ludwigConfirmationText;
         [SerializeField] private GameObject _maestroConfirmationText;
         [SerializeField] private string _sceneType;
+        
+        [SerializeField] private Canvas bookCanvas;
+        [SerializeField] private GameObject weaponConfirmationPanel;
     
         [Header("In game menu")]
         [SerializeField] private GameObject _ingameUI;
@@ -56,6 +59,9 @@ namespace Presentation.GUI
                 _amadeusConfirmationText.SetActive(false);
                 _ludwigConfirmationText.SetActive(false);
                 _maestroConfirmationText.SetActive(false);
+                
+                bookCanvas.gameObject.SetActive(false);
+                weaponConfirmationPanel.SetActive(false);
             }
             else
             {
@@ -333,5 +339,23 @@ namespace Presentation.GUI
         #endregion
 
         #endregion
+
+        public void ShowWeaponPanel()
+        {
+            bookCanvas.gameObject.SetActive(true);
+            weaponConfirmationPanel.SetActive(true);
+        }
+
+        public void HideWeaponPanel()
+        {
+            bookCanvas.gameObject.SetActive(false);
+            weaponConfirmationPanel.SetActive(false);
+        }
+
+        public void OnWeaponPanel_Back()
+        {
+            HideWeaponPanel();
+            // BookController.Instance.CloseBook();
+        }
     }
 }

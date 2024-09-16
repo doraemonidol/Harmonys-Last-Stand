@@ -62,5 +62,10 @@ namespace Presentation.GUI
             GlobalVariables.Set("isWin", true);
             UIManager.Instance.ShowWinPanel();
         }
+
+        public void EquipWeapon()
+        {
+            UIManager.Instance.ShowWeaponPanel();
+        }
     }
 }

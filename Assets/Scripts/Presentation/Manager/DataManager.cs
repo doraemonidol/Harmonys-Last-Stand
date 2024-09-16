@@ -10,6 +10,7 @@ namespace Presentation.Manager
         public bool UnlockedLudwig = false;
         public bool UnlockedMaestro = false;
         public int Money = 0;
+        
     }
     public class DataManager : MonoBehaviorInstance<DataManager>
     {
