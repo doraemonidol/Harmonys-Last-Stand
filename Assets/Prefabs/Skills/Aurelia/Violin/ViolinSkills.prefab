@@ -45,24 +45,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a452852caa312b94dacd8263f796bf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityType: 0
+  isReady: 1
   preCastVfx:
     vfx: {fileID: 0}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   projectileVfx:
     vfx: {fileID: 1607489160101874, guid: 5713a28142b101545afa3f26bac990e2, type: 3}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   postCastVfx:
     vfx: {fileID: 0}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   cameraShake: 0
   rotateToDirection: 1
-  cooldownTime: 1
+  SkillDetailUI: {fileID: 0}
+  skillIcon: {fileID: -14439252, guid: 237d9476ac323e94a908b3b796ec3c3a, type: 3}
+  newSkillIcon: {fileID: 0}
+  _skillState: 1
   useTarget: 0
   castingSound: {fileID: 0}
   hitSound: {fileID: 0}
@@ -167,28 +175,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a452852caa312b94dacd8263f796bf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityType: 0
+  isReady: 1
   preCastVfx:
     vfx: {fileID: 1389097199030296, guid: c0c9c0ee0e189964281147a4700ab99d, type: 3}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   projectileVfx:
     vfx: {fileID: 0}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   postCastVfx:
     vfx: {fileID: 0}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   cameraShake: 0
   rotateToDirection: 1
-  cooldownTime: 1
+  SkillDetailUI: {fileID: 0}
+  skillIcon: {fileID: 636886146, guid: 237d9476ac323e94a908b3b796ec3c3a, type: 3}
+  newSkillIcon: {fileID: 0}
+  _skillState: 1
   useTarget: 0
   castingSound: {fileID: 0}
   hitSound: {fileID: 0}
-  channelingTime: 2
+  channelingTime: 1
   skillIndicator: {fileID: 392337186021041848}
 --- !u!1 &2790724483349777351
 GameObject:
@@ -407,24 +423,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1204db3e8bde4bd479ea3cfa202e9e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityType: 0
+  isReady: 1
   preCastVfx:
     vfx: {fileID: 0}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   projectileVfx:
     vfx: {fileID: 3968138036721122158, guid: 6430ed3827ab7c64782d7616feb14f48, type: 3}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   postCastVfx:
     vfx: {fileID: 0}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   cameraShake: 0
   rotateToDirection: 0
-  cooldownTime: 1
+  SkillDetailUI: {fileID: 0}
+  skillIcon: {fileID: -284842518, guid: 237d9476ac323e94a908b3b796ec3c3a, type: 3}
+  newSkillIcon: {fileID: 0}
+  _skillState: 1
   useTarget: 0
   castingSound: {fileID: 0}
   hitSound: {fileID: 0}
@@ -472,24 +496,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1204db3e8bde4bd479ea3cfa202e9e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityType: 0
+  isReady: 1
   preCastVfx:
     vfx: {fileID: 0}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   projectileVfx:
-    vfx: {fileID: 7990345093284203910, guid: c68e6581490ed4244acd47a305c8d3bc, type: 3}
+    vfx: {fileID: 6159129364514956513, guid: ad38d9a23635d5545ab1c79f8e9e7457, type: 3}
     duration: 10
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 1
   postCastVfx:
     vfx: {fileID: 0}
     duration: 0
+    affectCooldown: 0
     transform: {fileID: 0}
     autoDestroy: 0
   cameraShake: 0
   rotateToDirection: 1
-  cooldownTime: 1
+  SkillDetailUI: {fileID: 0}
+  skillIcon: {fileID: -2097312786, guid: 237d9476ac323e94a908b3b796ec3c3a, type: 3}
+  newSkillIcon: {fileID: -264187060, guid: 237d9476ac323e94a908b3b796ec3c3a, type: 3}
+  _skillState: 1
   useTarget: 0
   castingSound: {fileID: 0}
   hitSound: {fileID: 0}

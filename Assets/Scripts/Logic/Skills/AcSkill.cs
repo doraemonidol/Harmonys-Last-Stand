@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using Common;
 using DTO;
@@ -166,14 +167,15 @@ namespace Logic.Skills
             this.Lock();
         }
         
-        private void CallVisitor(string typeEv)
+        private void CallVisitor(string typeEv, Dictionary<string, object> context)
         {
             var visitor = new EventUpdateVisitor
             {
                 ["ev"] =
                 {
                     ["type"] = typeEv
-                }
+                },
+                ["context"] = new Dictionary<string, object>(context)
             };
             this.NotifySubscribers(visitor);
         }
@@ -181,7 +183,13 @@ namespace Logic.Skills
         public void Lock()
         {
             this.Locked = true;
-            CallVisitor("lock");
+            CallVisitor(
+                "lock",
+                new Dictionary<string, object>
+                {
+                    ["timeout"] = (float)this.CoolDownTime / GameStats.BASE_TIME_UNIT
+                }
+            );
             _thread = new Thread(() =>
             {
                 while (CustomTime.WhatIsIt() < this.NextTimeToAvailable)
@@ -196,14 +204,14 @@ namespace Logic.Skills
         public void Unlock()
         {
             this.Locked = false;
-            CallVisitor("unlock");
+            CallVisitor("unlock", new Dictionary<string, object>());
         }
         
         public void ImmediateUnlock()
         {
             _thread.Abort();
             this.Locked = false;
-            CallVisitor("unlock");
+            CallVisitor("unlock", new Dictionary<string, object>());
         }
 
         public virtual void Cancel()

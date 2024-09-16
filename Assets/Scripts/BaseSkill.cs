@@ -5,6 +5,7 @@ using Cinemachine;
 using MockUp;
 using Presentation;
 using Presentation.Projectiles;
+using Presentation.UI;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -22,9 +23,11 @@ public abstract class BaseSkill : PSkill
     private CameraShakeSimpleScript _cameraShakeSimpleScript;
     protected RotateToDirection Rotator;
 
-    [Header("Skill Timings")] [SerializeField]
-
-    private SkillState _skillState = SkillState.Idle;
+    [Header("Skill Timings")] 
+    [SerializeField] protected SkillDetailUI SkillDetailUI;
+    [SerializeField] protected Sprite skillIcon;
+    [SerializeField] protected Sprite newSkillIcon;
+    [SerializeField] protected SkillState _skillState = SkillState.Idle;
 
     [Space] [Header("Attack Direction")] private GameObject _firePoint;
     private GameObject _target;
@@ -34,6 +37,11 @@ public abstract class BaseSkill : PSkill
     private AudioClip castingSound;
 
     [SerializeField] private AudioClip hitSound;
+
+    public Sprite GetIcon()
+    {
+        return skillIcon;
+    }
 
     public void AttachRotator(RotateToDirection rotator)
     {
@@ -55,14 +63,34 @@ public abstract class BaseSkill : PSkill
         if (virtualCamera)
             _cameraShakeSimpleScript = virtualCamera.GetComponent<CameraShakeSimpleScript>();
     }
+    
+    public void AttachSkillDetailUI(SkillDetailUI skillDetailUI)
+    {
+        SkillDetailUI = skillDetailUI;
+    }
+
+    private void OnCastEnd()
+    {
+        _skillState = SkillState.Idle;
+    }
 
     public void StartCasting()
     {
+        if (newSkillIcon == null)
+        {
+            newSkillIcon = skillIcon;
+        }
+        
         if (_skillState == SkillState.Casting)
         {
             ProjectileMovement projectileMovement = _currentInstantiatedVfx.GetComponent<ProjectileMovement>();
             if (projectileMovement.hasUltimate)
             {
+                isReady = false;
+                StartCoroutine(CustomDelay(0.5f, () =>
+                {
+                    isReady = true;
+                }));
                 projectileMovement.Ultimate();
             }
         }
@@ -71,10 +99,21 @@ public abstract class BaseSkill : PSkill
             StartCoroutine(PlayVFX());
         }
     }
+    
+    private IEnumerator CustomDelay(float delay, System.Action action)
+    {
+        yield return new WaitForSeconds(delay);
+        action();
+    }
 
     public IEnumerator PlayVFX()
     {
         _skillState = SkillState.PreCasting;
+        
+        if (SkillDetailUI)
+        {
+            SkillDetailUI.SetIcon(newSkillIcon);
+        }
 
         if (cameraShake)
         {
@@ -100,6 +139,12 @@ public abstract class BaseSkill : PSkill
         {
             StartCoroutine(RenderVFX(postCastVfx));
             yield return new WaitForSeconds(postCastVfx.duration);
+        }
+        
+        _skillState = SkillState.Idle;
+        if (SkillDetailUI)
+        {
+            SkillDetailUI.SetIcon(skillIcon);
         }
     }
 

@@ -267,6 +267,9 @@ MonoBehaviour:
     autoDestroy: 0
   cameraShake: 0
   rotateToDirection: 0
+  SkillDetailUI: {fileID: 0}
+  skillIcon: {fileID: -284842518, guid: 237d9476ac323e94a908b3b796ec3c3a, type: 3}
+  newSkillIcon: {fileID: 0}
   _skillState: 1
   useTarget: 0
   castingSound: {fileID: 0}
@@ -862,11 +865,14 @@ MonoBehaviour:
     autoDestroy: 0
   cameraShake: 0
   rotateToDirection: 1
+  SkillDetailUI: {fileID: 0}
+  skillIcon: {fileID: -14439252, guid: 237d9476ac323e94a908b3b796ec3c3a, type: 3}
+  newSkillIcon: {fileID: 0}
   _skillState: 1
   useTarget: 0
   castingSound: {fileID: 0}
   hitSound: {fileID: 0}
-  channelingTime: 2
+  channelingTime: 1
   skillIndicator: {fileID: 5927014817339095636}
 --- !u!1 &2228480603396179713
 GameObject:
@@ -1207,6 +1213,9 @@ MonoBehaviour:
     autoDestroy: 0
   cameraShake: 0
   rotateToDirection: 1
+  SkillDetailUI: {fileID: 0}
+  skillIcon: {fileID: -14439252, guid: 237d9476ac323e94a908b3b796ec3c3a, type: 3}
+  newSkillIcon: {fileID: 0}
   _skillState: 1
   useTarget: 0
   castingSound: {fileID: 0}
@@ -1423,11 +1432,14 @@ MonoBehaviour:
     autoDestroy: 0
   cameraShake: 0
   rotateToDirection: 0
+  SkillDetailUI: {fileID: 0}
+  skillIcon: {fileID: -546569999, guid: 237d9476ac323e94a908b3b796ec3c3a, type: 3}
+  newSkillIcon: {fileID: 0}
   _skillState: 1
   useTarget: 0
   castingSound: {fileID: 0}
   hitSound: {fileID: 0}
-  channelingTime: 2
+  channelingTime: 1
   skillIndicator: {fileID: 4217750816030022122}
 --- !u!1001 &591916626789518585
 PrefabInstance:

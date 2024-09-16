@@ -17,6 +17,7 @@ namespace Presentation.Maestro
         {
             Debug.Log("Grave " + Index + " is clicked");
             GraveManager.Instance.SetFound(Index);
+            Destroy(gameObject);
         }
     }
 }

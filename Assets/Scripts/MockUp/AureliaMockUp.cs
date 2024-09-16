@@ -17,9 +17,10 @@ namespace MockUp
 {
     public class AureliaMockUp : PresentationObject
     {
+        private List<SkillDetailUI> skillDetailUIs;
         [SerializeField] List<PWeapon> weapons;
-        [SerializeField] private List<PlayerSkill> normalSkills;
-        [SerializeField] private List<PlayerSkill> specialSkills;
+        [SerializeField] public List<PlayerSkill> normalSkills;
+        [SerializeField] public List<PlayerSkill> specialSkills;
         [SerializeField] private int _activeWeapon = 0;
         private int _currentSkill = -1;
         private double _beginChannelingTime = 0f;
@@ -36,11 +37,17 @@ namespace MockUp
         private bool isStopped = false;
         
         private bool isDead = false;
+        public CloneCastSkill cloneCastSkill;
 
         private void SetHealth(int health, int maxHealth)
         {
             healthBar.currentHealth = health;
             healthBar.maxHealth = maxHealth;
+        }
+        
+        public int GetActiveWeapon()
+        {
+            return _activeWeapon;
         }
 
         public override void Start()
@@ -77,6 +84,20 @@ namespace MockUp
             {
                 Debug.LogError("Please assign Animator to the player");
             }
+            
+            // Find all gameobjects with script SkillDetailUI
+            skillDetailUIs = new List<SkillDetailUI>();
+            foreach (var skillDetailUI in FindObjectsOfType<SkillDetailUI>())
+            {
+                skillDetailUIs.Add(skillDetailUI);
+            }
+            if (skillDetailUIs.Count != 4)
+            {
+                Debug.LogError("Please assign 4 SkillDetailUI to the player. Only found " + skillDetailUIs.Count);
+            }
+            
+            // sort the skillDetailUIs by their name
+            skillDetailUIs.Sort((a, b) => a.name.CompareTo(b.name));
         
             UpdateCurrentSkills();
         }
@@ -93,6 +114,8 @@ namespace MockUp
                 normalSkills[i].AttachFirePoint(firePoint);
                 normalSkills[i].AttachTarget(target);
                 normalSkills[i].AttachVirtualCamera(virtualCamera);
+                normalSkills[i].AttachSkillDetailUI(skillDetailUIs[i * 2]);
+                skillDetailUIs[i * 2].SetIcon(normalSkills[i].GetIcon());
             }
         
             for (int i = 0; i < specialSkills.Count; i++)
@@ -102,6 +125,13 @@ namespace MockUp
                 specialSkills[i].AttachFirePoint(firePoint);
                 specialSkills[i].AttachTarget(target);
                 specialSkills[i].AttachVirtualCamera(virtualCamera);
+                specialSkills[i].AttachSkillDetailUI(skillDetailUIs[i * 2 + 1]);
+                skillDetailUIs[i * 2 + 1].SetIcon(specialSkills[i].GetIcon());
+            }
+            
+            if (cloneCastSkill)
+            {
+                cloneCastSkill.UpdateCurrentSkills();
             }
         }
 
@@ -238,6 +268,10 @@ namespace MockUp
                         };
                         LogicLayer.GetInstance().Observe(eventd);
                         normalSkills[i].StartCasting();
+                        if (cloneCastSkill)
+                        {
+                            cloneCastSkill.CastNormalSkill(i);
+                        }
                         OnCasting();
                     }
 
@@ -267,6 +301,10 @@ namespace MockUp
                         };
                         LogicLayer.GetInstance().Observe(eventd);
                         specialSkills[i].StartCasting();
+                        if (cloneCastSkill)
+                        {
+                            cloneCastSkill.CastSpecialSkill(i);
+                        }
                         OnCasting();
                     }
                     _currentSkill = -1;

@@ -1,5 +1,6 @@
 using Logic;
 using Presentation;
+using UnityEngine;
 using Debug = UnityEngine.Debug;
 
 public abstract class PlayerSkill : BaseSkill
@@ -15,10 +16,17 @@ public abstract class PlayerSkill : BaseSkill
         {
             case "lock":
                 isReady = false;
+                float timeout = (float) visitor["context"]["timeout"];
+                SkillDetailUI.Initialize(timeout);
                 break;
             case "unlock":
                 isReady = true;
                 break;
         }
+    }
+    
+    public PlayerSkill Copy()
+    {
+        return (PlayerSkill) MemberwiseClone();
     }
 }
