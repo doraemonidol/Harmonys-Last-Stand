@@ -51,7 +51,8 @@ namespace Presentation.GUI
         
         public void LoadScene(string sceneType)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneType);
+            // UnityEngine.SceneManagement.SceneManager.LoadScene(sceneType);
+            bl_SceneLoaderManager.LoadScene(sceneType);
         }
         
         public void ReloadCurrentScene()

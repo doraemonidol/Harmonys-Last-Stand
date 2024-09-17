@@ -443,7 +443,7 @@ MonoBehaviour:
   maestroUnlocked: {fileID: 5406989960132357952}
   weapon1Text: {fileID: 2884741697318026738}
   weapon2Text: {fileID: 2528392483006198190}
-  CoinsText: {fileID: 0}
+  CoinsText: {fileID: 7679137667297730218}
 --- !u!1 &4845407792616741739
 GameObject:
   m_ObjectHideFlags: 0

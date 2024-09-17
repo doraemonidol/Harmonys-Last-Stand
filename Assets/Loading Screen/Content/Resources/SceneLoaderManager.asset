@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7decf71d60cb2fe438b4d9a0a160a517, type: 3}
+  m_Name: SceneLoaderManager
+  m_EditorClassIdentifier: 
+  loadingScreenMode: 1
+  sceneList:
+  - SceneName: MainMenu
+    SceneAsset: {fileID: 102900000, guid: 7de54a6e34442ec44aed46a8c229c6d3, type: 3}
+    DisplayName: MainMenu
+    Description: 
+    SkipType: 3
+    LoadingType: 0
+    FakeLoadingTime: 8.2
+    Backgrounds:
+    - {fileID: 21300000, guid: 8203ba590ac734c259456bf393729919, type: 3}
+  - SceneName: LobbyScene
+    SceneAsset: {fileID: 102900000, guid: ba9f3dcb3f9004ee590cd41aae246338, type: 3}
+    DisplayName: Intializing...
+    Description: 
+    SkipType: 3
+    LoadingType: 0
+    FakeLoadingTime: 8.5
+    Backgrounds:
+    - {fileID: 21300000, guid: 8203ba590ac734c259456bf393729919, type: 3}
+  - SceneName: TroopScene1
+    SceneAsset: {fileID: 102900000, guid: 6ec5a199be584435fbd58f05ed30bac5, type: 3}
+    DisplayName: Symphony of Shadows
+    Description: "In this eerie battlefield, Amadeus's minions patrol the surroundings,
+      filling the air with haunting melodies. Their synchronized movements echo the
+      brilliance of their master\u2019s compositions, but their attacks strike with
+      calculated precision. Players must navigate through these symphonic warriors,
+      each step timed to avoid the rhythmic traps set by their harmonic formations."
+    SkipType: 3
+    LoadingType: 0
+    FakeLoadingTime: 4.5
+    Backgrounds:
+    - {fileID: 21300000, guid: 07ef1e9f24860be4083f6ded12ceea33, type: 3}
+  - SceneName: BossScene1
+    SceneAsset: {fileID: 102900000, guid: fc91f796fd82be8468895df0a215a2db, type: 3}
+    DisplayName: The Final Requiem
+    Description: In the grand concert hall, Amadeus himself awaits, conducting his
+      orchestra of destruction. His powerful symphonies manifest as waves of energy,
+      each note imbued with deadly force. As the fight progresses, the intensity
+      of his music builds, unleashing devastating attacks in perfect harmony with
+      the crescendo of his battle.
+    SkipType: 3
+    LoadingType: 0
+    FakeLoadingTime: 2
+    Backgrounds:
+    - {fileID: 21300000, guid: 4c47c9958e903324489032377dedad6b, type: 3}
+  - SceneName: TroopScene2
+    SceneAsset: {fileID: 102900000, guid: ee2c2f3ee460aa743b8980cfdcd3125c, type: 3}
+    DisplayName: Troop#2
+    Description: 
+    SkipType: 3
+    LoadingType: 0
+    FakeLoadingTime: 2
+    Backgrounds: []
+  - SceneName: BossScene2
+    SceneAsset: {fileID: 102900000, guid: c484d0c9d2aef5149b7a1a77138bc7cc, type: 3}
+    DisplayName: Ludwig
+    Description: 
+    SkipType: 3
+    LoadingType: 0
+    FakeLoadingTime: 2
+    Backgrounds: []
+  - SceneName: TroopScene3
+    SceneAsset: {fileID: 102900000, guid: 97bd7f6fde7c6b245b8d36db330e0049, type: 3}
+    DisplayName: Graveyard of Lost Notes
+    Description: "Hidden within a gloomy, fog-covered graveyard, the player must
+      solve the mystery of the hidden graves of Maestro's fallen henchmen. Shadows
+      twist around, and false paths appear, while Maestro\u2019s mocking laughter
+      fills the air. Only by following subtle musical clues can the player uncover
+      the correct graves and move forward, all while avoiding Maestro\u2019s trickery."
+    SkipType: 3
+    LoadingType: 0
+    FakeLoadingTime: 2
+    Backgrounds:
+    - {fileID: 21300000, guid: 85468821916fdcc45ad6ccd10d575367, type: 3}
+  - SceneName: BossScene3
+    SceneAsset: {fileID: 102900000, guid: 7df5e81f387c243438c2b0e3b37d3d07, type: 3}
+    DisplayName: Carnival of Chaos
+    Description: In the heart of a sinister carnival, Maestro reveals his true form
+      as a malevolent, twisted clown. The fight is chaotic and unpredictable, with
+      Maestro using dark humor and wild illusions to confuse and torment the player.
+      His attacks are as theatrical as they are deadly, with each phase of the battle
+      intensifying as the performance reaches its terrifying finale.
+    SkipType: 3
+    LoadingType: 0
+    FakeLoadingTime: 2
+    Backgrounds:
+    - {fileID: 21300000, guid: ff1807181d38de9429d44df5f60e7a4b, type: 3}
+  tipsList:
+  - 'Master Your Weapon Combos: Make use of the dual-weapon system. Experiment with
+    different weapon combinations to find synergies that suit your playstyle.'
+  - 'Timing Your Spells: Long-pressing for Special Spells deals more damage but takes
+    time to charge. Use them strategically when you have space or need a powerful
+    attack.'
+  - 'Dodge and Move: Keep moving with WASD/Arrow keys to avoid enemy attacks. Positioning
+    is key to staying alive during tough troop battles and boss fights.'
+  - 'Plan for Boss Fights: Before entering a boss fight, ensure you''ve cleared troop
+    battles efficiently. Save your best abilities for the boss encounter.'
+  - 'Solving Puzzles: If you encounter a puzzle scene, think critically and explore
+    your surroundings. Completing puzzles quickly allows you to conserve time for
+    tougher battles.'
+  - 'Manage Sound Settings: Adjust background music and SFX through the Sound Manager
+    for an immersive experience without distractions.'
+  buildSettingsAsFallback: 1
+  useSynchronousAsFallback: 1

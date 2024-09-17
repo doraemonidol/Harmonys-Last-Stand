@@ -223,11 +223,11 @@ namespace Presentation.GUI
         public void OnStartGameButtonClicked()
         {
             Time.timeScale = 1;
-            _overlay.SetActive(false);
-            _startGamePanel.SetActive(false);
-            _amadeusConfirmationText.SetActive(false);
-            _ludwigConfirmationText.SetActive(false);
-            _maestroConfirmationText.SetActive(false);
+            // _overlay.SetActive(false);
+            // _startGamePanel.SetActive(false);
+            // _amadeusConfirmationText.SetActive(false);
+            // _ludwigConfirmationText.SetActive(false);
+            // _maestroConfirmationText.SetActive(false);
             SceneManager.Instance.LoadScene(_sceneType);
         }
 

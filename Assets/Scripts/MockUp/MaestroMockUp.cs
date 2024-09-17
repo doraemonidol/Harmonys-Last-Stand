@@ -80,20 +80,8 @@ namespace MockUp
                     animator.SetTrigger(EnemyActionType.Attack);
                 return;
             }
-
             VillainCastSkill();
-
-            // bool isCasting = false;
-            // for (int i = 1; i <= _skills.Count; i++)
-            // {
-            //     if (animator.GetCurrentAnimatorStateInfo(0).IsName("CastSpell" + i.ToString()))
-            //     {
-            //         isCasting = true;
-            //         break;
-            //     }
-            // }
-            //
-            // navMeshAgent.isStopped = isCasting;
+            base.Update();
         }
 
         private void VillainCastSkill()

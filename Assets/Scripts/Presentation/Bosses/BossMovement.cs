@@ -94,6 +94,18 @@ public abstract class BossMovement : PresentationObject
         if (isDead || GameManager.Instance.IsGamePaused)
             return;
         navMeshAgent.SetDestination(player.transform.position);
+
+        bool isCasting = false;
+        for (int i = 1; i <= 4; i++)
+        {
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("CastSpell" + i.ToString()))
+            {
+                isCasting = true;
+                break;
+            }
+        }
+        
+        navMeshAgent.isStopped = isCasting;
     }
 
     public override void AcceptAndUpdate(EventUpdateVisitor visitor)

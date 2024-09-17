@@ -109,7 +109,7 @@ namespace MockUp
             // sort the skillDetailUIs by their name
             skillDetailUIs.Sort((a, b) => a.name.CompareTo(b.name));
             
-            dashSkillDetailUI = skillDetailUIs[4];
+            dashSkillDetailUI = skillDetailUIs[^1];
         
             UpdateCurrentSkills();
         }
