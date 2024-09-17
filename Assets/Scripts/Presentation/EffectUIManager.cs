@@ -274,7 +274,7 @@ namespace Presentation
             }
             canvas.gameObject.SetActive(true);
             progressBar.SetEffect(effects[effects.Count - 1]);
-            effectText.text = effects[effects.Count - 1].Name;
+            effectText.text = effects[effects.Count - 1].Name.ToUpper();
 
             if (IsAppliedEffect(EffectType.FEAR) && Time.time > lastUpdateFear + 0.4f)
             {

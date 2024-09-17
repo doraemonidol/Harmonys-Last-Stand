@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Common;
+using DG.Tweening;
 using echo17.EndlessBook;
 using echo17.EndlessBook.Demo02;
 using Presentation.GUI;
@@ -132,18 +133,34 @@ namespace echo17.EndlessBook.Demo02
             audioOn = true;
         }
 
+        [SerializeField] private Canvas bookInstructionsCanvas;
+
         private void Update()
         {
             if (!GameManager.Instance.isOpeningBook)
             {
                 Transform player = GameObject.FindGameObjectWithTag("Player").transform;
-                if (Vector3.Distance(player.position, transform.position) < 20F)
+                Debug.Log(Vector3.Distance(player.position, transform.position));
+                if (Vector3.Distance(player.position, transform.position) < 7F)
                 {
+                    bookInstructionsCanvas.gameObject.SetActive(true);
+                    bookInstructionsCanvas.transform.DOMoveY(3.2F, 0.3F);
+                    bookInstructionsCanvas.transform.DOScale(new Vector3(0.009f, 0.009f, 0.009f), 0.3F);
+                    
                     if (Input.GetKeyDown(KeyCode.E))
                     {
                         GameManager.Instance.OpenBook();
                     }
+                } else
+                {
+                    bookInstructionsCanvas.transform.DOMoveY(0, 1F);
+                    bookInstructionsCanvas.transform.DOScale(new Vector3(0, 0, 0), 1F);
                 }
+            }
+            else
+            {
+                bookInstructionsCanvas.transform.DOMoveY(0, 1F);
+                bookInstructionsCanvas.transform.DOScale(new Vector3(0, 0, 0), 1F);
             }
         }
 
