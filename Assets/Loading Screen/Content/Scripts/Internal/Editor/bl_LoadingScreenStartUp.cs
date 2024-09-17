@@ -2,6 +2,7 @@
 using UnityEditor;
 using System.Collections.Generic;
 
+#if UNITY_EDITOR
 namespace Lovatto.SceneLoader.Editor
 {
     [InitializeOnLoad]
@@ -106,3 +107,4 @@ namespace Lovatto.SceneLoader.Editor
         }
     }
 }
+#endif

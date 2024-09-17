@@ -1,5 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
+#if UNITY_EDITOR
 using LoadingScreenA.TutorialWizard;
 
 public class LoadingScreenDocumentation : TutorialWizard
@@ -159,3 +160,4 @@ public class LoadingScreenDocumentation : TutorialWizard
 		GetWindow<LoadingScreenDocumentation>();
 	}
 }
+#endif

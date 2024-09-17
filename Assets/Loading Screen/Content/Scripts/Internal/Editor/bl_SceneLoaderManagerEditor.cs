@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using Lovatto.SceneLoader;
+
+// if Unity Editor is not defined
+#if UNITY_EDITOR
 using UnityEditorInternal;
 
 [CustomEditor(typeof(bl_SceneLoaderManager))]
@@ -89,3 +92,4 @@ public class bl_SceneLoaderManagerEditor : Editor
         else return EditorGUIUtility.singleLineHeight;
     }
 }
+#endif

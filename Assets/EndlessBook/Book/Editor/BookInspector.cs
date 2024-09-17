@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using echo17.EndlessBook;
 
+#if UNITY_EDITOR
 /// <summary>
 /// Handles updating most values of the Book object
 /// </summary>
@@ -241,3 +242,4 @@ public class BookInspector : Editor
         }
     }
 }
+#endif

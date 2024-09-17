@@ -37,11 +37,13 @@ namespace Presentation.GUI
 
         public void RestartGame()
         {
+            IsGamePaused = false;
             SceneManager.Instance.ReloadCurrentScene();
         }
 
         public void LoadMainMenu()
         {
+            IsGamePaused = false;
             SceneManager.Instance.LoadScene(SceneType.MAINMENU);
             // SoundManager.Instance.PlayMusic(MusicEnum.MenuMusic);
         }

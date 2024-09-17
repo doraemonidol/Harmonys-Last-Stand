@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using Lovatto.SceneLoader;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(bl_SceneLoader))]
 public class bl_SceneLoaderEditor : Editor
 {
@@ -108,3 +109,4 @@ public class bl_SceneLoaderEditor : Editor
         }
     }
 }
+#endif

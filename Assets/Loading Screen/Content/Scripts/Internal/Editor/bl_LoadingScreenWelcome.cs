@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 namespace Lovatto.SceneLoader.Editor
 {
     public class bl_LoadingScreenWelcome : EditorWindow
@@ -31,3 +32,4 @@ namespace Lovatto.SceneLoader.Editor
         }
     }
 }
+#endif
