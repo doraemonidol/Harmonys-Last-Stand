@@ -41,6 +41,9 @@ namespace Presentation.GUI
 
         [Header("Instruction Panel")] [SerializeField]
         private GameObject _instructionPanel;
+        
+        [Header("Game save menu")]
+        [SerializeField] private GameObject _gameSaveMenu;
 
         // Start is called before the first frame update
         void Start()
@@ -52,6 +55,7 @@ namespace Presentation.GUI
                 _optionMenu.SetActive(false);
                 _audioSettings.SetActive(false);
                 _controlSettings.SetActive(false);
+                _gameSaveMenu.SetActive(false);
             }
             else if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == SceneBuildIndex.LOBBY)
             {
@@ -112,8 +116,8 @@ namespace Presentation.GUI
 
         public void OnMainMenu_StartGame()
         {
-            // create a new game save in player prefs
-            SceneManager.Instance.LoadScene(SceneType.LOBBY);
+            HideMainMenu();
+            ShowGameSaveMenu();
         }
 
         public void OnQuitButtonClicked()
@@ -121,6 +125,18 @@ namespace Presentation.GUI
             Application.Quit();
         }
 
+        #endregion
+        
+        #region Game Save Menu
+        private void ShowGameSaveMenu()
+        {
+            _gameSaveMenu.SetActive(true);
+        }
+        
+        private void HideGameSaveMenu()
+        {
+            _gameSaveMenu.SetActive(false);
+        }
         #endregion
 
         #region Option Menu
@@ -162,6 +178,11 @@ namespace Presentation.GUI
             else if (_optionMenu.activeSelf)
             {
                 HideOptionMenu();
+                ShowMainMenu();
+            }
+            else if (_gameSaveMenu.activeSelf)
+            {
+                HideGameSaveMenu();
                 ShowMainMenu();
             }
         }
@@ -374,12 +395,14 @@ namespace Presentation.GUI
         public void ShowWeaponConfirmationPanel(EntityTypeEnum weapon)
         {
             selectedWeapon = weapon;
+            GameManager.Instance.IsGamePaused = true;
             _overlay.SetActive(true);
             weaponConfirmationPanel.SetActive(true);
         }
 
         public void HideWeaponConfirmationPanel()
         {
+            GameManager.Instance.IsGamePaused = false;
             _overlay.SetActive(false);
             weaponConfirmationPanel.SetActive(false);
         }

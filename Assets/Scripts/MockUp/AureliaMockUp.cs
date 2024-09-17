@@ -9,6 +9,7 @@ using Logic.Facade;
 using Logic.Helper;
 using Presentation;
 using Presentation.GUI;
+using Presentation.Manager;
 using Presentation.UI;
 using UnityEngine;
 using Time = UnityEngine.Time;
@@ -61,6 +62,7 @@ namespace MockUp
 
         public override void Start()
         {
+            InitializeWeapon();
             isDead = false;
             LogicLayer.GetInstance().Instantiate(EntityType.AURELIA, this);
             // EquipWeapon(weapons[_activeWeapon]);
@@ -142,15 +144,28 @@ namespace MockUp
             }
         }
 
-        public void ChangeWeapon(PWeapon weapon)
+        private void ChangeWeapon()
         {
-            var eventd = new EventDto
+            var weapon1 = DataManager.Instance.ToggleWeapon();
+            _activeWeapon = FindWeaponIndex(weapon1);
+        }
+
+        private void InitializeWeapon()
+        {
+            var weapon = DataManager.Instance.LoadData().Weapon1;
+            _activeWeapon = FindWeaponIndex(weapon);
+        }
+        
+        private int FindWeaponIndex(EntityTypeEnum weapon)
+        {
+            for (int i = 0; i < weapons.Count; i++)
             {
-                Event = "CHANGE_WP",
-            };
-            LogicLayer.GetInstance().Observe(eventd);
-            
-            weapons.Remove(weapon);
+                if (weapons[i].entityType == weapon)
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
 
         public void EquipWeapon(PWeapon weapon)
@@ -180,7 +195,7 @@ namespace MockUp
 
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
-                    _activeWeapon = (_activeWeapon + 1) % weapons.Count;
+                    ChangeWeapon();
                     UpdateCurrentSkills();
                 }
             }

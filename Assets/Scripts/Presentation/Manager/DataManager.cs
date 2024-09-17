@@ -30,7 +30,18 @@ namespace Presentation.Manager
             string json = PlayerPrefs.GetString(currentFileSave, "");
             if (json == "")
             {
+                SaveData(new PlayerData());
                 return new PlayerData();
+            }
+            return JsonUtility.FromJson<PlayerData>(json);
+        }
+        
+        public PlayerData LoadData(string fileSave)
+        {
+            string json = PlayerPrefs.GetString(fileSave, "");
+            if (json == "")
+            {
+                return null;
             }
             return JsonUtility.FromJson<PlayerData>(json);
         }
@@ -80,6 +91,14 @@ namespace Presentation.Manager
             }
             data.Weapon2 = weapon;
             SaveData(data);
+        }
+
+        public EntityTypeEnum ToggleWeapon()
+        {
+            PlayerData data = LoadData();
+            (data.Weapon1, data.Weapon2) = (data.Weapon2, data.Weapon1);
+            SaveData(data);
+            return data.Weapon1;
         }
     }
 }

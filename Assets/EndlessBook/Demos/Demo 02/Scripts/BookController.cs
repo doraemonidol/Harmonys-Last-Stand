@@ -152,9 +152,9 @@ namespace echo17.EndlessBook.Demo02
             switch (book.CurrentLeftPageNumber)
             {
                 case 1:
-                    return EntityTypeEnum.FLUTE;
-                case 3:
                     return EntityTypeEnum.VIOLIN;
+                case 3:
+                    return EntityTypeEnum.FLUTE;
                 case 5:
                     return EntityTypeEnum.SUPERBASS;
             }
