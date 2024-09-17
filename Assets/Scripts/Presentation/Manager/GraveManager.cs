@@ -42,7 +42,19 @@ namespace Presentation.Manager
         // Update is called once per frame
         void Update()
         {
-        
+            // Check key combination of number 1 2 3 4 5 6
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                SetFound(0);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                SetFound(1);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                SetFound(2);
+            }
         }
 
         private void GetWaypoints()
