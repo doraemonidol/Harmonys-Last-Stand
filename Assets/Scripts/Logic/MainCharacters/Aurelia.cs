@@ -25,11 +25,14 @@ namespace Logic.MainCharacters
         {
             _weapons = new List<Weapon>();
             _effectManager = new EffectManager(this);
+            GameContext.GetInstance().MainCharacter = this;
+            GameContext.GetInstance().Reset();
         }
 
         public Aurelia(List<int> wpLists)
         {
             GameContext.GetInstance().MainCharacter = this;
+            GameContext.GetInstance().Reset();
             _effectManager = new EffectManager();
             _weapons = new List<Weapon>();
             foreach (var weapon in wpLists)

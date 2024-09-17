@@ -60,7 +60,7 @@ namespace MockUp
             return _activeWeapon;
         }
 
-        public override void Start()
+        public override void OnEnable()
         {
             if (_activeWeapon != -1)
             {

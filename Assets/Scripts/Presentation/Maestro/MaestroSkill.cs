@@ -22,7 +22,7 @@ namespace Presentation.Maestro
         [SerializeField] protected float attackRange;
         public Identity MaestroLogicHandle;
         
-        public override void Start()
+        public override void OnEnable()
         {
             state = SkillState.Idle;
         }

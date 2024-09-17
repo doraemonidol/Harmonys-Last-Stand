@@ -14,7 +14,7 @@ namespace MockUp
         private float lastCastTime = 0.0f;
         private float cooldownTime = 1.0f;
         public WeaponMockUp weapon;
-        public override void Start()
+        public override void OnEnable()
         {
             LogicLayer.GetInstance().Instantiate(Google.Search("ins", "lud"), this);
         }

@@ -8,7 +8,7 @@ namespace MockUp
 {
     public class WeaponMockUp2 : PWeapon
     {
-        public override void Start()
+        public override void OnEnable()
         {
             
             normalSkills = new List<PSkill>

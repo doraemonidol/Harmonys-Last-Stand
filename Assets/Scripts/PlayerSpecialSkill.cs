@@ -23,7 +23,7 @@ public class PlayerSpecialSkill : PlayerSkill
         return 0;
     }
 
-    public override void Start()
+    public override void OnEnable()
     {
         
     }

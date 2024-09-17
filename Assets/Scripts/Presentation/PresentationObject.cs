@@ -15,7 +15,7 @@ namespace Presentation
         
         private readonly ArrayList Notifier = new ArrayList();
 
-        public abstract void Start();
+        public abstract void OnEnable();
 
         public abstract void Update();
 

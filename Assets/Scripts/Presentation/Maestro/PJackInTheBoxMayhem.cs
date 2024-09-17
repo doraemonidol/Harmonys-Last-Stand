@@ -19,9 +19,9 @@ namespace Presentation.Maestro
         private Vector2 positivePosition, negativePosition;
         [SerializeField] private float heightOfCheck = 10f, rangeOfCheck = 30f;
         
-        public override void Start()
+        public override void OnEnable()
         {
-            base.Start();
+            base.OnEnable();
             positivePosition = new Vector2(Mathf.Max(TopRight.position.x, BottomLeft.position.x), Mathf.Max(TopRight.position.z, BottomLeft.position.z));
             negativePosition = new Vector2(Mathf.Min(TopRight.position.x, BottomLeft.position.x), Mathf.Min(TopRight.position.z, BottomLeft.position.z));
         }

@@ -45,14 +45,14 @@ namespace MockUp
             GameManager.Instance.OnDefeatBoss(SceneTypeEnum.AMADEUS_BOSS);
         }
         
-        public override void Start()
+        public override void OnEnable()
         {
             if (!_rotateToTarget)
             {
                 Debug.LogError("Please assign RotateToTargetScript to the boss");
             }
             
-            base.Start();
+            base.OnEnable();
             // _bossCastSkill = GetComponent<BossCastSkill>();
             LogicLayer.GetInstance().Instantiate(Google.Search("ins", "ama"), this);
             UpdateEnemyCollision();

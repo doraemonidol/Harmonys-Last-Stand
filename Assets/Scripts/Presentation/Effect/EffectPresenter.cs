@@ -9,7 +9,7 @@ namespace Presentation.Effect
         [SerializeField] private GameObject mainCameraVfxContainer;
         [SerializeField] private GameObject entityVfxContainer;
         
-        public override void Start()
+        public override void OnEnable()
         {
             
         }

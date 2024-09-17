@@ -29,7 +29,7 @@ public abstract class BossMovement : PresentationObject
     
     [SerializeField] protected List<EnemyCollision> enemyCollisions;
 
-    public override void Start()
+    public override void OnEnable()
     {
         LogicLayer.GetInstance().Instantiate(EntityType.GetEntityType(entityType), this);
         Debug.Log("Entity: " + this.LogicHandle + " " + entityType);

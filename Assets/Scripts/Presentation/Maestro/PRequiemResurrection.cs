@@ -7,9 +7,9 @@ namespace Presentation.Maestro
 {
     public class PRequiemResurrection : MaestroSkill
     {
-        public override void Start()
+        public override void OnEnable()
         {
-            base.Start();
+            base.OnEnable();
         }
         
         public override IEnumerator StartCasting()

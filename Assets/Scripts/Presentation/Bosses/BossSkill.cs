@@ -8,7 +8,7 @@ namespace Presentation.Bosses
     {
         public float nextCastTime;
         
-        public override void Start()
+        public override void OnEnable()
         {
             
         }

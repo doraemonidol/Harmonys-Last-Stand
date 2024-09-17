@@ -10,7 +10,7 @@ namespace MockUp
 {
     public class WeaponMockUp : PWeapon
     {
-        public override void Start()
+        public override void OnEnable()
         {
             LogicLayer.GetInstance().Instantiate(EntityType.GetEntityType(entityType), this);
             // Debug.Log("Weapon: " + entityType.ToString() + " ("+ this.LogicHandle + ") with " + normalSkills.Count + " normal skills and " + specialSkills.Count + " special skills");

@@ -16,9 +16,9 @@ namespace MockUp
         public float eyeSight = 80f;
         public WeaponMockUp weapon;
         
-        public override void Start()
+        public override void OnEnable()
         {
-            base.Start();
+            base.OnEnable();
             // LogicLayer.GetInstance().Instantiate(Google.Search("ins", "troop"), this);
             UpdateEnemyCollision();
             

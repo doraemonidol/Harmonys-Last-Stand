@@ -155,6 +155,17 @@ namespace Common.Context
                     break;
             }
         }
+        
+        public void Reset()
+        {
+            _attributes = new GCAttributes (
+                GameStats.AURELIA_HEALTH, 
+                100, 
+                GameStats.AURELIA_ATTACK,
+                GameStats.AURELIA_ATKSPEED,
+                GameStats.AURELIA_MOVSPEED
+            );
+        }
 
         public void LoadWeapon(string data)
         {

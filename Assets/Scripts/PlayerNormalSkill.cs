@@ -17,7 +17,7 @@ public class PlayerNormalSkill : PlayerSkill
     private LineRegion _lineRegion;
     private ArcRegion _arcRegion;
     private ScatterLineRegion _scatterLineRegion;
-    public override void Start()
+    public override void OnEnable()
     {
         isChanneling = false;
         if (skillIndicator)

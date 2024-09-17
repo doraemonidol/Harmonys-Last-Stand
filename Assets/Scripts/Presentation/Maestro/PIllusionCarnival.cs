@@ -102,9 +102,9 @@ namespace Presentation.Maestro
         }
 
         // Start is called before the first frame update
-        public override void Start()
+        public override void OnEnable()
         {
-            base.Start();
+            base.OnEnable();
             // rotateToMouseScript = target.GetComponent<RotateToMouseScript>();
         }
         
