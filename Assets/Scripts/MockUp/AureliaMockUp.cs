@@ -62,7 +62,10 @@ namespace MockUp
 
         public override void Start()
         {
-            InitializeWeapon();
+            if (_activeWeapon != -1)
+            {
+                InitializeWeapon();
+            }
             isDead = false;
             LogicLayer.GetInstance().Instantiate(EntityType.AURELIA, this);
             // EquipWeapon(weapons[_activeWeapon]);

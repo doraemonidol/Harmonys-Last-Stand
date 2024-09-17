@@ -92,9 +92,25 @@ PrefabInstance:
       propertyPath: weapons.Array.data[1]
       value: 
       objectReference: {fileID: 6382207554096286226}
+    - target: {fileID: 4558119135267589535, guid: bb2a793f926f7b643ba1ef3218223729, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f4089b40c8c3f94a9f5bcc927a09682, type: 2}
     - target: {fileID: 5316442668752805619, guid: bb2a793f926f7b643ba1ef3218223729, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599455596933755449, guid: bb2a793f926f7b643ba1ef3218223729, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663120558080531337, guid: bb2a793f926f7b643ba1ef3218223729, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663120558080531337, guid: bb2a793f926f7b643ba1ef3218223729, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7249316763959245703, guid: bb2a793f926f7b643ba1ef3218223729, type: 3}
       propertyPath: m_Enabled
