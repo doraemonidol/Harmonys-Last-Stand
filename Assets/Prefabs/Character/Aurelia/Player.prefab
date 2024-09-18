@@ -1569,6 +1569,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EffectHolderCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 795903351758170382, guid: 3377239955fda5b4db27ce48caf3bc48, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169319610715125868, guid: 3377239955fda5b4db27ce48caf3bc48, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7178890869185297644, guid: 3377239955fda5b4db27ce48caf3bc48, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
