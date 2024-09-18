@@ -9,8 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="48de62fe-ecde-4fdd-ba69-81119ab6817e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Harmonys Last Stand/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Grave.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Grave.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/GraveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Presentation/Manager/GraveManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/BossScene3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IngameScenes/BossScene3.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Wand and Circles/Stylized Dungeon Pack/Prefabs/Props/Other/Tombstone_0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wand and Circles/Stylized Dungeon Pack/Prefabs/Props/Other/Tombstone_0.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,6 +141,7 @@
       <workItem from="1726537091880" duration="2245000" />
       <workItem from="1726554241119" duration="13065000" />
       <workItem from="1726614888398" duration="436000" />
+      <workItem from="1726618109576" duration="184000" />
     </task>
     <servers />
   </component>
