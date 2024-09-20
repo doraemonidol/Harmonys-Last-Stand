@@ -3,19 +3,27 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bullet
+  - Enemy
+  - WPM1
+  - WPM2
+  - WPM3
+  - MaeTroop
+  - BlindHouse
+  - Grave
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - Ground
-  - 
-  - 
-  - 
-  - 
+  - PostProcessing
+  - Player
+  - Point Light
+  - UICamera
   - 
   - 
   - 

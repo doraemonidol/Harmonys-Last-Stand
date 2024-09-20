@@ -1,3 +1,4 @@
+using Presentation.GUI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +11,6 @@ public class ImageClickHandler : MonoBehaviour
     public TextMeshProUGUI detail;
     public TextMeshProUGUI money;
     [SerializeField]
-
     private Item item; // The item to be handled
     private Image childImage;
 
@@ -37,7 +37,7 @@ public class ImageClickHandler : MonoBehaviour
     // This method will be called when an image slot is clicked
     public void OnImageClick()
     {
-        this.transform.parent.GetComponent<ImageClickManager>().SetCurrentItem(item);
+        this.transform.parent.GetComponent<BuyItem>().SetCurrentItem(item);
         displayImage.enabled = true;
         displayImage.sprite = item.image;
         displayName.text = item.name; 

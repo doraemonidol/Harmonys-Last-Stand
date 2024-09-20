@@ -5,10 +5,79 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/LoadExample.unity
+    guid: 511f544c1ae32b3448425de6b65acff2
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/Example 1.unity
+    guid: 95722ca89118e964cbbd539e75b63345
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/Example 2.unity
+    guid: 23b4b5f377b6fe34e9c8aaa713f716fb
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/Example 3.unity
+    guid: d5389027e3a6b2242a041ed311ae651c
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/Example 4.unity
+    guid: 226422f65b6555840b1d5f6df4a79b74
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/Example 5.unity
+    guid: c03bd6dfd58da3a478c7a308f23d21e1
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/Example 6.unity
+    guid: a527073b0c7e8a649bad4e2441d6297d
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/Example 7.unity
+    guid: c93e62f33f0a8e84bb17060f84295007
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/Example 8.unity
+    guid: 4cbf69233847799488a754316d9e4d04
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/Example 9.unity
+    guid: 26419d9d24baf534ea6499686606af7d
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/Example 10.unity
+    guid: 92e3f9a7a53ef024ab30e63dd253d25e
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/Example 11.unity
+    guid: c994af733cc3682459a0e9ca8b30fc3c
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/Example 12.unity
+    guid: 07add6901d26b304aa83d93495a370ce
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/Example 13.unity
+    guid: e6793006f9639c6479fbf225b0a01f9d
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/Example 14.unity
+    guid: 9e16e68a5e2b52b4fbceada4635e2853
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/Example 15.unity
+    guid: 1518005ddfb9f06488bd5cdd11a12b46
+  - enabled: 0
+    path: Assets/Loading Screen/Example/Scenes/Example 16.unity
+    guid: 34e63df625a2d3a44bfa4fd90001c69d
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 45006b52dda8941f8bafef6b357ba92f
+    path: Assets/Scenes/MenuScenes/MainMenu.unity
+    guid: 7de54a6e34442ec44aed46a8c229c6d3
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/IngameScenes/LobbyScene.unity
+    guid: ba9f3dcb3f9004ee590cd41aae246338
+  - enabled: 1
+    path: Assets/Scenes/IngameScenes/TroopScene1.unity
+    guid: 6ec5a199be584435fbd58f05ed30bac5
+  - enabled: 1
+    path: Assets/Scenes/IngameScenes/BossScene1.unity
+    guid: fc91f796fd82be8468895df0a215a2db
+  - enabled: 1
+    path: Assets/Scenes/IngameScenes/TroopScene2.unity
+    guid: ee2c2f3ee460aa743b8980cfdcd3125c
+  - enabled: 1
+    path: Assets/Scenes/IngameScenes/BossScene2.unity
+    guid: c484d0c9d2aef5149b7a1a77138bc7cc
+  - enabled: 1
+    path: Assets/Scenes/IngameScenes/TroopScene3.unity
+    guid: 97bd7f6fde7c6b245b8d36db330e0049
+  - enabled: 1
+    path: Assets/Scenes/IngameScenes/BossScene3.unity
+    guid: 7df5e81f387c243438c2b0e3b37d3d07
   m_configObjects: {}

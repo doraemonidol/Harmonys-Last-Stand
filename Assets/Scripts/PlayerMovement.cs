@@ -1,138 +1,99 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.AI;
-
-public class PlayerMovement : MonoBehaviour
-{
-    Animator animator;
-
-    [SerializeField] private float _moveSpeed = 10f;
-    [SerializeField] private float _dashDistance = 20f;
-    [SerializeField] private float _dashDuration = 1f;
-    [SerializeField] private float _dashCooldown = 5f;
-    [SerializeField] private float _rotationSpeed = 0.5f;
-    private bool _canDash = true;
-    private bool _isDashing = false;
-    private bool _isMousePressed = false;
-    private bool _wasMousePressed = false;
-    [SerializeField] private TrailRenderer _trailRenderer;
-    [SerializeField] private Rigidbody _rigidbody;
-    private NavMeshAgent _agent;
-
-    private Vector3 _currentDirection = Vector3.forward;
-
-    void Start()
+       using System.Collections.Generic;
+       using Presentation.GUI;
+       using UnityEngine;
+       using UnityEngine.AI;
+       using UnityEngine.Serialization;
+       
+       public class PlayerMovement : MonoBehaviour
+       {
+           [SerializeField] private float _moveSpeed = 10f;
+           [SerializeField] private float _dashDistance = 20f;
+           [SerializeField] private float _dashDuration = 1f;
+           [SerializeField] private float _dashCooldown = 5f;
+           private bool _canDash = true;
+           private bool _isDashing = false;
+           [SerializeField] TrailRenderer _trailRenderer;
+           [SerializeField] private Rigidbody _rigidbody;
+           [SerializeField] private Vector3 _currentDirection = Vector3.forward;
+           private NavMeshAgent _agent;
+           public bool isDead;
+           
+           // Start is called before the first frame update
+           void Start()
+           {
+               _rigidbody = GetComponent<Rigidbody>();
+               _trailRenderer = GetComponent<TrailRenderer>();
+               _agent = GetComponent<NavMeshAgent>();
+               _agent.speed = _moveSpeed;
+               isDead = false;
+           }
+       
+           // Update is called once per frame
+           void Update()
+           {
+               if (isDead || GameManager.Instance.IsGamePaused)
+                   return;
+               
+               ProcessTranslation();
+           }
+       
+           private void ProcessTranslation()
     {
-        GetComponent();
-    }
-
-    void GetComponent()
-    {
-        animator = GetComponent<Animator>();
-        Debug.Log("Check ani", animator);
-    }
-
-    void Update()
-    {
-        // Check for mouse press and release
-        checkMouse();
-        ProcessTranslation();
-    }
-    void checkMouse()
-    {
-        if (Input.GetMouseButtonDown(0))
+        if (_isDashing) return;
+        
+        float xValue = Input.GetAxis("Horizontal") * Time.deltaTime * _moveSpeed;
+        float zValue = Input.GetAxis("Vertical") * Time.deltaTime * _moveSpeed;
+        
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
-            _isMousePressed = true;
-            animator.SetBool("isRunning", false);
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            _isMousePressed = false;
-        }
-    }   
-
-    private void ProcessTranslation()
-    {
-        if (_isDashing || _isMousePressed) return;
-
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
-        Vector3 moveDirection = new Vector3(horizontal, 0, vertical).normalized;
-
-        if (moveDirection.magnitude >= 0.1f)
-        {
-            _currentDirection = CalculateDirection(horizontal, vertical);
-            Console.WriteLine(_currentDirection);
-            animator.SetBool("isRunning", true);
-
-            transform.Translate(_currentDirection * _moveSpeed * Time.deltaTime, Space.World);
-
-          
-            if (!_wasMousePressed) 
+            _currentDirection = new Vector3(0, 0, 0);
+            if (Input.GetAxis("Horizontal") > 0)
             {
-                Quaternion targetRotation = Quaternion.LookRotation(_currentDirection);
-                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, _rotationSpeed);
+                _currentDirection.x = 1;
+            }
+            else if (Input.GetAxis("Horizontal") < 0)
+            {
+                _currentDirection.x = -1;
+            }
+            if (Input.GetAxis("Vertical") > 0)
+            {
+                _currentDirection.z = 1;
+            }
+            else if (Input.GetAxis("Vertical") < 0)
+            {
+                _currentDirection.z = -1;
             }
         }
-        else
+
+        transform.Translate(xValue, 0, zValue);
+        
+        if (Input.GetButtonDown("Jump"))
         {
-            animator.SetBool("isRunning", false);
+            if (_canDash)
+            {
+                StartCoroutine(Dash());
+            }
         }
-
-        if (Input.GetButtonDown("Jump") && _canDash)
-        {
-            StartCoroutine(Dash());
-        }
-        else
-        {
-            //animator.SetBool("isDash", false);
-        }
-
-        _wasMousePressed = _isMousePressed; // Track the state of mouse press for the next frame
-    }
-
-    private Vector3 CalculateDirection(float horizontal, float vertical)
-    {
-        if (horizontal > 0 && vertical > 0)
-            return new Vector3(1, 0, 1).normalized;
-        if (horizontal > 0 && vertical < 0)
-            return new Vector3(1, 0, -1).normalized;
-        if (horizontal < 0 && vertical > 0)
-            return new Vector3(-1, 0, 1).normalized;
-        if (horizontal < 0 && vertical < 0)
-            return new Vector3(-1, 0, -1).normalized;
-        if (horizontal > 0)
-            return Vector3.right;
-        if (horizontal < 0)
-            return Vector3.left;
-        if (vertical > 0)
-            return Vector3.forward;
-        if (vertical < 0)
-            return Vector3.back;
-
-        return Vector3.zero;
     }
 
     private IEnumerator Dash()
     {
         _isDashing = true;
         _canDash = false;
-        //animator.SetBool("isDash", true);
-
+        _trailRenderer.emitting = true;
+        // _rigidbody.useGravity = false;
+        _agent.speed = _dashDistance / _dashDuration;
         Vector3 dashEndPosition = transform.position + _currentDirection * _dashDistance;
-
-        float dashStartTime = Time.time;
-        while (Time.time < dashStartTime + _dashDuration)
-        {
-            transform.position = Vector3.Lerp(transform.position, dashEndPosition, (Time.time - dashStartTime) / _dashDuration);
-            yield return null;
-        }
-
-        //animator.SetBool("isDash", false);
+        dashEndPosition.y -= (float)0.5;
+        Debug.Log(dashEndPosition);
+        _agent.SetDestination(dashEndPosition);
+        yield return new WaitForSeconds(_dashDuration);
+        _agent.speed = _moveSpeed;
+        _agent.ResetPath();
+        _trailRenderer.emitting = false;
         _isDashing = false;
+        // _rigidbody.useGravity = true;
         yield return new WaitForSeconds(_dashCooldown);
         _canDash = true;
     }

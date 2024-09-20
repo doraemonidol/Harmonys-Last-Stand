@@ -1,0 +1,31 @@
+﻿using UnityEngine;
+
+public class MoveToObject : MonoBehaviour
+{
+    public Transform m_movePos;
+    public float m_startDelay;
+    public float m_durationTime;
+    public float m_lerpValue;
+    public float m_lookValue;
+
+    private float m_Time;
+
+    private void Start()
+    {
+        m_Time = Time.time;
+    }
+
+    private void Update()
+    {
+        if (Time.time > m_Time + m_startDelay)
+            if (Time.time < m_Time + m_durationTime + m_startDelay)
+            {
+                transform.position = Vector3.Lerp(transform.position, m_movePos.position, Time.deltaTime * m_lerpValue);
+                if (Vector3.Distance(transform.position, m_movePos.position) > 1)
+                {
+                    var lookPos = Quaternion.LookRotation(transform.position - m_movePos.position);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, lookPos, Time.deltaTime * m_lookValue);
+                }
+            }
+    }
+}

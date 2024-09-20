@@ -1,24 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class NewMaterialChange : MonoBehaviour
 {
     public bool isParticleSystem;
     public Material m_inputMaterial;
-    Material m_objectMaterial;
-    MeshRenderer m_meshRenderer;
-    ParticleSystemRenderer m_particleRenderer;
     public float m_timeToReduce;
-    public float m_reduceFactor =0.0f;
-    float m_time;
-    float m_submitReduceFactor;
-    float m_cutOutFactor;
+    public float m_reduceFactor;
     public float m_upFactor;
-    float upFactor;
-    bool isupfactor = true;
+    private bool isupfactor = true;
+    private float m_cutOutFactor;
+    private MeshRenderer m_meshRenderer;
+    private Material m_objectMaterial;
+    private ParticleSystemRenderer m_particleRenderer;
+    private float m_submitReduceFactor;
+    private float m_time;
+    private float upFactor;
 
-    void Awake()
+    private void Awake()
     {
         if (isParticleSystem)
         {
@@ -32,11 +30,12 @@ public class NewMaterialChange : MonoBehaviour
             m_meshRenderer.material = m_inputMaterial;
             m_objectMaterial = m_meshRenderer.material;
         }
+
         m_submitReduceFactor = 0.0f;
         m_cutOutFactor = 1.0f;
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         m_time += Time.deltaTime;
         if (m_time > m_timeToReduce)
@@ -50,7 +49,7 @@ public class NewMaterialChange : MonoBehaviour
             Destroy(gameObject);
         m_objectMaterial.SetFloat("_MaskCutOut", m_cutOutFactor);
 
-        if (m_upFactor != 0 && isupfactor != false)
+        if (m_upFactor != 0 && isupfactor)
         {
             upFactor += m_upFactor * Time.deltaTime;
             upFactor = Mathf.Clamp01(upFactor);

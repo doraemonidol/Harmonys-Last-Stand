@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -15,19 +16,35 @@ public class ButtonHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
     [SerializeField]
     private GameObject rightImage; // The right image object
 
-    private RectTransform textRectTransform; 
+    private RectTransform textRectTransform;
+
+    private void OnEnable()
+    {
+        if (leftImage != null)
+            leftImage.SetActive(false);
+        if (rightImage != null)
+            rightImage.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        if (leftImage != null)
+            leftImage.SetActive(false);
+        if (rightImage != null)
+            rightImage.SetActive(false);
+    }
 
     void Start()
     {
         textRectTransform = buttonText.GetComponent<RectTransform>();
-        Debug.Log("Text: " + buttonText.text);
-        UpdateImagePositions();
+        // Debug.Log("Text: " + buttonText.text);
+        // UpdateImagePositions();
     }
 
     public void SetText(string newText)
     {
         buttonText.text = newText;
-        UpdateImagePositions();
+        // UpdateImagePositions();
     }
 
     private void UpdateImagePositions()
@@ -57,7 +74,7 @@ public class ButtonHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
         if (buttonText != null)
         {
             textRectTransform = buttonText.GetComponent<RectTransform>();
-            UpdateImagePositions();
+            // UpdateImagePositions();
         }
     }
 

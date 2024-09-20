@@ -1,8 +1,12 @@
 using UnityEngine;
 public enum ItemType
 {
-    MovingPortion,
-    AttachPortion,
+    MovSpdPotion,
+    AtkSpdPotion,
     DamagePotion,
-    HealthPortion
+    HealthPotion,
+    TmpMovSpdPotion,
+    TmpAtkSpdPotion,
+    TmpDamagePotion,
+    TmpHealthPortion
 }

@@ -2,122 +2,129 @@
 // Available at the Unity Asset Store - http://u3d.as/y3X 
 Shader "Hovl/Particles/LightGlow"
 {
-	Properties
-	{
-		_MainTex("MainTex", 2D) = "white" {}
-		_Noise("Noise", 2D) = "white" {}
-		_SpeedMainTexUVNoiseZW("Speed MainTex U/V + Noise Z/W", Vector) = (0,0,0,0)
-		_Emission("Emission", Float) = 2
-		_Color("Color", Color) = (0.5,0.5,0.5,1)
-		_Opacity("Opacity", Range( 0 , 1)) = 1
-		_LightFalloff("Light Falloff", Float) = 0.5
-		_LightRange("Light Range", Float) = 2
-		_LightEmission("Light Emission", Float) = 2
-		[Toggle]_Usedepth("Use depth?", Float) = 0
-		_Depthpower("Depth power", Float) = 1
-		[HideInInspector] _texcoord( "", 2D ) = "white" {}
-		[HideInInspector] __dirty( "", Int ) = 1
-	}
+    Properties
+    {
+        _MainTex("MainTex", 2D) = "white" {}
+        _Noise("Noise", 2D) = "white" {}
+        _SpeedMainTexUVNoiseZW("Speed MainTex U/V + Noise Z/W", Vector) = (0,0,0,0)
+        _Emission("Emission", Float) = 2
+        _Color("Color", Color) = (0.5,0.5,0.5,1)
+        _Opacity("Opacity", Range( 0 , 1)) = 1
+        _LightFalloff("Light Falloff", Float) = 0.5
+        _LightRange("Light Range", Float) = 2
+        _LightEmission("Light Emission", Float) = 2
+        [Toggle]_Usedepth("Use depth?", Float) = 0
+        _Depthpower("Depth power", Float) = 1
+        [HideInInspector] _texcoord( "", 2D ) = "white" {}
+        [HideInInspector] __dirty( "", Int ) = 1
+    }
 
-	SubShader
-	{
-		Tags{ "RenderType" = "Transparent"  "Queue" = "Transparent+0" "IgnoreProjector" = "True" "IsEmissive" = "true"  }
-		Cull Off
-		CGPROGRAM
-		#ifndef UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX
+    SubShader
+    {
+        Tags
+        {
+            "RenderType" = "Transparent" "Queue" = "Transparent+0" "IgnoreProjector" = "True" "IsEmissive" = "true"
+        }
+        Cull Off
+        CGPROGRAM
+        #ifndef UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX
 		#define UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input)
-		#endif
-		#include "UnityPBSLighting.cginc"
-		#include "UnityShaderVariables.cginc"
-		#include "UnityCG.cginc"
-		#pragma target 3.0
-		#pragma surface surf StandardCustomLighting alpha:fade keepalpha noshadow 
-		struct Input
-		{
-			float2 uv_texcoord;
-			float4 vertexColor : COLOR;
-			float4 screenPos;
-			float3 worldPos;
-		};
+        #endif
+        #include "UnityPBSLighting.cginc"
+        #include "UnityShaderVariables.cginc"
+        #include "UnityCG.cginc"
+        #pragma target 3.0
+        #pragma surface surf StandardCustomLighting alpha:fade keepalpha noshadow
+        struct Input
+        {
+            float2 uv_texcoord;
+            float4 vertexColor : COLOR;
+            float4 screenPos;
+            float3 worldPos;
+        };
 
-		struct SurfaceOutputCustomLightingCustom
-		{
-			half3 Albedo;
-			half3 Normal;
-			half3 Emission;
-			half Metallic;
-			half Smoothness;
-			half Occlusion;
-			half Alpha;
-			Input SurfInput;
-			UnityGIInput GIData;
-		};
+        struct SurfaceOutputCustomLightingCustom
+        {
+            half3 Albedo;
+            half3 Normal;
+            half3 Emission;
+            half Metallic;
+            half Smoothness;
+            half Occlusion;
+            half Alpha;
+            Input SurfInput;
+            UnityGIInput GIData;
+        };
 
-		uniform sampler2D _MainTex;
-		uniform float4 _SpeedMainTexUVNoiseZW;
-		uniform float4 _MainTex_ST;
-		uniform sampler2D _Noise;
-		uniform float4 _Noise_ST;
-		uniform float4 _Color;
-		uniform float _Emission;
-		uniform float _Usedepth;
-		UNITY_DECLARE_DEPTH_TEXTURE( _CameraDepthTexture );
-		uniform float4 _CameraDepthTexture_TexelSize;
-		uniform float _Depthpower;
-		uniform float _Opacity;
-		uniform float _LightRange;
-		uniform float _LightFalloff;
-		uniform float _LightEmission;
+        uniform sampler2D _MainTex;
+        uniform float4 _SpeedMainTexUVNoiseZW;
+        uniform float4 _MainTex_ST;
+        uniform sampler2D _Noise;
+        uniform float4 _Noise_ST;
+        uniform float4 _Color;
+        uniform float _Emission;
+        uniform float _Usedepth;
+        UNITY_DECLARE_DEPTH_TEXTURE(_CameraDepthTexture);
+        uniform float4 _CameraDepthTexture_TexelSize;
+        uniform float _Depthpower;
+        uniform float _Opacity;
+        uniform float _LightRange;
+        uniform float _LightFalloff;
+        uniform float _LightEmission;
 
-		inline half4 LightingStandardCustomLighting( inout SurfaceOutputCustomLightingCustom s, half3 viewDir, UnityGI gi )
-		{
-			UnityGIInput data = s.GIData;
-			Input i = s.SurfInput;
-			half4 c = 0;
-			float2 appendResult21 = (float2(_SpeedMainTexUVNoiseZW.x , _SpeedMainTexUVNoiseZW.y));
-			float2 uv0_MainTex = i.uv_texcoord * _MainTex_ST.xy + _MainTex_ST.zw;
-			float4 tex2DNode13 = tex2D( _MainTex, ( ( appendResult21 * _Time.y ) + uv0_MainTex ) );
-			float2 uv0_Noise = i.uv_texcoord * _Noise_ST.xy + _Noise_ST.zw;
-			float2 appendResult22 = (float2(_SpeedMainTexUVNoiseZW.z , _SpeedMainTexUVNoiseZW.w));
-			float4 tex2DNode14 = tex2D( _Noise, ( uv0_Noise + ( _Time.y * appendResult22 ) ) );
-			float temp_output_60_0 = ( tex2DNode13.a * tex2DNode14.a * _Color.a * i.vertexColor.a );
-			float4 ase_screenPos = float4( i.screenPos.xyz , i.screenPos.w + 0.00000000001 );
-			float4 ase_screenPosNorm = ase_screenPos / ase_screenPos.w;
-			ase_screenPosNorm.z = ( UNITY_NEAR_CLIP_VALUE >= 0 ) ? ase_screenPosNorm.z : ase_screenPosNorm.z * 0.5 + 0.5;
-			float screenDepth91 = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE( _CameraDepthTexture, ase_screenPosNorm.xy ));
-			float distanceDepth91 = abs( ( screenDepth91 - LinearEyeDepth( ase_screenPosNorm.z ) ) / ( _Depthpower ) );
-			#if defined(LIGHTMAP_ON) && ( UNITY_VERSION < 560 || ( defined(LIGHTMAP_SHADOW_MIXING) && !defined(SHADOWS_SHADOWMASK) && defined(SHADOWS_SCREEN) ) )//aselc
+        inline half4 LightingStandardCustomLighting(inout SurfaceOutputCustomLightingCustom s, half3 viewDir,
+                                                        UnityGI gi)
+        {
+            UnityGIInput data = s.GIData;
+            Input i = s.SurfInput;
+            half4 c = 0;
+            float2 appendResult21 = (float2(_SpeedMainTexUVNoiseZW.x, _SpeedMainTexUVNoiseZW.y));
+            float2 uv0_MainTex = i.uv_texcoord * _MainTex_ST.xy + _MainTex_ST.zw;
+            float4 tex2DNode13 = tex2D(_MainTex, ((appendResult21 * _Time.y) + uv0_MainTex));
+            float2 uv0_Noise = i.uv_texcoord * _Noise_ST.xy + _Noise_ST.zw;
+            float2 appendResult22 = (float2(_SpeedMainTexUVNoiseZW.z, _SpeedMainTexUVNoiseZW.w));
+            float4 tex2DNode14 = tex2D(_Noise, (uv0_Noise + (_Time.y * appendResult22)));
+            float temp_output_60_0 = (tex2DNode13.a * tex2DNode14.a * _Color.a * i.vertexColor.a);
+            float4 ase_screenPos = float4(i.screenPos.xyz, i.screenPos.w + 0.00000000001);
+            float4 ase_screenPosNorm = ase_screenPos / ase_screenPos.w;
+            ase_screenPosNorm.z = (UNITY_NEAR_CLIP_VALUE >= 0) ? ase_screenPosNorm.z : ase_screenPosNorm.z * 0.5 + 0.5;
+            float screenDepth91 = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, ase_screenPosNorm.xy));
+            float distanceDepth91 = abs((screenDepth91 - LinearEyeDepth(ase_screenPosNorm.z)) / (_Depthpower));
+            #if defined(LIGHTMAP_ON) && ( UNITY_VERSION < 560 || ( defined(LIGHTMAP_SHADOW_MIXING) && !defined(SHADOWS_SHADOWMASK) && defined(SHADOWS_SCREEN) ) )//aselc
+
 			float4 ase_lightColor = 0;
-			#else //aselc
-			float4 ase_lightColor = _LightColor0;
-			#endif //aselc
-			float4 ase_vertex4Pos = mul( unity_WorldToObject, float4( i.worldPos , 1 ) );
-			c.rgb = ( ase_lightColor * (0.0 + (max( ( _LightRange - pow( distance( float4( _WorldSpaceLightPos0.xyz , 0.0 ) , ase_vertex4Pos ) , _LightFalloff ) ) , 0.0 ) - 0.0) * (1.0 - 0.0) / (_LightRange - 0.0)) * _LightEmission ).rgb;
-			c.a = ( lerp(temp_output_60_0,( temp_output_60_0 * saturate( distanceDepth91 ) ),_Usedepth) * _Opacity );
-			return c;
-		}
+            #else //aselc
+            float4 ase_lightColor = _LightColor0;
+            #endif //aselc
+            float4 ase_vertex4Pos = mul(unity_WorldToObject, float4(i.worldPos, 1));
+            c.rgb = (ase_lightColor * (0.0 + (max(
+                (_LightRange - pow(distance(float4(_WorldSpaceLightPos0.xyz, 0.0), ase_vertex4Pos), _LightFalloff)),
+                0.0) - 0.0) * (1.0 - 0.0) / (_LightRange - 0.0)) * _LightEmission).rgb;
+            c.a = (lerp(temp_output_60_0, (temp_output_60_0 * saturate(distanceDepth91)), _Usedepth) * _Opacity);
+            return c;
+        }
 
-		inline void LightingStandardCustomLighting_GI( inout SurfaceOutputCustomLightingCustom s, UnityGIInput data, inout UnityGI gi )
-		{
-			s.GIData = data;
-		}
+        inline void LightingStandardCustomLighting_GI(inout SurfaceOutputCustomLightingCustom s, UnityGIInput data,
+               inout UnityGI gi)
+        {
+            s.GIData = data;
+        }
 
-		void surf( Input i , inout SurfaceOutputCustomLightingCustom o )
-		{
-			UNITY_SETUP_INSTANCE_ID( i );
-			UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX( i );
-			o.SurfInput = i;
-			float2 appendResult21 = (float2(_SpeedMainTexUVNoiseZW.x , _SpeedMainTexUVNoiseZW.y));
-			float2 uv0_MainTex = i.uv_texcoord * _MainTex_ST.xy + _MainTex_ST.zw;
-			float4 tex2DNode13 = tex2D( _MainTex, ( ( appendResult21 * _Time.y ) + uv0_MainTex ) );
-			float2 uv0_Noise = i.uv_texcoord * _Noise_ST.xy + _Noise_ST.zw;
-			float2 appendResult22 = (float2(_SpeedMainTexUVNoiseZW.z , _SpeedMainTexUVNoiseZW.w));
-			float4 tex2DNode14 = tex2D( _Noise, ( uv0_Noise + ( _Time.y * appendResult22 ) ) );
-			o.Emission = ( (( tex2DNode13 * tex2DNode14 * _Color * i.vertexColor )).rgb * _Emission );
-		}
-
-		ENDCG
-	}
+        void surf(Input i, inout SurfaceOutputCustomLightingCustom o)
+        {
+            UNITY_SETUP_INSTANCE_ID(i);
+            UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+            o.SurfInput = i;
+            float2 appendResult21 = (float2(_SpeedMainTexUVNoiseZW.x, _SpeedMainTexUVNoiseZW.y));
+            float2 uv0_MainTex = i.uv_texcoord * _MainTex_ST.xy + _MainTex_ST.zw;
+            float4 tex2DNode13 = tex2D(_MainTex, ((appendResult21 * _Time.y) + uv0_MainTex));
+            float2 uv0_Noise = i.uv_texcoord * _Noise_ST.xy + _Noise_ST.zw;
+            float2 appendResult22 = (float2(_SpeedMainTexUVNoiseZW.z, _SpeedMainTexUVNoiseZW.w));
+            float4 tex2DNode14 = tex2D(_Noise, (uv0_Noise + (_Time.y * appendResult22)));
+            o.Emission = (((tex2DNode13 * tex2DNode14 * _Color * i.vertexColor)).rgb * _Emission);
+        }
+        ENDCG
+    }
 }
 /*ASEBEGIN
 Version=17000

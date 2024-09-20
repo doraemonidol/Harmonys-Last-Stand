@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HS_CameraShaker : MonoBehaviour
@@ -9,43 +8,29 @@ public class HS_CameraShaker : MonoBehaviour
     public float frequency;
     public float duration;
     public float timeRemaining;
-    private Vector3 noiseOffset;
     private Vector3 noise;
-    private AnimationCurve smoothCurve = new AnimationCurve(new Keyframe(0.0f, 0.0f, Mathf.Deg2Rad * 0.0f, Mathf.Deg2Rad * 720.0f), new Keyframe(0.2f, 1.0f), new Keyframe(1.0f, 0.0f));
+    private Vector3 noiseOffset;
 
-    void Start()
+    private readonly AnimationCurve smoothCurve =
+        new(new Keyframe(0.0f, 0.0f, Mathf.Deg2Rad * 0.0f, Mathf.Deg2Rad * 720.0f), new Keyframe(0.2f, 1.0f),
+            new Keyframe(1.0f, 0.0f));
+
+    private void Start()
     {
-        float rand = 32.0f;
+        var rand = 32.0f;
         noiseOffset.x = Random.Range(0.0f, rand);
         noiseOffset.y = Random.Range(0.0f, rand);
         noiseOffset.z = Random.Range(0.0f, rand);
     }
 
-    public IEnumerator Shake(float amp, float freq, float dur, float wait)
-    {
-        yield return new WaitForSeconds(wait);
-        float rand = 32.0f;
-        noiseOffset.x = Random.Range(0.0f, rand);
-        noiseOffset.y = Random.Range(0.0f, rand);
-        noiseOffset.z = Random.Range(0.0f, rand);
-        amplitude = amp;
-        frequency = freq;
-        duration = dur;
-        timeRemaining += dur;
-        if (timeRemaining > dur)
-        {
-            timeRemaining = dur;
-        }
-    }
-
-    void Update()
+    private void Update()
     {
         if (timeRemaining <= 0)
             return;
 
-        float deltaTime = Time.deltaTime;
+        var deltaTime = Time.deltaTime;
         timeRemaining -= deltaTime;
-        float noiseOffsetDelta = deltaTime * frequency;
+        var noiseOffsetDelta = deltaTime * frequency;
 
         noiseOffset.x += noiseOffsetDelta;
         noiseOffset.y += noiseOffsetDelta;
@@ -58,19 +43,33 @@ public class HS_CameraShaker : MonoBehaviour
         noise -= Vector3.one * 0.5f;
         noise *= amplitude;
 
-        float agePercent = 1.0f - (timeRemaining / duration);
+        var agePercent = 1.0f - timeRemaining / duration;
         noise *= smoothCurve.Evaluate(agePercent);
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         if (timeRemaining <= 0)
             return;
-        Vector3 positionOffset = Vector3.zero;
-        Vector3 rotationOffset = Vector3.zero;
+        var positionOffset = Vector3.zero;
+        var rotationOffset = Vector3.zero;
         positionOffset += noise;
         rotationOffset += noise;
         cameraObject.transform.localPosition = positionOffset;
         cameraObject.transform.localEulerAngles = rotationOffset;
+    }
+
+    public IEnumerator Shake(float amp, float freq, float dur, float wait)
+    {
+        yield return new WaitForSeconds(wait);
+        var rand = 32.0f;
+        noiseOffset.x = Random.Range(0.0f, rand);
+        noiseOffset.y = Random.Range(0.0f, rand);
+        noiseOffset.z = Random.Range(0.0f, rand);
+        amplitude = amp;
+        frequency = freq;
+        duration = dur;
+        timeRemaining += dur;
+        if (timeRemaining > dur) timeRemaining = dur;
     }
 }

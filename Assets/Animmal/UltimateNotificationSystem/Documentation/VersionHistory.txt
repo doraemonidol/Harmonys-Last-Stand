@@ -1,0 +1,45 @@
+Version 1.26
+-Fixed some of the bugs with addressables
+
+Version 1.25
+-Added Support For Unity Addressable System
+
+Version 1.24
+- UNS provides a way to manage notifications you show using NotificationStatus callback. But one common use for it would be to call a notification using a specific Unique ID, and then Hide that specific instance of notification using that Unique ID. NotificationManager now comes with new functions that enable you to supply a Unique ID to get quick access to specific instances of notifications. 
+Use ShowNotificationWithID, GetNotificationWithID, and HideNotificationWithID functions on Notification Manager to make use of this new feature. 
+
+Version 1.23
+- Added support to play CanvasGroupLerp displayable with unscaled time (Time scale independent animation)
+
+Version 1.22
+- Added Quest Machine support 
+
+Version 1.21
+- Fixed issues with the auto-advance queue, not working as expected in some cases 
+- Added new OnHideStarted and OnShowStarted events to animation displayable 
+- Added itemhidingfinished events to legacy and animator Instant hide animations 
+
+Version 1.20
+- Added proper error messages for using StyleVariationID higher than notitication prefab count
+- Added support for audioclip notifications
+- Added support for videoplayer notifications
+- Added new audio/video notifications demo
+- Added Behavior Designer support
+
+Version 1.10
+- The IDisplayable interface was added to the Animmal namespace and Notification Display behaviors have been made into generic reusable display behaviors
+- Status callbacks object added for ShowNotification functions in Notification Manager and Notification Display so you can listen to notification lifetime events or control the behavior
+- Added the ability to show or hide notification displays with animations. This is useful if you want to show/hide all of the notification UI without disturbing Notification items. For example in cinematics.
+- Some basic unity events moved to the Animal namespace
+- Added new Example demos that show how to build tutorials, hide all notifications and use various layouts like Horizontal, Vertical, Grid, scrollview.
+- Added Adventure Creator Support
+- Added DoTweenPro Support
+- Integration packages are updated to support these new features.
+
+Version 1.01
+- Improved bulk operations.
+- Fix issues with pause/disable bulk operations.
+- Fixed issue with animator requeu-ing.
+- Animator example - added start animation in a hidden state to stop first frame from appearing shown in rare cases.
+- Added ability to disable queuing behavior on notification display inspector altogether.
+- Button alert type inside demo scenes made unqueable and 0 cooldown.
